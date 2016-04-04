@@ -11,18 +11,29 @@
 	background: #AAAAAA;
 }
 
+
 #cabecera{
 	padding: 30px;
-	height: 30%;
+	height: 40px;
 	background: #D3D3D3;
 }
 
 #sidebar-left{
 	float: left;
 	padding: 10px 0px 10px 10px;
-	width: 15%;
+	width: 16%;
 	background: #A9A9A9;
 }
+
+.avatar{
+	float: left;
+	margin-left: 30px;
+}
+.sesion{
+	float: right;
+	margin-right: 20px;
+}
+
 
 #sidebar-left ul {
     margin: 0;
@@ -47,6 +58,8 @@
 }
 
 .contenidoDonaciones{
+	align-items: center;
+	text-align: center;
 	word-wrap: break-word; 
 	float: left;
 	margin: 15px;
@@ -58,8 +71,20 @@
 	-webkit-box-shadow: 5px 5px 1px #008B8B;
 }
 
-#contenido{
+.contenidoVoluntarios{
+	word-wrap: break-word; 
 	float: left;
+	margin: 15px;
+	border-color: black;
+	padding: 10px;
+	height: 200px;
+	width: 90%;
+	background: #F0F8FF;
+	-webkit-box-shadow: 5px 5px 1px #008B8B;
+}
+
+#contenido{
+	float: right;
 	padding: 10px;
 	min-height: 600px;
 	width: 82%;
