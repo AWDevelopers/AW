@@ -14,7 +14,7 @@
 
 #cabecera{
 	padding: 30px;
-	height: 40px;
+	height: 150px;
 	background: #D3D3D3;
 }
 
@@ -32,6 +32,7 @@
 .sesion{
 	float: right;
 	margin-right: 20px;
+	align-items: center;
 }
 
 
@@ -95,3 +96,25 @@
 	clear: both;
 	text-align: center;
 }
+
+#conocenosInicio{
+	margin: 10px;
+}
+
+#conocenosInicio h1{
+	color: #000;
+ 	text-shadow: #555 2px 2px 3px;
+ 	font-family: cursive;
+}
+
+#conocenosDesarrolladores{
+	margin: 10px;
+}
+
+#conocenosDesarrolladores h2{
+	color: #000;
+ 	text-shadow: #555 2px 2px 3px;
+ 	font-family: cursive;
+}
+
+
