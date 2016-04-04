@@ -1,12 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<title>Conocenos</title>
+	<title>Inicio</title>
 	<link rel="stylesheet" type="text/css" href="estilos.css"/>
 </head>
 <body>
 	<div id='contenedor'>
-		<div id="cabecera">
+	<?php require 'common.php'; ?>
+		<!--<div id="cabecera">
 			<div class="avatar">
 				<IMG SRC="img/usuarioSF.png" WIDTH=120 HEIGHT=120 ALT="Avatar usuario">
 			</div>
@@ -22,7 +23,8 @@
             	<li><a href="conocenos.html">Conocenos</a></li>
             	<li><a href="#">Tienda</a></li>
         	</ul>
-		</div>
+		</div> 
+		-->
 		<div id="contenido">
 			
 		</div>

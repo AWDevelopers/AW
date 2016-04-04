@@ -5,10 +5,10 @@
  	echo '</div>';
 	echo '<div id="sidebar-left">';
 			echo '<ul>';
-				echo '<li><a href="index.html">Inicio</a></li>';
+				echo '<li><a href="index.php">Inicio</a></li>';
             	echo '<li><a href="#">Donaciones</a></li>';
             	echo '<li><a href="#">Voluntarios</a></li>';
-            	echo '<li><a href="conocenos.html">Conocenos</a></li>';
+            	echo '<li><a href="conocenos.php">Conocenos</a></li>';
             	echo '<li><a href="#">Tienda</a></li>';
         	echo '</ul>';
 	echo '</div>';
