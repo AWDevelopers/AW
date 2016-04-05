@@ -44,7 +44,7 @@
 }
 #sidebar-left ul li a {
     padding: 15px 0px 15px 20px;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 100;
     color: white;
     text-decoration: none;
@@ -88,6 +88,7 @@
 	min-height: 600px;
 	width: 82%;
 	background: #A9A9A9;
+	vertical-align: center;
 }
 
 #pie{
@@ -113,6 +114,58 @@
 	color: #000;
  	text-shadow: #555 2px 2px 3px;
  	font-family: cursive;
+}
+#noticias{
+	vertical-align: middle;
+	text-align: center;
+	margin-left: 150px; 	
+}
+
+#noticias h1{
+	font-size: 70px;
+	font-family: cursive;
+}
+
+.principal{
+	margin: 30px;
+	font-size: 16px;
+	font-family: cursive;
+	width: 950px;
+	height: auto
+}
+
+.principal img{
+	width: 1000px;
+	min-width: 600px;
+	min-height: 300px;
+	height: 500px;
+}
+
+.secundaria{
+	margin: 30px;
+	font-size: 16px;
+	font-family: cursive;
+	width: 450px;
+	float: left;
+}
+
+.secundaria img{
+	width: 500px;
+	height: 250px;
+}
+
+.terciaria{
+	margin: 30px;
+	font-size: 16px;
+	font-family: cursive;
+	width: 250px;
+	float: left;
+
+}
+
+.terciaria img{
+	width: 300px;
+	height: 150px;
 }
 
 
