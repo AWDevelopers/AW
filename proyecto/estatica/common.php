@@ -1,6 +1,7 @@
 ﻿ <?php
  	echo '<div id="cabecera">';
 			echo '<div class="avatar"> <IMG SRC="img/usuarioSF.png" WIDTH=120 HEIGHT=120 ALT="Avatar usuario"> </div>';
+			echo '<div class="titulo"> <IMG SRC="img/tituloPagina.png" WIDTH=500 HEIGHT=150 ALT="Avatar usuario"> </div>';
 			echo '<div class="sesion"> <IMG SRC="img/power.png" WIDTH=60 HEIGHT=60 ALT="Avatar usuario"> </div>';		
  	echo '</div>';
 	echo '<div id="sidebar-left">';
