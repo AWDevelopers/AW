@@ -115,4 +115,40 @@
  	font-family: cursive;
 }
 
+#proyectoONG{
+	margin:10 px;
+	text-align: justify;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+#proyectoONG h1{
+	font-size: 50px;
+	color: #000;
+ 	text-shadow: #555 2px 2px 3px;
+ 	font-family: cursive;
+	text-align:center;
+}
+
+#proyectoONG h2{
+	font-size: 30px;
+	color: #000;
+ 	text-shadow: #555 2px 2px 3px;
+ 	font-family: cursive;
+	text-align:center;
+}
+
+.proyectoFechas{
+	font-style: bold;
+	float: left;
+	text-align:left;
+	font-weight:bold;
+	font-size: 20px;
+}
+.proyectoVoluntario{
+	font-size: 20px;
+	font-weight:bold;
+	float: right;
+}
+
 
