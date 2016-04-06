@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>Proyectos ONGS</title>
@@ -17,8 +17,8 @@
 				<!--Aqui va una imagen-->
 				<div class="imgDonaciones">
 					<img src="img/medicos.jpg">
-					<p>Aqui va la descripci�n del proyecto</p>
-					<!--Aqui va el bot�n donar-->
+					<p>Aqui va la descripción del proyecto</p>
+					<!--Aqui va el botón donar-->
 					<button type="button">DONAR</button>
 				</div>
 				
@@ -32,14 +32,74 @@
 				<!--Aqui va una imagen-->
 				<div class="imgDonaciones">
 					<img src="img/panda.png">
-					<p>Aqui va la descripci�n del proyecto</p>
+					<p>Aqui va la descripción del proyecto</p>
 					
-					<!--Aqui va el bot�n donar-->
+					<!--Aqui va el botón donar-->
 					<button type="button">DONAR</button>
 				</div>
 
 				<!--Aqui va la barra-->
 			</div>
+
+			<div class="contenidoDonaciones">
+            
+				<h1> Nombre Proyecto 1 </h1>
+				<!--Aqui va una imagen-->
+				<div class="imgDonaciones">
+					<img src="img/medicos.jpg">
+					<p>Aqui va la descripción del proyecto</p>
+					<!--Aqui va el botón donar-->
+					<button type="button">DONAR</button>
+				</div>
+				
+				<!--Aqui va la barra-->
+			</div>
+
+			<div class="contenidoDonaciones">
+				
+				<h1> Nombre Proyecto 3 </h1>
+				<!--Aqui va una imagen-->
+				<div class="imgDonaciones">
+					<img src="img/panda.png">
+					<p>Aqui va la descripción del proyecto</p>
+					
+					<!--Aqui va el botón donar-->
+					<button type="button">DONAR</button>
+				</div>
+
+				<!--Aqui va la barra-->
+			</div>
+
+			<div class="contenidoDonaciones">
+            
+				<h1> Nombre Proyecto 1 </h1>
+				<!--Aqui va una imagen-->
+				<div class="imgDonaciones">
+					<img src="img/medicos.jpg">
+					<p>Aqui va la descripción del proyecto</p>
+					<!--Aqui va el botón donar-->
+					<button type="button">DONAR</button>
+				</div>
+				
+				<!--Aqui va la barra-->
+			</div>
+
+			<div class="contenidoDonaciones">
+				
+				<h1> Nombre Proyecto 3 </h1>
+				<!--Aqui va una imagen-->
+				<div class="imgDonaciones">
+					<img src="img/panda.png">
+					<p>Aqui va la descripción del proyecto</p>
+					
+					<!--Aqui va el botón donar-->
+					<button type="button">DONAR</button>
+				</div>
+
+				<!--Aqui va la barra-->
+			</div>
+
+			
 			
 
 		</div>
