@@ -68,11 +68,11 @@ html body{
 	text-align: center;
 	word-wrap: break-word; 
 	float: left;
-	margin: 15px;
+	margin: 30px;
 	border-color: black;
 	padding: 10px;
 	height: 500px;
-	width: 300px;
+	width: 400px;
 	background: #F0F8FF;
 	-webkit-box-shadow: 5px 5px 1px #008B8B;
 }
