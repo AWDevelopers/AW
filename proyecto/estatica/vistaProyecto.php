@@ -19,7 +19,7 @@
 				<div class="proyectoFechas">Fechas: 12/05/2016</div>
 				
 				<!--Aqui van los voluntarios necesarios -->
-				<div class="proyectoVoluntario">Voluntatios necesarios: 50 </div>
+				<div class="proyectoVoluntario">Voluntarios necesarios: 50 </div>
 			
 				<!--Aqui va el botón Apuntame-->
 				
