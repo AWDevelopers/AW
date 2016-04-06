@@ -68,13 +68,26 @@ html body{
 	text-align: center;
 	word-wrap: break-word; 
 	float: left;
-	margin: 30px;
+	margin: 20px;
 	border-color: black;
 	padding: 10px;
-	height: 500px;
-	width: 400px;
+	height: 550px;
+	width: 450px;
 	background: #F0F8FF;
 	-webkit-box-shadow: 5px 5px 1px #008B8B;
+}
+
+.imgDonaciones{
+	margin-left: 70px;
+	font-size: 16px;
+	font-family: cursive;
+	float: left;
+}
+
+.imgDonaciones img{
+	width: 300px;
+	height: 250px;
+	/*-webkit-box-shadow: 8px 8px 1.8px #696969;*/
 }
 
 .contenidoVoluntarios{
