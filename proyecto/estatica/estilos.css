@@ -103,6 +103,21 @@ html body{
 	-webkit-box-shadow: 5px 5px 1px #008B8B;
 }
 
+.textoVoluntarios{
+	float: left;
+	margin-left: 10px;
+	padding: 10px;
+	height: 180px;
+	width: 75%;
+	
+}
+
+.botonVoluntarios button{
+	margin-top: 85px;
+	margin-right: 20px;
+	float: right;
+}
+
 #contenido{
 	float: right;
 	padding: 0.5%;
