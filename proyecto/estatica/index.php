@@ -34,11 +34,7 @@
 					<h2>Titulo principal</h2>
 					<p>Texto</p>
 				</div>
-<<<<<<< HEAD
 				<div class="bloque_secundaria">
-=======
-				<div id="secundarias">
->>>>>>> b154c7a6e60d9fb3f2fb3403c341f2c6e6726439
 					<div class="secundaria">
 						<img src="img/imgSecundaria.jpeg">
 						<h3>Titulo secundaria</h3>
@@ -47,17 +43,10 @@
 					<div class="secundaria">
 						<img src="img/imgSecundaria2.jpeg">
 						<h3>Titulo secundaria</h3>
-<<<<<<< HEAD
 						<p>Texto</p>
 					</div>
 				</div>
 				<div class="bloque_terciaria">
-=======
-						<p>Lorem ipsum</p>
-					</div>
-				</div>
-				<div id="terciarias">
->>>>>>> b154c7a6e60d9fb3f2fb3403c341f2c6e6726439
 					<div class="terciaria">
 						<img src="img/imgTerciaria.jpeg">
 						<h4>Titulo terciaria</h4>
