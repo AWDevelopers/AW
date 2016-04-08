@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Inicio</title>
@@ -33,30 +33,34 @@
 					<h2>Titulo principal</h2>
 					<p>Texto</p>
 				</div>
-				<div class="secundaria">
-					<img src="img/imgSecundaria.jpeg">
-					<h3>Titulo secundaria</h3>
-					<p>Texto</p>
+				<div class="bloque_secundaria">
+					<div class="secundaria">
+						<img src="img/imgSecundaria.jpeg">
+						<h3>Titulo secundaria</h3>
+						<p>Texto</p>
+					</div>
+					<div class="secundaria">
+						<img src="img/imgSecundaria2.jpeg">
+						<h3>Titulo secundaria</h3>
+						<p>Texto</p>
+					</div>
 				</div>
-				<div class="secundaria">
-					<img src="img/imgSecundaria2.jpeg">
-					<h3>Titulo secundaria</h3>
-					<p>Lorem ipsum</p>
-				</div>
-				<div class="terciaria">
-					<img src="img/imgTerciaria.jpeg">
-					<h4>Titulo terciaria</h4>
-					<p>Texto</p>
-				</div>
-				<div class="terciaria">
-					<img src="img/imgTerciaria2.jpeg">
-					<h4>Titulo terciaria</h4>
-					<p>Texto</p>
-				</div>
-				<div class="terciaria">
-					<img src="img/imgTerciaria3.jpeg">
-					<h4>Titulo terciaria</h4>
-					<p>Texto</p>
+				<div class="bloque_terciaria">
+					<div class="terciaria">
+						<img src="img/imgTerciaria.jpeg">
+						<h4>Titulo terciaria</h4>
+						<p>Texto</p>
+					</div>
+					<div class="terciaria">
+						<img src="img/imgTerciaria2.jpeg">
+						<h4>Titulo terciaria</h4>
+						<p>Texto</p>
+					</div>
+					<div class="terciaria">
+						<img src="img/imgTerciaria3.jpeg">
+						<h4>Titulo terciaria</h4>
+						<p>Texto</p>
+					</div>
 				</div>
 			</div>
 		</div>
