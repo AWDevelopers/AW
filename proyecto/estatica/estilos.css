@@ -180,9 +180,10 @@ html body{
 	-webkit-box-shadow: 10px 10px 2px #696969;
 }
 
-#secundarias{
+.bloque_secundaria{
 	width: 100%;
 	padding:5%;
+	float: left;
 }
 
 .secundaria{
@@ -190,7 +191,7 @@ html body{
 	font-size: 16px;
 	font-family: cursive;
 	width: 40%;
-	float: left;
+	display: inline-block;
 }
 
 .secundaria img{
@@ -200,9 +201,10 @@ html body{
 }
 
 
-#terciarias{
+.bloque_terciaria{
 	width: 100%;
 	padding: 5%;
+	float: left;
 }
 
 .terciaria{
@@ -210,7 +212,6 @@ html body{
 	font-size: 16px;
 	font-family: cursive;
 	width: 25%;
-	float: left;
 	display: inline-block;
 }
 
