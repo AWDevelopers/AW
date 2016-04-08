@@ -1,7 +1,7 @@
-﻿html body{
+html body{
 	background: #D3D3D3;
 	height: 100%;
-	margin: 0px;
+	margin: 0%;
 }
 
 #contenedor{
@@ -11,26 +11,33 @@
 
 
 #cabecera{
-	padding: 30px;
+	padding: 1%;
 	height: 150px;
 	background: #D3D3D3;
 }
 
 #sidebar-left{
 	float: left;
-	padding: 10px 0px 10px 10px;
+	padding: 1% 0% 1% 1%;
 	width: 16%;
+	min-width: 121px;
 	background: #A9A9A9;
 }
 
 .avatar{
 	float: left;
-	margin-left: 30px;
+	margin-left: 2%;
 }
 .sesion{
 	float: right;
-	margin-right: 20px;
+	margin-right: 2%;
 	align-items: center;
+}
+
+.titulo{
+	float: left;
+	position: absolute;
+  	left: 35%;
 }
 
 
@@ -59,15 +66,29 @@
 .contenidoDonaciones{
 	align-items: center;
 	text-align: center;
-	word-wrap: break-word; 
+	word-wrap: break-word;
 	float: left;
-	margin: 15px;
+	margin: 2%;
 	border-color: black;
-	padding: 10px;
-	height: 500px;
-	width: 300px;
-	background: #F0F8FF;
-	-webkit-box-shadow: 5px 5px 1px #008B8B;
+	padding: 1%;
+	width: 25%;
+	height: 550px;
+	background: #CED7D8;
+	-webkit-box-shadow: 8px 8px 2px #636363;
+}
+
+.imgDonaciones{
+	/* margin-left: 75px; */
+	font-size: 16px;
+	font-family: cursive;
+	/* float: left; */
+}
+
+.imgDonaciones img{
+	width: 90%;
+	height: 300px;
+	max-height: 50%;
+	/* -webkit-box-shadow: 8px 8px 1.8px #696969; */
 }
 
 .contenidoVoluntarios{
@@ -82,11 +103,27 @@
 	-webkit-box-shadow: 5px 5px 1px #008B8B;
 }
 
+.textoVoluntarios{
+	float: left;
+	margin-left: 10px;
+	padding: 10px;
+	height: 180px;
+	width: 75%;
+	
+}
+
+.botonVoluntarios button{
+	margin-top: 85px;
+	margin-right: 20px;
+	float: right;
+}
+
 #contenido{
 	float: right;
-	padding: 10px;
-	min-height: 600px;
+	padding: 0.5%;
+	min-height: 50%;
 	width: 82%;
+	height: 82%;
 	background: #A9A9A9;
 	vertical-align: center;
 }
@@ -118,7 +155,8 @@
 #noticias{
 	vertical-align: middle;
 	text-align: center;
-	margin-left: 150px; 	
+	margin: 150px;
+	margin-top: 10px;
 }
 
 #noticias h1{
@@ -130,42 +168,56 @@
 	margin: 30px;
 	font-size: 16px;
 	font-family: cursive;
-	width: 950px;
-	height: auto
+	width: 100%;
 }
 
 .principal img{
-	width: 1000px;
+	width: 100%;
+	/* min-width: 90%; */
 	min-width: 600px;
 	min-height: 300px;
 	height: 500px;
+	-webkit-box-shadow: 10px 10px 2px #696969;
+}
+
+#secundarias{
+	width: 100%;
+	padding:5%;
 }
 
 .secundaria{
 	margin: 30px;
 	font-size: 16px;
 	font-family: cursive;
-	width: 450px;
+	width: 40%;
 	float: left;
 }
 
 .secundaria img{
-	width: 500px;
+	width: 100%;
 	height: 250px;
+	-webkit-box-shadow: 8px 8px 1.8px #696969;
+}
+
+
+#terciarias{
+	width: 100%;
+	padding: 5%;
 }
 
 .terciaria{
 	margin: 30px;
 	font-size: 16px;
 	font-family: cursive;
-	width: 250px;
+	width: 25%;
 	float: left;
-
+	display: inline-block;
 }
 
 .terciaria img{
-	width: 300px;
+	width: 100%;
 	height: 150px;
+	-webkit-box-shadow: 7px 7px 1.5px #696969;
 }
 
 #proyectoONG{
@@ -205,3 +257,8 @@
 }
 
 
+
+
+@media screen and (max-width:800px ) {
+	/*Poner aqui codigo responsive
+}
