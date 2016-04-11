@@ -51,7 +51,7 @@
 					<p> Aqui va la descripción del proyecto </p>
 				</div>
 				<div class="botonVoluntarios">
-					<button type="button">APUNTATE</button>
+					<a href="vistaProyecto.php"> <button type="button">APUNTATE</button> </a>
 				</div>
 				
 			</div>
