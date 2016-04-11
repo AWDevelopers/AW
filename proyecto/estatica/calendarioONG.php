@@ -2,22 +2,11 @@
 <html>
 <head>
 	<title>Pagina con estilos</title>
-	<link rel="stylesheet" type="text/css" href="estilos.css"/>
+	<link rel="stylesheet" type="text/css" href="calendarionONG.css"/>
 </head>
 <body>
 	<div id='contenedor'>
-		<div id="cabecera">
-			<div class="avatar">Avatar con foto</div>
-			<div class="sesion"> cierre de sesion</div>
-		</div>
-		<div id="sidebar-left">
-			<ul>
-            <li><a href="#">Donaciones</a></li>
-            <li><a href="#">Voluntarios</a></li>
-            <li><a href="#">Conocenos</a></li>
-            <li><a href="#">Tienda</a></li>
-        </ul>
-		</div>
+		<?php require 'common.php'; ?>
 		<div id="contenido">
 		
 			<div id="usuarios">

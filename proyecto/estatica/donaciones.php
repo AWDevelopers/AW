@@ -2,23 +2,13 @@
 <html>
 <head>
 	<title>Pagina con estilos</title>
+	
+	<link rel="stylesheet" type="text/css" href="donacion.css"/>
 	<link rel="stylesheet" type="text/css" href="estilos.css"/>
 </head>
 <body>
 	<div id='contenedor'>
-		<div id="cabecera">
-			<div class="avatar">Avatar con foto</div>
-			<div class="sesion"> cierre de sesion</div>
-			
-		</div>
-		<div id="sidebar-left">
-			<ul>
-            <li><a href="#">Donaciones</a></li>
-            <li><a href="#">Voluntarios</a></li>
-            <li><a href="#">Conocenos</a></li>
-            <li><a href="#">Tienda</a></li>
-        </ul>
-		</div>
+		<?php require 'common.php'; ?>
 		<div id="contenido">
 			<div id = 'fundacion'>
 				<h1 align="center">Nombre ONG/Fundacion</h1>
@@ -28,36 +18,28 @@
 				<h4 align="center">Descripcion</h4>
 				<center>
 				<p>Nananananananananananannannanananananananannananananannananananannananananananananananananananananan
-				nananananananananananannannanananananananannananananannananananannananananananananananananananananan
-				nananananananananananannannanananananananannananananannananananannananananananananananananananananan
-				nananananananananananannannanananananananannananananannananananannananananananananananananananananan</p>
-				<p>Nananananananananananannannanananananananannananananannananananannananananananananananananananananan
-				nananananananananananannannanananananananannananananannananananannananananananananananananananananan
-				nananananananananananannannanananananananannananananannananananannananananananananananananananananan
-				nananananananananananannannanananananananannananananannananananannananananananananananananananananan</p>
-				<p>Nananananananananananannannanananananananannananananannananananannananananananananananananananananan
-				nananananananananananannannanananananananannananananannananananannananananananananananananananananan
-				nananananananananananannannanananananananannananananannananananannananananananananananananananananan</p>
-				<p>Nananananananananananannannanananananananannananananannananananannananananananananananananananananan
-				nananananananananananannannanananananananannananananannananananannananananananananananananananananan</p>
-				<p>Nananananananananananannannanananananananannananananannananananannananananananananananananananananan
-				nananananananananananannannanananananananannananananannananananannananananananananananananananananan
-				nananananananananananannannanananananananannananananannananananannananananananananananananananananan</p>
-				<p>Nananananananananananannannanananananananannananananannananananannananananananananananananananananan
 				nananananananananananannannanananananananannananananannananananannananananananananananananananananan</p>
 				</center>
 			</div>
 			<div id = "recaudado">
-					<align = "left">Recaudacion: 89.536 euros</align>
-					<align = "center">Meta: 100.000 euros</align>
-					<align = "right"> Cantidad: 355 euros</align>
-				</div>
-					<div id = "barrainformativa">
-						<p align= "center"><img src="img/barraestado.png"/></p>
-					</div>
-				<div>
-					<center><input type= "submit" value = "Donar"></center>
-				</div>
+				<center>
+					<div id= "recaudacion">Recaudacion: 89.536 euros</div>
+					<div id= "meta">Meta: 100.000 euros</div>
+					<div id= "cantidad"> Cantidad:</div>
+				</center>
+			</div>
+			<div id = "barrainformativa">
+				<!--<p><img src="barraestado.png"/></p>-->
+				<progress value="80" max="100"></progress>
+			</div>
+			<div id = "datoscantidad">
+				<input type="text" name="cantidad" value="5875 euros" size="10">
+			</div>
+			<div id ="boton">
+				<center>
+				<input type= "submit" value = "Donar" size="20">
+				</center>
+			</div>
 		</div>
 	</div>
 </body>
