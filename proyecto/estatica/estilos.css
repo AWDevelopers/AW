@@ -1,0 +1,265 @@
+html body{
+	background: #D3D3D3;
+	height: 100%;
+	margin: 0%;
+}
+
+#contenedor{
+	height: 100%;
+	width: 100%;
+}
+
+
+#cabecera{
+	padding: 1%;
+	height: 150px;
+	background: #D3D3D3;
+}
+
+#sidebar-left{
+	float: left;
+	padding: 1% 0% 1% 1%;
+	width: 16%;
+	min-width: 121px;
+	background: #A9A9A9;
+}
+
+.avatar{
+	float: left;
+	margin-left: 2%;
+}
+.sesion{
+	float: right;
+	margin-right: 2%;
+	align-items: center;
+}
+
+.titulo{
+	float: left;
+	position: absolute;
+  	left: 35%;
+}
+
+
+#sidebar-left ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#sidebar-left ul li {
+    margin: 0;
+}
+#sidebar-left ul li a {
+    padding: 15px 0px 15px 20px;
+    font-size: 20px;
+    font-weight: 100;
+    color: white;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #196c96;
+    -webkit-transition:  background 0.3s ease-in-out;
+}
+#sidebar-left ul li:hover a {
+    background: #196c96;
+}
+
+.contenidoDonaciones{
+	align-items: center;
+	text-align: center;
+	word-wrap: break-word;
+	float: left;
+	margin: 2%;
+	border-color: black;
+	padding: 1%;
+	width: 25%;
+	height: 550px;
+	background: #CED7D8;
+	-webkit-box-shadow: 8px 8px 2px #636363;
+}
+
+.imgDonaciones{
+	/* margin-left: 75px; */
+	font-size: 16px;
+	font-family: cursive;
+	/* float: left; */
+}
+
+.imgDonaciones img{
+	width: 90%;
+	height: 300px;
+	max-height: 50%;
+	/* -webkit-box-shadow: 8px 8px 1.8px #696969; */
+}
+
+.contenidoVoluntarios{
+	word-wrap: break-word; 
+	float: left;
+	margin: 15px;
+	border-color: black;
+	padding: 10px;
+	height: 200px;
+	width: 90%;
+	background: #F0F8FF;
+	-webkit-box-shadow: 5px 5px 1px #008B8B;
+}
+
+.textoVoluntarios{
+	float: left;
+	margin-left: 10px;
+	padding: 10px;
+	height: 180px;
+	width: 75%;
+	
+}
+
+.botonVoluntarios button{
+	margin-top: 85px;
+	margin-right: 20px;
+	float: right;
+}
+
+#contenido{
+	float: right;
+	padding: 0.5%;
+	min-height: 50%;
+	width: 82%;
+	height: 82%;
+	background: #A9A9A9;
+	vertical-align: center;
+}
+
+#pie{
+	clear: both;
+	text-align: center;
+}
+
+#conocenosInicio{
+	margin: 10px;
+}
+
+#conocenosInicio h1{
+	color: #000;
+ 	text-shadow: #555 2px 2px 3px;
+ 	font-family: cursive;
+}
+
+#conocenosDesarrolladores{
+	margin: 10px;
+}
+
+#conocenosDesarrolladores h2{
+	color: #000;
+ 	text-shadow: #555 2px 2px 3px;
+ 	font-family: cursive;
+}
+#noticias{
+	vertical-align: middle;
+	text-align: center;
+	margin: 150px;
+	margin-top: 10px;
+}
+
+#noticias h1{
+	font-size: 70px;
+	font-family: cursive;
+}
+
+.principal{
+	margin: 30px;
+	font-size: 16px;
+	font-family: cursive;
+	width: 100%;
+}
+
+.principal img{
+	width: 100%;
+	/* min-width: 90%; */
+	min-width: 600px;
+	min-height: 300px;
+	height: 500px;
+	-webkit-box-shadow: 10px 10px 2px #696969;
+}
+
+.bloque_secundaria{
+	width: 100%;
+	padding:5%;
+	float: left;
+}
+
+.secundaria{
+	margin: 30px;
+	font-size: 16px;
+	font-family: cursive;
+	width: 40%;
+	display: inline-block;
+}
+
+.secundaria img{
+	width: 100%;
+	height: 250px;
+	-webkit-box-shadow: 8px 8px 1.8px #696969;
+}
+
+
+.bloque_terciaria{
+	width: 100%;
+	padding: 5%;
+	float: left;
+}
+
+.terciaria{
+	margin: 30px;
+	font-size: 16px;
+	font-family: cursive;
+	width: 25%;
+	display: inline-block;
+}
+
+.terciaria img{
+	width: 100%;
+	height: 150px;
+	-webkit-box-shadow: 7px 7px 1.5px #696969;
+}
+
+#proyectoONG{
+	margin:10 px;
+	text-align: justify;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+#proyectoONG h1{
+	font-size: 50px;
+	color: #000;
+ 	text-shadow: #555 2px 2px 3px;
+ 	font-family: cursive;
+	text-align:center;
+}
+
+#proyectoONG h2{
+	font-size: 30px;
+	color: #000;
+ 	text-shadow: #555 2px 2px 3px;
+ 	font-family: cursive;
+	text-align:center;
+}
+
+.proyectoFechas{
+	font-style: bold;
+	float: left;
+	text-align:left;
+	font-weight:bold;
+	font-size: 20px;
+}
+.proyectoVoluntario{
+	font-size: 20px;
+	font-weight:bold;
+	float: right;
+}
+
+
+
+
+@media screen and (max-width:800px ) {
+	/*Poner aqui codigo responsive
+}
