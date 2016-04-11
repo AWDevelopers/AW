@@ -15,10 +15,10 @@
 			<div class="contenidoVoluntarios">
 				<div class="textoVoluntarios">
 					<h2> Nombre ONG 1 </h2>
-					<p> Aqui va la descripci髇 del proyecto </p>
+					<p> Aqui va la descripci贸n del proyecto </p>
 				</div>
 				<div class="botonVoluntarios">
-					<button type="button">APUNTATE</button>
+					<a href="vistaProyecto.php"> <button type="button">APUNTATE</button> </a>
 				</div>
 				
 			</div>
@@ -26,10 +26,10 @@
 			<div class="contenidoVoluntarios">
 				<div class="textoVoluntarios">
 					<h2> Nombre ONG 2 </h2>
-					<p> Aqui va la descripci髇 del proyecto </p>
+					<p> Aqui va la descripci贸n del proyecto </p>
 				</div>
 				<div class="botonVoluntarios">
-					<button type="button">APUNTATE</button>
+					<a href="vistaProyecto.php"> <button type="button">APUNTATE</button> </a>
 				</div>
 				
 			</div>
@@ -37,10 +37,10 @@
 			<div class="contenidoVoluntarios">
 				<div class="textoVoluntarios">
 					<h2> Nombre ONG 3 </h2>
-					<p> Aqui va la descripci髇 del proyecto </p>
+					<p> Aqui va la descripci贸n del proyecto </p>
 				</div>
 				<div class="botonVoluntarios">
-					<button type="button">APUNTATE</button>
+					<a href="vistaProyecto.php"> <button type="button">APUNTATE</button> </a>
 				</div>
 				
 			</div>
@@ -48,7 +48,7 @@
 			<div class="contenidoVoluntarios">
 				<div class="textoVoluntarios">
 					<h2> Nombre ONG 4 </h2>
-					<p> Aqui va la descripci髇 del proyecto </p>
+					<p> Aqui va la descripci贸n del proyecto </p>
 				</div>
 				<div class="botonVoluntarios">
 					<button type="button">APUNTATE</button>
