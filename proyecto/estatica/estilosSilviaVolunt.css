@@ -2,13 +2,14 @@
 .contenidoVoluntarios{
 	word-wrap: break-word; 
 	float: left;
-	margin: 15px;
+	margin: 4%;
 	border-color: black;
-	padding: 10px;
+	padding: 3%;
 	height: 200px;
 	width: 90%;
 	background: #F0F8FF;
 	-webkit-box-shadow: 5px 5px 1px #008B8B;
+	
 }
 
 .textoVoluntarios{
