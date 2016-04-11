@@ -17,7 +17,7 @@
 				<h1> Nombre Proyecto 1 </h1>
 				<!--Aqui va una imagen-->
 				<div class="imgDonaciones">
-					<img src="img/medicos.jpg">
+					<a href="donaciones.php"> <img src="img/medicos.jpg" > </a>
 					<p>Aqui va la descripción del proyecto</p>
 					<!--Aqui va el botón donar-->
 					<button type="button">DONAR</button>
@@ -32,7 +32,7 @@
 				<h1> Nombre Proyecto 2 </h1>
 				<!--Aqui va una imagen-->
 				<div class="imgDonaciones">
-					<img src="img/panda.png">
+					<a href="donaciones.php">  <img src="img/panda.png"> </a>
 					<p>Aqui va la descripción del proyecto</p>
 					
 					<!--Aqui va el botón donar-->
@@ -47,7 +47,7 @@
 				<h1> Nombre Proyecto 1 </h1>
 				<!--Aqui va una imagen-->
 				<div class="imgDonaciones">
-					<img src="img/medicos.jpg">
+					<a href="donaciones.php"> <img src="img/medicos.jpg" > </a>
 					<p>Aqui va la descripción del proyecto</p>
 					<!--Aqui va el botón donar-->
 					<button type="button">DONAR</button>
@@ -61,7 +61,7 @@
 				<h1> Nombre Proyecto 3 </h1>
 				<!--Aqui va una imagen-->
 				<div class="imgDonaciones">
-					<img src="img/panda.png">
+					<a href="donaciones.php">  <img src="img/panda.png"> </a>
 					<p>Aqui va la descripción del proyecto</p>
 					
 					<!--Aqui va el botón donar-->
@@ -76,7 +76,7 @@
 				<h1> Nombre Proyecto 1 </h1>
 				<!--Aqui va una imagen-->
 				<div class="imgDonaciones">
-					<img src="img/medicos.jpg">
+					<a href="donaciones.php"> <img src="img/medicos.jpg" > </a>
 					<p>Aqui va la descripción del proyecto</p>
 					<!--Aqui va el botón donar-->
 					<button type="button">DONAR</button>
@@ -90,7 +90,7 @@
 				<h1> Nombre Proyecto 3 </h1>
 				<!--Aqui va una imagen-->
 				<div class="imgDonaciones">
-					<img src="img/panda.png">
+					<a href="donaciones.php">  <img src="img/panda.png"> </a>
 					<p>Aqui va la descripción del proyecto</p>
 					
 					<!--Aqui va el botón donar-->
