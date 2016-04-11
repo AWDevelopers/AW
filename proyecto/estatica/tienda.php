@@ -27,7 +27,7 @@
 				for($i=0; $i<$productos;$i++){
 					echo '<div class="producto"> 
 							<h3> Nombre del producto</h3>
-							<img src="img/default-image.jpg"/>
+							<a href="vistaproducto.php"><img src="img/default-image.jpg"/><a>
 							<h3> Nombre de la ONG </h3>
 							<h3 class="precio"> Precio: '.$precio.'€</h3>
 							<form action="vistaproducto.php">
