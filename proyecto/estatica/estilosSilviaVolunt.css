@@ -21,9 +21,13 @@
 	
 }
 
+.botonVoluntarios{
+	height: 200px;
+}
 .botonVoluntarios button{
 	margin-top: 15%;
 	margin-right: 3%;
 	float: right;
+	display: block;
 	   
 }
