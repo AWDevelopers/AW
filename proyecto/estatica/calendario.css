@@ -1,0 +1,86 @@
+#contenidoCalendario{
+	overflow: hidden;
+	padding: 30px;
+	margin:auto;
+	background: #A9A9A9;
+
+}
+#calendario{
+	width: 300px;
+	height: 300px;
+	background-color: #0B4C5F;
+	color:white;
+	padding: 5px;
+	border-width: 5px;
+	border-color: black;
+	border-style: solid;
+	float: left;
+}
+#dia {
+    background-color: #0B243B; 
+    border: none;
+    color: white;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#mes{
+	font-size:20px;
+	color:white;
+	font-family: serif;
+	border-color: black;
+	border-style: solid;
+	background-color: #0B243B; 
+	padding: 3px;
+}
+
+#horas{
+	height: 320px;
+	width: 30%;
+	margin-left: 4%;
+	float: left;
+	margin-top: -5%;	
+
+}
+#inicio{
+	float:top;	
+	
+	padding-top: 25%;
+}
+#fin {
+	float:bottom;
+	
+	padding-bottom: 10%;
+
+}
+button {
+	background-color: #0B243B; 
+    border: solid;
+    border-width: 2px;
+    color: white;
+    border-color:#0B4C5F;
+    font-size: 18px;
+	
+	
+}
+button#confirmar{
+	width: 30px;
+	height: 20px;
+	font-size: 19px;
+}
+#mostrarHoras{
+	float:right;
+	border: solid;
+    border-width: 2px;
+    border-color: black;
+    width: 30%;
+    background: white;
+	height: 320px;
+}
+
+#pieCalendario {
+	float:left;
+	color:white;
+}

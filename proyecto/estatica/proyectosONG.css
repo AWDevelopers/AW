@@ -1,0 +1,62 @@
+#proyectoONG{
+	margin:10 px;
+	text-align: justify;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+#proyectoONG h1{
+	font-size: 50px;
+	color: #000;
+ 	text-shadow: #555 2px 2px 3px;
+ 	font-family: cursive;
+	text-align:center;
+}
+
+#proyectoONG h2{
+	font-size: 30px;
+	color: #000;
+ 	text-shadow: #555 2px 2px 3px;
+ 	font-family: cursive;
+	text-align:center;
+}
+
+.proyectoFechas{
+	margin-top: 10px;
+	margin-right: 400px;
+	font-style: bold;
+	float: left;
+	text-align:left;
+	font-weight:bold;
+	font-size: 20px;
+}
+.proyectoVoluntario{
+	margin-top: 10px;
+	font-size: 20px;
+	font-weight:bold;
+	float: left;
+	margin-left: 800px;
+}
+
+.boton{
+	margin-left: 700px;
+	marign-top: 30px;
+	display: block;
+	align-items: center;
+	/*background-color: #bfbfbf;*/
+	border-radius: 10px;
+}
+
+.boton button{
+	background-color:#A9A9A9;
+	border:none;
+	border-radius: 4px;
+	color: black;
+    padding: 10px 16px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid black;
+}
+.boton button:hover{
+	background-color: #bfbfbf;
+}

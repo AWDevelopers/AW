@@ -8,9 +8,9 @@
 			echo '<ul>';
 				echo '<li><a href="index.php">Inicio</a></li>';
             	echo '<li><a href="vistaProyectoDonar.php">Donaciones</a></li>';
-            	echo '<li><a href="#">Voluntarios</a></li>';
+            	echo '<li><a href="voluntariosONGUs.php">Voluntarios</a></li>';
             	echo '<li><a href="conocenos.php">Conocenos</a></li>';
-            	echo '<li><a href="#">Tienda</a></li>';
+            	echo '<li><a href="tienda.php">Tienda</a></li>';
         	echo '</ul>';
 	echo '</div>';
  ?>
