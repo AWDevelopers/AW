@@ -19,7 +19,9 @@
 					<p> Aqui va la descripción del proyecto </p>
 				</div>
 				<div class="botonVoluntarios">
-					<a href="vistaProyecto.php"> <button type="button">APUNTATE</button> </a>
+					<form action="vistaProyecto.php">
+					<input type="submit" value="APUNTATE">
+					</form>
 				</div>
 				
 			</div>
@@ -30,7 +32,9 @@
 					<p> Aqui va la descripción del proyecto </p>
 				</div>
 				<div class="botonVoluntarios">
-					<a href="vistaProyecto.php"> <button type="button">APUNTATE</button> </a>
+					<form action="vistaProyecto.php">
+					<input type="submit" value="APUNTATE">
+					</form>
 				</div>
 				
 			</div>
@@ -41,7 +45,9 @@
 					<p> Aqui va la descripción del proyecto </p>
 				</div>
 				<div class="botonVoluntarios">
-					<a href="vistaProyecto.php"> <button type="button">APUNTATE</button> </a>
+					<form action="vistaProyecto.php">
+					<input type="submit" value="APUNTATE">
+					</form>
 				</div>
 				
 			</div>
@@ -52,7 +58,9 @@
 					<p> Aqui va la descripción del proyecto </p>
 				</div>
 				<div class="botonVoluntarios">
-					<a href="vistaProyecto.php"> <button type="button">APUNTATE</button> </a>
+					<form action="vistaProyecto.php">
+					<input type="submit" value="APUNTATE">
+					</form>
 				</div>
 				
 			</div>
