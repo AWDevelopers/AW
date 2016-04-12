@@ -2,8 +2,9 @@
 <html>
 <head>
 	<title>Pagina con estilos</title>
-	<link rel="stylesheet" type="text/css" href="estilos.css"/>
+	
 	<link rel="stylesheet" type="text/css" href="donacion.css"/>
+	<link rel="stylesheet" type="text/css" href="estilos.css"/>
 </head>
 <body>
 	<div id='contenedor'>
@@ -17,8 +18,6 @@
 				<h4 align="center">Descripcion</h4>
 				<center>
 				<p>Nananananananananananannannanananananananannananananannananananannananananananananananananananananan
-				nananananananananananannannanananananananannananananannananananannananananananananananananananananan
-				nananananananananananannannanananananananannananananannananananannananananananananananananananananan
 				nananananananananananannannanananananananannananananannananananannananananananananananananananananan</p>
 				</center>
 			</div>
@@ -26,18 +25,19 @@
 				<center>
 					<div id= "recaudacion">Recaudacion: 89.536 euros</div>
 					<div id= "meta">Meta: 100.000 euros</div>
-					<div id= "cantidad"> Cantidad: 355 euros</div>
+					<div id= "cantidad"> Cantidad:</div>
 				</center>
 			</div>
-			<div class="progress">
-			  <div class="progress-bar" role="progressbar" aria-valuenow="60"
-			       aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-			    <span class="sr-only">60% completado</span>
-			  </div>
+			<div id = "barrainformativa">
+				<!--<p><img src="barraestado.png"/></p>-->
+				<progress value="80" max="100"></progress>
+			</div>
+			<div id = "datoscantidad">
+				<input type="text" name="cantidad" value="5875 euros" size="10">
 			</div>
 			<div id ="boton">
 				<center>
-				<p><input type= "submit" value = "Donar"></p>
+				<input type= "submit" value = "Donar" size="20">
 				</center>
 			</div>
 		</div>

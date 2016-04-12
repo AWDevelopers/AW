@@ -7,7 +7,7 @@
 	padding: 3%;
 	height: 200px;
 	width: 90%;
-	background: #F0F8FF;
+	background: #CED7D8;
 	-webkit-box-shadow: 5px 5px 1px #008B8B;
 	
 }
@@ -22,8 +22,10 @@
 }
 
 .botonVoluntarios{
-	height: 200px;
+	float: right;
+    	margin-top: 10%;
 }
+
 .botonVoluntarios button{
 	margin-top: 15%;
 	margin-right: 3%;

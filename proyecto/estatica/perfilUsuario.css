@@ -1,0 +1,53 @@
+#contenidoPerfilUsuario{
+	overflow: hidden;
+}
+.cabeceraPerfil{
+	height: 30%;
+	margin:1%;
+	float:top;
+	overflow: hidden;
+}
+#volver{
+	float:left;
+	width: 30%;
+}
+#fotoUsuario{
+	float:left;
+width: 33%
+}
+
+#cerrar{
+	float:right;
+	width: 30%;
+}
+button.bCabecera{
+	border-style: none;
+}
+button#bCerrar{
+	float: right;
+}
+.datosUsuario{
+	border-width: 2px;
+	border-color: black;
+	border-style: solid;
+	float:left;
+	width: 35%;
+	background: white;
+	margin: 1%;
+	padding: 2%;
+	width: 39%;
+	font-size: 20px;
+}
+
+#datosPersonales, #formularioPerfil{
+	height: 25%;
+	float:left;
+}
+#cambiaContrasena, #bolsaHoras{
+	float:right;
+	height:25%;
+}
+
+#left{
+	text-align:right;
+}

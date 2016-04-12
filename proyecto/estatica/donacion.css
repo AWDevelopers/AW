@@ -1,6 +1,6 @@
 #recaudacion{
 	float: left;
-	margin-left: 160px;
+	margin-left: 168px;
 }
 #meta{
 	float: left;
@@ -8,16 +8,26 @@
 }
 #cantidad{
 	float: left;
-	margin-left: 290px;
+	margin-left: 105px;
 }
-#barrainformativa{
+progress{
 	float: left;
-	margin-left:160px;
+	margin-left:168px;
+	background-color: #f3f3f3;
+    border: 0;
+    height: 18px;
+    border-radius: 9px;
+	width:380px;
+	height: 20px;
+}
+#datoscantidad{
+	float: left;
+	margin-left: 60px;
+	height:20px;
 }
 #boton{
 	float:left;
-	margin-left:250px;
+	margin-left:65px;
+	height:20px;
+	width:30px;
 }
-
-
-
