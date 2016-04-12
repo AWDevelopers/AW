@@ -8,7 +8,6 @@
 	<div id='contenedor'>
 		<?php require 'common.php'; ?>
 		<div id="contenido">
-		
 			<div id="usuarios">
 				<h2>Usuarios disponibles</h2>
 				<center>
