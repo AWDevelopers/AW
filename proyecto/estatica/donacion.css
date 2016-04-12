@@ -1,18 +1,12 @@
-#recaudacion{
-	float: left;
-	margin-left: 168px;
+#datos{
+	float: center;
 }
-#meta{
-	float: left;
-	margin-left: 30px;
+#recaudado{
+	float:left;
 }
-#cantidad{
-	float: left;
-	margin-left: 105px;
-}
+
 progress{
 	float: left;
-	margin-left:168px;
 	background-color: #f3f3f3;
     border: 0;
     height: 18px;
@@ -21,13 +15,7 @@ progress{
 	height: 20px;
 }
 #datoscantidad{
-	float: left;
-	margin-left: 60px;
-	height:20px;
+	float: right;
+	display: inline-block;
 }
-#boton{
-	float:left;
-	margin-left:65px;
-	height:20px;
-	width:30px;
-}
+
