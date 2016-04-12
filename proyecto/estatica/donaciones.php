@@ -29,7 +29,6 @@
 						<p><progress value="80" max="100"></progress></p>
 					</div>
 				</div>
-				
 				<div id = "datoscantidad">
 					<div id= "cantidad"> Cantidad:</div>
 						<p><input type="text" name="cantidad" value="5875 euros" size="10">
