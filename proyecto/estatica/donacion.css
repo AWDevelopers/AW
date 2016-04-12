@@ -1,127 +1,23 @@
-html body{
-	background: #D3D3D3;
-	height: 100%;
-	margin: 0px;
-}
-
-#contenedor{
-	height: 100%;
-	width: 100%;
-	margin: auto;
-	background: #AAAAAA;
-}
-
-
-#cabecera{
-	padding: 30px;
-	height: 40px;
-	background: #D3D3D3;
-}
-
-#sidebar-left{
+#recaudacion{
 	float: left;
-	padding: 10px 0px 10px 10px;
-	width: 16%;
-	background: #A9A9A9;
+	margin-left: 160px;
 }
-
-.avatar{
+#meta{
 	float: left;
 	margin-left: 30px;
 }
-.sesion{
-	float: right;
-	margin-right: 20px;
-}
-
-
-#sidebar-left ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-#sidebar-left ul li {
-    margin: 0;
-}
-#sidebar-left ul li a {
-    padding: 15px 0px 15px 20px;
-    font-size: 16px;
-    font-weight: 100;
-    color: white;
-    text-decoration: none;
-    display: block;
-    border-bottom: 1px solid #196c96;
-    -webkit-transition:  background 0.3s ease-in-out;
-}
-#sidebar-left ul li:hover a {
-    background: #196c96;
-}
-
-.contenidoDonaciones{
-	align-items: center;
-	text-align: center;
-	word-wrap: break-word; 
+#cantidad{
 	float: left;
-	margin: 15px;
-	border-color: black;
-	padding: 10px;
-	height: 500px;
-	width: 300px;
-	background: #F0F8FF;
-	-webkit-box-shadow: 5px 5px 1px #008B8B;
+	margin-left: 290px;
 }
-
-.contenidoVoluntarios{
-	word-wrap: break-word; 
+#barrainformativa{
 	float: left;
-	margin: 15px;
-	border-color: black;
-	padding: 10px;
-	height: 200px;
-	width: 90%;
-	background: #F0F8FF;
-	-webkit-box-shadow: 5px 5px 1px #008B8B;
+	margin-left:160px;
 }
-
-#contenido{
-	float: right;
-	padding: 10px;
-	min-height: 600px;
-	width: 82%;
-	background: #A9A9A9;
-}
-
-#usuarios{
-	margin-top: 120px;
-	margin-left: 50px;
+#boton{
 	float:left;
-	display: inline-block;
-	line-height: 28px;
-}
-#usuarios ol li{
-	font-size: 18px;
+	margin-left:250px;
 }
 
-#fechas{
-	margin-top: 120px;
-	margin-left: 120px;
-	float: center;
-	display: inline-block;
-	line-height: 26px;
-}
-
-#horas{
-	float:right;
-	margin-top: 120px;
-	margin-right: 220px;
-	display: inline-block;
-	line-height: 26px;
-}
-
-
-#pie{
-	clear: both;
-	text-align: center;
-}
 
 
