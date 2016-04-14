@@ -20,8 +20,9 @@ width: 33%
 	float:right;
 	width: 30%;
 }
-button.bCabecera{
+.bCabecera{
 	border-style: none;
+	background: transparent;
 }
 button#bCerrar{
 	float: right;
@@ -46,8 +47,4 @@ button#bCerrar{
 #cambiaContrasena, #bolsaHoras{
 	float:right;
 	height:25%;
-}
-
-#left{
-	text-align:right;
 }
