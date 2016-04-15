@@ -1,0 +1,39 @@
+
+.contenidoVoluntarios{
+	word-wrap: break-word; 
+	float: left;
+	margin: 4%;
+	border-color: black;
+	padding: 3%;
+	height: 200px;
+	width: 90%;
+	background: #CED7D8;
+	-webkit-box-shadow: 5px 5px 1px #008B8B;
+	
+}
+
+.textoVoluntarios{
+	float: left;
+	margin-left: 1%;
+	padding: 2%;
+	height: 180px;
+	width: 95%;
+	
+}
+
+button{
+	float: right;
+}
+
+.botonVoluntarios{
+	float: right;
+    	margin-top: 10%;
+}
+
+./*botonVoluntarios button{
+	margin-top: 15%;
+	margin-right: 3%;
+	float: right;
+	display: block;
+	   
+}*/

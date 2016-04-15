@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Voluntarios ONGS</title>
-	<link rel="stylesheet" type="text/css" href="estilos.css">
-	<link rel="stylesheet" type="text/css" href="voluntarios.css" >
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<link rel="stylesheet" type="text/css" href="css/voluntarios.css" >
 
 </head>
 <body>

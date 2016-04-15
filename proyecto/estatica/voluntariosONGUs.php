@@ -3,8 +3,8 @@
 <html>
 <head>
 	<title>ONGS</title>
-	<link rel="stylesheet" type="text/css" href="estilos.css">	
-	<link rel="stylesheet" type="text/css" href="estilosSilviaVolunt.css">
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">	
+	<link rel="stylesheet" type="text/css" href="css/estilosSilviaVolunt.css">
 
 </head>
 <body>

@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<title>Producto - InCommOng</title>
-		<link rel="stylesheet" type="text/css" href="estilos.css">
-		<link rel="stylesheet" type="text/css" href="vistaproducto.css">
+		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+		<link rel="stylesheet" type="text/css" href="css/vistaproducto.css">
 	</head>
 	<body>
 		<!--CABECERA+MENU-->
