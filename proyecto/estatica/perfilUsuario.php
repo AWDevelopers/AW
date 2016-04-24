@@ -6,8 +6,11 @@
 	  <link rel="stylesheet" type="text/css" href="estilos.css"/>
 </head>
 <body>
+
+	<div id="contenedor">
+	<?php require("common.php");?>
 	<div id="contenido">
-		<?php require("common.php")?>
+		
 		<div id= "contenidoPerfilUsuario">
 			<div class="cabeceraPerfil">
 				<div id="volver" class ="cabeceraPerfil">
@@ -83,6 +86,7 @@
 			</div>
 		</div>
 
+	</div>
 	</div>
 </body>
 </html>
