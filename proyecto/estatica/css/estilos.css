@@ -160,7 +160,7 @@ html body{
 }
 
 #noticias h1{
-	font-size: 70px;
+	font-size: 40px;
 	font-family: cursive;
 }
 
@@ -174,8 +174,8 @@ html body{
 .principal img{
 	width: 100%;
 	/* min-width: 90%; */
-	min-width: 600px;
-	min-height: 300px;
+	/* min-width: 600px; */
+	/* min-height: 300px; */
 	height: 500px;
 	-webkit-box-shadow: 10px 10px 2px #696969;
 }
@@ -275,8 +275,55 @@ button:active /* Al presionarse el botón */ {
 	box-shadow:inset 4px 4px 4px rgba(0,0,0,.3), inset -3px -3px 3px rgba(255,255,255,.2);
 }
 
+@media only screen and (max-width : 500px) {
+
+    #cabecera{
+    	display: none;
+    }
+
+    #contenido{
+    	width: 100%;
+    }
+
+    .principal{
+    	width: 90%;
+    	/* margin: 0%; */
+    	font-size: 10px;
+ }
+
+	.principal img{
+		/* min-width: 90%; */
+		height: 100px;
+	}
+
+	.bloque_secundaria{
+		margin: 0%;
+		padding:0%;
+		margin: 0%;
+	}
+
+	.secundaria{
+		font-size: 9px;
+		width: 90%;
+	}
+
+	.secundaria img{height: 100px;}
 
 
-@media screen and (max-width:800px ) {
-	/*Poner aqui codigo responsive
+	.bloque_terciaria{
+		margin: 0%;
+		padding: 0%;
+	}
+
+	.terciaria{
+		width: 90%;
+	}
+
+	.terciaria img{
+		height: 100px;
+	}
+
+	#noticias{
+		margin:0%;
+	}
 }

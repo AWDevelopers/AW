@@ -3,8 +3,8 @@
 <html>
 <head>
 	<title>ONGS</title>
-	<link rel="stylesheet" type="text/css" href="estilos.css">	
-	<link rel="stylesheet" type="text/css" href="estilosSilviaVolunt.css">
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">	
+	<link rel="stylesheet" type="text/css" href="css/estilosSilviaVolunt.css">
 
 </head>
 <body>
@@ -18,7 +18,7 @@
 				<div class="textoVoluntarios">
 					<h2> Nombre ONG 1 </h2>
 					<p> Aqui va la descripción del proyecto </p>
-					<button type="button"> Apuntate </button>
+					<button type="button" onclick ="location = 'calendarioUsuario.php'"> Apuntate </button>
 				</div>
 			</div>
             
@@ -26,7 +26,7 @@
 				<div class="textoVoluntarios">
 					<h2> Nombre ONG 2 </h2>
 					<p> Aqui va la descripción del proyecto </p>
-					<button type="button"> Apuntate </button>
+					<button type="button" onclick ="location = 'calendarioUsuario.php'"> Apuntate </button>
 				</div>
 			</div>
 			
@@ -34,7 +34,7 @@
 				<div class="textoVoluntarios">
 					<h2> Nombre ONG 3 </h2>
 					<p> Aqui va la descripción del proyecto </p>
-					<button type="button"> Apuntate </button>
+					<button type="button" onclick ="location = 'calendarioUsuario.php'"> Apuntate </button>
 				</div>
 			</div>
 			
@@ -42,7 +42,7 @@
 				<div class="textoVoluntarios">
 					<h2> Nombre ONG 4 </h2>
 					<p> Aqui va la descripción del proyecto </p>
-					<button type="button"> Apuntate </button>
+					<button type="button"onclick ="location = 'calendarioUsuario.php'"> Apuntate </button>
 				</div>
 			</div>
 		</div>

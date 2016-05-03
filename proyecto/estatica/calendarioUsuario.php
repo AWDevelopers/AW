@@ -2,13 +2,14 @@
 <html>
 <head>
     <title>Calendario Voluntarios</title>
-    <link rel="stylesheet" type="text/css" href="estilos.css"/>
-    <link rel="stylesheet" type="text/css" href="calendario.css"/>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css"/>
+    <link rel="stylesheet" type="text/css" href="css/calendario.css"/>
 </head>
 <body>
     <div id="contenedor">
-        <?php require ("common.php")?>
+        <?php require ("common.php");?>
 
+        <div id="contenido">
         <div id="contenidoCalendario">
             
         	   <div id= "calendario">
@@ -58,7 +59,7 @@
                
         </div>
 
-        
+        </div>
     </div>
 </body>
 </html>

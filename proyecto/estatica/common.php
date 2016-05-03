@@ -5,6 +5,7 @@
 			echo '<div class="sesion"> <IMG SRC="img/power.png" WIDTH=60 HEIGHT=60 ALT="Avatar usuario"> </div>';		
  	echo '</div>';
 	echo '<div id="sidebar-left">';
+		echo '<nav>';
 			echo '<ul>';
 				echo '<li><a href="index.php">Inicio</a></li>';
             	echo '<li><a href="vistaProyectoDonar.php">Donaciones</a></li>';
@@ -12,5 +13,5 @@
             	echo '<li><a href="conocenos.php">Conocenos</a></li>';
             	echo '<li><a href="tienda.php">Tienda</a></li>';
         	echo '</ul>';
+        echo '</nav>';
 	echo '</div>';
- ?>

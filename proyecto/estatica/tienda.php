@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<title>Tienda - InCommOng</title>
-		<link rel="stylesheet" type="text/css" href="estilos.css">
-		<link rel="stylesheet" type="text/css" href="tienda.css">
+		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+		<link rel="stylesheet" type="text/css" href="css/tienda.css">
 	</head>
 	<body>
 		<div id='contenedor'>

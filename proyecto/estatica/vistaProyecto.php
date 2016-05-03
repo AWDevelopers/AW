@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Proyectos ONGS</title>
-	<link rel="stylesheet" type="text/css" href="estilos.css">
-	<link rel="stylesheet" type="text/css" href="proyectosONG.css">
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<link rel="stylesheet" type="text/css" href="css/proyectosONG.css">
 </head>
 <body>
 	<div id='contenedor'>
