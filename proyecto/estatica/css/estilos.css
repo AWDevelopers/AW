@@ -4,6 +4,24 @@ html body{
 	margin: 0%;
 }
 
+/* Clearfix */
+.clear:before, .clear:after {
+    content: " ";
+    display: table;
+}
+ 
+.clear:after {
+    clear: both;
+}
+ 
+.clear {
+    *zoom: 1;
+}
+ 
+a#pull {
+    display: none;
+}
+
 #contenedor{
 	height: 100%;
 	width: 100%;
@@ -277,6 +295,50 @@ button:active /* Al presionarse el botón */ {
 
 @media only screen and (max-width : 500px) {
 
+	nav {
+        border-bottom: 0;
+        height: auto;
+    }
+ 
+    nav ul {
+        display: none;
+        height: auto;
+        width: 100%;
+    }
+ 
+    nav li {
+        width: 50%;
+        float: left;
+        position: relative;
+    }
+ 
+    nav a {
+        text-align: left;
+        width: 100%;
+        text-indent: 25px;
+    }
+ 
+    nav a#pull {
+        display: block;
+        background-color: #666;
+        width: 100%;
+        position: relative;
+    }
+ 
+    nav a#pull:after {
+        content:"";
+        background: url('../img/nav-icon.png') no-repeat;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        float: left;
+        margin: 15%;
+    }
+
+    #sidebar-left{
+    	width: 40px;
+    	min-width: 0px;
+    }
     #cabecera{
     	display: none;
     }
@@ -287,7 +349,7 @@ button:active /* Al presionarse el botón */ {
 
     .principal{
     	width: 90%;
-    	/* margin: 0%; */
+    	margin: 5%; 
     	font-size: 10px;
  }
 
@@ -298,25 +360,30 @@ button:active /* Al presionarse el botón */ {
 
 	.bloque_secundaria{
 		margin: 0%;
+		margin-top: 10%;
 		padding:0%;
-		margin: 0%;
 	}
 
 	.secundaria{
+		margin: 0%;
 		font-size: 9px;
 		width: 90%;
 	}
 
-	.secundaria img{height: 100px;}
-
+	.secundaria img{
+		height: 100px;
+	}
 
 	.bloque_terciaria{
 		margin: 0%;
+		margin-top: 10%;
 		padding: 0%;
 	}
 
 	.terciaria{
+		margin: 0%;
 		width: 90%;
+		font-size: 8px;
 	}
 
 	.terciaria img{
