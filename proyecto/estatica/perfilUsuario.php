@@ -22,7 +22,7 @@
 					<center>
 						<img src="img/perfil.png">
 						<strong>
-						<p>Nombre Apellidos</p>
+						<p>Nombre Apellidooos</p>
 						</strong>
 					</center>
 				</div>
