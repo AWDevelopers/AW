@@ -2,7 +2,9 @@
 <html>
 <head>
 	<title>Pagina con estilos</title>
-	<link rel="stylesheet" type="text/css" href="css/calendarionONG.css"/>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css"/>
+	<link rel="stylesheet" type="text/css" href="css/colorsandtext.css"/>
+	<!--<link rel="stylesheet" type="text/css" href="css/calendarionONG.css"/>-->
 </head>
 <body>
 	<div id='contenedor'>

@@ -3,7 +3,8 @@
 	<head>
 		<title>Producto - InCommOng</title>
 		<link rel="stylesheet" type="text/css" href="css/estilos.css">
-		<link rel="stylesheet" type="text/css" href="css/vistaproducto.css">
+			<link rel="stylesheet" type="text/css" href="css/colorsandtext.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="css/vistaproducto.css">-->
 	</head>
 	<body>
 		<!--CABECERA+MENU-->

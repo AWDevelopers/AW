@@ -3,7 +3,8 @@
 <head>
 	<title>Perfil de usuario</title>
 	<link rel="stylesheet" type="text/css" href="css/estilos.css"/>
-	  <link rel="stylesheet" type="text/css" href="css/perfilUsuario.css"/>
+		<link rel="stylesheet" type="text/css" href="css/colorsandtext.css"/>
+	  <!--<link rel="stylesheet" type="text/css" href="css/perfilUsuario.css"/>-->
 	  
 </head>
 <body>

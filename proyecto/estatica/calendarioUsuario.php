@@ -3,7 +3,8 @@
 <head>
     <title>Calendario Voluntarios</title>
     <link rel="stylesheet" type="text/css" href="css/estilos.css"/>
-    <link rel="stylesheet" type="text/css" href="css/calendario.css"/>
+        <link rel="stylesheet" type="text/css" href="css/colorsandtext.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="css/calendario.css"/>-->
 </head>
 <body>
     <div id="contenedor">

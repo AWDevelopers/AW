@@ -3,6 +3,7 @@
 <head>
 	<title>Conocenos</title>
 	<link rel="stylesheet" type="text/css" href="css/estilos.css"/>
+		<link rel="stylesheet" type="text/css" href="css/colorsandtext.css"/>
 </head>
 <body>
 	<div id='contenedor'>

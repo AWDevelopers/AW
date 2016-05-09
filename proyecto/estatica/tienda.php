@@ -3,7 +3,8 @@
 	<head>
 		<title>Tienda - InCommOng</title>
 		<link rel="stylesheet" type="text/css" href="css/estilos.css">
-		<link rel="stylesheet" type="text/css" href="css/tienda.css">
+			<link rel="stylesheet" type="text/css" href="css/colorsandtext.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="css/tienda.css">-->
 	</head>
 	<body>
 		<div id='contenedor'>

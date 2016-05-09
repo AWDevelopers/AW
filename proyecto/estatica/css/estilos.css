@@ -1,5 +1,4 @@
 html body{
-	background: #D3D3D3;
 	height: 100%;
 	margin: 0%;
 }
@@ -31,7 +30,6 @@ a#pull {
 #cabecera{
 	padding: 1%;
 	height: 150px;
-	background: #D3D3D3;
 }
 
 #sidebar-left{
@@ -39,7 +37,6 @@ a#pull {
 	padding: 1% 0% 1% 1%;
 	width: 16%;
 	min-width: 121px;
-	background: #A9A9A9;
 }
 
 .avatar{
@@ -69,37 +66,24 @@ a#pull {
 }
 #sidebar-left ul li a {
     padding: 15px 0px 15px 20px;
-    font-size: 20px;
-    font-weight: 100;
-    color: white;
-    text-decoration: none;
     display: block;
-    border-bottom: 1px solid #196c96;
-    -webkit-transition:  background 0.3s ease-in-out;
 }
-#sidebar-left ul li:hover a {
-    background: #196c96;
+
+
+button {
+	width: 150px;  /* Ancho del botón */
+	height: 40px;
+	text-align: center;  /* Alineación del texto */
 }
 
 .contenidoDonaciones{
 	align-items: center;
-	text-align: center;
-	word-wrap: break-word;
 	float: left;
 	margin: 2%;
-	border-color: black;
 	padding: 1%;
 	width: 25%;
 	height: 550px;
-	background: #CED7D8;
-	-webkit-box-shadow: 8px 8px 2px #636363;
-}
-
-.imgDonaciones{
-	/* margin-left: 75px; */
-	font-size: 16px;
-	font-family: cursive;
-	/* float: left; */
+	text-align: center;
 }
 
 .imgDonaciones img{
@@ -110,15 +94,11 @@ a#pull {
 }
 
 .contenidoVoluntarios{
-	word-wrap: break-word; 
 	float: left;
 	margin: 15px;
-	border-color: black;
 	padding: 10px;
 	height: 200px;
 	width: 90%;
-	background: #F0F8FF;
-	-webkit-box-shadow: 5px 5px 1px #008B8B;
 }
 
 .textoVoluntarios{
@@ -142,34 +122,21 @@ a#pull {
 	min-height: 50%;
 	width: 82%;
 	height: 82%;
-	background: #A9A9A9;
 	vertical-align: center;
 }
 
 #pie{
 	clear: both;
-	text-align: center;
 }
 
 #conocenosInicio{
 	margin: 10px;
 }
 
-#conocenosInicio h1{
-	color: #000;
- 	text-shadow: #555 2px 2px 3px;
- 	font-family: cursive;
-}
-
 #conocenosDesarrolladores{
 	margin: 10px;
 }
 
-#conocenosDesarrolladores h2{
-	color: #000;
- 	text-shadow: #555 2px 2px 3px;
- 	font-family: cursive;
-}
 #noticias{
 	vertical-align: middle;
 	text-align: center;
@@ -177,16 +144,8 @@ a#pull {
 	margin-top: 10px;
 }
 
-#noticias h1{
-	font-size: 40px;
-	font-family: cursive;
-}
-
 .principal{
 	margin: 30px;
-	font-size: 16px;
-	font-family: cursive;
-	width: 100%;
 }
 
 .principal img{
@@ -195,7 +154,6 @@ a#pull {
 	/* min-width: 600px; */
 	/* min-height: 300px; */
 	height: 500px;
-	-webkit-box-shadow: 10px 10px 2px #696969;
 }
 
 .bloque_secundaria{
@@ -206,8 +164,6 @@ a#pull {
 
 .secundaria{
 	margin: 30px;
-	font-size: 16px;
-	font-family: cursive;
 	width: 40%;
 	display: inline-block;
 }
@@ -215,7 +171,6 @@ a#pull {
 .secundaria img{
 	width: 100%;
 	height: 250px;
-	-webkit-box-shadow: 8px 8px 1.8px #696969;
 }
 
 
@@ -227,8 +182,6 @@ a#pull {
 
 .terciaria{
 	margin: 30px;
-	font-size: 16px;
-	font-family: cursive;
 	width: 25%;
 	display: inline-block;
 }
@@ -236,62 +189,235 @@ a#pull {
 .terciaria img{
 	width: 100%;
 	height: 150px;
-	-webkit-box-shadow: 7px 7px 1.5px #696969;
 }
 
 #proyectoONG{
 	margin:10 px;
-	text-align: justify;
 	margin-right: 20px;
 	margin-left: 20px;
 }
 
 #proyectoONG h1{
-	font-size: 50px;
-	color: #000;
- 	text-shadow: #555 2px 2px 3px;
- 	font-family: cursive;
 	text-align:center;
 }
 
 #proyectoONG h2{
-	font-size: 30px;
-	color: #000;
- 	text-shadow: #555 2px 2px 3px;
- 	font-family: cursive;
+	
 	text-align:center;
 }
 
 .proyectoFechas{
-	font-style: bold;
 	float: left;
 	text-align:left;
-	font-weight:bold;
-	font-size: 20px;
 }
 .proyectoVoluntario{
-	font-size: 20px;
-	font-weight:bold;
 	float: right;
 }
 
-button {
-	box-shadow: inset 3px 3px 3px rgba(255,255,255,.7), inset -2px -2px 3px rgba(0,0,0,.1), 2px 2px 10px rgba(0,0,0,.1);
-	width: 150px;  /* Ancho del botón */
-	height: 40px;
-	font-size: 20px;
-	border: 1px solid #9b9bff; /* Borde */
-	background: #7777ff;  /* Fondo */
-	text-align: center;  /* Alineación del texto */
-	text-shadow: -1px -1px rgba(0,0,0,.2);  /* Sombra del texto */
-	border-radius: 5px;  /* Bordes redondos */
-	color: white;  /* Color del texto */
+
+/* --------------------VOLUNTARIOS---------------*/
+.contenidoVoluntario{
+	float: left;
+	margin: 40 px;
+	padding: 15px;
+	height: 140px;
+	width: 90%;
+	margin-top: 2%;
 }
-button:active /* Al presionarse el botón */ {
-	text-shadow: 1px 1px rgba(0,0,0,.3);  /* Sombra del texto */
-	background:#3d3dff;  /* Fondo más oscuro que el original */
-	box-shadow:inset 4px 4px 4px rgba(0,0,0,.3), inset -3px -3px 3px rgba(255,255,255,.2);
+
+
+.imagenUsuario img{
+	float: left;
+	margin-left: 30px;
+	margin-top: 5px;
+	width: 100px;
+	height: 100px;
 }
+
+.nombreUsuario {
+    float: left;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 7%;
+}
+
+.boton {
+    margin-top: 5%;
+    margin-left: 15%;
+    float: left;
+    display: block;
+    align-items: center;
+}
+
+.cajaTitulos{
+    margin-left: 25%;
+    margin-right: -10%;
+    margin-top: 4%;
+    float: left;
+    align-items: center;
+}
+/*----------------FIN VOLUNTARIOS---------------*/
+
+
+/*--------------------TIENDA--------------------*/
+.filtro{
+	margin: 20px;
+	display: block;
+	align-items: center;
+}
+.filtro p{
+	margin-left: 10px;
+	text-align: center;
+	display: inline-block;
+}
+.filtro button{
+	margin-left:150px;
+    padding: 10px 16px;
+    text-align: center;
+}
+.producto{
+	align-items: center;
+	text-align: center;
+	float: left;
+	margin: 20px;
+	border-color: black;
+	padding: 10px;
+	height: 300px;
+	width: 180px;
+}
+.producto h3{
+	margin-top: 5px;
+}
+.producto img{
+	height: auto; 
+    width: auto; 
+    max-width: 160px; 
+    max-height: 160px;
+    border: 1px solid black;
+}
+.producto form input{
+	margin-bottom: 50px;
+    padding: 10px 16px;
+    text-align: center;
+}
+
+.producto p{
+	display: inline-block;
+}
+.producto form{
+	display: inline-block;
+}
+.producto .precio{
+	margin: 10px;
+}
+/*--------------------FIN TIENDA------------------------*/
+
+/*--------------------CALENDARIO USUARIO-------------------*/
+#contenidoCalendario{
+	overflow: hidden;
+	padding: 30px;
+	margin:auto;
+
+}
+#calendario{
+	width: 10%;
+	padding: 2%;
+	border-width: 2px;
+	float: left;
+	font-size:30px;
+
+}
+
+
+#horas{
+	height: 320px;
+	width: 30%;
+	margin-left: 4%;
+	float: left;
+	margin-top: -5%;
+	margin-bottom: 2%;	
+
+}
+#inicio{
+	float:top;	
+	padding-top: 25%;
+}
+#fin {
+	float:bottom;
+	padding-bottom: 10%;
+
+}
+#mostrarHoras{
+	float:left;
+    width: 30%;
+	height: 320px;
+	margin-top: 2%;
+}
+
+#pieCalendario {
+	float:left;
+
+}
+
+/*---------------------FIN CALENDARIO USUARIO------------------*/
+
+/*---------------.DONACIONES----------------*/
+#datos{
+	float: center;
+}
+#recaudado{
+	float:left;
+}
+
+progress{
+	float: left;
+    height: 18px;
+	width:380px;
+	height: 20px;
+}
+#datoscantidad{
+	float: right;
+	display: inline-block;
+}
+/*------------------FIN DONACIONES----------*/
+
+/*-----------------PRODUCTO---------------*/
+.columnaIzda{
+	float: left;
+	text-align: center;
+	width: 70%;
+	margin: 20px;
+	padding: 20px;
+	background-color: #bfbfbf;
+}
+.columnaIzda img{
+	border: 1px solid black;
+	/*hacemos que las imagenes siempre tengan el mismo tamaño, evitando imagenes muy grandes*/
+	height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+
+}
+.columnaDcha{
+	float: left;
+	text-align: center;
+	width:15%;
+	margin-top: 20px;
+	margin-left: -20px;
+	padding: 20px;
+}
+.columnaDcha h3{
+	margin:0px;
+}
+.columnaDcha p{
+	display: inline-block;
+}
+.columnaDcha form{
+	display: inline-block;
+}
+/*-------------FIN PRODUCTOS-----------------*/
+
 
 @media only screen and (max-width : 500px) {
 

@@ -3,7 +3,8 @@
 <head>
 	<title>Voluntarios ONGS</title>
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
-	<link rel="stylesheet" type="text/css" href="css/voluntarios.css" >
+		<link rel="stylesheet" type="text/css" href="css/colorsandtext.css"/>
+	<!--<link rel="stylesheet" type="text/css" href="css/voluntarios.css" >-->
 
 </head>
 <body>

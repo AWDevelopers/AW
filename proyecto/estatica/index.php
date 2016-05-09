@@ -3,6 +3,7 @@
 <head>
 	<title>Inicio</title>
 	<link rel="stylesheet" type="text/css" href="css/estilos.css"/>
+		<link rel="stylesheet" type="text/css" href="css/colorsandtext.css"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
