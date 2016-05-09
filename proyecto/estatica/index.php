@@ -32,7 +32,7 @@
 				<h1>Noticias</h1>
 				<div class="principal">
 					<img src="img/imgPrincipal.png">
-					<h2>Titulo principal</h2>
+					<h2>Titulo principal qeoucwe</h2>
 					<p>Texto</p>
 				</div>
 				<div class="bloque_secundaria">
