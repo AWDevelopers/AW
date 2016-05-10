@@ -32,9 +32,11 @@
 				</div>
 				<div id = "datoscantidad">
 					<div id= "cantidad"> Cantidad:</div>
-						<p><input type="text" name="cantidad" value="5875 euros" size="10">
-						<input type= "submit" value = "Donar" size="20">
+					<form action="procesarDonacion.php" method="POST">
+						<p><input type="text" name="cantidad">
+						<input type= "submit" name ="donar" value = "Donar" size="20">
 						</p>
+					</form>
 				</div>
 			</div>
 		</div>
