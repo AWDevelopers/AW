@@ -32,6 +32,11 @@ a#pull {
 	height: 150px;
 }
 
+#videoPrincipal{
+	width: 100%;
+	height: 400px;
+}
+
 #sidebar-left{
 	float: left;
 	padding: 1% 0% 1% 1%;
@@ -145,7 +150,7 @@ button {
 }
 
 .principal{
-	margin: 30px;
+	/*margin: 30px;*/
 }
 
 .principal img{
@@ -157,13 +162,19 @@ button {
 }
 
 .bloque_secundaria{
+	margin-top: 20px;
 	width: 100%;
-	padding:5%;
+	border-style: ridge;
+    border-bottom-color: #8B99A2;
+    border-right-color: #8B99A2;
+    border-top-color: #BEC9D0;
+    border-left-color: #BEC9D0;
+	/*padding:5%;*/
 	float: left;
 }
 
 .secundaria{
-	margin: 30px;
+	margin: 2%;
 	width: 40%;
 	display: inline-block;
 }
@@ -175,8 +186,13 @@ button {
 
 
 .bloque_terciaria{
+	margin-top: 20px;
 	width: 100%;
-	padding: 5%;
+	border-style: ridge;
+    border-bottom-color: #8B99A2;
+    border-right-color: #8B99A2;
+    border-top-color: #BEC9D0;
+    border-left-color: #BEC9D0;
 	float: left;
 }
 

@@ -1,12 +1,11 @@
 ﻿ <?php
-﻿ 	session_start();
  	echo '<div id="cabecera">';
 			echo '<div class="avatar"> <a href="perfilUsuario.php"><IMG SRC="img/usuarioSF.png" WIDTH=120 HEIGHT=120 ALT="Avatar usuario"> </a> </div>';
 			echo '<div class="titulo"> <IMG SRC="img/tituloPagina.png" WIDTH=500 HEIGHT=150 ALT="Avatar usuario"> </div>';
 			echo '<div class="sesion"> <IMG SRC="img/power.png" WIDTH=60 HEIGHT=60 ALT="Avatar usuario"> </div>';	
 			echo '<div class="login">';
 				if (isset($_SESSION['login']) && $_SESSION['login']) {
-					echo 'Welcome, ' .$_SESSION['usuario']. "<a href='logout.php'>Cerrar sesion</a>";
+					echo 'Welcome, ' .$_SESSION['usuario']. "<a href='includes/logout.php'>Cerrar sesion</a>";
 				} else {
 					echo '<p>Usuario desconocido. <a href="login.php">Iniciar sesion</a></p>';
 				}
