@@ -1,0 +1,50 @@
+.imagen{
+	float: left;
+	margin: 5%;
+	margin-left: 10%;
+}
+.imagen img{
+	height: auto; 
+    width: auto; 
+    max-width: 250px; 
+    max-height: 250px;
+}	
+.formulario{
+	margin:5%;
+	margin-left: 10%;
+	width: 54%;
+}
+.formulario form{
+	float: right;
+}
+.formulario form p{
+	text-align: right;
+	margin-bottom: 0%;
+	font-size: 16px;
+	color: #4d4d4d;
+}
+.formulario form a p{
+	color: #0073e6;
+}
+.formulario form input[type=text]{
+	margin-top: 0%;
+	border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 17px;
+    background-color: white;
+    padding: 12px 20px 12px 10px;
+}
+.formulario form input[type=submit]{
+	margin-top: 5px;
+	background-color: #3399ff;
+	border: none;
+	border-radius: 4px;
+	color: white;
+    padding: 10px 16px;
+    text-align: center;
+    font-size: 16px;
+    float:right;
+}
+.formulario form input[type=submit]:hover{
+	background-color: #66b3ff;
+}
