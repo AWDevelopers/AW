@@ -36,6 +36,7 @@
 					"avatar" => $fila["avatar"],
 					"sexo" => $fila["sexo"],
 					"telefono" => $fila["telefono"],
+					"tipo" => $fila["tipo"],
 				];
 			}
 	}
