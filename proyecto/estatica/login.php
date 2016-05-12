@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<title>Login - InCommOng</title>
-		<link rel="stylesheet" type="text/css" href="css/login.css"/>
 		<link rel="stylesheet" type="text/css" href="css/estilos.css"/>
 		<link rel="stylesheet" type="text/css" href="css/colorsandtext.css"/>
 		
@@ -19,7 +18,7 @@
 					<img src="img/nuevologo.png">
 				</div>
 				<div class="formulario">
-					<form action="comprobar_login.php" method="POST">
+					<form action="includes/comprobar_login.php" method="POST">
 						<p>Usuario</p>
 						<input type="text" name="usuario"></input>
 						<p>Contraseña</p>

@@ -418,6 +418,41 @@ progress{
 }
 /*-------------FIN PRODUCTOS-----------------*/
 
+/*--------------LOGIN-----------------*/
+.imagen{
+	float: left;
+	margin: 5%;
+	margin-left: 10%;
+}
+.imagen img{
+	height: auto; 
+    width: auto; 
+    max-width: 250px; 
+    max-height: 250px;
+}	
+.formulario{
+	margin:5%;
+	margin-left: 10%;
+	width: 54%;
+}
+.formulario form{
+	float: right;
+}
+.formulario form p{
+	text-align: right;
+	margin-bottom: 0%;
+}
+.formulario form input[type=text]{
+	margin-top: 0%;
+    padding: 12px 20px 12px 10px;
+}
+.formulario form input[type=submit]{
+	margin-top: 5px;
+    padding: 10px 16px;
+    text-align: center;
+    float:right;
+}
+/*---------------FIN LOGIN--------------*/
 
 @media only screen and (max-width : 500px) {
 
