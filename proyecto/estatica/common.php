@@ -4,12 +4,12 @@
 			echo '<div class="titulo"> <IMG SRC="img/tituloPagina.png" WIDTH=500 HEIGHT=150 ALT="Avatar usuario"> </div>';
 			echo '<div class="sesion">';
 				if (isset($_SESSION['login']) && $_SESSION['login']) {
-					echo '<IMG SRC="img/power.png" WIDTH=60 HEIGHT=60 ALT="Avatar usuario">';
+					echo '<a href="logout.php"><IMG SRC="img/power.png" WIDTH=60 HEIGHT=60 ALT="Avatar usuario"></a>';
 				}
 			echo '</div>';
 			echo '<div class="login">';
 				if (isset($_SESSION['login']) && $_SESSION['login']) {
-					echo 'Welcome, ' .$_SESSION['usuario']. "<a href='includes/logout.php'>Cerrar sesion</a>";
+					echo 'Welcome, ' .$_SESSION['usuario'];
 				} else {
 					echo '<p>Usuario desconocido. <a href="login.php">Iniciar sesion</a></p>';
 				}
