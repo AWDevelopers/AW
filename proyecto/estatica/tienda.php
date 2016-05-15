@@ -37,7 +37,7 @@
 			?>
 				<div class="producto"> 
 					<h3><?php echo $row_SacarProductos['nombre'] ?></h3>
-					<a href="producto/<?php echo $row_SacarProductos['idProducto'] ?>"><img src="img/productos/<?php echo $row_SacarProductos['imagen'] ?>"/><a>
+					<a href="producto/<?php echo $row_SacarProductos['idProducto'] ?>"><img src="img/default-image.jpg"/><a>
 					<h3><?php echo $row_SacarCif['nombre'] ?></h3>
 					<h3 class="precio"> Precio: <?php echo $row_SacarProductos['precio'] ?> €</h3>
 					<form>
