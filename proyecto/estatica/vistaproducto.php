@@ -46,7 +46,7 @@
 		<div id="contenido">
 			<div class="columnaIzda">
 				<h1><?php echo $row_SacarElProducto['nombre'] ?></h1>
-				<img src="../img/productos/<?php echo $row_SacarElProducto['imagen'] ?>"/>
+				<img src="img/default-image.jpg"/>
 				<h1><?php echo $row_SacarNombreONG['nombre'] ?></h1>
 				<h3><?php echo $row_SacarElProducto['descripcionCorta'] ?></h3>
 				<p><?php echo $row_SacarElProducto['descripcionLarga'] ?></p>	
