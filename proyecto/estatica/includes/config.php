@@ -1,5 +1,6 @@
 <? php
-
+//URL Absoluta
+	$urlAbsoluta = 'http://localhost/estatica/';
 //Defines con los parámetros de configuración de acceso a la BBDD y la URL desde la que se sirve la aplicación
 	define('BD_HOST', 'localhost');
 	define('BD_NAME', 'incommong');
@@ -33,6 +34,7 @@
 		echo "Error: " . $mysqli->connect_error . "\n";
 		exit;
 	}
+	
 
 //Función para autocargar clases PHP.
 /*spl_autoload_register(function ($class) {
