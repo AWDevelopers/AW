@@ -1,9 +1,15 @@
-﻿<!DOCTYPE html>
+<?php include('includes/config.php');
+	//Producto
+	$query_SacarProductos = 'SELECT * FROM producto';
+	$SacarProductos = mysqli_query($connection, $query_SacarProductos);
+	$row_SacarProductos = mysqli_fetch_assoc($SacarProductos);
+?>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Tienda - InCommOng</title>
-		<link rel="stylesheet" type="text/css" href="css/estilos.css">
-			<link rel="stylesheet" type="text/css" href="css/colorsandtext.css"/>
+		<link rel="stylesheet" type="text/css" href="<?php echo $urlAbsoluta ?>css/estilos.css">
+			<link rel="stylesheet" type="text/css" href="<?php echo $urlAbsoluta ?>css/colorsandtext.css"/>
 		<!--<link rel="stylesheet" type="text/css" href="css/tienda.css">-->
 	</head>
 	<body>
@@ -22,29 +28,30 @@
 				<button>Relevancia</button>
 				<button>Ventas</button>
 			</div>
-			<?php
-				$productos=8;
-				$precio=1;
-				for($i=0; $i<$productos;$i++){
-					echo '<div class="producto"> 
-							<h3> Nombre del producto</h3>
-							<a href="vistaproducto.php"><img src="img/default-image.jpg"/><a>
-							<h3> Nombre de la ONG </h3>
-							<h3 class="precio"> Precio: '.$precio.'€</h3>
-							<form>
-								<select>
-									<option selected> 1
-									<option >2
-									<option >3
-									<option >4
-								</select>
-								<input type="submit" value="Comprar">
-							</form>
-						  </div>';
-				}
-				
-			?>
 
+			<?php do {
+				$nombreOngDelProducto = $row_SacarProductos['CIFOng'];
+				$query_SacarCif = "SELECT nombre FROM ong WHERE  CIF = $nombreOngDelProducto";
+				$SacarCif = mysqli_query($connection, $query_SacarCif);
+				$row_SacarCif = mysqli_fetch_assoc($SacarCif);
+			?>
+				<div class="producto"> 
+					<h3><?php echo $row_SacarProductos['nombre'] ?></h3>
+					<a href="producto/<?php echo $row_SacarProductos['idProducto'] ?>"><img src="img/productos/<?php echo $row_SacarProductos['imagen'] ?>"/><a>
+					<h3><?php echo $row_SacarCif['nombre'] ?></h3>
+					<h3 class="precio"> Precio: <?php echo $row_SacarProductos['precio'] ?> €</h3>
+					<form>
+						<select>
+							<?php for ($i=1; $i <= $row_SacarProductos['stock'] ; $i++) { ?>
+								<option <?php if ($i==1) echo 'selected'?>> <?php echo $i ?>
+							<?php } ?>
+						</select>
+						<input type="submit" value="Comprar">
+					</form>
+				</div>
+			<?php } while ($row_SacarProductos = mysqli_fetch_assoc($SacarProductos)); ?>
 		</div>
 	</body>
 </html>
+<?php mysqli_free_result($SacarProductos) ?>
+<?php mysqli_free_result($SacarCif) ?>
