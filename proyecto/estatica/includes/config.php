@@ -19,9 +19,23 @@
 
 	ini_set('default_charset', 'UTF-8');
 	setLocale(LC_ALL, 'es_ES.UTF.8');
+	
+	session_start();
+	$user=$_POST['usuario'];
+	$pass=$_POST['contraseña'];
+	$mysqli = new mysqli('localhost', 'root', '', 'incommong');
+	
+	// ¡Oh, no! Existe un error 'connect_errno', fallando así el intento de conexión
+	if ($mysqli->connect_errno) {
+		echo "Lo sentimos, este sitio web está experimentando problemas.";
+		echo "Error: Fallo al conectarse a MySQL debido a: \n";
+		echo "Errno: " . $mysqli->connect_errno . "\n";
+		echo "Error: " . $mysqli->connect_error . "\n";
+		exit;
+	}
 
 //Función para autocargar clases PHP.
-spl_autoload_register(function ($class) {
+/*spl_autoload_register(function ($class) {
 
     $prefix = 'aw\\';		// project-specific namespace prefix
 
@@ -61,7 +75,7 @@ spl_autoload_register(function ($class) {
 		if($conn->connect_error){
    			die("Conexión fallida: " . $conn->connect_error);
 		}
-		echo "Conexión correcta";*/
+		echo "Conexión correcta";
 	}
 
 	function desconectaDB($db){
@@ -72,6 +86,6 @@ spl_autoload_register(function ($class) {
 		else if (isset($dbconx)){
 			mysql_close($dbconx);
 		}
-	}
+	}*/
 
 ?>
