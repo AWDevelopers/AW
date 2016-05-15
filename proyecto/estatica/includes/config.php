@@ -2,11 +2,11 @@
 
 //Defines con los parámetros de configuración de acceso a la BBDD y la URL desde la que se sirve la aplicación
 	define('BD_HOST', 'localhost');
-	define('BD_NAME', 'inCommONG');
-	define('BD_USER', 'inCommONG');
-	define('BD_PASS', 'inCommONG');
+	define('BD_NAME', 'incommong');
+	define('BD_USER', 'incommong');
+	define('BD_PASS', 'incommong');
 	define('RAIZ_APP', __DIR__);
-	define('RUTA_APP', '/inCommONG/');
+	define('RUTA_APP', '/incommong/');
 	define('RUTA_IMGS', RUTA_APP.'img/');
 	define('RUTA_CSS', RUTA_APP.'css/');
 	define('RUTA_JS', RUTA_APP.'js/');
