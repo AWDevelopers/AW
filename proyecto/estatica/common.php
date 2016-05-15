@@ -1,4 +1,6 @@
-﻿ <?php
+<?php include('includes/config.php'); ?>
+
+<?php
  	echo '<div id="cabecera">';
 			echo '<div class="avatar">';
 				if (isset($_SESSION['login']) && $_SESSION['login']) {
@@ -18,36 +20,18 @@
 					echo '<p>Usuario desconocido. <a href="login.php">Iniciar sesion</a></p>';
 				}
 			echo '</div>';
- 	echo '</div>';
-	echo '<div id="sidebar-left">';
-		echo '<nav>';
-			echo '<ul>';
-				echo '<li><a href="index.php">Inicio</a></li>';
-            	echo '<li><a href="vistaProyectoDonar.php">Donaciones</a></li>';
-            	echo '<li><a href="voluntariosONGUs.php">Voluntarios</a></li>';
-            	echo '<li><a href="conocenos.php">Conocenos</a></li>';
-            	echo '<li><a href="tienda.php">Tienda</a></li>';
-        	echo '</ul>';
-        	echo '<a id="pull" href="#"></a>';
-        echo '</nav>';
-	echo '</div>';
+ 	echo '</div>'
+?>
 
-/*
-$(function() {
-    var pull = $('#pull');
-    menu = $('nav ul');
-    menuHeight = menu.height();
- 
-    $(pull).on('click', function(e) {
-        e.preventDefault();
-        menu.slideToggle();
-    });
-});
- 
-$(window).resize(function(){
-    var w = $(window).width();
-    if(w > 320 && menu.is(':hidden')) {
-        menu.removeAttr('style');
-    }
-});
-*/
+<div id="sidebar-left">
+	<nav>
+		<ul>
+			<li><a href="<?php echo $urlAbsoluta ?>index.php">Inicio</a></li>
+        	<li><a href="<?php echo $urlAbsoluta ?>vistaProyectoDonar.php">Donaciones</a></li>
+        	<li><a href="<?php echo $urlAbsoluta ?>voluntariosONGUs.php">Voluntarios</a></li>
+        	<li><a href="<?php echo $urlAbsoluta ?>conocenos.php">Conocenos</a></li>
+        	<li><a href="<?php echo $urlAbsoluta ?>tienda.php">Tienda</a></li>
+    	</ul>
+    </nav>
+</div>
+
