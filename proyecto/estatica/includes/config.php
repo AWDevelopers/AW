@@ -1,4 +1,7 @@
 <?php 
+	ini_set('default_charset', 'UTF-8');
+	setLocale(LC_ALL, 'es_ES.UTF.8');
+	
 	if (!isset($_SESSION)) { 
 		session_start();
 	}
