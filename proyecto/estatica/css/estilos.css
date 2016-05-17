@@ -60,6 +60,12 @@ a#pull {
   	left: 35%;
 }
 
+.login{
+	position: absolute;
+	float: right;
+	right: 2%;
+	margin-top: 5%;
+}
 
 #sidebar-left ul {
     margin: 0;
