@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -20,31 +21,27 @@
 			
 			<div class="filtro">
 				<p>Filtros:</p>
-				<!--Estos botones deberían hacer cosas, pero sin bd no van a poder-->
 				<button>Precio</button>
 				<button>Relevancia</button>
 				<button>Nombre</button>
 			</div>
 			<?php 
 
-				include  ('scriptTienda.php');
-				$nombreONG ='';
-				$id='';
-				$nombre='';
-				$precio='';
-				$stock=''	;
-
-				 mostrarTienda($nombreONG, $id, $nombre, $precio, $stock,$n ); 
+				include  ('includes/scriptTienda.php');
+				
+		
+				$tienda = new tienda;
+				$tienda->insertaProductosTienda();
 
 			?>
-			<?php for($i = 0; $i < $n; $i++){ ?>
+			<?php for($i = 0; $i < $tienda->getContador(); $i++){ ?>
 			<div class="producto"> 
 				
 
-					<h3><?php echo $nombre[$i] ?></h3>
-					<a href="producto/<?php echo $id[$i] ?>"><img src="img/default-image.jpg"/><a>
-					<h3><?php echo $nombreONG[$i] ?></h3>
-					<h3 class="precio"> Precio: <?php echo $precio[$i] ?>€</h3>
+					<h3><?php echo $tienda->getNombreProductos($i) ?></h3>
+					<a href="producto/<?php echo $tienda->getIdProductos($i)  ?>"><img src="img/default-image.jpg"/><a>
+					<h3><?php echo $tienda->getNombreONGProductos($i)  ?></h3>
+					<h3 class="precio"> Precio: <?php echo $tienda->getPrecioProductos($i)  ?>€</h3>
 					
 
 				
@@ -53,6 +50,10 @@
 		</div>
 	</body>
 </html>
+
+
+
+
 
 
 

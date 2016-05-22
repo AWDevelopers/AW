@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,40 +17,38 @@
 		<!--CONTENIDO-->
 		<div id="contenido">
 			<?php 
-
-			include('scriptProducto.php');
-			$nombreONG ='';
-			$id='';
-			$nombre='';
-			$precio='';
-			$stock=''	;
-
-			mostrarProducto($nombreONG, $nombre, $precio, $stock, $descCorta, $descLarga ); 
-
+			include('includes/scriptProducto.php');	
+				
+			$producto = new producto;
+			$producto->almacenarProductos();
 			?>
 
 			<div class="columnaIzda">
-				<h1><?php echo $nombre ?></h1>
+				<h1><?php echo $producto->getNombreProducto() ?></h1>
 				<img src="<?php echo $urlAbsoluta ?>img/default-image.jpg"/>
-				<h1><?php echo $nombreONG ?></h1>
-				<h3><?php echo $descCorta ?></h3>
-				<p><?php echo $descLarga ?></p>	
+				<h1><?php echo $producto->getNombreONGProducto() ?></h1>
+				<h3><?php echo $producto->getDescCortaProducto() ?></h3>
+				<p><?php echo $producto->getDescLargaProducto() ?></p>	
 			</div>
 			
 			<div class="columnaDcha">
-				<h3>Precio: <?php echo $precio ?> €</h3>
-				<p>Num.Unidades <?php echo $stock?></p>
+				<h3>Precio: <?php echo $producto->getPrecioProducto() ?> €</h3>
+				<p>Num.Unidades <?php echo $producto->getStockProducto() ?></p>
 				<form>
 					<select>
-						<?php for ($i=1; $i <= $stock; $i++) { ?>
+						<?php for ($i=1; $i <= $producto->getStockProducto() ; $i++) { ?>
 							<option <?php if ($i==1) echo 'selected'?>> <?php echo $i ?>
 						<?php } ?>
 					</select>
-					<input type="submit" value="Comprar">
+					<button>comprar</button>
+					<!--<input type="submit" value="Comprar">-->
 				</form>			
 			</div>
 		</div>
 	</body>
 </html>
+
+
+
 
 

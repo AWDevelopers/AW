@@ -458,7 +458,7 @@ progress{
 	text-align: right;
 	margin-bottom: 0%;
 }
-.formulario form input[type=text]{
+.formulario form input{
 	margin-top: 0%;
     padding: 12px 20px 12px 10px;
 }

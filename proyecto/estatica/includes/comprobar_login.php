@@ -42,10 +42,10 @@
 	}
 	
 	if($_SESSION['login'] == True){
-		header("Location: index.php"); 
+		header("Location: ../index.php"); 
 	}
 	else{
-		header("Location: login.php");
+		header("Location: ../login.php");
 	}
 	
 	

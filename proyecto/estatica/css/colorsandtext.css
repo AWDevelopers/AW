@@ -241,7 +241,13 @@ progress{
 .formulario form a p{
 	color: #0073e6;
 }
-.formulario form input[type=text]{
+.formulario form input{
+	border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 17px;
+    background-color: white;
+}
+.formulario form select{
 	border: 2px solid #ccc;
     border-radius: 4px;
     font-size: 17px;
