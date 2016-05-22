@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 109e44bd479a187b14b5082585673df1351d378e
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +35,7 @@
 				include  ('includes/scriptTienda.php');
 				
 		
+<<<<<<< HEAD
 				$tienda = new tienda();
 				$tienda->cargarDatosTienda();
 			?>
@@ -39,6 +45,21 @@
 				<div class="producto"> 
 
 					<h3><?php echo $tienda->getNombreProductos($i) ?></h3>
+=======
+				$tienda = new tienda;
+				$tienda->insertaProductosTienda();
+
+			?>
+			<?php for($i = 0; $i < $tienda->getContador(); $i++){ ?>
+			<div class="producto"> 
+				
+
+					<h3><?php echo $tienda->getNombreProductos($i) ?></h3>
+					<a href="producto/<?php echo $tienda->getIdProductos($i)  ?>"><img src="img/default-image.jpg"/><a>
+					<h3><?php echo $tienda->getNombreONGProductos($i)  ?></h3>
+					<h3 class="precio"> Precio: <?php echo $tienda->getPrecioProductos($i)  ?>€</h3>
+					
+>>>>>>> 109e44bd479a187b14b5082585673df1351d378e
 
 					<form action="vistaProducto.php" method = "post">
 					
