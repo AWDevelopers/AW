@@ -10,7 +10,7 @@
 <body>
 	<div id="contenedor">
 	<?php require("common.php");?>
-	<div id="contenido">
+	<div class="contenido">
 		
 		<div id= "contenidoPerfilUsuario">
 			<div class="cabeceraPerfil">

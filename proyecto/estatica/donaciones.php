@@ -10,7 +10,7 @@
 <body>
 	<div id='contenedor'>
 		<?php require 'common.php'; ?>
-		<div id="contenido">
+		<div class="contenido">
 			<div id = 'fundacion'>
 				<h1 align="center">Nombre ONG/Fundacion</h1>
 			</div>

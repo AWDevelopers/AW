@@ -8,7 +8,7 @@
 <body>
 	<div id='contenedor'>
 		<?php require 'common.php'; ?>
-		<div id="contenido">
+		<div class="contenido">
 			<div id="conocenosInicio">
 				<h1 align="center" font-family:"cursive">CONOCENOS</h1>
 				<p>Somos un grupo de estudiantes universitarios apasionados por la informática, realizamos este proyecto al ver que casi no existen paginas con estas características y estos fines.</p>

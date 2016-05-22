@@ -12,7 +12,7 @@
 		<?php require 'common.php'; ?>
 		
 		<!--Aqui va el contenido-->
-		<div id="contenido">
+		<div class="contenido">
 			<div id="proyectoONG">
 				<h1>Nombre ONG </h1>
 				<h2> Nombre proyecto </h2>

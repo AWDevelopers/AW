@@ -12,7 +12,7 @@
 		<?php require 'common.php'; ?>
 		
 		<!--Aqui va el contenido-->
-		<div id="contenido">
+		<div class="contenido">
 
 		<?php
 

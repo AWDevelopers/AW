@@ -13,7 +13,7 @@
 		</div>
 		<!--CONTENIDO-->
 
-			<div id="contenido">
+			<div class="contenido">
 				<div class="imagen">
 					<img src="img/nuevologo.png">
 				</div>

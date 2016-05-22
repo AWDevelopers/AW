@@ -14,7 +14,7 @@
 		<?php require 'common.php'; ?>
 		
 		<!--Aqui va el contenido-->
-		<div id="contenido">
+		<div class="contenido">
 			<div class="contenidoVoluntarios">
 				<div class="textoVoluntarios">
 					<h2> Nombre ONG 1 </h2>

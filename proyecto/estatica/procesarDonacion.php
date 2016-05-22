@@ -10,7 +10,7 @@
 <body>
 	<div id="contenedor">
 		<?php require 'common.php'; require 'ScriptDonaciones.php' ?>
-		<div id="contenido">
+		<div class="contenido">
 			<div id="datos">
 				<?php
 					if(!$_POST['cantidad']){

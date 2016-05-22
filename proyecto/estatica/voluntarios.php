@@ -13,7 +13,7 @@
 		<?php require 'common.php'; ?>
 		
 		<!--Aqui va el contenido-->
-		<div id="contenido">
+		<div class="contenido">
 
 				<div class="cajaTitulos"> Nombres </div>
 				<div class="cajaTitulos"> Horas disponibles </div>

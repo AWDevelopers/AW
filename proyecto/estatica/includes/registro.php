@@ -27,10 +27,9 @@
 	if($verificar_usuario == 0) { 
 	    $nuevo_user = new Usuario($nombre,$dni,$app,$direccion,$cp,$user,$pass,$email,$fecha,$avatar,$sexo,$tlf);
 	    $nuevo_user->addUser($connection);
-	    mysqli_query($connection,$sql); 
 
+	    header("Location: ../index.php"); 
 	    echo 'Usted se ha registrado correctamente.';
-	    //header("Location: ../index.php"); 
 	}else{ 
 	    echo 'Este usuario ya ha sido registrado anteriormente.';
 	    header("Location: ../registrate.php"); 

@@ -13,7 +13,7 @@
 		</div>
 		<!--CONTENIDO-->
 
-			<div id="contenido">
+			<div class="contenido">
 				<div class="formulario">
 					<form action="includes/registro.php" method="POST">
 						<p>Usuario</p>

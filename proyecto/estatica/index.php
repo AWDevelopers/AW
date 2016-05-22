@@ -27,7 +27,7 @@
         	</ul>
 		</div> 
 		-->
-		<div id="contenido">
+		<div class="contenido">
 			<div id="noticias">
 				<video id="videoPrincipal" src="videos/videOng.webm" autoplay controls preload> </video>
 
