@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -17,7 +15,7 @@
 		<!--CONTENIDO-->
 		<div class="contenido">
 			<?php 
-<<<<<<< HEAD
+
 				include('includes/scriptProducto.php');	
 
 				if(isset($_POST['pid'])){
@@ -27,21 +25,16 @@
 					echo 'Se ha producido un error inesperado.';
 				}
 			
-=======
 			include('includes/scriptProducto.php');	
 				
 			$producto = new producto;
 			$producto->almacenarProductos();
->>>>>>> 109e44bd479a187b14b5082585673df1351d378e
 			?>
 
 			<div class="columnaIzda">
 				<h1><?php echo $producto->getNombreProducto() ?></h1>
-<<<<<<< HEAD
 				<img src="img/default-image.jpg"/>
-=======
 				<img src="<?php echo $urlAbsoluta ?>img/default-image.jpg"/>
->>>>>>> 109e44bd479a187b14b5082585673df1351d378e
 				<h1><?php echo $producto->getNombreONGProducto() ?></h1>
 				<h3><?php echo $producto->getDescCortaProducto() ?></h3>
 				<p><?php echo $producto->getDescLargaProducto() ?></p>	
@@ -56,11 +49,8 @@
 							<option <?php if ($i==1) echo 'selected'?>> <?php echo $i ?>
 						<?php } ?>
 					</select>
-<<<<<<< HEAD
 					<input type = "submit" value = "comprar"/>
-=======
 					<button>comprar</button>
->>>>>>> 109e44bd479a187b14b5082585673df1351d378e
 					<!--<input type="submit" value="Comprar">-->
 				</form>			
 			</div>
