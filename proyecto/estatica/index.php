@@ -32,7 +32,11 @@
 				<video id="videoPrincipal" src="videos/videOng.webm" autoplay controls preload> </video>
 
 				<h1>Noticias</h1>
-				
+				<?php
+					if (isset($_SESSION['login']) && $_SESSION['login']) {
+						echo '<p><a href="vistaAniadirNoticia.php">Añade una nueva noticia</a></p>';
+					}
+				?>
 				<div class="principal">
 					<img src="img/principal.jpg">
 					<h2>Titulo principal</h2>
