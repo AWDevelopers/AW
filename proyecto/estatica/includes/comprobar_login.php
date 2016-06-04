@@ -1,22 +1,13 @@
 <?php
-	session_start();
+	include ("config.php");
 	$user=$_POST['usuario'];
 	$pass=$_POST['contraseña'];
-	$mysqli = new mysqli('localhost', 'root', '', 'incommong');
-	
-	// ¡Oh, no! Existe un error 'connect_errno', fallando así el intento de conexión
-	if ($mysqli->connect_errno) {
-		echo "Lo sentimos, este sitio web está experimentando problemas.";
-		echo "Error: Fallo al conectarse a MySQL debido a: \n";
-		echo "Errno: " . $mysqli->connect_errno . "\n";
-		echo "Error: " . $mysqli->connect_error . "\n";
-		exit;
-	}
+
 	//Realizamos la consulta 
 	$consulta= "SELECT * FROM usuario WHERE email='$user' || usuario='$user'";
-	$consulta=  mysqli_query($mysqli, $consulta);
+	$resultado=  mysqli_query($connection, $consulta);
 	$_SESSION['login']= False;
-	if($fila=mysqli_fetch_array($consulta)){
+	if($fila=mysqli_fetch_array($resultado)){
 			$passUser = $fila["pass"];
 			if($passUser == $pass){
 				//Almacenamos el nombre de usuario,tipo, que ha hecho login y todos los datos del usuario
@@ -41,7 +32,7 @@
 			}
 	}
 	//Liberamos los recursos
-	$consulta->free();
+	$resultado->free();
 	if($_SESSION['login'] == True){
 		header("Location: ../index.php"); 
 	}
