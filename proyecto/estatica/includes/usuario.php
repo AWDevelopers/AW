@@ -38,6 +38,7 @@
 		public function addUser($mysqli){
 			$consulta="INSERT INTO usuario (DNI,nombre,apellidos,direccion,cp,usuario,pass,email,fechaNacimiento,avatar,sexo,telefono) VALUES ('$this->DNI','$this->nombre','$this->apellidos','$this->direccion','$this->cp','$this->usuario','$this->pass','$this->email','$this->fechaNacimiento','$this->avatar','$this->sexo','$this->telefono');";
 			$resultado=mysqli_query($mysqli,$consulta);
+			$resultado->free();
 		}
 		/*Función que elimina un usuario de la BD 
 		public function delUser(){
