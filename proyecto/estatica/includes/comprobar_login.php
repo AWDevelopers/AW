@@ -40,7 +40,8 @@
 				];
 			}
 	}
-	
+	//Liberamos los recursos
+	$consulta->free();
 	if($_SESSION['login'] == True){
 		header("Location: ../index.php"); 
 	}
