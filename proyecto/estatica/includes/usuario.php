@@ -34,6 +34,17 @@
 			$this->telefono=$telefono;
 			$this->direccion=$direccion;
 		}
+		
+		/*Funcion que valida el DNI*/
+		public static function validar_dni($dni){
+			$letra = substr($dni, -1);
+			$numeros = substr($dni, 0, -1);
+			if ( substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros%23, 1) == $letra && strlen($letra) == 1 && strlen ($numeros) == 8 ){
+				return true;
+			}else{
+				return false;
+			}
+		}
 		/*Función que añade un usuario a la BD */
 		public function addUser($mysqli){
 			$consulta="INSERT INTO usuario (DNI,nombre,apellidos,direccion,cp,usuario,pass,email,fechaNacimiento,avatar,sexo,telefono) VALUES ('$this->DNI','$this->nombre','$this->apellidos','$this->direccion','$this->cp','$this->usuario','$this->pass','$this->email','$this->fechaNacimiento','$this->avatar','$this->sexo','$this->telefono');";
