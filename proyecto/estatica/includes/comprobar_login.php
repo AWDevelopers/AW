@@ -9,7 +9,8 @@
 	$_SESSION['login']= False;
 	if($fila=mysqli_fetch_array($resultado)){
 			$passUser = $fila["pass"];
-			if($passUser == $pass){
+			$passCrip = substr(MD5($pass),0,20);
+			if($passUser == $passCrip){
 				//Almacenamos el nombre de usuario,tipo, que ha hecho login y todos los datos del usuario
 				$_SESSION['usuario']= $fila["usuario"];
 				//$_SESSION['tipo']= $fila["tipo"];
