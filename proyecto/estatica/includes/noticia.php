@@ -37,6 +37,26 @@ class noticia{
 		return $this->fecha;
 	}
 	
+	public function getTitulo(){
+		return $this->titulo;
+	}
+	
+	public function getTipo(){
+		return $this->tipo;
+	}
+	
+	public function getDescripcionCorta(){
+		return $this->descripcionCorta;
+	}
+	
+	public function getDescripcionLarga(){
+		return $this->descripcionLarga;
+	}
+	
+	public function getFecha(){
+		return $this->fecha;
+	}
+	
 	public function addNoticia($mysqli){
 		$consulta = "INSERT INTO noticia (id,titulo,tipo,descripcionCorta,descripcionLarga,fecha) VALUES ('$this->id','$this->titulo', '$this->tipo', '$this->descripcionCorta', '$this->descripcionLarga', '$this->fecha')";
 		$resultado=mysqli_query($mysqli,$consulta);

@@ -34,6 +34,10 @@
 			$this->telefono=$telefono;
 			$this->direccion=$direccion;
 		}
+<<<<<<< HEAD
+=======
+		
+>>>>>>> 05110b3d9d6baff37064d19c2e8bbbe493673d0e
 		/*Funcion que valida el DNI*/
 		public static function validar_dni($dni){
 			$letra = substr($dni, -1);

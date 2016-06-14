@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 	//session_start();
 	include("config.php");
 	$user=$_POST['usuario'];
@@ -13,6 +14,12 @@
 		echo "Error: " . $mysqli->connect_error . "\n";
 		exit;
 	}*/
+=======
+	include ("config.php");
+	$user=$_POST['usuario'];
+	$pass=$_POST['contraseña'];
+
+>>>>>>> 05110b3d9d6baff37064d19c2e8bbbe493673d0e
 	//Realizamos la consulta 
 	$consulta= "SELECT * FROM usuario WHERE email='$user' || usuario='$user'";
 	$resultado=  mysqli_query($connection, $consulta);
@@ -20,7 +27,11 @@
 	if($fila=mysqli_fetch_array($resultado)){
 			$passUser = $fila["pass"];
 			$passCrip = substr(MD5($pass),0,20);
+<<<<<<< HEAD
 			if($passUser == $pass){
+=======
+			if($passUser == $passCrip){
+>>>>>>> 05110b3d9d6baff37064d19c2e8bbbe493673d0e
 				//Almacenamos el nombre de usuario,tipo, que ha hecho login y todos los datos del usuario
 				$_SESSION['usuario']= $fila["usuario"];
 				//$_SESSION['tipo']= $fila["tipo"];
@@ -42,7 +53,8 @@
 				];
 			}
 	}
-	
+	//Liberamos los recursos
+	$resultado->free();
 	if($_SESSION['login'] == True){
 		header("Location: ../index.php"); 
 	}

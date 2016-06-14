@@ -23,4 +23,8 @@
 		echo '<a href="vistaAniadirNoticia.php">Pulse aqui para añadirla de nuevo </a>';
 	}
 	$result->free();
+<<<<<<< HEAD
 ?> 
+=======
+?> 
+>>>>>>> 05110b3d9d6baff37064d19c2e8bbbe493673d0e
