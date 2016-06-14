@@ -88,6 +88,12 @@ button {
 	text-align: center;  /* Alineación del texto */
 }
 
+.contenidoDonaciones form input[type=submit]{
+	width: 150px;  /* Ancho del botón */
+	height: 40px;
+	text-align: center;  /* Alineación del texto */
+}
+
 .contenidoDonaciones{
 	align-items: center;
 	float: left;
@@ -421,7 +427,33 @@ progress{
 	float: right;
 	display: inline-block;
 }
+#datosDonacion{
+	float: right;
+	display: inline-block;
+	margin-right: 340px;
+}
+#imagenDonacion{
+	float: left;
+	display:inline-block;
+	margin-left: 60px;
+}
 /*------------------FIN DONACIONES----------*/
+
+/*-----------------ONG---------------------*/
+#datosOng{
+	float: right;
+	display: inline-block;
+	margin-right: 280px;
+	margin-top: 50px;
+}
+#imagenOng{
+	float: left;
+	display:inline-block;
+	margin-left: 60px;
+	margin-top: 50px;
+}
+
+/*---------------FIN ONG-------------------*/
 
 /*-----------------PRODUCTO---------------*/
 .columnaIzda{

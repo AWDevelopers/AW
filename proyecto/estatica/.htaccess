@@ -1,4 +1,0 @@
-Options +FollowSymlinks
-RewriteEngine on
-
-RewriteRule ^producto/(.+) vistaproducto.php?producto=$1

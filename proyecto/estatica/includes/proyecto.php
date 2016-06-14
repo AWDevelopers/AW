@@ -1,6 +1,6 @@
 <?php
 	
-	class Producto{
+	class Proyecto{
 		private $idProyecto;
 		private $CIFOng;
 		private $fechaCreacion;
@@ -9,7 +9,7 @@
 		private $nombre;
 		private $descripcionCorta;
 		private $descripcionLarga;
-		private $rutaImagen
+		private $rutaImagen;
 
 		public function Proyecto($id){
 			$this->idProyecto = $id;

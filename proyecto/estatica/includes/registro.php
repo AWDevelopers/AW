@@ -25,11 +25,14 @@
 	} 
 	  
 	if($verificar_usuario == 0) { 
-	    $nuevo_user = new Usuario($nombre,$dni,$app,$direccion,$cp,$user,$pass,$email,$fecha,$avatar,$sexo,$tlf);
-	    $nuevo_user->addUser($connection);
-
-	    header("Location: ../index.php"); 
-	    echo 'Usted se ha registrado correctamente.';
+	    $nuevo_user = new Usuario($nombre,$dni,$app,$direccion,$cp,$user,MD5($pass),$email,$fecha,$avatar,$sexo,$tlf);
+	    if($nuevo_user->validar_dni($dni)){
+			$nuevo_user->addUser($connection);
+			header("Location: ../index.php"); //Se ha registrado correctamente
+	     }
+	     else{
+			header("Location: ../registrate.php");  //Error en el dni
+	     }
 	}else{ 
 	    echo 'Este usuario ya ha sido registrado anteriormente.';
 	    header("Location: ../registrate.php"); 
