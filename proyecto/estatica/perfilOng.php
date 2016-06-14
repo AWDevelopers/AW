@@ -30,33 +30,33 @@
 				<p><strong>Nombre de la Ong:</strong> <?php echo $rows['nombre']?>  
 					<?php 
 					if (isset($_SESSION['login']) && $_SESSION['usuario'] == $rows['usuario']){
-						echo ' ----- <a href="vistaModificarNombreOng.php?data='. $rows['nombre'] . '">  Modificar </a></p>';
+						echo ' ----- <a href="ViewScripts/vistaModificarNombreOng.php?data='. $rows['nombre'] . '">  Modificar </a></p>';
 					}
 					?>
 				
 				<p><strong>CIF de la Ong: </strong> <?php echo $rows['CIF']?>
 					<?php 
 					if (isset($_SESSION['login']) && $_SESSION['usuario'] == $rows['usuario']){
-							echo ' ----- <a href="vistaModificarCifOng.php?data='. $rows['CIF'] . '">    Modificar </a></p>';
+							echo ' ----- <a href="ViewScripts/vistaModificarCifOng.php?data='. $rows['CIF'] . '">    Modificar </a></p>';
 					}
 					?>
 				
 				<p><strong>Dirección de la Ong: </strong> <?php echo $rows['direccion']?>  
 					<?php 
 					if (isset($_SESSION['login']) && $_SESSION['usuario'] == $rows['usuario']){
-						echo ' ----- <a href="vistaModificarDireccionOng.php?data='. $rows['direccion'] . '">    Modificar </a></p>';
+						echo ' ----- <a href="ViewScripts/vistaModificarDireccionOng.php?data='. $rows['direccion'] . '">    Modificar </a></p>';
 					}
 					?>
 				<p><strong>Email de la Ong: </strong><?php echo $rows['email']?>
 					<?php 
 					if (isset($_SESSION['login']) && $_SESSION['usuario'] == $rows['usuario']){
-						echo ' ----- <a href="vistaModificarEmailOng.php?data='. $rows['email'] . '">    Modificar </a></p>';
+						echo ' ----- <a href="ViewScripts/vistaModificarEmailOng.php?data='. $rows['email'] . '">    Modificar </a></p>';
 					}
 					?>
 				<p><strong>Teléfono de la Ong: </strong><?php echo $rows['telefono']?> 
 					<?php 
 					if (isset($_SESSION['login']) && $_SESSION['usuario'] == $rows['usuario']){
-						echo ' ------ <a href="vistaModificarTelefonoOng.php?data='. $rows['telefono'] . '">    Modificar </a></p>';
+						echo ' ------ <a href="ViewScripts/vistaModificarTelefonoOng.php?data='. $rows['telefono'] . '">    Modificar </a></p>';
 					}
 					?>
 				<?php

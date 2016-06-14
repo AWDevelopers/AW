@@ -1,25 +1,18 @@
 <?php
-<<<<<<< HEAD
 	//session_start();
 	include("config.php");
 	$user=$_POST['usuario'];
-	$pass=$_POST['contraseÃ±a'];
+	$pass=$_POST['contraseña'];
 	$mysqli = new mysqli('localhost', 'root', '', 'incommong');
 	
-	// Â¡Oh, no! Existe un error 'connect_errno', fallando asÃ­ el intento de conexiÃ³n
+	// ¡Oh, no! Existe un error 'connect_errno', fallando así el intento de conexión
 	/*if ($mysqli->connect_errno) {
-		echo "Lo sentimos, este sitio web estÃ¡ experimentando problemas.";
+		echo "Lo sentimos, este sitio web está experimentando problemas.";
 		echo "Error: Fallo al conectarse a MySQL debido a: \n";
 		echo "Errno: " . $mysqli->connect_errno . "\n";
 		echo "Error: " . $mysqli->connect_error . "\n";
 		exit;
 	}*/
-=======
-	include ("config.php");
-	$user=$_POST['usuario'];
-	$pass=$_POST['contraseÃ±a'];
-
->>>>>>> 05110b3d9d6baff37064d19c2e8bbbe493673d0e
 	//Realizamos la consulta 
 	$consulta= "SELECT * FROM usuario WHERE email='$user' || usuario='$user'";
 	$resultado=  mysqli_query($connection, $consulta);
@@ -27,11 +20,7 @@
 	if($fila=mysqli_fetch_array($resultado)){
 			$passUser = $fila["pass"];
 			$passCrip = substr(MD5($pass),0,20);
-<<<<<<< HEAD
 			if($passUser == $pass){
-=======
-			if($passUser == $passCrip){
->>>>>>> 05110b3d9d6baff37064d19c2e8bbbe493673d0e
 				//Almacenamos el nombre de usuario,tipo, que ha hecho login y todos los datos del usuario
 				$_SESSION['usuario']= $fila["usuario"];
 				//$_SESSION['tipo']= $fila["tipo"];
@@ -53,8 +42,7 @@
 				];
 			}
 	}
-	//Liberamos los recursos
-	$resultado->free();
+	
 	if($_SESSION['login'] == True){
 		header("Location: ../index.php"); 
 	}

@@ -105,19 +105,19 @@ button {
 }
 
 .imgDonaciones img{
-	width: 90%;
-	height: 300px;
-	max-height: 50%;
-	/* -webkit-box-shadow: 8px 8px 1.8px #696969; */
+	width: 70%;
+	height: 70%;
 }
 
 .contenidoVoluntarios{
 	float: left;
 	margin: 15px;
 	padding: 10px;
-	height: 200px;
-	width: 90%;
+	height: 100%;
+	width: 95%;
+	text-align: center;
 }
+
 
 .textoVoluntarios{
 	float: left;
@@ -126,12 +126,6 @@ button {
 	height: 180px;
 	width: 75%;
 	
-}
-
-.botonVoluntarios button{
-	margin-top: 85px;
-	margin-right: 20px;
-	float: right;
 }
 
 .contenido{

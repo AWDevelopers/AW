@@ -34,10 +34,6 @@
 			$this->telefono=$telefono;
 			$this->direccion=$direccion;
 		}
-<<<<<<< HEAD
-=======
-		
->>>>>>> 05110b3d9d6baff37064d19c2e8bbbe493673d0e
 		/*Funcion que valida el DNI*/
 		public static function validar_dni($dni){
 			$letra = substr($dni, -1);
@@ -48,24 +44,24 @@
 				return false;
 			}
 		}
-		/*Funci贸n que a帽ade un usuario a la BD */
+		/*Funci髇 que a馻de un usuario a la BD */
 		public function addUser($mysqli){
 			$consulta="INSERT INTO usuario (DNI,nombre,apellidos,direccion,cp,usuario,pass,email,fechaNacimiento,avatar,sexo,telefono) VALUES ('$this->DNI','$this->nombre','$this->apellidos','$this->direccion','$this->cp','$this->usuario','$this->pass','$this->email','$this->fechaNacimiento','$this->avatar','$this->sexo','$this->telefono');";
 			$resultado=mysqli_query($mysqli,$consulta);
 			$resultado->free();
 		}
 
-		/*Funci贸n que a帽ade un usuario a la BD */
+		/*Funci髇 que a馻de un usuario a la BD */
 		/*public function addUser($mysqli){
 			$consulta="INSERT INTO usuario (DNI,nombre,apellidos,direccion,cp,usuario,pass,email,fechaNacimiento,avatar,sexo,telefono) VALUES ('$this->DNI','$this->nombre','$this->apellidos','$this->direccion','$this->cp','$this->usuario','$this->pass','$this->email','$this->fechaNacimiento','$this->avatar','$this->sexo','$this->telefono');";
 			$resultado=mysqli_query($mysqli,$consulta);
 		}*/
-		/*Funci贸n que elimina un usuario de la BD 
+		/*Funci髇 que elimina un usuario de la BD 
 		public function delUser(){
 			$consulta="delete from Usuario where email = $email";
 			$resultado=mysqli_query($consulta);
 		}*/
-		/*Funci贸n que modifica un usuario 
+		/*Funci髇 que modifica un usuario 
 		public function modUser($campo,$valor){
 			UPDATE Usuario SET ;
 		}*/

@@ -9,7 +9,7 @@
 	<body>
 		<div id='contenedor'>
 			<!--Aqui va el menu y la cabecera que es comun-->
-			<? php require 'common.php'; ?>
+			<?php require 'common.php'; ?>
 		</div>
 		<!--CONTENIDO-->
 
