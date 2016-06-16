@@ -16,7 +16,7 @@
 		<!--Aqui va el contenido-->
 		<div class="contenido">
 			<?php
-			require_once ("ViewScripts/vistaMuestraListaProyectosVoluntarios.php");
+			require_once ("ViewScripts/ProyectosVista.php");
 			muestraProyectosVoluntarios();
 			?>
 		</div>

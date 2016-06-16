@@ -22,7 +22,7 @@
 						<p>Dni:
 						<input type="text" name="dni" required></input></p>
 						<p>Proyecto(id):
-						<input type="text" name="pid" required value = "<?=$_POST['idProyect']?>"></input></p>
+						<input type="text" name="pid" required value = "<?=$_POST['idProyecto']?>"></input></p>
 						<p>Cantidad a donar:
 							<?php $dinero = $_POST['cantidad']?>
 							<input type="text" name="cantidad" required value="<?= $dinero ?>" />

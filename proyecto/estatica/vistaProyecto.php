@@ -14,17 +14,11 @@
 		<!--Aqui va el contenido-->
 		<div class="contenido">
 			<div id="proyectoONG">
-				<h1>Nombre ONG </h1>
-				<h2> Nombre proyecto </h2>
-				<p> Aqui va la descripcion del proyecto de la ONG correspondiente </p>	
-				<!--Aqui van las fechas del proyecto-->
-				<div class="proyectoFechas">Fechas: 12/05/2016</div>
-				
-				<!--Aqui van los voluntarios necesarios -->
-				<div class="proyectoVoluntario">Voluntarios necesarios: 50 </div>
-			
-				<!--Aqui va el botón Apuntame-->
-				<div class="boton"><button> APUNTAME </button></div>
+				<?php
+					require_once "ViewScripts/ProyectosVista.php";
+					muestraProyecto($_GET['id']);
+
+				?>
 				
 			</div>
 			
