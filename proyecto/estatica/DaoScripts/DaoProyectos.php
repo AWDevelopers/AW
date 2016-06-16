@@ -24,9 +24,10 @@
 		}
 
 		function insertaProyecto($proyecto){
+			$proyecto = json_decode($proyecto, true);
 			$con = createConnection();
-			$sql = "INSERT INTO proyecto(idProyecto, CIFOng, fechaCreacion, dineroNecesario, dineroAcumulado, nombre, descripcionLarga, descripcionCorta, imagen) VALUES ";
-			$sql.= "('".$proyecto->getIdProyecto()."', '".$proyecto->getCifOng()."', '".$proyecto->getFechaCreacion()."', '".$proyecto->getDineroNecesario()."', '".$proyecto->getDineroAcumulado()."', '".$proyecto->getNombre()."', '".$proyecto->getDescripcionLarga()."', '".$proyecto->getDescripcionCorta()."', '".$proyecto->getImagen()."', '".$proyecto->getNumVoluntarios()."')";
+			$sql = "INSERT INTO proyecto(idProyecto, CIFOng, fechaCreacion, dineroNecesario, dineroAcumulado, nombre, descripcionLarga, descripcionCorta, imagen, numVoluntarios) VALUES ";
+			$sql.= "('".$proyecto['id']."', '".$proyecto['cif']."', '".$proyecto['fecha']."', '".$proyecto['dineroNecesario']."', '".$proyecto['dineroAcumulado']."', '".$proyecto['nombre']."', '".$proyecto['descripcionLarga']."', '".$proyecto['descripcionCorta']."', '".$proyecto['imagen']."', '".$proyecto['numVoluntarios']."')";
 
 			$con->query($sql) or die ($con->error);
 			closeConnection($con);
