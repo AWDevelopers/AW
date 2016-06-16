@@ -11,12 +11,13 @@
 <body>
 	<div id='contenedor'>
 		<!--Aqui va el menu y la cabecera que es comun-->
-		<?php require 'common.php'; ?>
+		<?php require 'common.php';
+			require 'config.php' ?>
 		
 		<!--Aqui va el contenido-->
 		<div class="contenido">
 			<?php
-			require_once ("ViewScripts/ProyectosVista.php");
+			require_once ("includes/ViewScripts/ProyectosVista.php");
 			muestraProyectosVoluntarios();
 			?>
 		</div>

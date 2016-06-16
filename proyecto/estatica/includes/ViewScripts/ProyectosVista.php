@@ -31,7 +31,7 @@
 		$proyecto = $ListaProyectos->getProyecto($id);
 		echo "<h1> ".$proyecto->getNombre()."</h1>";
 		echo "<p> Aqui va la descripcion del proyecto de la ONG correspondiente </p>";	
-		echo "<div class='proyectoFechas'>Fechas: ".$proyecto->getFechaCreacion()."</div>";
+		echo "<div class='proyectoFechas'>Fecha: ".$proyecto->getFechaCreacion()."</div>";
 					
 		echo "<div class='proyectoVoluntario'>Voluntarios necesarios: ".$proyecto->getNumVoluntarios()." </div>";
 				

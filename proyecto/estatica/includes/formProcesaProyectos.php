@@ -1,6 +1,7 @@
 <?php
-
-require_once '/../ModelScripts/ListaProyectos.php';
+include ('config.php');
+if (!isset($_SESSION)) session_start();
+require_once 'ModelScripts/ListaProyectos.php';
 $funcion = $_REQUEST['button'];
 
 switch($funcion){
@@ -12,17 +13,18 @@ switch($funcion){
 	case 'NUEVO':
 		$lista = new ListaProyectos();
 		$json = new stdClass();
-		$json->nombre = $_REQUEST['nombre'];
-		$json->cif = $_REQUEST['cif'];
-		$json->fecha = '08/07/1992';# = new DateTime("now", new DateTimeZone('Europe/Madrid'));
-		$json->dineroNecesario = $_REQUEST['dinero'];
-		$json->descripcionCorta = $_REQUEST['descripcionCorta'];
-		$json->descripcionLarga = $_REQUEST['descripcionLarga'];
-		$json->dineroAcumulado = 0;
-		$json->imagen = 'img/imagen.png';
-		$json->numVoluntarios = 50;
-		$json->id = 000000010;
-		$salida = $lista->nuevoProyecto(json_encode($json));
+		#if($lista.compruebaCIF($_REQUEST['cif']) != null){
+			$json->nombre = $_REQUEST['nombre'];
+			$json->cif = $_REQUEST['cif'];
+			$json->dineroNecesario = $_REQUEST['dinero'];
+			$json->descripcionCorta = $_REQUEST['descripcionCorta'];
+			$json->descripcionLarga = $_REQUEST['descripcionLarga'];
+			$json->dineroAcumulado = 0;
+			$json->imagen = "img/".$_REQUEST['foto'];
+			$json->numVoluntarios = $_REQUEST['voluntarios'];
+			$salida = $lista->nuevoProyecto(json_encode($json));
+			header("Location: ../vistaProyecto.php?id=".$salida);
+		#}
 		break;
 
 }

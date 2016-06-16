@@ -7,7 +7,7 @@
 		private $nombre;
 		private $descripcionCorta;
 		private $descripcionLarga;
-		private $nombreOng;
+		private $CIFOng;
 		private $rutaImagen;
 
 		public function Producto($id){
@@ -23,8 +23,8 @@
 		public function getstockProducto(){
 			return $this->stock;
 		}
-		public function getNombreONGProducto(){
-			return $this->nombreOng;
+		public function getCifONGProducto(){
+			return $this->CIFOng;
 		}
 		public function getDescLargaProducto(){
 			return $this->descripcionLarga;
