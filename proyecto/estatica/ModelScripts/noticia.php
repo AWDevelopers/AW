@@ -6,15 +6,17 @@ class noticia{
 	private $descripcionCorta;
 	private $descripcionLarga;
 	private $fecha;
+	private $imagen;
 	
 	/*Constructora de la clase por defecto*/
-	function __construct($id, $titulo, $tipo, $descripcionCorta, $descripcionLarga, $fecha){
+	function __construct($id, $titulo, $tipo, $descripcionCorta, $descripcionLarga, $fecha, $imagen){
 			$this->id=$id;
 			$this->titulo=$titulo;  
 			$this->tipo=$tipo;
 	   		$this->descripcionCorta=$descripcionCorta; 
 			$this->descripcionLarga=$descripcionLarga; 
 			$this->fecha=$fecha;
+			$this->imagen=$imagen
 	}
 
 	public function getTitulo(){
@@ -57,15 +59,8 @@ class noticia{
 		return $this->fecha;
 	}
 	
-	public function addNoticia($mysqli){
-		$consulta = "INSERT INTO noticia (id,titulo,tipo,descripcionCorta,descripcionLarga,fecha) VALUES ('$this->id','$this->titulo', '$this->tipo', '$this->descripcionCorta', '$this->descripcionLarga', '$this->fecha')";
-		$resultado=mysqli_query($mysqli,$consulta);
-	}
-	
-	public function mostrarNoticiasPrimarias(){
-		$consulta = "SELECT titulo, tipo, descripcionCorta, descripcionLarga, fecha FROM noticia WHERE tipo='PRIMARIA'";
-		$resultado = mysqli_query($consulta);
-		return $resultado;
+	public function getImagen(){
+		return $this->imagen;
 	}
 }
 ?>
