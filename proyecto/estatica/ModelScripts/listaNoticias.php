@@ -22,5 +22,9 @@
 			return ($dao->listaNoticiasOtras());
 		}
 		
+		public function nuevaNoticia($json){
+			$dao = new DaoNoticias();
+			return ($dao->insertaNoticia($json));
+		}
 	}
 ?>
