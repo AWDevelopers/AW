@@ -72,7 +72,7 @@
 			}
 		}
 		
-		function insertaProyecto($noticia){
+		function insertaNoticia($noticia){
 			$con = createConnection();
 			$sql = "INSERT INTO noticia (id,titulo,tipo,descripcionCorta,descripcionLarga,fecha) VALUES ";
 			$sql.= "('".$noticia->getId()."', '".$noticia->getTitulo()."', '".$noticia->getTipo()."', '".$noticia->getDescripcionCorta()."', '".$noticia->getDescripcionLarga()."', '".$noticia->getFecha()."', '".$noticia->getImagen()."')";
