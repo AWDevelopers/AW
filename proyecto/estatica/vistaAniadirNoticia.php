@@ -16,8 +16,6 @@
 			<div id="contenido">
 				<div class="formulario">
 					<form action="includes/aniadirNoticia.php" method="POST">
-						<p>Identificador de la noticia 
-						<input type="text" name="id" required></input></p>
 						<p>Titulo de la noticia
 						<input type="text" name="titulo" required></input></p>
 						<p>Tipo de la noticia
