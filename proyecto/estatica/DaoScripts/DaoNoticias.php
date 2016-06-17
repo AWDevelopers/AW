@@ -1,5 +1,5 @@
 <?php
-	require_once '/../ModelScripts/Noticia.php';
+	require_once '/../ModelScripts/noticia.php';
 	require_once '/../includes/config.php';
 	class DaoNoticias{
 		private $array;
