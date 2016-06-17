@@ -16,7 +16,7 @@ class noticia{
 	   		$this->descripcionCorta=$descripcionCorta; 
 			$this->descripcionLarga=$descripcionLarga; 
 			$this->fecha=$fecha;
-			$this->imagen=$imagen
+			$this->imagen=$imagen;
 	}
 
 	public function getTitulo(){
