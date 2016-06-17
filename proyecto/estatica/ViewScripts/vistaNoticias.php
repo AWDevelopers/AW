@@ -52,4 +52,18 @@
 		    $iterator->next();
 		}	
 	}
+	
+	function muestraNoticiasOtras(){
+		$ListaNoticias = new ListaNoticias();
+		$lista = $ListaNoticias->getListaNoticiasOtras();
+		$iterator = $lista->getIterator();
+		while($iterator->valid()) {
+		  		echo "<div class='terciaria'>";	
+			  		echo '<img src="' .$iterator->current()->getImagen() . '">'; //Mostramos la imagen
+					echo "<h5>" . $iterator->current()->getTitulo() . "</h5>"; //Mostramos el titulo
+					echo "<p>" . $iterator->current()->getDescripcionCorta() . "<p>"; //Mostramos la descripcion
+			  	echo "</div>";
+		    $iterator->next();
+		}	
+	}
 ?>
