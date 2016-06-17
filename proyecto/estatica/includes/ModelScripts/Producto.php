@@ -7,8 +7,13 @@
 		private $nombre;
 		private $descripcionCorta;
 		private $descripcionLarga;
+<<<<<<< HEAD:proyecto/estatica/ModelScripts/Producto.php
 		private $nombreOng;
 		private $imagen;
+=======
+		private $CIFOng;
+		private $rutaImagen;
+>>>>>>> pruebas:proyecto/estatica/includes/ModelScripts/Producto.php
 
 		function Producto($idProducto, $nombreOng, $stock, $precio, $nombre, $descCorta, $descLarga, $imagen){
 			$this->idProducto = $idProducto;
@@ -34,8 +39,8 @@
 		public function getstockProducto(){
 			return $this->stock;
 		}
-		public function getNombreONGProducto(){
-			return $this->nombreOng;
+		public function getCifONGProducto(){
+			return $this->CIFOng;
 		}
 		public function getDescLargaProducto(){
 			return $this->descripcionLarga;

@@ -12,6 +12,11 @@
 			$dao = new DaoProyectos();
 			return ($dao->seleccionaProyecto($id));
 		}
+
+		public function nuevoProyecto($json){
+			$dao = new DaoProyectos();
+			return ($dao->insertaProyecto($json));
+		}
 	}
 
 ?>

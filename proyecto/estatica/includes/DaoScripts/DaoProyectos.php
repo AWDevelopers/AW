@@ -1,6 +1,6 @@
 <?php
 	require_once '/../ModelScripts/Proyectos.php';
-	require_once '/../includes/config.php';
+	require_once '/../config.php';
 	class DaoProyectos{
 
 		private $array;
@@ -24,12 +24,14 @@
 		}
 
 		function insertaProyecto($proyecto){
+			$proyecto = json_decode($proyecto, true);
 			$con = createConnection();
-			$sql = "INSERT INTO proyecto(idProyecto, CIFOng, fechaCreacion, dineroNecesario, dineroAcumulado, nombre, descripcionLarga, descripcionCorta, imagen) VALUES ";
-			$sql.= "('".$proyecto->getIdProyecto()."', '".$proyecto->getCifOng()."', '".$proyecto->getFechaCreacion()."', '".$proyecto->getDineroNecesario()."', '".$proyecto->getDineroAcumulado()."', '".$proyecto->getNombre()."', '".$proyecto->getDescripcionLarga()."', '".$proyecto->getDescripcionCorta()."', '".$proyecto->getImagen()."', '".$proyecto->getNumVoluntarios()."')";
-
+			$sql = "INSERT INTO proyecto(CIFOng, fechaCreacion, dineroNecesario, dineroAcumulado, nombre, descripcionLarga, descripcionCorta, imagen, numVoluntarios) VALUES ";
+			$sql.= "('".$proyecto['cif']."', sysdate() , '".$proyecto['dineroNecesario']."', '".$proyecto['dineroAcumulado']."', '".$proyecto['nombre']."', '".$proyecto['descripcionLarga']."', '".$proyecto['descripcionCorta']."', '".$proyecto['imagen']."', '".$proyecto['numVoluntarios']."')";
 			$con->query($sql) or die ($con->error);
+			$num = $con->insert_id;
 			closeConnection($con);
+			return ($num);
 		}
 
 		function borraProyecto($idProyecto){
