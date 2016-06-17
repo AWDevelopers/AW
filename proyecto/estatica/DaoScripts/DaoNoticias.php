@@ -7,7 +7,7 @@
 		function listaNoticiasPrimarias(){
 			$array = new ArrayObject();
 			$con = createConnection();
-			$sql = "SELECT * FROM proyecto WHERE tipo='primaria'";
+			$sql = "SELECT * FROM proyecto WHERE 'tipo'='primaria'";
 			$rs = $con->query($sql) or die ($con->error);
 			/**/
 			if($rs != NULL)
@@ -24,7 +24,7 @@
 		function listaNoticiasSecundarias(){
 			$array = new ArrayObject();
 			$con = createConnection();
-			$sql = "SELECT * FROM proyecto WHERE tipo='secundaria'";
+			$sql = "SELECT * FROM proyecto WHERE 'tipo'='secundaria'";
 			$rs = $con->query($sql) or die ($con->error);
 			/**/
 			if($rs != NULL)
@@ -41,7 +41,7 @@
 		function listaNoticiasTerciarias(){
 			$array = new ArrayObject();
 			$con = createConnection();
-			$sql = "SELECT * FROM proyecto WHERE tipo='terciaria'";
+			$sql = "SELECT * FROM proyecto WHERE 'tipo'='terciaria'";
 			$rs = $con->query($sql) or die ($con->error);
 			/**/
 			if($rs != NULL)
@@ -58,7 +58,7 @@
 		function listaNoticiasOtras(){
 			$array = new ArrayObject();
 			$con = createConnection();
-			$sql = "SELECT * FROM proyecto WHERE tipo='otras'";
+			$sql = "SELECT * FROM proyecto WHERE 'tipo'='otras'";
 			$rs = $con->query($sql) or die ($con->error);
 			/**/
 			if($rs != NULL)
