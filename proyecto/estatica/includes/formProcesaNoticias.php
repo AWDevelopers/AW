@@ -5,7 +5,11 @@ require_once '../ModelScripts/ListaNoticias.php';
 $funcion = $_REQUEST['button'];
 
 switch($funcion){
-	
+	case 'Seguir leyendo':
+            $id = $_REQUEST['id'];
+            header("Location: ../vistaNoticiaDetallada.php?id=".$id);
+            exit();
+        break;
 	case 'NUEVO':
 		$lista = new ListaNoticias();
 		$json = new stdClass();
