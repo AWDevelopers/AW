@@ -88,6 +88,22 @@
 			closeConnection($con);
 		}
 		
+		function seleccionaNoticia($id){
+			$con = createConnection();
+                        $sql = sprintf("SELECT * FROM noticia WHERE id='%s'", mysql_real_escape_string($id));
+			$rs = $con->query($sql) or die ($con->error);
+			$resultado = "";
+			if($rs != NULL)
+			{
+				while($lista = $rs->fetch_assoc()){
+					$resultado =  new Noticia($lista['id'], $lista['titulo'], $lista['tipo'], $lista['descripcionCorta'], $lista['descripcionLarga'], $lista['fecha'], $lista['imagen']);
+				}
+				mysqli_free_result($rs);
+				closeConnection($con);
+				return ($resultado);
+			}
+		}
+		
 		
 	}
 ?>	
