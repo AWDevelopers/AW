@@ -15,7 +15,7 @@
 
 			<div id="contenido">
 				<div class="formulario">
-					<form id="formNuevaNoticia" gaction="includes/formProcesaNoticias.php" method="POST">
+					<form action="includes/formProcesaNoticias.php" method="POST">
 						<p>Titulo de la noticia
 						<input type="text" name="titulo" required></input></p>
 						<p>Tipo de la noticia
