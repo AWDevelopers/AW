@@ -10,7 +10,9 @@ $lista = new GestorProyectos();
 	$descripcionLarga = $_REQUEST['descripcionLarga'];
 	$imagen = "img/".$_REQUEST['foto'];
 	$numVoluntarios = $_REQUEST['voluntarios'];
-	$salida = $lista->nuevoProyecto($nombre,$cif,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen,$numVoluntarios);
+	#$rol = $_SESSION['rol'];
+	$rol = "admin";
+	$salida = $lista->nuevoProyecto($nombre,$cif,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen,$numVoluntarios, $rol);
 	header("Location: ../vistaProyecto.php?id=".$salida);
 
 

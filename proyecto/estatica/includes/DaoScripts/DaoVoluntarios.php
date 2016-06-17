@@ -3,22 +3,62 @@
 
 	class DaoVoluntarios{
 
-		private $array;
 		function listaVoluntarios($dniUsuario){
-
-			$con = createConnection();
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
 			$array = new ArrayObject();
 			$sql = "SELECT * FROM voluntarios WHERE DNIUsuario = '$dniUsuario'";
 			$rs = $con->query($sql) or die ($con->error);
 			if($rs != NULL)
 			{
-				while($row = $rs->fetch_assoc()){
-					$array->append(new voluntario($lista['idProyecto'], $lista['DNIUsuario'], $lista['dia'], $lista['horaEntrada'], $lista['horaSalida']));
-				}
-				mysqli_free_result($rs);
-				closeConnection($con);
-				return ($array);
+				while($lista[] = $rs->fetch_assoc());
+				$rs->free();
+				$con->close();
+				return ($lista);	
 			}
+		}
+
+		function insertaVoluntario($idProyecto,$dniUsuario,$dia,$horaEntrada,$horaSalida){
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
+			$sql = "INSERT INTO voluntarios(idProyecto, DNIUsuario, dia, horaEntrada, horaSalida) VALUES ";
+			$sql.= "('".$idProyecto."', '".$dniUsuario."', '".$dia."', '".$horaEntrada."', '".$horaSalida."')";
+			$con->query($sql) or die ($con->error);
+			$num = $con->insert_id;
+			$con->close();
+			return ($num);
+		}
+
+		function borraVoluntario($idVol){
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
+			$sql = "DELETE FROM voluntarios WHERE idVoluntariado = '$idVol'";
+			$con->query($sql) or die ($con->error);
+			$con->close();
+		}
+
+		function modificarHoraEntrada($horaEntrada, $idVol){
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
+			$sql = "UPDATE FROM voluntarios SET (horaEntrada = '$horaEntrada') WHERE idVoluntariado = '$idVol'";
+			$con->query($sql) or die ($con->error);
+			$con->close();
+		}
+
+		function modificarHoraSalida($horaSalida, $idVol){
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
+			$sql = "UPDATE FROM voluntarios SET (horaSalida = '$horaSalida') WHERE idVoluntariado = '$idVol'";
+			$con->query($sql) or die ($con->error);
+			$con->close();
+		}
+
+		function modificarDia($dia, $idVol){
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
+			$sql = "UPDATE FROM voluntarios SET (dia = '$dia') WHERE idVoluntariado = '$idVol'";
+			$con->query($sql) or die ($con->error);
+			$con->close();
 		}
 
 	}
