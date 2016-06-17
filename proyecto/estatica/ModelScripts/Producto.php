@@ -8,10 +8,21 @@
 		private $descripcionCorta;
 		private $descripcionLarga;
 		private $nombreOng;
-		private $rutaImagen;
+		private $imagen;
 
-		public function Producto($id){
-			$this->idProducto = $id;
+		function Producto($idProducto, $nombreOng, $stock, $precio, $nombre, $descCorta, $descLarga, $imagen){
+			$this->idProducto = $idProducto;
+			$this->stock = $stock;
+			$this->precio = $precio;
+			$this->nombre = $nombre;
+			$this->descripcionCorta = $descCorta;
+			$this->descripcionLarga = $descLarga;
+			$this->nombreOng = $nombreOng;
+			$this->imagen = $imagen;
+		}
+
+		public function getIdProducto(){
+			return $this->idProducto;
 		}
 
 		public function getNombreProducto(){
@@ -32,48 +43,14 @@
 		public function getDescCortaProducto(){
 			return $this->descripcionCorta;
 		}
-		public function getRutaImagen(){
-			print $this->rutaImagen;
+		public function getImagen(){
+			print $this->imagen;
 		}
 
 
-		private function cargarNombreONG($cifOng){
-			include 'includes/config.php';
-			$sqlONG = "SELECT nombre FROM ong WHERE CIF = $cifOng";
-			$consultaONG= $connection->query($sqlONG);
+		
 
-			if(!$consultaONG || $consultaONG->num_rows === 0){
-				echo "Se ha producido un error con, inténtalo más tarde.";
-				exit;
-			}
-			
-			
-			$datosONG = $consultaONG->fetch_assoc();
-
-			return $datosONG['nombre'];
-		}
-
-		public function cargarDatosProducto(){
-			include 'includes/config.php';
-
-			$sqlProducto = "SELECT * FROM Producto WHERE idProducto = $this->idProducto";
-			$consultaProducto = $connection->query($sqlProducto);
-
-			if(!$consultaProducto|| $consultaProducto->num_rows === 0){
-				echo "Se ha producido un error con productos, inténtalo más tarde.";
-				exit;
-			}
-			$datosProducto = $consultaProducto->fetch_assoc();
-			
-			$this->stock = $datosProducto['stock'];
-			$this->precio = $datosProducto['precio'];
-			$this->nombre = $datosProducto['nombre'];
-			$this->descripcionCorta = $datosProducto['descripcionCorta'];
-			$this->descripcionLarga = $datosProducto['descripcionLarga'];
-			$this->rutaImagen = $datosProducto['imagen'];
-			$this->nombreOng = $this->cargarNombreONG($datosProducto['CIFOng']);
-		}
-
+		
 	}
 
 
