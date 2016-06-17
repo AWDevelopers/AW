@@ -2,8 +2,7 @@
 include ('config.php');
 if (!isset($_SESSION)) session_start();
 require_once 'ModelScripts/GestorProyectos.php';
-$lista = new ListaProyectos();
-#if($lista.compruebaCIF($_REQUEST['cif']) != null){
+$lista = new GestorProyectos();
 	$nombre = $_REQUEST['nombre'];
 	$cif = $_REQUEST['cif'];
 	$dineroNecesario = $_REQUEST['dinero'];

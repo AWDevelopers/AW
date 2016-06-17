@@ -3,13 +3,9 @@
 namespace AW\proyecto\estatica\includes;
 
 class Aplicacion {
-
   private static $instancia;
-
   private $bdDatosConexion;
-
   private $rutaRaizApp;
-
   private $dirInstalacion;
 
   public static function getSingleton() {
@@ -104,8 +100,8 @@ class Aplicacion {
     if (!isset($_SESSION['roles']) || ! in_array($rol, $_SESSION['roles'])) {
       if ( !is_null($cabeceraError) && ! is_null($mensajeError) ) {
         $bloqueContenido=<<<EOF
-<h1>$cabeceraError!</h1>
-<p>$mensajeError.</p>
+        <h1>$cabeceraError!</h1>
+        <p>$mensajeError.</p>
 EOF;
         echo $bloqueContenido;
       }

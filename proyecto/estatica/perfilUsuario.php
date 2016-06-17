@@ -71,7 +71,6 @@
 					Nombre
 					<input type ="text" name ="nombre"/><br>
 					<br>Apellidos
-
 					<input type ="text" name ="apellidos" /><br>
 					<br>E-mail 
 					<input type ="email" name ="email" ><br>
@@ -80,7 +79,6 @@
 					<br>Teléfono 
 					<input type ="text" name ="telefono" ><br>
 					<center>
-						
 						<input type ="submit" value="editar"></input>
 					</center>
 				</form>
