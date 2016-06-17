@@ -1,6 +1,6 @@
 <?php
 
-	class donacion{
+	class Donacion{
 		
 		private $iddonacion;
 		private $dniusuario;
@@ -26,14 +26,6 @@
 		}
 		public function getDonacion($i){
 			return $this->cantidad;
-		}
-
-		/*---------------- OTRAS FUNCIONES ---------------*/
-		public function addDonacion($mysqli){
-			$consulta = "INSERT INTO donaciones(DNIUsuario, idProyecto, donacion) VALUES ('$this->dniusuario', '$this->idproyecto', '$this->cantidad')";
-			$resultado = mysqli_query($mysqli, $consulta);
-			$consulta = "UPDATE proyecto SET dineroAcumulado = (dineroAcumulado + '$this->cantidad') WHERE idProyecto = '$this->idproyecto'";
-			$resultado = mysqli_query($mysqli, $consulta);
 		}
 	}
 ?>
