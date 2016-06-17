@@ -18,26 +18,6 @@ class noticia{
 			$this->fecha=$fecha;
 			$this->imagen=$imagen;
 	}
-
-	public function getTitulo(){
-		return $this->titulo;
-	}
-	
-	public function getTipo(){
-		return $this->tipo;
-	}
-	
-	public function getDescripcionCorta(){
-		return $this->descripcionCorta;
-	}
-	
-	public function getDescripcionLarga(){
-		return $this->descripcionLarga;
-	}
-	
-	public function getFecha(){
-		return $this->fecha;
-	}
 	
 	public function getTitulo(){
 		return $this->titulo;
