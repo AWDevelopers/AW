@@ -19,6 +19,10 @@ class noticia{
 			$this->imagen=$imagen;
 	}
 	
+	public function getId(){
+            return $this->id;
+        }
+        
 	public function getTitulo(){
 		return $this->titulo;
 	}
