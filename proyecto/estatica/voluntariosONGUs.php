@@ -18,7 +18,9 @@
 		<div class="contenido">
 			<?php
 			require_once ("includes/ViewScripts/ProyectosVista.php");
-			muestraProyectosVoluntarios();
+
+			$vista = new vistaProyectos();
+			$vista->muestraProyectosVoluntarios();
 			?>
 		</div>
 	</div>

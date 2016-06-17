@@ -47,6 +47,14 @@
 
 		public function getNumVoluntarios(){return $this->numVoluntarios;}
 
+		public function toJson(){
+			return $json;
+		}
+
+		public function fromJson($json){
+			return $proyecto;
+		}
+
 	}
 
 ?>

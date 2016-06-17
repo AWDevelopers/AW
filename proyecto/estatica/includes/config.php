@@ -1,44 +1,36 @@
-<?php 
-	ini_set('default_charset', 'UTF-8');
-	setLocale(LC_ALL, 'es_ES.UTF.8');
-	
-	if (!isset($_SESSION)) { 
-		session_start();
-	}
+<?php
 
-	//LA VARIABLE MAS IMPORTANTE: REDEFINIR SI COLOCAIS LA CARPETA EN OTRO LADO QUE NO SEA HTDOCS
-	define('RAIZ_APP', 'http://localhost/estatica');
-	//rutas que se usan siempre
-	define('HOME', RAIZ_APP.'/index.php');
-	define('VOLUNTARIOS', RAIZ_APP.'/voluntariosONGUs.php');
-	define('PROYECTOS', RAIZ_APP.'/vistaProyectoDonar.php');
-	define('TIENDA', RAIZ_APP.'/tienda.php');
-	define('LOGIN', RAIZ_APP.'/login.php');
-	define('LOGOUT', RAIZ_APP.'/includes/logout.php');
-	define('CONOCENOS', RAIZ_APP.'/conocenos.php');
-	define('REGISTRO', RAIZ_APP.'/registrate.php');
-	
-	//carpetas
-	define('IMAGENES', RAIZ_APP.'/img');
-	define('VIDEO', RAIZ_APP.'/videos');
-	define('INCLUDE', RAIZ_APP.'/include');
-	define('SCRIPTVISTAS', RAIZ_APP.'/ViewScripts');
-	define('SCRIPTMODELO', RAIZ_APP.'/ModelScripts');
-	define('SCRIPTDAO', RAIZ_APP.'/DaoScripts');
+define('BD_HOST', 'localhost');
+define('BD_NAME', 'incommong');
+define('BD_USER', 'root');
+define('BD_PASS', '');
+define('RAIZ_APP', __DIR__);
+define('RUTA_APP', __DIR__);
+define('RUTA_IMGS', RUTA_APP.'img/');
+define('RUTA_CSS', RUTA_APP.'css/');
+define('RUTA_JS', RUTA_APP.'js/');
+define('INSTALADA', true );
 
-	 /*Create connection*/
-	function createConnection(){
-		$hostname="localhost";
-		$username="root";
-		$database="incommong";
-		$mysqli = new mysqli($hostname, $username, "", $database);
-		if (mysqli_connect_errno() ) {
-		 echo "Error de conexión a la BD: ".mysqli_connect_error();
-		 exit();
-		}
-		return $mysqli;
-	}
-	 function closeConnection($mysqli){
-			$mysqli->close();
-	 }
-?>
+if (! INSTALADA) {
+  echo "La aplicación no está configurada";
+  exit();
+}
+
+ini_set('default_charset', 'UTF-8');
+setLocale(LC_ALL, 'es_ES.UTF.8');
+
+spl_autoload_register(function ($class) {
+    $prefix = 'AW\\proyecto\\estatica\\includes';
+    $base_dir = __DIR__ . '/';
+    $len = strlen($prefix);
+    if (strncmp($prefix, $class, $len) !== 0) {
+        return;
+    }
+    $relative_class = substr($class, $len);
+    $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
+    if (file_exists($file)) {
+        require $file;
+    }
+});
+$app = \AW\proyecto\estatica\includes\Aplicacion::getSingleton();
+$app->init(array('host'=>BD_HOST, 'bd'=>BD_NAME, 'user'=>BD_USER, 'pass'=>BD_PASS), RUTA_APP, RAIZ_APP);

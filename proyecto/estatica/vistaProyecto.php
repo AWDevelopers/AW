@@ -16,7 +16,8 @@
 			<div id="proyectoONG">
 				<?php
 					require_once "includes/ViewScripts/ProyectosVista.php";
-					muestraProyecto($_GET['id']);
+					$vista = new vistaProyectos();
+					$vista->muestraProyecto($_GET['id']);
 
 				?>
 				

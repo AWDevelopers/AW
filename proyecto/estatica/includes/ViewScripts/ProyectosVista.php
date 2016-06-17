@@ -1,41 +1,85 @@
 ﻿<?php
 	
-	function muestraProyectosVoluntarios(){
-		require_once '/../ModelScripts/ListaProyectos.php';
+	class vistaProyectos{
 		
-		$ListaProyectos = new ListaProyectos();
+		private $ListaProyectos;
+		function __construct(){
+			require_once '/../ModelScripts/GestorProyectos.php';
+			$this->ListaProyectos = new GestorProyectos();
+		}
 
-		$lista = $ListaProyectos->getListaProyectosVoluntarios();
+	function muestraProyectosVoluntarios(){
+		
+		$lista = $this->ListaProyectos->getListaProyectosVoluntarios();
 		$iterator = $lista->getIterator();
 
 		while($iterator->valid()) {
-		  		echo "<div class='contenidoVoluntarios'>";
-			  		echo "<h1>" . $iterator->current()->getNombre() . "</h1>";
-			  		echo "<div class='imgDonaciones'>";
-			  			echo '<img src="' .$iterator->current()->getImagen() . '">';
-			  		echo "</div>";
-			  		echo '<form name="vista" action="includes/formProcesaProyectos.php" method="POST">
-			  				<input type="hidden" name="idProyecto" id="proyecto" value="' .$iterator->current()->getIdProyecto() . '"> 
-			  				<input name="button" type="submit" value="INFORMACION"></form>';
-			  	echo "</div>";
+			$nombre =  $iterator->current()->getNombre();
+			$imagen = $iterator->current()->getImagen();
+			$id = $iterator->current()->getIdProyecto();
+			  	 $html = <<<EOS
+  				<div class="contenidoVoluntarios">
+				  		<h1> $nombre </h1>
+						<div class="imgDonaciones">
+				  			<img src="$imagen" />
+				  		</div>
+				  		<form name="vista" action="includes/formMuestraProyectoVoluntario.php" method="POST">
+				  				<input type="hidden" name="idProyecto" id="proyecto" value="$id" /> 
+				  				<input name="button" type="submit" value="INFORMACION" />
+				  		</form>
+			  		</div> 
+EOS;
+			echo $html;  		
+		    $iterator->next();
+		}		 	
+	}
+
+	function muestraProyecto($id){
+
+		$proyecto = $this->ListaProyectos->getProyecto($id);
+		$nombre = $proyecto->getNombre();
+		$fecha = $proyecto->getFechaCreacion();
+		$numVoluntarios =  $proyecto->getNumVoluntarios();
+		$html = <<<EOS
+		<h1> $nombre </h1>";
+		<p> Aqui va la descripcion del proyecto de la ONG correspondiente </p>	
+		<div class='proyectoFechas'>Fecha: $fecha </div>
+					
+		<div class='proyectoVoluntario'>Voluntarios necesarios: $numVoluntarios </div>
+				
+		<div class='boton' name='button' value='APUNTAME'><button> APUNTAME </button></div>
+EOS;
+		echo $html;
+	}
+
+	function muestraProyectosDonar(){
+
+		$lista = $this->ListaProyectos->getListaProyectosVoluntarios();
+		$iterator = $lista->getIterator();
+
+		while($iterator->valid()) {
+		  		$nombre =  $iterator->current()->getNombre();
+			$imagen = $iterator->current()->getImagen();
+			$id = $iterator->current()->getIdProyecto();
+			$dineroAcumulado =  $iterator->current()->getDineroAcumulado();
+			  	 $html = <<<EOS
+  				<div class="contenidoVoluntarios">
+				  		<h1> $nombre </h1>
+						<div class="imgDonaciones">
+				  			<img src="$imagen" />
+				  		</div>
+				  		<form name="vista" action="includes/formMuestraProyectoDonar.php" method="POST">
+				  				<input type="hidden" name="idProyecto" id="proyecto" value="$id" /> 
+				  				<input type="hidden" name="dineroAcumulado" id="dinero" value="$dineroAcumulado" /> 
+				  				<input name="button" type="submit" value="INFORMACION" />
+				  		</form>
+			  		</div> 
+EOS;
+			echo $html;  	
 		    $iterator->next();
 		}
 			 	
 	}
 
-	function muestraProyecto($id){
-		require_once '/../ModelScripts/ListaProyectos.php';
-		
-		$ListaProyectos = new ListaProyectos();
-
-		$proyecto = $ListaProyectos->getProyecto($id);
-		echo "<h1> ".$proyecto->getNombre()."</h1>";
-		echo "<p> Aqui va la descripcion del proyecto de la ONG correspondiente </p>";	
-		echo "<div class='proyectoFechas'>Fecha: ".$proyecto->getFechaCreacion()."</div>";
-					
-		echo "<div class='proyectoVoluntario'>Voluntarios necesarios: ".$proyecto->getNumVoluntarios()." </div>";
-				
-		echo "<div class='boton' name='button' value='APUNTAME'><button> APUNTAME </button></div>";
-	}
-
+}
 ?>
