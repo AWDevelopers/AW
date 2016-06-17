@@ -20,7 +20,7 @@
 		            url: "includes/checkCif.php",
 		            data: dataString,
 		            success: function(data) {
-		                ;
+		                  $('#Info').html(data).fadeIn(1000);
 		            }
 		        });
 		    });              
@@ -37,7 +37,7 @@
 		<!--CONTENIDO-->
 
 			<div class="contenido">
-					<form id="formNuevoProyecto" gaction="includes/formProcesaProyectos.php" method="POST">
+					<form id="formNuevoProyecto" gaction="includes/formNuevoProyecto.php" method="POST">
 						<p>Nombre del proyecto</p>
 						<input type="text" name="nombre" required></input>
 						<p>CIF Ong</p>

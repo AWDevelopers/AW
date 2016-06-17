@@ -20,11 +20,11 @@
 			}
 		}
 
-		function insertaProyecto($nombre,$cif,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen, $numVoluntarios,$dineroAcumulado){
+		function insertaProyecto($nombre,$cif,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen, $numVoluntarios,$dineroAcumulado, $fechaFin){
 			$app = App::getSingleton();
     		$con = $app->conexionBd();
-			$sql = "INSERT INTO proyecto(CIFOng, fechaCreacion, dineroNecesario, dineroAcumulado, nombre, descripcionLarga, descripcionCorta, imagen, numVoluntarios) VALUES ";
-			$sql.= "('".$cif."', sysdate() , '".$dineroNecesario."', '".$dineroAcumulado."', '".$nombre."', '".$descripcionLarga."', '".$descripcionCorta."', '".$imagen."', '".$numVoluntarios."')";
+			$sql = "INSERT INTO proyecto(CIFOng, fechaCreacion, dineroNecesario, dineroAcumulado, nombre, descripcionLarga, descripcionCorta, imagen, numVoluntarios, fechaFin) VALUES ";
+			$sql.= "('".$cif."', sysdate() , '".$dineroNecesario."', '".$dineroAcumulado."', '".$nombre."', '".$descripcionLarga."', '".$descripcionCorta."', '".$imagen."', '".$numVoluntarios."', '".$fechaFin."')";
 			$con->query($sql) or die ($con->error);
 			$num = $con->insert_id;
 			$con->close();
