@@ -1,7 +1,7 @@
 <?php
 include ('config.php');
 if (!isset($_SESSION)) session_start();
-require_once 'ModelScripts/ListaNoticias.php';
+require_once '../ModelScripts/ListaNoticias.php';
 $funcion = $_REQUEST['button'];
 
 switch($funcion){
