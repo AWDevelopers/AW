@@ -7,11 +7,11 @@
 		function listaNoticiasPrimarias(){
 			$array = new ArrayObject();
 			$con = createConnection();
-			$sql = "SELECT * FROM proyecto WHERE 'tipo'='primaria'";
+			$sql = sprintf("SELECT * FROM noticia WHERE tipo='%s'", mysql_real_escape_string('primaria'));
 			$rs = $con->query($sql) or die ($con->error);
-			/**/
 			if($rs != NULL)
 			{
+                            
 				while($lista = $rs->fetch_assoc()){
 					$array->append(new Noticia($lista['id'], $lista['titulo'], $lista['tipo'], $lista['descripcionCorta'], $lista['descripcionLarga'], $lista['fecha'], $lista['imagen']));
 				}
@@ -24,7 +24,7 @@
 		function listaNoticiasSecundarias(){
 			$array = new ArrayObject();
 			$con = createConnection();
-			$sql = "SELECT * FROM proyecto WHERE 'tipo'='secundaria'";
+			$sql = sprintf("SELECT * FROM noticia WHERE tipo='%s'", mysql_real_escape_string('secundaria'));
 			$rs = $con->query($sql) or die ($con->error);
 			/**/
 			if($rs != NULL)
@@ -41,7 +41,7 @@
 		function listaNoticiasTerciarias(){
 			$array = new ArrayObject();
 			$con = createConnection();
-			$sql = "SELECT * FROM proyecto WHERE 'tipo'='terciaria'";
+			$sql = sprintf("SELECT * FROM noticia WHERE tipo='%s'", mysql_real_escape_string('terciaria'));
 			$rs = $con->query($sql) or die ($con->error);
 			/**/
 			if($rs != NULL)
@@ -58,7 +58,7 @@
 		function listaNoticiasOtras(){
 			$array = new ArrayObject();
 			$con = createConnection();
-			$sql = "SELECT * FROM proyecto WHERE 'tipo'='otras'";
+			$sql = sprintf("SELECT * FROM noticia WHERE tipo='%s'", mysql_real_escape_string('otras'));
 			$rs = $con->query($sql) or die ($con->error);
 			/**/
 			if($rs != NULL)
@@ -71,6 +71,7 @@
 				return ($array);
 			}
 		}
+		
 		
 		function insertaNoticia($noticia){
 			$con = createConnection();
