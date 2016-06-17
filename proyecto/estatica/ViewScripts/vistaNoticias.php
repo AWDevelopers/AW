@@ -1,5 +1,16 @@
 <?php
 	require_once '/../ModelScripts/ListaNoticias.php';
+	
+	function muestraNoticia($id){		
+		$ListaNoticias= new ListaNoticias();
+		$noticia = $ListaNoticias->getNoticia($id);
+		echo "<h1> ".$noticia->getTitulo()."</h1>";
+		echo "<p> ".$noticia->getFecha()."</p>";
+                echo '<img src="' .$noticia->getImagen(). '">'; //Mostramos la imagen
+                echo "<p> ".$noticia->getDescripcionLarga()."</p>";
+
+        }
+        
 	function muestraNoticiasPrimarias(){
 		$ListaNoticias = new ListaNoticias();
 		$lista = $ListaNoticias->getListaNoticiasPrimarias();
