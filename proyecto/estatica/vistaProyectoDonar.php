@@ -12,7 +12,7 @@
 	<div id='contenedor'>
 		<!--Aqui va el menu y la cabecera que es comun-->
 		<?php require 'common.php';
-			require 'config.php' ?>
+			require 'includes/config.php' ?>
 		
 		<!--Aqui va el contenido-->
 		<div class="contenido">

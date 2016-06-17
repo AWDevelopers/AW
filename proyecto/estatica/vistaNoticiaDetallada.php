@@ -16,7 +16,8 @@
 			
 				<?php
                                         require_once "ViewScripts/vistaNoticias.php";
-					muestraNoticia($_GET['id']);
+                                        $vista= new VistaNoticias();
+					$vista->muestraNoticia($_GET['id']);
 
 				?>
 				

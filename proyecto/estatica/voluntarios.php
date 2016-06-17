@@ -19,7 +19,7 @@
 				<div class="cajaTitulos"> Horas disponibles </div>
 				<div class="contenidoVoluntario">
 					<div class="imagenUsuario"> <img src="img/usuarioSF.png"></div>
-					<div class="nombreUsuario"> NOMBRE DEL USUARIO 1 </div>
+					<div class="nombreUsuario"> NOMBRE DEL USUARIO 16</div>
 					<div class="nombreUsuario"> 10 h </div>
 					<div class="boton"> <button> Apuntar </button> </div>
 				</div>
