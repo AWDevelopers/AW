@@ -15,7 +15,7 @@
 
 			<div id="contenido">
 				<div class="formulario">
-					<form action="includes/aniadirNoticia.php" method="POST">
+					<form id="formNuevaNoticia" gaction="includes/formProcesaNoticias.php" method="POST">
 						<p>Titulo de la noticia
 						<input type="text" name="titulo" required></input></p>
 						<p>Tipo de la noticia
@@ -31,7 +31,7 @@
 						<input type="text" name="desLarga"></input></p>
 						<p>Fecha de la noticia
 						<input type="date" name="fecha"></input></p>
-						<p><input type="submit" name="submit" value="Añadir noticia"></p>
+						<p><input type="submit" name="button" value="NUEVO"></p>
 					</form>
 					
 				</div>
