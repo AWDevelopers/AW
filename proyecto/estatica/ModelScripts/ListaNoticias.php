@@ -26,5 +26,10 @@
 			$dao = new DaoNoticias();
 			return ($dao->insertaNoticia($json));
 		}
+		
+		public function getNoticia($id){
+			$dao = new DaoNoticias();
+			return ($dao->seleccionaNoticia($id));
+		}
 	}
 ?>
