@@ -24,7 +24,9 @@
 		public function getIdProducto(){
 			return $this->idProducto;
 		}
-
+		public function getNombreONGProducto(){
+			return $this->nombre;
+		}
 		public function getNombreProducto(){
 			return $this->nombre;
 		}
