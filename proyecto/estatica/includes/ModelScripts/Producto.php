@@ -46,7 +46,7 @@
 			return $this->descripcionCorta;
 		}
 		public function getImagen(){
-			print $this->imagen;
+			return $this->imagen;
 		}
 
 
