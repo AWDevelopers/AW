@@ -30,9 +30,9 @@
 			</div>
 			
 			<?php 
-				require_once "ViewScripts/ProductosVista.php";
-
-				muestraProductos();
+				require_once "includes/ViewScripts/ProductosVista.php";
+				$vProductos = new vistaProductos();
+				$vProductos->muestraProductos();
 
 			?>
 		</div>
