@@ -15,8 +15,9 @@
 		<!--CONTENIDO-->
 		<div class="contenido">
 			<?php
-					require_once "ViewScripts/ProductosVista.php";
-					muestraProducto($_GET['idProducto']);
+					require_once "includes/ViewScripts/ProductosVista.php";
+					$vProducto = new vistaProductos();
+					$vProducto->muestraProducto($_GET['idProducto']);
 
 			?>
 		</div>
