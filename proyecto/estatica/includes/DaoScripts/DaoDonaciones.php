@@ -1,6 +1,5 @@
 <?php
 	require_once '/../ModelScripts/donacion.php';
-	require_once '/../config.php';
 	use \AW\proyecto\estatica\includes\Aplicacion as App;
 	class DaoDonaciones{
 
