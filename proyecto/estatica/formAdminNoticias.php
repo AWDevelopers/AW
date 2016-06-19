@@ -12,19 +12,15 @@
 	<div id = 'contenedor'>
 		<?php require 'common.php'; ?>
 		
-		<div class = "contenido">
-			<div id = panelNoticias">
-				<button><a href=panelAdmin.php>Atras</a></button><!--boton atras-->
-				<input type="submit" ><!--crear noticia hecho? o no?-->
+			<div class = "contenido">
+			<div id = "panelNoticias">
+				<form action="panelAdmin.php>"><input type="submit" value="Atras"></input></form>				
+				<button>Añadir noticia</button><!--crear noticia hecho? o no?-->
 				<?php 
 					require_once "includes/ViewScripts/NoticiasVista.php";
 					$vNoticias = new NoticiasVista();
-					$vNoticias->muestraNoticiasPrimarias();
-					$vNoticias->muestraNoticiasSecundarias();
-					$vNoticias->muestraNoticiasTerciarias();
-					$vNoticias->muestraNoticiasOtras();
+					$vNoticias->muestraNoticiasAdmin();
 				?>
-	
 			</div>
 		</div>
 		

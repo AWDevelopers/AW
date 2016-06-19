@@ -2,10 +2,12 @@
 
         class NoticiasVista{	
             private $ListaNoticias;
-            
+            private $dao;
             function __construct(){
 			require_once '/../ModelScripts/GestorNoticias.php';
+            require_once '/../DaoScripts/DaoNoticias.php';
 			$this->ListaNoticias = new GestorNoticias();
+            $this->dao= new DaoNoticias();
             }
             
             
@@ -53,7 +55,7 @@ EOS;
             }
 	
             function muestraNoticiasSecundarias(){
-                $lista = $this->ListaNoticias->getListaNoticiasSecuendarias();
+                $lista = $this->ListaNoticias->getListaNoticiasSecundarias();
                 $iterator = $lista->getIterator();
 		
 		while($iterator->valid()) {
@@ -124,7 +126,30 @@ EOS;
                     echo $html;  		
 		    $iterator->next();
 		}
+
             
         } 
-    }    
+
+            function muestraNoticiasAdmin(){
+                $lista = $this->ListaNoticias->getListaNoticias();
+                $iterator = $lista->getIterator();
+                
+        
+                while($iterator->valid()) {
+                    $titulo = $iterator->current()->getTitulo();
+                    $des = $iterator->current()->getDescripcionCorta();
+                    $id = $iterator->current()->getId();
+                    $html = <<<EOS
+        
+                                    <h3> $titulo </h3>
+                                    <p> $des </p> 
+                                    <form name="eliminar">
+                                        <input type="submit" value="eliminar"></input>
+                                    </form>
+EOS;
+                    echo $html;     
+                    $iterator->next();
+                }
+            } 
+}   
 ?>

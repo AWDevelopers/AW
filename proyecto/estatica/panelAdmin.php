@@ -15,6 +15,7 @@
 		<div class = "contenido">
 			<div id = "panelAdmin">
 				<!--<ul>-->
+					<div class="cajaAdmin"><a href="formAdminNoticias.php"><button> Noticias</button></div></a>
 					<div class="cajaAdmin"><a href="formVoluntarios.php"> <button> Voluntarios</button></div></a>
 					<div class="cajaAdmin"><a href="formProyectos.php"><button> Proyectos</button></div></a>
 					<div class="cajaAdmin"><a href="formProyectos.php"><button> Usuarios</button></div></a>

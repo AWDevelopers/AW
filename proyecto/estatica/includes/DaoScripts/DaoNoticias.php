@@ -1,10 +1,24 @@
 <?php
 	require_once '/../ModelScripts/noticia.php';
-	require_once '/../includes/config.php';
+	//require_once '/../includes/config.php';
         use \AW\proyecto\estatica\includes\Aplicacion as App;
 	class DaoNoticias{
 		private $array;
 		
+		function listaNoticias(){
+			$app = App::getSingleton();
+                        $con = $app->conexionBd();
+			$sql = sprintf("SELECT * FROM noticia");
+			$rs = $con->query($sql) or die ($con->error);
+			if($rs != NULL)
+			{
+                            while($lista[] = $rs->fetch_assoc());
+				$rs->free();
+				$con->close();
+				return ($lista);
+			}
+		}
+
 		function listaNoticiasPrimarias(){
 			$app = App::getSingleton();
                         $con = $app->conexionBd();
