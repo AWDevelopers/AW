@@ -22,6 +22,7 @@
 		            success: function(data) {
 		                  $('#Info').html(data).fadeIn(1000);
 		            }
+
 		        });
 		    });              
 		});    

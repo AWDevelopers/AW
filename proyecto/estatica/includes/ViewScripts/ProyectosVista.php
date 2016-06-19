@@ -40,14 +40,17 @@ EOS;
 		$nombre = $proyecto->getNombre();
 		$fecha = $proyecto->getFechaCreacion();
 		$numVoluntarios =  $proyecto->getNumVoluntarios();
+		$imagen = $proyecto->getImagen();
+		$descripcion = $proyecto->getDescripcionLarga();
 		$html = <<<EOS
-		<h1> $nombre </h1>";
-		<p> Aqui va la descripcion del proyecto de la ONG correspondiente </p>	
-		<div class='proyectoFechas'>Fecha: $fecha </div>
-					
-		<div class='proyectoVoluntario'>Voluntarios necesarios: $numVoluntarios </div>
-				
-		<div class='boton' name='button' value='APUNTAME'><button> APUNTAME </button></div>
+		<h1> $nombre </h1>
+		<div class="imgDonaciones">
+			<img src="$imagen" />
+		</div>
+		<p> $descripcion </p>
+		<div class='proyectoFechas'>Fecha: $fecha </div>		
+		<div class='proyectoVoluntario'>Voluntarios necesarios: $numVoluntarios </div>	
+		<div class='button' name='button' value='APUNTAME'><button> APUNTAME </button></div>
 EOS;
 		echo $html;
 	}
