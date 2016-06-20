@@ -39,22 +39,25 @@
 
 			<div class="contenido">
 					<form id="formNuevoProyecto" gaction="includes/formNuevoProyecto.php" method="POST">
-						<p>Nombre del proyecto</p>
+					<div class="contenido2">	
+						<p><h1><font color = "white">Formulario para un nuevo proyecto</font></h1></p>
+						<p><h2>Nombre del proyecto: </h2></p>
 						<input type="text" name="nombre" required></input>
-						<p>CIF Ong</p>
+						<p><h2>CIF Ong: </h2></p>
 						<input id="cif" type="text" name="cif" required></input><div id="Info"></div>
-						<p>Imagen</p>
+						<p><h2>Imagen: </h2></p>
 						<input id="file_url" type="file" name="foto">
-						<p>dinero necesario</p>
+						<p><h2>Dinero necesario: </h2></p>
 						<input type="number" name="dinero"></input>
-						<p>Voluntarios necesarios</p>
+						<p><h2>Voluntarios necesarios: </h2></p>
 						<input type="number" name="voluntarios"></input>
-						<p>descripcion corta</p>
-						<textarea name="descripcionCorta" rows="4">Introduce descripcion corta...</textarea>
-						<p>descripcion larga</p>
-						<textarea name="descripcionLarga" rows="10">Introduce descripcion larga...</textarea>
+						<p><h2>Descripcion corta: </h2></p>
+						<textarea name="descripcionCorta" rows="4" placeholder= "Descripcion corta."></textarea>
+						<p><h2>Descripcion larga: </h2></p>
+						<textarea name="descripcionLarga" rows="10" placeholder= "Descripcion larga..."></textarea>
 
-						<input type="submit" name="button" value="NUEVO">
+						<p><input type="submit" name="button" value="NUEVO"></p>
+					</div>
 					</form>
 
 		</div>
