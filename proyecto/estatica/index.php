@@ -5,6 +5,8 @@
 	<link rel="stylesheet" type="text/css" href="css/estilos.css"/>
 		<link rel="stylesheet" type="text/css" href="css/colorsandtext.css"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	
 </head>
 <body>
 	<div id='contenedor'>
@@ -29,7 +31,10 @@
 		-->
 		<div class="contenido">
 			<div id="noticias">
-				<video id="videoPrincipal" src="videos/videOng.webm" autoplay controls preload> </video>
+				<video id="videoPrincipal" autoplay controls> 
+				<source src="videos/videOng.webm" type="video/webm">
+					Your browser does not support HTML5 video.
+				</video>
 
 				<h1>Noticias</h1>
 				<?php
@@ -37,11 +42,39 @@
 						echo '<p><a href="vistaAniadirNoticia.php">Añade una nueva noticia</a></p>';
 					}
 				?>
+				
 				<div class="principal">
 					<img src="img/principal.jpg">
-					<h2>Titulo principal</h2>
+					<h2>principal</h2>
 					<p>Texto</p>
 				</div>
+				<div class="principal">
+					<img src="img/llavero.jpg">
+					<h2>llavero</h2>
+					<p>Texto</p>
+				</div>
+				<div class="principal">
+					<img src="img/medicos.jpg">
+					<h2>medicos</h2>
+					<p>Texto</p>
+				</div>
+				<script>
+					var slideIndex = 0;
+					carousel();
+
+					function carousel() {
+					    var i;
+					    var x = document.getElementsByClassName("principal");
+					    for (i = 0; i < x.length; i++) {
+					      x[i].style.display = "none";
+					    }
+					    slideIndex++;
+					    if (slideIndex > x.length) {slideIndex = 1}
+					    x[slideIndex-1].style.display = "block";
+					    setTimeout(carousel, 5000);
+
+					}
+				</script>
 				<div class="bloque_secundaria">
 					<div class="secundaria">
 						<img src="img/imgSecundaria.jpeg">
