@@ -14,19 +14,25 @@
 		<!--CONTENIDO-->
 
 			<div class="contenido">
-				<div class="imagen">
-					<img src="img/nuevologo.png">
-				</div>
+				
 				<div class="formulario">
+					
 					<form action="includes/comprobar_login.php" method="POST">
-						<p>Usuario</p>
-						<input type="text" name="usuario"></input>
-						<p>Contraseña</p>
-						<input type="password" name="contraseña"></input>
-						<a href="index.php"><p>Olvidaste la contraseña?</p></a>
+						<p> <h2><align = center> <font color= white> Inicio de sesión </font></h2></p>
+						<p>    
+						<input type="text" name="usuario" placeholder= "Usuario"></input> </p>
+						<p>  
+						<input type="password" name="contraseña" placeholder= "Contraseña"></input></p>
+						
+						
+						
+						<a href="index.php"><p><h3>Olvidaste la contraseña</h3></p></a>
 						<input type="submit" name="submit" value="Login">
 					</form>
 					
+				</div>
+				<div class="imagen">
+					<img src="img/nuevologo.png">
 				</div>
 				
 		</div>

@@ -1,13 +1,13 @@
 html body{
-	background: #D3D3D3;
+	background: #024e88;
 }
 
 #cabecera{
-	background: #D3D3D3;
+	background: #F3F3F3;
 }
 
 #sidebar-left{
-	background: #A9A9A9;
+	background: #024e88;
 }
 
 #sidebar-left ul li a {
@@ -15,11 +15,12 @@ html body{
     font-weight: 100;
     color: white;
     text-decoration: none;
-    border-bottom: 1px solid #196c96;
+    border-bottom: 1px solid #FFFFFF;
     -webkit-transition:  background 0.3s ease-in-out;
 }
 #sidebar-left ul li:hover a {
-    background: #196c96;
+    background: #FFFFFF;
+	color: #024e88;
 }
 
 
@@ -31,6 +32,10 @@ button {
 	text-shadow: -1px -1px rgba(0,0,0,.2);  /* Sombra del texto */
 	border-radius: 5px;  /* Bordes redondos */
 	color: white;  /* Color del texto */
+}
+
+.cajaAdmin{
+
 }
 button:active /* Al presionarse el botón */ {
 	text-shadow: 1px 1px rgba(0,0,0,.3);  /* Sombra del texto */
@@ -79,8 +84,18 @@ button:active /* Al presionarse el botón */ {
 }
 
 #contenido{
-	background: #A9A9A9;
+	background: #6F95BB;
+	
 }
+
+.contenido2{
+	background: #024e88;
+	color: grey; 
+	font-family: cursive;
+ 	
+}
+	
+
 
 #conocenosInicio h1{
 	color: #000;
@@ -267,8 +282,8 @@ progress{
 }
 .formulario form input{
 	border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 17px;
+    border-radius: 2%;
+    font-size: 90%;
     background-color: white;
 }
 .formulario form select{
