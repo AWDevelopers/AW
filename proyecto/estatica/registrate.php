@@ -21,8 +21,7 @@
 					
 					<div class="contenido2">
 						
-						
-						<p><h1 > <font color= white> Formulario de registro</font></h1></p>
+						<div id="formulariosTitulo"><p><h1>  Formulario de registro</h1></p></div>
 						
 						<p> <h2>Usuario: </h2></p>
 						<input type="text" size="20" name="usuario" placeholder= "CarlitaRH"></input> </p>

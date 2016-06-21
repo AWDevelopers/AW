@@ -13,33 +13,34 @@
 		</div>
 		<!--CONTENIDO-->
 		
-			<div id="contenido">
+			<div class="contenido">
 				<div class="formulario">
 					<form action="includes/formProcesaAniadirNoticia.php" method="POST">
 						<div class="contenido2">
 						
 						
-							<p><h1><font color = "white"> Formulario para añadir una nueva noticia </font></h1></p>
+							<div id="formulariosTitulo"><p><h1> Formulario para una nueva noticia </font></h1></p></div>
 							
-							<p><h2>Titulo de la noticia:</h2> </p>
-							<input type="text" name="titulo" required></input>
-							<p><h2>Tipo de la noticia: </h2></p>
-							<select name="tipo">
-								<option value="primaria">Primaria</option>
-								<option value="secundaria">Secundaria</option>
-								<option value="terciaria">Terciaria</option>
-								<option value="otras">Otras</option>
-							</select></p>
-							<p><h2> Descripción corta de la noticia:</h2> </p>
-							<textarea name="descripcionCorta" rows="4" placeholder= "Descripcion corta." ></textarea>
-							<p><h2> Descripción larga de la noticia: </h2> </p>
-							<textarea name="descripcionLarga" rows="10" placeholder= "Descripcion larga de la noticia..." ></textarea>			
-							<p><h2> Fecha de la noticia:</h2> </p>
-							<input type="date" name="fecha"></input>
-							<p><h2> Nombre de la imagen: </h2></p>
-							<input type="text" name="imagen"></input>
-							<p><input type="submit" name="button" value="Nueva Noticia"></p>
-						</div>
+								<p><h2>Titulo de la noticia:</h2> </p>
+								<input type="text" name="titulo" required></input>
+								<p><h2>Tipo de la noticia: </h2></p>
+								<select name="tipo">
+									<option value="primaria">Primaria</option>
+									<option value="secundaria">Secundaria</option>
+									<option value="terciaria">Terciaria</option>
+									<option value="otras">Otras</option>
+								</select></p>
+								<p><h2> Descripción corta de la noticia:</h2> </p>
+								<textarea name="descripcionCorta" rows="4" placeholder= "Descripcion corta." ></textarea>
+								<p><h2> Descripción larga de la noticia: </h2> </p>
+								<textarea name="descripcionLarga" rows="10" placeholder= "Descripcion larga de la noticia..." ></textarea>			
+								<p><h2> Fecha de la noticia:</h2> </p>
+								<input type="date" name="fecha"></input>
+								<p><h2> Nombre de la imagen: </h2></p>
+								<input type="text" name="imagen"></input>
+								<p><input type="submit" name="button" value="Nueva Noticia"></p>
+							</div>
+						<div>
 					</form>
 				</div>
 				

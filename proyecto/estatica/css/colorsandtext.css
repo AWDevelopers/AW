@@ -94,7 +94,10 @@ button:active /* Al presionarse el botón */ {
 	font-family: cursive;
  	
 }
-	
+
+#formulariosTitulo h1{
+	color: #FFF;
+}	
 
 
 #conocenosInicio h1{
