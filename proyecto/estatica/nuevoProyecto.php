@@ -44,12 +44,15 @@
 							
 							<div id="formulariosTitulo">
 							<p><h1> Formulario para un nuevo proyecto</h1></p></div>
+							
 							<p><h2> Nombre del proyecto: </h2></p>
 							<input type="text" name="nombre" required></input>
 							<p><h2> CIF Ong: </h2></p>
 							<input id="cif" type="text" name="cif" required></input><div id="Info"></div>
 							<p><h2> Imagen: </h2></p>
 							<input id="file_url" type="file" name="foto">
+							<p> <h2>Fecha de finalizacion: </h2></p>
+							<input type="date" size="20" name="fecha"></input></p>
 							<p><h2> Dinero necesario: </h2></p>
 							<input type="number" name="dinero"></input>
 							<p><h2> Voluntarios necesarios: </h2></p>
@@ -59,6 +62,7 @@
 							<p><h2> Descripcion larga: </h2></p>
 							<textarea name="descripcionLarga" rows="10" placeholder= "Descripcion larga..."></textarea>
 							<p><input type="submit" name="button" value="NUEVO"></p>
+							
 						</div>
 					</form>
 				</div>
