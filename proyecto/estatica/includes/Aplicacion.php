@@ -53,8 +53,8 @@ class Aplicacion {
 
   public function login(Usuario $user) {
     $_SESSION['login'] = true;
-    $_SESSION['nombre'] = $user->username();
-    $_SESSION['roles'] = $user->roles();
+    $_SESSION['nombre'] = $user->getNombre();
+    $_SESSION['roles'] = $user->getRol();
   }
 
   public function logout() {

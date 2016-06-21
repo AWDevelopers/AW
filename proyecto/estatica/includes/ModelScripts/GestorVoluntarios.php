@@ -9,7 +9,7 @@
 			$this->dao = new DaoVoluntarios();
 		}
 		public function getListaVoluntarios(){
-			$lista = $this->dao->listaVoluntarios());
+			$lista = $this->dao->listaVoluntarios();
 			$array = new ArrayObject();
 			for($i= 0; $i <sizeof($lista) ; $i++){
 			$array->append(new voluntario($lista[$j]['idProyecto'], $lista[$j]['DNIUsuario'], $lista[$j]['dia'], $lista[$j]['horaEntrada'], $lista[$j]['horaSalida']));			

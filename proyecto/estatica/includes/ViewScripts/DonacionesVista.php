@@ -26,18 +26,15 @@
 					<div class="contenido">
 				
 						<div id = 'fundacion'>
-							
-							<h1 align="center"><a href="perfilOng.php?ong=$CIFOng">'$nombre'</a></h1>'
+							<h1><a href="perfilOng.php?ong=$CIFOng">'$nombre'</a></h1>'
 						</div>
 						<div id = 'imagenONG'>
-							<center>
 							<!--<p><img src="img/panda.png" width="600" /></p>-->
 							<p><img src= "$imagen" /></p>
 							<h4>$descCorta</h4>
 							
 							<!--<p>Aqui ira la descripcion de la ONG</p>-->
 							<p>$descLarga</p>
-							</center>
 						</div>
 						<div id = "datos">
 						<div id = "recaudado">

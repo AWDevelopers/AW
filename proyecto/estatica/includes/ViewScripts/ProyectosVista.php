@@ -42,6 +42,8 @@ EOS;
 		$numVoluntarios =  $proyecto->getNumVoluntarios();
 		$imagen = $proyecto->getImagen();
 		$descripcion = $proyecto->getDescripcionLarga();
+		#$idUsuario = $_SESSION['usuario'];
+		$idUsuario = "000000000";
 		$html = <<<EOS
 		<h1> $nombre </h1>
 		<div class="imgDonaciones">
@@ -50,7 +52,11 @@ EOS;
 		<p> $descripcion </p>
 		<div class='proyectoFechas'>Fecha: $fecha </div>		
 		<div class='proyectoVoluntario'>Voluntarios necesarios: $numVoluntarios </div>	
-		<div class='button' name='button' value='APUNTAME'><button> APUNTAME </button></div>
+		<form name="vista" action="includes/formApuntameVoluntario.php" method="POST">
+				<input type="hidden" name="idProyecto" id="proyecto" value="$id" /> 
+				<input type="hidden" name="idUsuario" id="usuario" value="$idUsuario" /> 
+				<input name="button" type="submit" value="APUNTAME" />
+		</form>
 EOS;
 		echo $html;
 	}

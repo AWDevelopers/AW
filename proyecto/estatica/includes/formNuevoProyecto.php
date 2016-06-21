@@ -1,6 +1,5 @@
 <?php
 include ('config.php');
-if (!isset($_SESSION)) session_start();
 require_once 'ModelScripts/GestorProyectos.php';
 $lista = new GestorProyectos();
 	$nombre = $_REQUEST['nombre'];
@@ -10,9 +9,10 @@ $lista = new GestorProyectos();
 	$descripcionLarga = $_REQUEST['descripcionLarga'];
 	$imagen = "img/".$_REQUEST['foto'];
 	$numVoluntarios = $_REQUEST['voluntarios'];
+	$fechaFin = $_REQUEST['fechaFin'];
 	#$rol = $_SESSION['rol'];
 	$rol = "admin";
-	$salida = $lista->nuevoProyecto($nombre,$cif,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen,$numVoluntarios, $rol);
+	$salida = $lista->nuevoProyecto($nombre,$cif,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen,$numVoluntarios,$fechaFin, $rol);
 	header("Location: ../vistaProyecto.php?id=".$salida);
 
 

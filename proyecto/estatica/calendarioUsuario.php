@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="css/estilos.css"/>
         <link rel="stylesheet" type="text/css" href="css/colorsandtext.css"/>
     <!--<link rel="stylesheet" type="text/css" href="css/calendario.css"/>-->
+    
 </head>
 <body>
     <div id="contenedor">
@@ -15,14 +16,12 @@
             
         	   <div id= "calendario">
                 <form>
-                    <center>
                     <p>Día</p>
                     <input type="date" name = "fecha"></input>
-                    </center>
                 </form>
                 </div>
                 <div id = "horas">
-                    <form ><center>
+                    <form >
 
                         <div id="inicio">
                             <p>Hora inicio</p>
@@ -35,8 +34,7 @@
                         </div>
                         
                         <button id= "anadir" type="submit" name = "añadir">AÑADIR</button> 
-                        
-                    </center></form>
+                        </form>
                 </div>
 
                 <div id = "mostrarHoras">
@@ -49,12 +47,10 @@
             
 
                 <div id ="pieCalendario">
-                    <center>
                         <p>Selecciona uno o varios días del calendario, indica las horas de inicio y fin de tu voluntariado y pulsa el botón añadir para añadirla a tu bolsa de horas.</p>
 
                           
                         <button class= "boton" type="button" name = "confirmar" value = "confirmar">CONFIRMAR</button> 
-                    </center>
                </div>
 
                

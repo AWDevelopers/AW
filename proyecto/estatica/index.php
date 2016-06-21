@@ -51,6 +51,7 @@
 				<div class="principal">
 					<img src="img/llavero.jpg">
 					<h2>llavero</h2>
+<<<<<<< HEAD
 					<p>Texto</p>
 				</div>
 				<div class="principal">
@@ -61,6 +62,19 @@
 				<script>
 					var slideIndex = 0;
 					carousel();
+=======
+					<p>Texto</p>
+				</div>
+				<div class="principal">
+					<img src="img/medicos.jpg">
+					<h2>medicos</h2>
+					<p>Texto</p>
+				</div>
+				<script>
+					var slideIndex = 0;
+					carousel();
+
+>>>>>>> f81214267b672be7824229e04cbd13ba93a511bc
 					function carousel() {
 					    var i;
 					    var x = document.getElementsByClassName("principal");
@@ -71,6 +85,10 @@
 					    if (slideIndex > x.length) {slideIndex = 1}
 					    x[slideIndex-1].style.display = "block";
 					    setTimeout(carousel, 5000);
+<<<<<<< HEAD
+=======
+
+>>>>>>> f81214267b672be7824229e04cbd13ba93a511bc
 					}
 				</script>
 				<div class="bloque_secundaria">
