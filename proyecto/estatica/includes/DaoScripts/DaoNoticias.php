@@ -1,13 +1,13 @@
 <?php
 	require_once '/../ModelScripts/noticia.php';
-	//require_once '/../includes/config.php';
-        use \AW\proyecto\estatica\includes\Aplicacion as App;
+	require_once '/../config.php';
+    use \AW\proyecto\estatica\includes\Aplicacion as App;
 	class DaoNoticias{
 		private $array;
 		
 		function listaNoticias(){
 			$app = App::getSingleton();
-                        $con = $app->conexionBd();
+            $con = $app->conexionBd();
 			$sql = sprintf("SELECT * FROM noticia");
 			$rs = $con->query($sql) or die ($con->error);
 			if($rs != NULL)
@@ -21,8 +21,8 @@
 
 		function listaNoticiasPrimarias(){
 			$app = App::getSingleton();
-                        $con = $app->conexionBd();
-			$sql = sprintf("SELECT * FROM noticia WHERE tipo='%s'", mysql_real_escape_string('primaria'));
+			$con = $app->conexionBd();
+			$sql = sprintf("SELECT * FROM noticia WHERE tipo='%s'", $con->real_escape_string('primaria'));
 			$rs = $con->query($sql) or die ($con->error);
 			if($rs != NULL)
 			{
@@ -36,7 +36,7 @@
 		function listaNoticiasSecundarias(){
 			$app = App::getSingleton();
                         $con = $app->conexionBd();
-			$sql = sprintf("SELECT * FROM noticia WHERE tipo='%s'", mysql_real_escape_string('secundaria'));
+			$sql = sprintf("SELECT * FROM noticia WHERE tipo='%s'", $con->real_escape_string('secundaria'));
 			$rs = $con->query($sql) or die ($con->error);
 			/**/
 			if($rs != NULL)
@@ -51,7 +51,7 @@
 		function listaNoticiasTerciarias(){
 			$app = App::getSingleton();
                         $con = $app->conexionBd();
-			$sql = sprintf("SELECT * FROM noticia WHERE tipo='%s'", mysql_real_escape_string('terciaria'));
+			$sql = sprintf("SELECT * FROM noticia WHERE tipo='%s'", $con->real_escape_string('terciaria'));
 			$rs = $con->query($sql) or die ($con->error);
 			/**/
 			if($rs != NULL)
@@ -66,7 +66,7 @@
 		function listaNoticiasOtras(){
 			$app = App::getSingleton();
                         $con = $app->conexionBd();
-			$sql = sprintf("SELECT * FROM noticia WHERE tipo='%s'", mysql_real_escape_string('otras'));
+			$sql = sprintf("SELECT * FROM noticia WHERE tipo='%s'", $con->real_escape_string('otras'));
 			$rs = $con->query($sql) or die ($con->error);
 			/**/
 			if($rs != NULL)
@@ -80,26 +80,25 @@
 		
 		
 		function insertaNoticia($titulo, $tipo , $descripcionCorta, $descripcionLarga, $imagen, $fecha){
-                        $app = App::getSingleton();
-                        $con = $app->conexionBd();
-			$sql = "INSERT INTO noticia (titulo,tipo,descripcionCorta,descripcionLarga,fecha) VALUES ";
-			$sql.= "('".$titulo."', '".$tipo."', '".$desripcionCorta."', '".$descripcionLarga."', '".$fecha."', '".$imagen."')";
+            $app = App::getSingleton();
+            $con = $app->conexionBd();
+			$sql = "INSERT INTO noticia (titulo,tipo,descripcionCorta,descripcionLarga,fecha, imagen) VALUES ";
+			$sql.= "('".$titulo."', '".$tipo."', '".$desripcionCorta."', '".$descripcionLarga."', sysdate() , '".$imagen."')";
 			$con->query($sql) or die ($con->error);
-                        $num = $con->insert_id;
+            $num = $con->insert_id;
 			$con->close();
 			return ($num);
         
 		}
                 
-                function existeNoticia($titulo){
-                    $app = App::getSingleton();
-                    $con = $app->conexionBd();
-                    $sql = sprintf("SELECT * FROM noticia WHERE titulo='%s'", mysql_real_escape_string($titulo));
-                    $rs = $con->query($sql) or die ($con->error);
-                    $num = $rs->num_rows;
-                    $con->close();
-                    return $num;        
-                }
+		function existeNoticia($titulo){
+			$app = App::getSingleton();
+			$con = $app->conexionBd();
+			$sql = sprintf("SELECT * FROM noticia WHERE titulo='%s'", $con->real_escape_string($titulo));
+			$rs = $con->query($sql) or die ($con->error);
+			$num = $rs->num_rows;
+			return $num;        
+		}
 		
 		function eliminaNoticia($idNoticia){
 			$app = App::getSingleton();
@@ -112,7 +111,7 @@
 		function seleccionaNoticia($id){
 			$app = App::getSingleton();
                         $con = $app->conexionBd();
-                        $sql = sprintf("SELECT * FROM noticia WHERE id='%s'", mysql_real_escape_string($id));
+                        $sql = sprintf("SELECT * FROM noticia WHERE id='%s'", $con->real_escape_string($id));
 			$rs = $con->query($sql) or die ($con->error);
 			$resultado = "";
 			if($rs != NULL)
