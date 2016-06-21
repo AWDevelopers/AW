@@ -9,7 +9,7 @@
 		public function getListaNoticias(){
 			$lista = $this->dao->listaNoticias();
 			$array = new ArrayObject();
-			for($i= 0; $i <sizeof($lista) ; $i++){
+			for($i= 0; $i <sizeof($lista)-1 ; $i++){
 			$array->append(new noticia($lista[$i]['id'], $lista[$i]['titulo'],$lista[$i]['tipo'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen'],$lista[$i]['fecha']));
 			}
 			return $array;
@@ -17,8 +17,8 @@
 		public function getListaNoticiasPrimarias(){
 			$lista = $this->dao->listaNoticiasPrimarias();
 			$array = new ArrayObject();
-			for($i= 0; $i <sizeof($lista) ; $i++){
-			$array->append(new noticia($lista[$i]['id'], $lista[$i]['titulo'],$lista[$i]['tipo'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen'],$lista[$i]['fecha']));
+			for($i= 0; $i <sizeof($lista)-1 ; $i++){
+			$array->append(new noticia($lista[$i]['id'], $lista[$i]['titulo'],$lista[$i]['tipo'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'],$lista[$i]['fecha'], $lista[$i]['imagen']));
 			}
 			return $array;
 		}
@@ -26,7 +26,7 @@
 		public function getListaNoticiasSecundarias(){
 			$lista = $this->dao->listaNoticiasSecundarias();
 			$array = new ArrayObject();
-			for($i= 0; $i <sizeof($lista) ; $i++){
+			for($i= 0; $i <sizeof($lista)-1 ; $i++){
 			$array->append(new noticia($lista[$i]['id'], $lista[$i]['titulo'], $lista[$i]['tipo'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen'],$lista[$i]['fecha']));
 			}
 			return $array;
@@ -35,7 +35,7 @@
 		public function getListaNoticiasTerciarias(){
 			$lista = $this->dao->listaNoticiasTerciarias();
 			$array = new ArrayObject();
-			for($i= 0; $i <sizeof($lista) ; $i++){
+			for($i= 0; $i <sizeof($lista)-1 ; $i++){
 			$array->append(new noticia($lista[$i]['id'], $lista[$i]['titulo'], $lista[$i]['tipo'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen'],$lista[$i]['fecha']));
 			}
 			return $array;
@@ -44,7 +44,7 @@
 		public function getListaNoticiasOtras(){
 			$lista = $this->dao->listaNoticiasOtras();
 			$array = new ArrayObject();
-			for($i= 0; $i <sizeof($lista) ; $i++){
+			for($i= 0; $i <sizeof($lista)-1 ; $i++){
                             $array->append(new noticia($lista[$i]['id'], $lista[$i]['titulo'], $lista[$i]['tipo'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen'],$lista[$i]['fecha']));
 			}
 			return $array;

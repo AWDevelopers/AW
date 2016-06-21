@@ -14,21 +14,24 @@
 			{
                             while($lista[] = $rs->fetch_assoc());
 				$rs->free();
-				$con->close();
 				return ($lista);
 			}
 		}
 
 		function listaNoticiasPrimarias(){
 			$app = App::getSingleton();
+<<<<<<< HEAD
 			$con = $app->conexionBd();
 			$sql = sprintf("SELECT * FROM noticia WHERE tipo='%s'", $con->real_escape_string('primaria'));
+=======
+                        $con = $app->conexionBd();
+			$sql = sprintf("SELECT * FROM noticia WHERE tipo='primaria'");
+>>>>>>> 7d159327768d7e3cfd291b230d5e644f0dde1c94
 			$rs = $con->query($sql) or die ($con->error);
-			if($rs != NULL)
+			if($rs->num_rows > 0)
 			{
                             while($lista[] = $rs->fetch_assoc());
 				$rs->free();
-				$con->close();
 				return ($lista);
 			}
 		}
@@ -36,14 +39,17 @@
 		function listaNoticiasSecundarias(){
 			$app = App::getSingleton();
                         $con = $app->conexionBd();
+<<<<<<< HEAD
 			$sql = sprintf("SELECT * FROM noticia WHERE tipo='%s'", $con->real_escape_string('secundaria'));
+=======
+			$sql = sprintf("SELECT * FROM noticia WHERE tipo='secundaria'");
+>>>>>>> 7d159327768d7e3cfd291b230d5e644f0dde1c94
 			$rs = $con->query($sql) or die ($con->error);
 			/**/
-			if($rs != NULL)
+			if($rs->num_rows > 0)
 			{
 				while($lista[] = $rs->fetch_assoc());
 				$rs->free();
-				$con->close();
 				return ($lista);
 			}
 		}
@@ -51,14 +57,17 @@
 		function listaNoticiasTerciarias(){
 			$app = App::getSingleton();
                         $con = $app->conexionBd();
+<<<<<<< HEAD
 			$sql = sprintf("SELECT * FROM noticia WHERE tipo='%s'", $con->real_escape_string('terciaria'));
+=======
+			$sql = sprintf("SELECT * FROM noticia WHERE tipo='terciaria'");
+>>>>>>> 7d159327768d7e3cfd291b230d5e644f0dde1c94
 			$rs = $con->query($sql) or die ($con->error);
 			/**/
-			if($rs != NULL)
+			if($rs->num_rows > 0)
 			{
 				while($lista[] = $rs->fetch_assoc());
 				$rs->free();
-				$con->close();
 				return ($lista);
 			}
 		}
@@ -66,14 +75,17 @@
 		function listaNoticiasOtras(){
 			$app = App::getSingleton();
                         $con = $app->conexionBd();
+<<<<<<< HEAD
 			$sql = sprintf("SELECT * FROM noticia WHERE tipo='%s'", $con->real_escape_string('otras'));
+=======
+			$sql = sprintf("SELECT * FROM noticia WHERE tipo='otras'");
+>>>>>>> 7d159327768d7e3cfd291b230d5e644f0dde1c94
 			$rs = $con->query($sql) or die ($con->error);
 			/**/
 			if($rs != NULL)
 			{
 				while($lista[] = $rs->fetch_assoc());
 				$rs->free();
-				$con->close();
 				return ($lista);
 			}
 		}

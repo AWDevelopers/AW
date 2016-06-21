@@ -38,43 +38,17 @@
 
 				<h1>Noticias</h1>
 				<?php
-					if (isset($_SESSION['login']) && $_SESSION['login']) {
-						echo '<p><a href="vistaAniadirNoticia.php">Añade una nueva noticia</a></p>';
-					}
-				?>
-				
-				<div class="principal">
-					<img src="img/principal.jpg">
-					<h2>principal</h2>
-					<p>Texto</p>
-				</div>
-				<div class="principal">
-					<img src="img/llavero.jpg">
-					<h2>llavero</h2>
-<<<<<<< HEAD
-					<p>Texto</p>
-				</div>
-				<div class="principal">
-					<img src="img/medicos.jpg">
-					<h2>medicos</h2>
-					<p>Texto</p>
-				</div>
-				<script>
-					var slideIndex = 0;
-					carousel();
-=======
-					<p>Texto</p>
-				</div>
-				<div class="principal">
-					<img src="img/medicos.jpg">
-					<h2>medicos</h2>
-					<p>Texto</p>
-				</div>
-				<script>
-					var slideIndex = 0;
-					carousel();
+					require_once ("includes/ViewScripts/NoticiasVista.php");
 
->>>>>>> f81214267b672be7824229e04cbd13ba93a511bc
+					$vista = new NoticiasVista();
+					$vista->muestraNoticiasPrimarias();
+					$vista->muestraNoticiasSecundarias();
+					$vista->muestraNoticiasTerciarias();
+					$vista->muestraNoticiasOtras();
+				?>
+				<script>
+					var slideIndex = 0;
+					carousel();
 					function carousel() {
 					    var i;
 					    var x = document.getElementsByClassName("principal");
@@ -85,41 +59,9 @@
 					    if (slideIndex > x.length) {slideIndex = 1}
 					    x[slideIndex-1].style.display = "block";
 					    setTimeout(carousel, 5000);
-<<<<<<< HEAD
-=======
-
->>>>>>> f81214267b672be7824229e04cbd13ba93a511bc
 					}
 				</script>
-				<div class="bloque_secundaria">
-					<div class="secundaria">
-						<img src="img/imgSecundaria.jpeg">
-						<h3>Titulo secundaria</h3>
-						<p>Texto</p>
-					</div>
-					<div class="secundaria">
-						<img src="img/imgSecundaria2.jpeg">
-						<h3>Titulo secundaria</h3>
-						<p>Texto</p>
-					</div>
-				</div>
-				<div class="bloque_terciaria">
-					<div class="terciaria">
-						<img src="img/imgTerciaria.jpeg">
-						<h4>Titulo terciaria</h4>
-						<p>Texto</p>
-					</div>
-					<div class="terciaria">
-						<img src="img/imgTerciaria2.jpeg">
-						<h4>Titulo terciaria</h4>
-						<p>Texto</p>
-					</div>
-					<div class="terciaria">
-						<img src="img/imgTerciaria3.jpeg">
-						<h4>Titulo terciaria</h4>
-						<p>Texto</p>
-					</div>
-				</div>
+
 			</div>
 		</div>
 	</div>
