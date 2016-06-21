@@ -1,5 +1,5 @@
 <?php
-	require_once '/../ModelScripts/usuario.php';
+	//require_once '/../ModelScripts/usuario.php';
 	require_once '/../config.php';
 	use \AW\proyecto\estatica\includes\Aplicacion as App;
 	class DaoUsuarios{
@@ -49,39 +49,40 @@
             $con = $app->conexionBd();
 			$sql = sprintf("SELECT * FROM usuario WHERE usuario='%s' OR email='%s'", $con->real_escape_string($user), $con->real_escape_string($user));
 			$rs = $con->query($sql) or die ($con->error);
+			$login =false;
 			if($row = $rs->fetch_assoc()){    
 					//Si el usuario es correcto ahora validamos su contraseña
 					$passBd = $row["pass"];
-					if ($pass == $passBd)
-						 {
+					if ($pass == $passBd) {
 						  //Creamos la sesión
 							session_destroy();
 							session_start();  
 						  //Almacenamos los datos del usuario en variables
 							$_SESSION['user'] = $row["usuario"];
 							$_SESSION['Logueado'] = true;
-							$_SESSION['rol'] = $row["tipò"];
+							$_SESSION['rol'] = $row["tipo"];
 							$_SESSION['Nombre'] = $row["nombre"];
 							$_SESSION['Apellidos'] = $row["apellidos"];
 							$_SESSION['Email'] = $row["email"];
 							$_SESSION['Direccion'] = $row["direccion"];
-							$_SESSION['Ciudad'] = $row["Ciudad"];
 							$_SESSION['CP'] = $row["cp"];
 							$_SESSION['sexo'] = $row["sexo"];
 							$_SESSION['telefono'] = $row["telefono"];
 							$_SESSION['avatar'] = $row["avatar"];
 							$_SESSION['DNI'] = $row["DNI"];
-						 }
+							$login=true;
+					}
 					else
 						 {				 	
-							echo "MALA CONTRASEÑA";
+							$login=false;
 						}
 				}
 				else
 				{
-					echo "NO EXISTE ESE USUARIO";
+					$login=false;
 				}
 			$con->close();
+			return $login;
 		}
 		
 		function insertaUsuario($user, $pass, $nombre, $apellidos, $dni, $email, $fechaNacimiento, $sexo, $telefono, $direccion, $cp, $avatar ){

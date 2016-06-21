@@ -1,8 +1,4 @@
 <?php
-
-/**
-	* 
-	*/
 	class Usuario
 	{	
 		private $nombre;

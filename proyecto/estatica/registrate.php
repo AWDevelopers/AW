@@ -4,7 +4,26 @@
 		<title>Registrate - InCommOng</title>
 		<link rel="stylesheet" type="text/css" href="css/estilos.css"/>
 		<link rel="stylesheet" type="text/css" href="css/colorsandtext.css"/>
-	
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function() {    
+		    $('#dni').blur(function(){
+
+		        var username = $(this).val();        
+		        var dataString = 'dni='+username;
+
+		        $.ajax({
+		            type: "POST",
+		            url: "includes/checkDNI.php",
+		            data: dataString,
+		            success: function(data) {
+						   $('#Info').html(data).fadeIn();
+		            }
+
+		        });
+		    });              
+		});    
+		</script>
 		
 		
 	</head>
@@ -31,9 +50,9 @@
 						<p> <h2>Nombre: </h2></p>
 						<input type="text" size="20" name="nombre" placeholder= "Carla " required></input></p>
 						<p> <h2>Apellidos: </h2></p>
-						<input type="text" size="20" name="apellidos" placeholder= "Ruiz Herrero" required></input></p>
+						<input type="text" size="20" name="apellidos" placeholder= "Ruiz Herrero" required></input> </p>
 						<p> <h2>DNI: </h2></p>
-						<input type="text" size="20" name="dni" placeholder= "08568754R" required></input></p>
+						<input id="dni" type="text" size="20" name="dni" placeholder= "08568754R" required></input> <div id="Info"></div></p>
 						<p> <h2>Correo electrónico: </h2></p>
 						<input type="email" size="20" name="email" placeholder= "CarlaRH@gmail.com" required></input></p>
 						<p> <h2>Imagen: </h2></p>
