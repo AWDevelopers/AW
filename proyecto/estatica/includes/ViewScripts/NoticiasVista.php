@@ -12,9 +12,9 @@
             
             
             function muestraNoticia($id){		
-		$noticia= $this->ListaNoticias->getNoticia($id);
-		$titulo = $noticia->getTitulo();
-		$fecha = $noticia->getFecha();
+				$noticia= $this->ListaNoticias->getNoticia($id);
+				$titulo = $noticia->getTitulo();
+				$fecha = $noticia->getFecha();
                 $imagen =  $noticia->getImagen();
                 $des = $noticia->getDescripcionLarga();
                  $html = <<<EOS

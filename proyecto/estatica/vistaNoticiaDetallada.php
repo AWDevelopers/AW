@@ -4,7 +4,6 @@
 	<title>Detalle de la noticia</title>
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
 		<link rel="stylesheet" type="text/css" href="css/colorsandtext.css"/>
-	<!--<link rel="stylesheet" type="text/css" href="css/proyectosONG.css">-->
 </head>
 <body>
 	<div id='contenedor'>
@@ -15,8 +14,8 @@
 		<div class="contenido">
 			
 				<?php
-                                        require_once "ViewScripts/vistaNoticias.php";
-                                        $vista= new VistaNoticias();
+                    require_once "includes/ViewScripts/NoticiasVista.php";
+                    $vista= new NoticiasVista();
 					$vista->muestraNoticia($_GET['id']);
 
 				?>
