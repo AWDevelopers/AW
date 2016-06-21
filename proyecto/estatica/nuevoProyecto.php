@@ -38,6 +38,7 @@
 		<!--CONTENIDO-->
 
 			<div class="contenido">
+<<<<<<< HEAD
 				<div class="formulario">
 					<form id="formNuevoProyecto" gaction="includes/formNuevoProyecto.php" method="POST">
 						<div class="contenido2">	
@@ -64,6 +65,27 @@
 							<p><input type="submit" name="button" value="NUEVO"></p>
 							
 						</div>
+=======
+					<form id="formNuevoProyecto" action="includes/formNuevoProyecto.php" method="POST">
+						<p>Nombre del proyecto</p>
+						<input type="text" name="nombre" required>*</input>
+						<p>CIF Ong</p>
+						<input id="cif" type="text" name="cif" required>*</input><div id="Info"></div>
+						<p>Imagen</p>
+						<input id="file_url" type="file" name="foto">
+						<p>dinero necesario</p>
+						<input type="number" name="dinero" required>*</input>
+						<p>Voluntarios necesarios</p>
+						<input type="number" name="voluntarios" required>*</input>
+						<p>Fecha de finalizacion</p>
+						<input type="date" name="fechaFin" required>*</input>
+						<p>descripcion corta</p>
+						<textarea name="descripcionCorta" rows="4">Introduce descripcion corta...</textarea>
+						<p>descripcion larga</p>
+						<textarea name="descripcionLarga" rows="10">Introduce descripcion larga...</textarea>
+						<p><input type="submit" name="button" value="NUEVO"></p>
+					</div>
+>>>>>>> 4f1e2c7096aa70d140c8aa0a7e74382a7d326600
 					</form>
 				</div>
 		</div>

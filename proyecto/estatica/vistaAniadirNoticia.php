@@ -12,6 +12,7 @@
 			<?php require 'common.php'; ?>
 		</div>
 		<!--CONTENIDO-->
+<<<<<<< HEAD
 		
 			<div class="contenido">
 				<div class="formulario">
@@ -41,7 +42,29 @@
 								<p><input type="submit" name="button" value="Nueva Noticia"></p>
 							</div>
 						<div>
+=======
+
+			<div id="contenido">
+				<div class="formulario">
+					<form action="includes/formProcesaAniadirNoticia.php" method="POST">
+						<p>Titulo de la noticia
+						<input type="text" name="titulo" required></input></p>
+						<p>Tipo de la noticia
+						<select name="tipo">
+							<option value="primaria">Primaria</option>
+							<option value="secundaria">Secundaria</option>
+							<option value="terciaria">Terciaria</option>
+							<option value="otras">Otras</option>
+						</select></p>
+						<p>Descripción corta de la noticia
+						<input type="text" name="desCorta"></input> </p>
+						<p>Descripción larga de la noticia
+						<input type="text" name="desLarga"></input></p>
+                        <p> Imagen:<input id="file_url" type="file" name="imagen"> </p>
+						<p><input type="submit" name="button" value="Nueva Noticia"></p>
+>>>>>>> 4f1e2c7096aa70d140c8aa0a7e74382a7d326600
 					</form>
+					
 				</div>
 				
 		</div>

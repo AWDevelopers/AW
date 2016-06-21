@@ -18,17 +18,17 @@
 		}
 
 		public function getProyecto($id){
-			$this->retiraEtiquetas($id); //LIMPIAMOS DE ETIQUETAS HTMLS Y PHP
+			/* $this->retiraEtiquetas($id); //LIMPIAMOS DE ETIQUETAS HTMLS Y PHP */
 			return ($this->dao->seleccionaProyecto($id));
 		}
-		private function retiraEtiquetas(&...$columns) {
+		/* private function retiraEtiquetas(&$columns) {
 		    foreach ($columns as $n) {
 		       $n=htmlspecialchars(trim(strip_tags($n)));
 		    }
-		}
+		} */
 		public function nuevoProyecto($nombre,$cif,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen, $numVoluntarios, $fechaFin, $rol){
-			$this->retiraEtiquetas($nombre,$cif,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen, $numVoluntarios, $fechaFin); //LIMPIAMOS DE ETIQUETAS HTMLS Y PHP
-			$daoO = new DaoOngs();
+/* 			$this->retiraEtiquetas($nombre,$cif,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen, $numVoluntarios, $fechaFin); //LIMPIAMOS DE ETIQUETAS HTMLS Y PHP
+ */			$daoO = new DaoOngs();
 			$end_time   =   strtotime($fechaFin);
 			$cur_time   =   strtotime("now");
 			$dineroAcumulado = 0;
