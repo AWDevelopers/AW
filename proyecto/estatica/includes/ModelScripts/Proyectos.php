@@ -12,8 +12,9 @@
 		private $descripcionLarga;
 		private $imagen;
 		private $numVoluntarios;
+		private $fechaFin;
 
-		function __construct($idProyecto, $cifOng, $fechaCreacion, $dineroNecesario, $dineroAcumulado, $nombre, $descripcionCorta, $descripcionLarga, $imagen, $numVoluntarios){
+		function __construct($idProyecto, $cifOng, $fechaCreacion, $dineroNecesario, $dineroAcumulado, $nombre, $descripcionCorta, $descripcionLarga, $imagen, $numVoluntarios, $fechaFin){
 			$this->idProyecto = $idProyecto;
 			$this->cifOng = $cifOng;
 			$this->fechaCreacion = $fechaCreacion;
@@ -24,6 +25,7 @@
 			$this->descripcionLarga = $descripcionLarga;
 			$this->imagen = $imagen;
 			$this->numVoluntarios = $numVoluntarios;
+			$this->fechaFin = $fechaFin;
 		}
 
 
@@ -46,6 +48,8 @@
 		public function getIdProyecto(){return $this->idProyecto;}
 
 		public function getNumVoluntarios(){return $this->numVoluntarios;}
+
+		public function getFechaFin(){return $this->fechaFin;}
 
 		public function toJson(){
 			return $json;
