@@ -12,30 +12,23 @@
 			$fechaFin = $proyecto->getFechaFin();
 			$fechaIni = $proyecto->getFechaCreacion();
 			$html = <<<EOS
-			<div id="contenidoCalendario">
             
         	   <div id= "calendario">
-                <form>
                     <p>Día</p>
                     <input id="datepicker" type="date" name = "fecha" min=$fechaIni max=$fechaFin></input>
-                </form>
-               
                 </div>
                 <div id = "horas">
-                    <form >
-
                         <div id="inicio">
                             <p>Hora inicio</p>
-                            <input type="time" name = "iniHoras" size = 2></input> 
+                            <input id="horaIni" type="time" name = "iniHoras" size = 2></input> 
                         </div>
 
                         <div id ="fin">
                             <p>Hora fin</p>
-                            <input type="time" name = "finHoras" size = 2></input> 
+                            <input id="horaFin" type="time" name = "finHoras" size = 2></input> 
                         </div>
-                        
-                        <input id= "anadir" type="submit" name = "añadir">AÑADIR</input> 
-                        </form>
+                        <button onclick="aniadeHoras()" id= "anadir" type="submit" name = "añadir">AÑADIR</button> 
+                        <div id="error"></div>
                 </div>
 
                 <div id = "mostrarHoras">
@@ -45,9 +38,11 @@
                         <h1> FECHA DE INICIO DEL PROYECTO: $fechaIni </h1>
                         <h1> FECHA DE FIN DEL PROYECTO: $fechaFin </h1>
 
-                          
-                        <button class= "boton" type="button" name = "confirmar" value = "confirmar">CONFIRMAR</button> 
+                           <form name="panelHorasVoluntarios" action="" method="POST">
+                        <input class= "boton" type="submit" name = "confirmar" value = "CONFIRMAR"></input> 
+                        </form>
                </div>
+               
 EOS;
 		echo $html;
 		}
