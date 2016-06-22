@@ -49,15 +49,10 @@
 						<p> <h2>Nombre: </h2></p>
 						<input type="text" size="20" name="nombre" placeholder= "Carla " required> (*)</input>
 						<p> <h2>Apellidos: </h2></p>
-<<<<<<< HEAD
 						<input type="text" size="20" name="apellidos" placeholder= "Ruiz Herrero" required></input> </p>
 						<p> <h2>DNI: </h2></p>
 						<input id="dni" type="text" size="20" name="dni" placeholder= "08568754R" required></input> <div id="Info"></div></p>
-=======
-						<input type="text" size="20" name="apellidos" placeholder= "Ruiz Herrero" required> (*)</input>
-						<p> <h2>DNI: </h2></p>
-						<input type="text" size="20" name="dni" placeholder= "08568754R" required> (*)</input>
->>>>>>> fe261659514c8ca4b822466ac4fec400998ca2ae
+
 						<p> <h2>Correo electrónico: </h2></p>
 						<input type="email" size="20" name="email" placeholder= "CarlaRH@gmail.com" required> (*)</input>
 						<p> <h2>Imagen: </h2></p>
