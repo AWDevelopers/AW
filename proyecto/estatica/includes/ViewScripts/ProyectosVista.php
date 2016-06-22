@@ -49,13 +49,15 @@ EOS;
 		<div class="imgDonaciones">
 			<img src="$imagen" />
 		</div>
+		<div class="cajaDescripcion">
 		<p> $descripcion </p>
-		<div class='proyectoFechas'>Fecha: $fecha </div>		
-		<div class='proyectoVoluntario'>Voluntarios necesarios: $numVoluntarios </div>	
-		<form name="vista" action="includes/formApuntameVoluntario.php" method="POST">
+		</div>
+		<div class='proyectoFechas'>Fecha: $fecha </div>	
+		<div class='proyectoVoluntario'>Voluntarios necesarios: $numVoluntarios </div>
+		<p><div class="proyectoApuntame"><form name="vista" action="includes/formApuntameVoluntario.php" method="POST">
 				<input type="hidden" name="idProyecto" id="proyecto" value="$id" /> 
 				<input type="hidden" name="idUsuario" id="usuario" value="$idUsuario" /> 
-				<input name="button" type="submit" value="APUNTAME" />
+				<input name="button" type="submit" value="APUNTAME" /></div></p>
 		</form>
 EOS;
 		echo $html;

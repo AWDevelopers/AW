@@ -131,6 +131,11 @@ button {
 	height: 70%;
 }
 
+.cajaDescripcion{
+	background: white;
+	min-height:80%;
+	min-width:30%;
+}
 .contenidoVoluntarios{
 	float: left;
 	margin: 15px;
@@ -276,11 +281,15 @@ button {
 .proyectoFechas{
 	float: left;
 	text-align:left;
+	
 }
 .proyectoVoluntario{
 	float: right;
 }
 
+.proyectoApuntame{
+	float:left;
+}
 
 /* --------------------VOLUNTARIOS---------------*/
 .contenidoVoluntario{
