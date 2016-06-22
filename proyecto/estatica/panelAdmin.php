@@ -16,11 +16,11 @@
 			<div id = "panelAdmin">
 				<!--<ul>-->
 					<div class="cajaAdmin"><a href="formAdminNoticias.php"><button> Noticias</button></div></a>
-					<div class="cajaAdmin"><a href="formVoluntarios.php"> <button> Voluntarios</button></div></a>
-					<div class="cajaAdmin"><a href="formProyectos.php"><button> Proyectos</button></div></a>
-					<div class="cajaAdmin"><a href="formProyectos.php"><button> Usuarios</button></div></a>
-					<div class="cajaAdmin"><a href="formProyectos.php"><button> ONGs</button></div></a>
-					<div class="cajaAdmin"><a href="formProyectos.php"><button> Productos</button></div></a>
+					<div class="cajaAdmin"><a href="formAdminVoluntarios.php"> <button> Voluntarios</button></div></a>
+					<div class="cajaAdmin"><a href="formAdminProyectos.php"><button> Proyectos</button></div></a>
+					<div class="cajaAdmin"><a href="formAdminUsuarios.php"><button> Usuarios</button></div></a>
+					<div class="cajaAdmin"><a href="formAdminONGs.php"><button> ONGs</button></div></a>
+					<div class="cajaAdmin"><a href="formAdminProductos.php"><button> Productos</button></div></a>
 					
 		
 				<!--</ul>-->
