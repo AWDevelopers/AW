@@ -61,10 +61,12 @@ a#pull {
 .avatar{
 	float: left;
 	margin-left: 2%;
+	margin-top:2%;
 }
 .sesion{
 	float: right;
 	margin-right: 2%;
+	margin-top:3%;
 	align-items: center;
 }
 
