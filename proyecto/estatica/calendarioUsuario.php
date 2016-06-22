@@ -29,6 +29,13 @@
                 var div = document.getElementById(num);
                 div.innerHTML = "";
             }  
+
+            function enviarDatos(){
+                var dias = document.getElementById("dia");
+                var horasIni = document.getElementById("horaI");
+                var horasFin = document.getElementById("horaF");
+                
+            }
         </script>
 </head>
 <body>

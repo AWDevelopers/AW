@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-06-2016 a las 12:55:18
+-- Tiempo de generación: 22-06-2016 a las 16:14:06
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.6.15
 
@@ -87,6 +87,13 @@ CREATE TABLE `noticia` (
   `imagen` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `noticia`
+--
+
+INSERT INTO `noticia` (`id`, `titulo`, `tipo`, `descripcionCorta`, `descripcionLarga`, `fecha`, `imagen`) VALUES
+(1, 'noticia1', 'primaria', 'descripcion corta', 'descripcion larga', '2016-06-22', 'img/imagen.png');
+
 -- --------------------------------------------------------
 
 --
@@ -100,21 +107,22 @@ CREATE TABLE `ong` (
   `email` varchar(30) NOT NULL,
   `usuario` varchar(20) NOT NULL,
   `pass` varchar(20) NOT NULL,
-  `telefono` int(11) DEFAULT NULL
+  `telefono` int(11) DEFAULT NULL,
+  `imagen` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `ong`
 --
 
-INSERT INTO `ong` (`CIF`, `nombre`, `direccion`, `email`, `usuario`, `pass`, `telefono`) VALUES
-('000000000', ' World Wildlife Fund (WWF)', 'Gran Vía de San Francisco, 8', 'info@wwf.es', 'wwfSpain', 'wwfSpain', 913540578),
-('000000001', 'Cruz Roja', 'Avenida Reina Victoria, 26', 'informa@cruzroja.es', 'CruzRoja', 'CruzRojaEspaña', 902222292),
-('000000002', 'Save the Children', 'Calle Doctor Esquerdo, 138', 'online@savethechildren.es', 'SaveTheChildren', 'savethechildrenSpain', 915130500),
-('000000003', 'Aldeas Infantiles', 'Calle Angelita Cavero, 9', 'mpardal@aldeasinfantiles.es', 'AldeasInfantiles', 'aldeasInfantSpain', 902332222),
-('000000004', 'Amnistia Internacional', 'Fernando VI, 8', 'info@es.amnesty.org', 'AmnistiaInterSpain', 'amnistiaInterSpain', 913101277),
-('000000005', 'Caritas', 'San Bernardo, 99', 'correo@caritas.es', 'CaritasEspaña', 'caritasEspaña', 914441000),
-('123456789', 'nuevo', 'c/Juan de la Rosa, 1', 'prueba@prueba.com', 'newuser', 'hoola', 98765432);
+INSERT INTO `ong` (`CIF`, `nombre`, `direccion`, `email`, `usuario`, `pass`, `telefono`, `imagen`) VALUES
+('000000000', ' World Wildlife Fund (WWF)', 'Gran Vía de San Francisco, 8', 'info@wwf.es', 'wwfSpain', 'wwfSpain', 913540578, ''),
+('000000001', 'Cruz Roja', 'Avenida Reina Victoria, 26', 'informa@cruzroja.es', 'CruzRoja', 'CruzRojaEspaña', 902222292, ''),
+('000000002', 'Save the Children', 'Calle Doctor Esquerdo, 138', 'online@savethechildren.es', 'SaveTheChildren', 'savethechildrenSpain', 915130500, ''),
+('000000003', 'Aldeas Infantiles', 'Calle Angelita Cavero, 9', 'mpardal@aldeasinfantiles.es', 'AldeasInfantiles', 'aldeasInfantSpain', 902332222, ''),
+('000000004', 'Amnistia Internacional', 'Fernando VI, 8', 'info@es.amnesty.org', 'AmnistiaInterSpain', 'amnistiaInterSpain', 913101277, ''),
+('000000005', 'Caritas', 'San Bernardo, 99', 'correo@caritas.es', 'CaritasEspaña', 'caritasEspaña', 914441000, ''),
+('123456789', 'nuevo', 'c/Juan de la Rosa, 1', 'prueba@prueba.com', 'newuser', 'hoola', 98765432, '');
 
 -- --------------------------------------------------------
 
@@ -185,7 +193,7 @@ CREATE TABLE `usuario` (
   `direccion` varchar(50) DEFAULT NULL,
   `cp` int(10) DEFAULT NULL,
   `usuario` varchar(20) NOT NULL,
-  `pass` varchar(20) NOT NULL,
+  `pass` varchar(60) NOT NULL,
   `email` varchar(30) NOT NULL,
   `fechaNacimiento` date NOT NULL,
   `avatar` tinytext,
@@ -302,7 +310,7 @@ ALTER TABLE `donaciones`
 -- AUTO_INCREMENT de la tabla `noticia`
 --
 ALTER TABLE `noticia`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --

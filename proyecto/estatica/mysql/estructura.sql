@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-06-2016 a las 12:55:04
+-- Tiempo de generación: 22-06-2016 a las 16:13:34
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.6.15
 
@@ -75,7 +75,8 @@ CREATE TABLE `ong` (
   `email` varchar(30) NOT NULL,
   `usuario` varchar(20) NOT NULL,
   `pass` varchar(20) NOT NULL,
-  `telefono` int(11) DEFAULT NULL
+  `telefono` int(11) DEFAULT NULL,
+  `imagen` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -128,7 +129,7 @@ CREATE TABLE `usuario` (
   `direccion` varchar(50) DEFAULT NULL,
   `cp` int(10) DEFAULT NULL,
   `usuario` varchar(20) NOT NULL,
-  `pass` varchar(20) NOT NULL,
+  `pass` varchar(60) NOT NULL,
   `email` varchar(30) NOT NULL,
   `fechaNacimiento` date NOT NULL,
   `avatar` tinytext,
@@ -230,7 +231,7 @@ ALTER TABLE `donaciones`
 -- AUTO_INCREMENT de la tabla `noticia`
 --
 ALTER TABLE `noticia`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --

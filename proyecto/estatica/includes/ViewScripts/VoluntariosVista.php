@@ -37,10 +37,7 @@
                         <p>Selecciona uno o varios días del calendario, indica las horas de inicio y fin de tu voluntariado y pulsa el botón añadir para añadirla a tu bolsa de horas.</p>
                         <h1> FECHA DE INICIO DEL PROYECTO: $fechaIni </h1>
                         <h1> FECHA DE FIN DEL PROYECTO: $fechaFin </h1>
-
-                           <form name="panelHorasVoluntarios" action="" method="POST">
-                        <input class= "boton" type="submit" name = "confirmar" value = "CONFIRMAR"></input> 
-                        </form>
+                        <button onclick="enviarDatos()" class= "boton" type="submit" name = "confirmar" value = "CONFIRMAR">CONFIRMAR</button> 
                </div>
                
 EOS;
