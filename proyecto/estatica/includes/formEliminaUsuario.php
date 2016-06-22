@@ -2,9 +2,12 @@
 include ('config.php');
 if (!isset($_SESSION)) session_start();
 require_once 'ModelScripts/GestorUsuarios.php';
+	
+	if (isset($_SESSION['login']) && $_SESSION['login']) {
 		$lista = new GestorUsuarios();
-
-		$DNI = $_REQUEST['DNI'];
-		header("Location: ../vistaNoticiaDetallada.php?id=".$id);
+		$dni = $_REQUEST['DNI'];
+		$lista->eliminarUsuario($dni);
+		header("Location: ../vistaUsuarios.php");
 		exit();
+	}
 ?>

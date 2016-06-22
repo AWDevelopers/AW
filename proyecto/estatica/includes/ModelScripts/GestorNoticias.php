@@ -53,10 +53,9 @@
 			$dao->eliminaNoticia($id);
 		}
 		
-		public function nuevaNoticia($titulo, $tipo , $descripcionCorta, $descripcionLarga, $imagen, $fecha){
-                        //Comprobacion q la noticia ya existe?
+		public function nuevaNoticia($titulo, $tipo , $descripcionCorta, $descripcionLarga, $imagen){
                         if(!$this->dao->existeNoticia($titulo)){
-                            return ($this->dao->insertaNoticia($titulo,$tipo,$descripcionCorta, $descripcionLarga, $imagen, $fecha));
+                            return ($this->dao->insertaNoticia($titulo,$tipo,$descripcionCorta, $descripcionLarga, $imagen));
                         }
                         else{
                             return false;
