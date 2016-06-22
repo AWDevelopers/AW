@@ -53,7 +53,7 @@
 			if($row = $rs->fetch_assoc()){    
 					//Si el usuario es correcto ahora validamos su contraseña
 					$passBd = $row["pass"];
-					if ($pass == $passBd) {
+					if (password_verify($pass, $passBd)) {
 						  //Creamos la sesión
 							session_destroy();
 							session_start();  
@@ -76,11 +76,11 @@
 						 {				 	
 							$login=false;
 						}
-				}
-				else
-				{
-					$login=false;
-				}
+			}
+			else
+			{
+				$login=false;
+			}
 			$con->close();
 			return $login;
 		}
@@ -89,12 +89,18 @@
 			$app = App::getSingleton();
             $con = $app->conexionBd();
 			$tipo = "User";
-			$sql = "INSERT INTO usuario (`DNI`, `nombre`, `apellidos`, `direccion`, `cp`, `usuario`, `pass`, `email`, `fechaNacimiento`, `avatar`, `sexo`, `telefono`, `tipo`)
-			VALUES ('$dni', '$nombre', '$apellidos', '$direccion', '$cp','$user', '$pass', '$email', '$fechaNacimiento', '$avatar','$sexo', '$telefono', '')";
+		
+			$opciones = [
+				'cost' => 11,
+				'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
+			];
+			$contra = $pass;
+			$contra = password_hash($contra, PASSWORD_BCRYPT, $opciones)."\n";
+			
+			$sql = "INSERT INTO usuario (DNI, nombre, apellidos, direccion, cp, usuario, pass, email, fechaNacimiento, avatar, sexo, telefono,tipo)
+			VALUES ( '$dni', '$nombre', '$apellidos', '$direccion', '$cp', '$user', '$contra', '$email', '$fechaNacimiento', '$avatar', '$sexo', '$telefono', '$tipo')";
 			$rs = $con->query($sql) or die ($con->error);
-			if($rs != NULL){
-				//
-			}
+			
 			$con->close();
 
 		}

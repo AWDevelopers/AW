@@ -18,27 +18,46 @@
 		}
 		
 		public function comprobarLogin($user, $pass){
-			$ok =true;
-			$inicio=true;
-			if(($this->dao->usuarioCorrecto($user)==0)){
-				$inicio=false;
+			if(($this->dao->usuarioCorrecto($user) == 0)){
+				//usuario no correct, no existe
+				return false;
 			}
 			else{
-				$inicio= $this->dao->compruebaLogin($user, $pass);
+				if($this->dao->compruebaLogin($user, $pass)){
+					//usuario correcto se ha hecho login
+					return true;
+				}
+				else{
+					return false;
+				}
 			}
-			return $inicio;
 		}
 		
-		public function nuevoUsuario($user, $pass, $nombre, $apellidos, $dni, $email, $fechaNacimiento, $sexo, $telefono, $direccion, $cp, $avatar ){
-			//No existe el usuario
-		   if($this->dao->existeUsuario($dni, $email, $user) == 0){
-				return $this->dao->insertaUsuario($user, $pass, $nombre, $apellidos, $dni, $email, $fechaNacimiento, $sexo, $telefono, $direccion, $cp, $avatar );
-            }    
-			else{
-				//Existe el usuario
-				return "existe el usuario";
+		public function comprobarDNI($dni){
+			$dni = $_REQUEST['dni'];
+			$letra = substr($dni, -1);
+			$numeros = substr($dni, 0, -1);
+			if ( substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros%23, 1) == $letra && strlen($letra) == 1 && strlen ($numeros) == 8 ){
+				return true;
+			}else{
+				return false;
 			}
 		}
+		public function nuevoUsuario($user, $pass, $nombre, $apellidos, $dni, $email, $fechaNacimiento, $sexo, $telefono, $direccion, $cp, $avatar ){
+			//No existe el usuario
+			if ($this->comprobarDNI($dni) && strlen($pass)>5){
+			  if($this->dao->existeUsuario($dni, $email, $user) == 0){
+					$this->dao->insertaUsuario($user, $pass, $nombre, $apellidos, $dni, $email, $fechaNacimiento, $sexo, $telefono, $direccion, $cp, $avatar );
+					return true;
+				}    
+				else{
+					return false;
+				}
+			}
+			else{
+				return false;
+			}
         
+		}
 	}
 ?>

@@ -20,13 +20,8 @@
 
 		function listaNoticiasPrimarias(){
 			$app = App::getSingleton();
-<<<<<<< HEAD
-			$con = $app->conexionBd();
-			$sql = sprintf("SELECT * FROM noticia WHERE tipo='%s'", $con->real_escape_string('primaria'));
-=======
-                        $con = $app->conexionBd();
+            $con = $app->conexionBd();
 			$sql = sprintf("SELECT * FROM noticia WHERE tipo='primaria'");
->>>>>>> 7d159327768d7e3cfd291b230d5e644f0dde1c94
 			$rs = $con->query($sql) or die ($con->error);
 			if($rs->num_rows > 0)
 			{
@@ -38,12 +33,8 @@
 		
 		function listaNoticiasSecundarias(){
 			$app = App::getSingleton();
-                        $con = $app->conexionBd();
-<<<<<<< HEAD
-			$sql = sprintf("SELECT * FROM noticia WHERE tipo='%s'", $con->real_escape_string('secundaria'));
-=======
+            $con = $app->conexionBd();
 			$sql = sprintf("SELECT * FROM noticia WHERE tipo='secundaria'");
->>>>>>> 7d159327768d7e3cfd291b230d5e644f0dde1c94
 			$rs = $con->query($sql) or die ($con->error);
 			/**/
 			if($rs->num_rows > 0)
@@ -56,12 +47,9 @@
 		
 		function listaNoticiasTerciarias(){
 			$app = App::getSingleton();
-                        $con = $app->conexionBd();
-<<<<<<< HEAD
-			$sql = sprintf("SELECT * FROM noticia WHERE tipo='%s'", $con->real_escape_string('terciaria'));
-=======
+             $con = $app->conexionBd();
+
 			$sql = sprintf("SELECT * FROM noticia WHERE tipo='terciaria'");
->>>>>>> 7d159327768d7e3cfd291b230d5e644f0dde1c94
 			$rs = $con->query($sql) or die ($con->error);
 			/**/
 			if($rs->num_rows > 0)
@@ -74,12 +62,9 @@
 		
 		function listaNoticiasOtras(){
 			$app = App::getSingleton();
-                        $con = $app->conexionBd();
-<<<<<<< HEAD
-			$sql = sprintf("SELECT * FROM noticia WHERE tipo='%s'", $con->real_escape_string('otras'));
-=======
+            $con = $app->conexionBd();
+
 			$sql = sprintf("SELECT * FROM noticia WHERE tipo='otras'");
->>>>>>> 7d159327768d7e3cfd291b230d5e644f0dde1c94
 			$rs = $con->query($sql) or die ($con->error);
 			/**/
 			if($rs != NULL)
