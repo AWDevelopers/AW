@@ -44,6 +44,19 @@ a#pull {
 	width: 16%;
 	min-width: 121px;
 }
+#dia{
+	line-height:2px;
+	
+}
+
+#horaI{
+	line-height:2px;
+}
+
+#horaF{
+	line-height:2px;
+}
+
 
 .avatar{
 	float: left;
@@ -443,14 +456,24 @@ button {
 }
 #mostrarHoras{
 	float:left;
-    width: 30%;
-	height: 320px;
+    width: 100%;
 	margin-top: 2%;
+	max-height:200px;
+}
+#cajaHoras{
+	margin-top:4%;
+	margin-left:50%;
+	margin-right:15%;
 }
 
 #pieCalendario {
 	float:left;
 
+}
+
+#mostrarHoras h2{
+	text-align:center;
+	text-decoration: underline;
 }
 
 /*---------------------FIN CALENDARIO USUARIO------------------*/

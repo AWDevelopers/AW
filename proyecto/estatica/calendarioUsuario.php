@@ -17,7 +17,7 @@
                 if(horaFin > horaIni){
                     if(horaIni > "10:00"){
                         if(horaFin < "22:00"){
-                            document.getElementById("mostrarHoras").innerHTML += "<div id="+num+"> <p id='dia'> Dia: "+ dia +"</p> <p id='horaI'>"+horaIni+"</p> <p id='horaF'>"+horaFin+"</p> <button onclick='eliminaHora("+num+")' id= 'eliminar' type='submit' name = 'eliminar'>Eliminar</button></div> ";
+                            document.getElementById("mostrarHoras").innerHTML += "<div id="+num+"> <p id='dia'> Dia: "+ dia +"</p> <p id='horaI'>Hora inicio: "+horaIni+"</p> <p id='horaF'>Hora fin: "+horaFin+"</p> <button onclick='eliminaHora("+num+")' id= 'eliminar' type='submit' name = 'eliminar'>Eliminar</button></div> ";
                             num++;
                             error.innerHTML = "";
                         } else error.innerHTML = "hora de finalizacion superior a las 22:00";
