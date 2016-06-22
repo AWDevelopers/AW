@@ -14,8 +14,8 @@
 		
 			<div class = "contenido">
 			<div id = "panelNoticias">
-				<form action="panelAdmin.php>"><input type="submit" value="Atras"></input></form>				
-				<button>Añadir noticia</button><!--crear noticia hecho? o no?-->
+				<form action="panelAdmin.php"><input type="submit" value="Atras"></input></form>				
+				<form action="vistaAniadirNoticia.php"><input type="submit" value="Añadir Noticia"></input></form><!--crear noticia hecho? o no?-->
 				<?php 
 					require_once "includes/ViewScripts/NoticiasVista.php";
 					$vNoticias = new NoticiasVista();
