@@ -51,7 +51,7 @@ class Aplicacion {
     include($this->dirInstalacion . '/'.$path);
   }
 
-  public function login(Usuario $user) {
+  public function login($user) {
     $_SESSION['login'] = true;
     $_SESSION['nombre'] = $user->getNombre();
     $_SESSION['roles'] = $user->getRol();

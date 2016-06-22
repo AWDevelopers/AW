@@ -7,7 +7,7 @@
 			$this->gestorProyectos = new GestorProyectos();
 		}
 
-		function muestraPanelVoluntariado($idProyecto){
+		function muestraPanelVoluntariado($idProyecto, $dniUsuario){
 			$proyecto = $this->gestorProyectos->getProyecto($idProyecto);
 			$fechaFin = $proyecto->getFechaFin();
 			$fechaIni = $proyecto->getFechaCreacion();
@@ -30,14 +30,20 @@
                         <button onclick="aniadeHoras()" id= "anadir" type="submit" name = "añadir">AÑADIR</button> 
                         <div id="error"></div>
                 </div>
-
-                <div id = "mostrarHoras">
-                </div>
+				
+				<div id="cajaHoras">
+					<div style="width:auto;height:auto;line-height:3em;overflow:auto;padding:5px;"> 
+						<div id = "mostrarHoras">
+							<p><h2>Horarios</h2></p>
+						</div>
+					</div>
+				</div>
+			
                 <div id ="pieCalendario">
                         <p>Selecciona uno o varios días del calendario, indica las horas de inicio y fin de tu voluntariado y pulsa el botón añadir para añadirla a tu bolsa de horas.</p>
                         <h1> FECHA DE INICIO DEL PROYECTO: $fechaIni </h1>
                         <h1> FECHA DE FIN DEL PROYECTO: $fechaFin </h1>
-                        <button onclick="enviarDatos()" class= "boton" type="submit" name = "confirmar" value = "CONFIRMAR">CONFIRMAR</button> 
+                        <button onclick="enviarDatos($idProyecto, $dniUsuario)" class= "boton" type="submit" name = "confirmar" value="CONFIRMAR">CONFIRMAR</button> 
                </div>
                
 EOS;

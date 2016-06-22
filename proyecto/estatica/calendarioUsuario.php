@@ -9,6 +9,7 @@
     <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript">
             var num = 0;
+            var voluntariados = new Array();
             function aniadeHoras() {
                 var horaIni = document.getElementById("horaIni").value;
                 var horaFin =  document.getElementById("horaFin").value;
@@ -17,7 +18,8 @@
                 if(horaFin > horaIni){
                     if(horaIni > "10:00"){
                         if(horaFin < "22:00"){
-                            document.getElementById("mostrarHoras").innerHTML += "<div id="+num+"> <p id='dia'> Dia: "+ dia +"</p> <p id='horaI'>"+horaIni+"</p> <p id='horaF'>"+horaFin+"</p> <button onclick='eliminaHora("+num+")' id= 'eliminar' type='submit' name = 'eliminar'>Eliminar</button></div> ";
+                            document.getElementById("mostrarHoras").innerHTML += "<div id="+num+"> <p name='dia'> Dia: "+ dia +"</p> <p name='horaI'>Hora Inicio:"+horaIni+"</p> <p name='horaF'>Hora fin:"+horaFin+"</p> <button onclick='eliminaHora("+num+")' id= 'eliminar' type='submit' name = 'eliminar'>Eliminar</button></div> ";
+                            voluntariados[num] = {dia:dia, horaF:horaFin, horaI:horaIni};
                             num++;
                             error.innerHTML = "";
                         } else error.innerHTML = "hora de finalizacion superior a las 22:00";
@@ -28,13 +30,28 @@
             function eliminaHora(num){
                 var div = document.getElementById(num);
                 div.innerHTML = "";
+                for(var i = voluntariados.length; i > num; i--){
+                    voluntariados[i] = voluntariados[i-1];
+                }
+                num--;
             }  
 
-            function enviarDatos(){
-                var dias = document.getElementById("dia");
-                var horasIni = document.getElementById("horaI");
-                var horasFin = document.getElementById("horaF");
-                
+            function enviarDatos(idProyecto, dniUsuario){
+                var dias = document.getElementsByTagName("dia");
+                var horasIni = document.getElementsByTagName("horaI");
+                var horasFin = document.getElementsByTagName("horaF");
+                var error = document.getElementById("error");
+                error.innerHTML = dniUsuario;
+                for(var i = 0; i < voluntariados.length; i++){
+                    $.ajax({
+                        type: "POST",
+                        url: "includes/formNuevoVoluntariado.php",
+                        data: {"id":idProyecto, "dni":dniUsuario, "dia":voluntariados[i]['dia'], "horaIni":voluntariados[i]['horaI'], "horaFin":voluntariados[i]['horaF']},
+                        success: function(data) {
+                            
+                        }
+                    });
+                }
             }
         </script>
 </head>
@@ -44,10 +61,9 @@
 
         <div class="contenido">
         <?php
-
         require_once "includes/ViewScripts/VoluntariosVista.php";
         $vista = new VoluntariosVista();
-        $vista->muestraPanelVoluntariado($_GET['id']);
+        $vista->muestraPanelVoluntariado($_GET['id'], $_GET['usuario']);
         ?>
 
                
