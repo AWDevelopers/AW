@@ -1,6 +1,7 @@
 ﻿<?php
 	require_once '/../ModelScripts/Voluntarios.php';
-
+	require_once '/../config.php';
+	use \AW\proyecto\estatica\includes\Aplicacion as App;
 	class DaoVoluntarios{
 
 		function listaVoluntarios($dniUsuario){
