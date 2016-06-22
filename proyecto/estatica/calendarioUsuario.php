@@ -18,12 +18,8 @@
                 if(horaFin > horaIni){
                     if(horaIni > "10:00"){
                         if(horaFin < "22:00"){
-<<<<<<< HEAD
                             document.getElementById("mostrarHoras").innerHTML += "<div id="+num+"> <p name='dia'> Dia: "+ dia +"</p> <p name='horaI'>Hora Inicio:"+horaIni+"</p> <p name='horaF'>Hora fin:"+horaFin+"</p> <button onclick='eliminaHora("+num+")' id= 'eliminar' type='submit' name = 'eliminar'>Eliminar</button></div> ";
                             voluntariados[num] = {dia:dia, horaF:horaFin, horaI:horaIni};
-=======
-                            document.getElementById("mostrarHoras").innerHTML += "<div id="+num+"> <p id='dia'> Dia: "+ dia +"</p> <p id='horaI'>Hora inicio: "+horaIni+"</p> <p id='horaF'>Hora fin: "+horaFin+"</p> <button onclick='eliminaHora("+num+")' id= 'eliminar' type='submit' name = 'eliminar'>Eliminar</button></div> ";
->>>>>>> 1a4bf19f53ed521c8525687f21ccb6983a30c50f
                             num++;
                             error.innerHTML = "";
                         } else error.innerHTML = "hora de finalizacion superior a las 22:00";
