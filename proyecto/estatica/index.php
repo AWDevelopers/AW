@@ -11,24 +11,6 @@
 <body>
 	<div id='contenedor'>
 		<?php require 'common.php'; ?>
-		<!--<div id="cabecera">
-			<div class="avatar">
-				<IMG SRC="img/usuarioSF.png" WIDTH=120 HEIGHT=120 ALT="Avatar usuario">
-			</div>
-			<div class="sesion">
-				<IMG SRC="img/power.png" WIDTH=60 HEIGHT=60 ALT="Avatar usuario">
-			</div>
-		</div>
-		<div id="sidebar-left">
-			<ul>
-				<li><a href="index.html">Inicio</a></li>
-            	<li><a href="#">Donaciones</a></li>
-            	<li><a href="#">Voluntarios</a></li>
-            	<li><a href="conocenos.html">Conocenos</a></li>
-            	<li><a href="#">Tienda</a></li>
-        	</ul>
-		</div> 
-		-->
 		<div class="contenido">
 			<div id="noticias">
 				<video id="videoPrincipal" autoplay controls> 
