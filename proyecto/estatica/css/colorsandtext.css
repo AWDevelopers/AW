@@ -223,7 +223,7 @@ button:active /* Al presionarse el botón */ {
 	background: #A9A9A9;
 }
 
-#mostrarHoras{
+#cajaHoras{
 	border: solid;
     border-width: 2px;
     border-color: grey;

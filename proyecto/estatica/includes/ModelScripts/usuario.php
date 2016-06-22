@@ -1,9 +1,11 @@
 <?php
 	class Usuario
 	{	
+		
+		private $DNI;
 		private $nombre;
-		private $DNI; 
-   		private $apellidos; 
+   		private $apellidos; 	
+		private $direccion;
 		private $cp; 
 		private $usuario;
 		private $pass;
@@ -12,14 +14,14 @@
 		private $avatar;
 		private $sexo;
 		private $telefono;
-		private $resultado;
-		private $direccion;
+		private $tipo;
 
 		/*Constructora de la clase por defecto*/
-		function __construct($nombre,$dni,$apellidos,$direccion,$cp,$usuario,$pass,$email,$fecha,$avatar,$sexo,$telefono){
-			$this->nombre=$nombre;
-			$this->DNI=$dni;  
-	   		$this->apellidos=$apellidos; 
+		function __construct($nombre,$dni,$apellidos,$direccion,$cp,$usuario,$pass,$email,$fecha,$avatar,$sexo,$telefono, $tipo){
+			$this->DNI=$dni;
+			$this->nombre=$nombre;  
+	   		$this->apellidos=$apellidos;
+			$this->direccion=$direccion;
 			$this->cp=$cp; 
 			$this->usuario=$usuario;
 			$this->pass=$pass;
@@ -28,61 +30,35 @@
 			$this->avatar=$avatar;
 			$this->sexo=$sexo;
 			$this->telefono=$telefono;
-			$this->direccion=$direccion;
+			$this->tipo = $tipo;
 		}
-                
-                public getNombre(){
-                    return $this->nombre;
-                }
-                
-                public getDNI(){
-                    return $this->DNI;
-                }
-                
-                public getApellidos(){
-                    return $this->apellidos;
-                }
-                
-                public getCP(){
-                    return $this->cp;
-                }
-                
-                public getUsuario(){
-                    return $this->usuario;
-                }
-                
-                public getPass(){
-                    return $this->pass;
-                }
-                
-                public getEmail(){
-                    return $this->email;
-                }
-                
-                public getFechaNacimiento(){
-                    return $this->fechaNacimiento;
-                }
-                
-                public getAvatar(){
-                    return $this->avatar;
-                }
-                
-                public getSexo(){
-                    return $this->sexo;
-                }
-                
-                public getTelefono(){
-                    return $this->telefono;
-                }
-                
-                public getDireccion(){
-                    return $this->direccion;
-                }
-                
-                public function compruebaPassword($password) {
-                    return password_verify($password, $this->pass);
-                }
 		
+		public function getNombre(){ return $this->nombre;}
+		
+		public function getDNI(){ return $this->DNI;}
+		
+		public function getApellidos(){ return $this->apellidos;}
+		
+		public function getCP(){ return $this->cp;}
+		
+		public function getUsuario(){ return $this->usuario;}
+		
+		public function getPass(){ return $this->pass;}
+		
+		public function getEmail(){ return $this->email;}
+		
+		public function getFechaNacimiento(){ return $this->fechaNacimiento;}
+		
+		public function getAvatar(){ return $this->avatar;}
+		
+		public function getSexo(){ return $this->sexo;}
+		
+		public function getTelefono(){ return $this->telefono;}
+		
+		public function getDireccion(){ return $this->direccion;}
+		
+		public function getRol(){ return $this->tipo;}
+
 		
 	}
 ?>

@@ -6,12 +6,11 @@ require_once 'ModelScripts/GestorUsuarios.php';
     $pass = $_REQUEST['pass'];
 	$login= $lista->comprobarLogin($user, $pass);
 	//Login incorrecto
-	echo $login;
-	/*if (!$login){
+	if (!$login){
 		header("Location: ../login.php");
 	}
 	else{
 		//Login correcto
 		header("Location: ../index.php");
-	}*/
+	}
 ?>

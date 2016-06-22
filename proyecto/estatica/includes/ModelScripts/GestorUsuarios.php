@@ -12,7 +12,9 @@
 			$lista = $this->dao->listaUsuarios();
 			$array = new ArrayObject();
 			for($i= 0; $i <sizeof($lista) ; $i++){
-			//$array->append(new noticia($lista[$i]['id'], $lista[$i]['titulo'],$lista[$i]['tipo'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen'],$lista[$i]['fecha']));
+				$array->append(new Usuario($lista[$i]['nombre'], $lista[$i]['DNI'],$lista[$i]['apellidos'], $lista[$i]['direccion'], $lista[$i]['cp'],
+				$lista[$i]['usuario'],$lista[$i]['pass'],$lista[$i]['email'],$lista[$i]['fechaNacimiento'], $lista[$i]['avatar'],$lista[$i]['sexo'],$lista[$i]['telefono'],
+				$lista[$i]['tipo']));
 			}
 			return $array;
 		}
@@ -20,16 +22,12 @@
 		public function comprobarLogin($user, $pass){
 			if(($this->dao->usuarioCorrecto($user) == 0)){
 				//usuario no correct, no existe
-				return false;
+				$login=0;
+				return $login;
 			}
 			else{
-				if($this->dao->compruebaLogin($user, $pass)){
-					//usuario correcto se ha hecho login
-					return true;
-				}
-				else{
-					return false;
-				}
+				$login = $this->dao->compruebaLogin($user, $pass);
+				return $login;
 			}
 		}
 		

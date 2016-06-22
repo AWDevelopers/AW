@@ -1,5 +1,5 @@
 <?php
-	//require_once '/../ModelScripts/usuario.php';
+	require_once '/../ModelScripts/usuario.php';
 	require_once '/../config.php';
 	use \AW\proyecto\estatica\includes\Aplicacion as App;
 	class DaoUsuarios{
@@ -8,10 +8,10 @@
 
 		function listaUsuarios(){
 			$app = App::getSingleton();
-                        $con = $app->conexionBd();
+            $con = $app->conexionBd();
 			$sql = "SELECT * FROM usuario";
 			$rs = $con->query($sql) or die ($con->error);
-			if($rs != NULL)
+			if($rs->num_rows >0 )
 			{
 				while($lista[] = $rs->fetch_assoc());
 				$rs->free();
@@ -27,7 +27,9 @@
 		
 			$rs = $con->query($sql) or die ($con->error);
 			if($rs != NULL){
-				return $rs->num_rows;
+				$num_cols = $rs->num_rows;
+				$rs->free();
+				return $num_cols;
 			}
 		}
 		
@@ -37,9 +39,8 @@
 			$numCol=0;
 			$sql = sprintf("SELECT * FROM usuario WHERE usuario='%s' OR email='%s' OR DNI='%s'", $con->real_escape_string($user), $con->real_escape_string($email), $con->real_escape_string($dni));
 			$rs = $con->query($sql) or die ($con->error);
-			if($rs!= NULL){
-				$numCol = $rs->num_rows;
-			}
+			$numCol = $rs->num_rows;
+			$rs->num_rows;
 			//$con->close();
 			return $numCol;
 		}
@@ -54,31 +55,18 @@
 					//Si el usuario es correcto ahora validamos su contraseña
 					$passBd = $row["pass"];
 					if (password_verify($pass, $passBd)) {
-						  //Creamos la sesión
-							session_destroy();
-							session_start();  
-						  //Almacenamos los datos del usuario en variables
-							$_SESSION['user'] = $row["usuario"];
-							$_SESSION['Logueado'] = true;
-							$_SESSION['rol'] = $row["tipo"];
-							$_SESSION['Nombre'] = $row["nombre"];
-							$_SESSION['Apellidos'] = $row["apellidos"];
-							$_SESSION['Email'] = $row["email"];
-							$_SESSION['Direccion'] = $row["direccion"];
-							$_SESSION['CP'] = $row["cp"];
-							$_SESSION['sexo'] = $row["sexo"];
-							$_SESSION['telefono'] = $row["telefono"];
-							$_SESSION['avatar'] = $row["avatar"];
-							$_SESSION['DNI'] = $row["DNI"];
-							$login=true;
+						//contraseña correcta hacemos sesion
+						$usuario = new Usuario($row["nombre"], $row["DNI"], $row["apellidos"], $row["direccion"], $row["usuario"], $row["cp"], $row["usuario"], $row["pass"], $row["email"], $row["fechaNacimiento"], $row["avatar"], $row["sexo"],$row["telefono"], $row["tipo"]);
+						$app->login($usuario);
+						$login=true;
 					}
 					else
-						 {				 	
+						 {	
 							$login=false;
 						}
 			}
 			else
-			{
+			{	
 				$login=false;
 			}
 			$con->close();
