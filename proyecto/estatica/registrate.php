@@ -26,6 +26,7 @@
 		</script>
 		
 		
+		
 	</head>
 	<body>
 		<div id='contenedor'>
@@ -36,7 +37,7 @@
 
 			<div class="contenido">
 				<div class="formulario">
-					<form action="includes/formRegistro.php" method="POST">
+					<form name= formulario action="includes/formRegistro.php" method="POST">
 					
 					<div class="contenido2">
 						
