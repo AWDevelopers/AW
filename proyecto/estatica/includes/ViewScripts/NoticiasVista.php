@@ -150,7 +150,7 @@ EOS;
                     $des = $iterator->current()->getDescripcionCorta();
                     $id = $iterator->current()->getId();
                     $html = <<<EOS
-                                    <div class="noticiaAdmin">
+                                 <div class="noticiaAdmin">
                                     <h3> $titulo </h3>
                                     <p> $des </p>
                                     <script language="JavaScript">

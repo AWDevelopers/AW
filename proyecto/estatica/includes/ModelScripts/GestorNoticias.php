@@ -50,7 +50,7 @@
 			return $array;
 		}
 		public function eliminaNoticia($id){
-			$dao->eliminaNoticia($id);
+			$this->dao->eliminaNoticia($id);
 		}
 		
 		public function nuevaNoticia($titulo, $tipo , $descripcionCorta, $descripcionLarga, $imagen){
