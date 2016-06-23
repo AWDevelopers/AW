@@ -60,12 +60,18 @@ button:active /* Al presionarse el botón */ {
 }
 
 .imgDonaciones{
-	margin-left: 25%;
+	
 	font-size: 16px;
 	font-family: cursive;
 	/* float: left; */
 }
 
+
+.imgONG{
+	font-size: 16px;
+	font-family: cursive;
+	margin-left:30%;
+}
 .cajaDescripcion{
 	background: white;
 	margin-left:25%;

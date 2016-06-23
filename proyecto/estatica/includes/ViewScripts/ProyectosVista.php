@@ -48,7 +48,7 @@ EOS;
 			$idUsuario = $_SESSION['DNI'];
 		$html = <<<EOS
 		<h1> $nombre </h1>
-		<div class="imgDonaciones">
+		<div class="imgDonacion">
 			<img src="$imagen" />
 		</div>
 		<div class="cajaDescripcion">

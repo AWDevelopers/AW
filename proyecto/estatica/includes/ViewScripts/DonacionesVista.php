@@ -25,10 +25,11 @@
 	 			$html = <<<EOS
 					<div class="contenido">
 				
-						<div id = 'fundacion'>
-							<h1><a href="perfilOng.php?ong=$CIFOng">'$nombre'</a></h1>'
+						<div id= "tituloDonacionesVista">
+						<h1><a href="perfilOng.php?ong=$CIFOng">'$nombre'</a></h1>
 						</div>
-						<div id = 'imagenONG'>
+						
+						<div class = "imgONG">
 							<!--<p><img src="img/panda.png" width="600" /></p>-->
 							<p><img src= "$imagen" /></p>
 							<h4>$descCorta</h4>

@@ -121,8 +121,18 @@ button {
 .imgDonaciones img{
 	width: 70%;
 	height: 70%;
+	
+}
+.imgDonacion img{
+	width: 52.5%;
+	height: 52.5%;
+	margin-left:25%;
 }
 
+.imgONG img{
+	width: 60%;
+	height: 60%;
+}
 .cajaDescripcion{
 	background: white;
 	min-height:80%;
@@ -508,6 +518,11 @@ progress{
 	float: left;
 	display:inline-block;
 	margin-left: 60px;
+}
+
+#tituloDonacionesVista{
+	
+	margin-left:45%;
 }
 /*------------------FIN DONACIONES----------*/
 
