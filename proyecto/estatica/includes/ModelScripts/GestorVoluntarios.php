@@ -35,7 +35,17 @@
 			return ($this->dao->seleccionaVoluntarios($idProyecto));
 		}
 
+		public function getVoluntariosPorONG($cifOng){
+			 //$this->retiraEtiquetas($id); //LIMPIAMOS DE ETIQUETAS HTMLS Y PHP */
+			htmlspecialchars(trim(strip_tags($cifOng)));
+			return ($this->dao->seleccionaVoluntariosONG($cifOng));
+		}
 
+		public function getVoluntariosPorONG($dni){
+			 //$this->retiraEtiquetas($id); //LIMPIAMOS DE ETIQUETAS HTMLS Y PHP */
+			htmlspecialchars(trim(strip_tags($dni)));
+			return ($this->dao->seleccionaVoluntariosUsuario($dni));
+		}
 	}
 
 ?>
