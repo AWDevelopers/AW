@@ -43,6 +43,7 @@ EOS;
 		$imagen = $proyecto->getImagen();
 		$descripcion = $proyecto->getDescripcionLarga();
 		#$idUsuario = $_SESSION['usuario'];
+		$idUsuario = "";
 		if (isset($_SESSION['login']) && $_SESSION['login'])
 			$idUsuario = $_SESSION['DNI'];
 		$html = <<<EOS

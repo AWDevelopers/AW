@@ -4,6 +4,9 @@ if (!isset($_SESSION)) session_start();
 require_once 'ModelScripts/GestorVoluntarios.php';
 $lista = new GestorVoluntarios();
 		$id = $_REQUEST['idProyecto'];
-		header("Location: ../calendarioUsuario.php?id=".$id);
+		if (isset($_SESSION['login']) && $_SESSION['login'])
+			header("Location: ../calendarioUsuario.php?id=".$id);
+		else
+			header("Location: ../registrate.php");
 		exit();
 ?>
