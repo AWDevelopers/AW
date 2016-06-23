@@ -13,9 +13,17 @@
 		<?php require 'common.php'; ?>
 		
 			<div class = "contenido">
-			<div id = "panelNoticias">
-				<form action="panelAdmin.php"><input type="submit" value="Atras"></input></form>				
-				<form action="vistaAniadirNoticia.php"><input type="submit" value="Añadir Noticia"></input></form>
+			<div class = "panelNoticias">
+				<!--Estos dos botones deberían ser imagenes-->
+				<div class="atrasYAniade">
+					<div class="atras">
+						<form action="panelAdmin.php"><input type="submit" value="Atras"></input></form>
+					</div>
+					<div class="aniade">
+						<form action="vistaAniadirNoticia.php"><input type="submit" value="Añadir Noticia"></input></form>
+					</div>				
+					
+				</div>
 				<?php 
 					require_once "includes/ViewScripts/NoticiasVista.php";
 					$vNoticias = new NoticiasVista();

@@ -14,12 +14,19 @@
 		
 			<div class = "contenido">
 			<div id = "panelUsuarios">
-				<form action="panelAdmin.php"><input type="submit" value="Atras"></input></form>				
-				<?php 
-					require_once "includes/ViewScripts/ProyectosVista.php";
-					$vProyectos = new vistaProyectos();
-					$vProyectos->muestraProyectosConVoluntarios();
-				?>
+			<div class = "panelNoticias">
+				<div class="atrasYAniade">
+					<div class="atras">
+						<form action="panelAdmin.php"><input type="submit" value="Atras"></input></form>
+					</div>
+				</div>				
+					<?php 
+						require_once "includes/ViewScripts/ProyectosVista.php";
+						$vProyectos = new vistaProyectos();
+						$vProyectos->muestraProyectosConVoluntarios();
+					?>
+			</div>
+			
 			</div>
 		</div>
 		

@@ -317,8 +317,40 @@ progress{
 	background-color: #66b3ff;
 }
 /*---------------FIN LOGIN--------------*/
-
-
+/*---------------PANEL ADMIN--------------*/
+.panelNoticias{
+	font-family: Arial;
+}
+.atrasYAniade form input[type=submit]{
+	background-color: #3399ff;
+	border: none;
+	border-radius: 4px;
+	color: white;
+    font-size: 16px;
+}
+.atrasYAniade form input[type=submit]:hover{
+	background-color: #66b3ff;
+}
+.noticiaAdmin{
+	margin-top: 0.5%; 
+	padding-left: 1%;
+	width: 100%;
+	border: 1px solid black;
+	display: inline-block;
+	float: left;
+	background-color: white;
+}
+.noticiaAdmin form input[type=submit]{
+	background-color: #6666ff;
+	border: none;
+	border-radius:1px;
+	color: white;
+    font-size: 16px;
+}
+.noticiaAdmin form input[type=submit]:hover{
+	background-color:#b3b3ff;
+}
+/*------FIN PANEL DE ADMIN----------*/
 @media only screen and (max-width : 500px) {
  
    nav a#pull {

@@ -19,7 +19,7 @@
 			$email = $iterator->current()->getEmail();
 			$DNI = $iterator->current()->getDNI();
 			  	 $html = <<<EOS
-  				<div>
+  				<div class="noticiaAdmin">
 				  		<p>Nombre: $nombre </p>
 						<p>Apellidos : $apellidos </p>
 						<p>DNI : $DNI </p>

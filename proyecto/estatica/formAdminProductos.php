@@ -13,8 +13,15 @@
 		<?php require 'common.php'; ?>	
 			<div class = "contenido">
 			<div id = "panelUsuarios">
-				<form action="panelAdmin.php"><input type="submit" value="Atras"></input></form>
-				<form action="vistaAniadirProducto.php"><input type="submit" value="Añadir Producto(aun no está)"></input></form><!--Falta la vista para añadir profucto-->				
+			<div class = "panelNoticias">
+				<div class="atrasYAniade">
+					<div class="atras">
+						<form action="panelAdmin.php"><input type="submit" value="Atras"></input></form>
+					</div>
+					<div class="aniade">
+							<form action="vistaAniadirProducto.php"><input type="submit" value="Añadir Producto(aun no está)"></input></form><!--Falta la vista para añadir profucto-->	
+					</div>
+						
 				<?php 
 					require_once "includes/ViewScripts/ProductosVista.php";
 					$vProyectos = new vistaProductos();

@@ -13,9 +13,15 @@
 		<?php require 'common.php'; ?>
 		
 			<div class = "contenido">
-			<div id = "panelUsuarios">
-				<form action="panelAdmin.php"><input type="submit" value="Atras"></input></form>
-				<form action="vistaInsertarONG.php"><input type="submit" value="Añadir ONG"></input></form><!--La funcion de añadir ong da problemillas-->			
+			<div class = "panelNoticias">
+				<div class="atrasYAniade">
+					<div class="atras">
+						<form action="panelAdmin.php"><input type="submit" value="Atras"></input></form>
+					</div>
+					<div class="aniade">
+						<form action="vistaInsertarONG.php"><input type="submit" value="Añadir ONG"></input></form><!--La funcion de añadir ong da problemillas-->	
+					</div>
+						
 				<?php 
 					require_once "includes/ViewScripts/OngsVista.php";
 					$vONGs = new vistaOng();

@@ -14,8 +14,14 @@
 		
 			<div class = "contenido">
 			<div id = "panelUsuarios">
-				<form action="panelAdmin.php"><input type="submit" value="Atras"></input></form>				
-				<form action="vistaAniadirUsuario.php"><input type="submit" value="Añadir Usuario"></input></form>
+			<div class = "panelNoticias">
+				<div class="atrasYAniade">
+					<div class="atras">
+						<form action="panelAdmin.php"><input type="submit" value="Atras"></input></form>
+					</div>
+					<div class="aniade">
+						<form action="vistaAniadirUsuario.php"><input type="submit" value="Añadir Usuario"></input></form>
+					</div>			
 				<?php 
 					require_once "includes/ViewScripts/UsuariosVista.php";
 					$vUsuarios = new UsuariosVista();

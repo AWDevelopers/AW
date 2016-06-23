@@ -103,7 +103,8 @@ EOS;
 			$dineroAcumulado =  $iterator->current()->getDineroAcumulado();
 		  	if($numVoluntarios>0){
 		  		$html = <<<EOS
-				  		<h1> $nombre </h1>
+		  			<div class="noticiaAdmin">
+				  		<h3> $nombre </h3>
 				  		<form name="vista" action="formVoluntariosProyecto.php" method="POST">
 				  				<input type="hidden" name="idProyecto" id="proyecto" value="$id" /> 
 				  				<input type="hidden" name="dineroAcumulado" id="dinero" value="$dineroAcumulado" /> 
@@ -129,6 +130,7 @@ EOS;
 			$imagen = $iterator->current()->getImagen();
 			$id = $iterator->current()->getIdProyecto();
 			  	 $html = <<<EOS
+			  	 	<div class="noticiaAdmin">
 				  		<h3> $nombre </h3>
 				  		<form name="vista" action="includes/formMuestraProyectoVoluntario.php" method="POST">
 				  				<input type="hidden" name="idProyecto" id="proyecto" value="$id" /> 
