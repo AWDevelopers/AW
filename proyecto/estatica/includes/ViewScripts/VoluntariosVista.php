@@ -54,14 +54,31 @@ EOS;
 		}
 
         function muestraVoluntariosProyecto($idProyecto){
-
-            $voluntarios = $this->gestorVoluntarios->getVoluntarios($idProyecto);
+            $lista = $this->gestorVoluntarios->getVoluntarios($idProyecto);
+            $iterator= $lista->getIterator();
+            while($iterator->valid()) {
+                $dni= $iterator->current()->getDniUsuario();
+                $dia= $iterator->current()->getDia();
+                $horaEntrada= $iterator->current()->getHoraEntrada();
+                $horaSalida= $iterator->current()->getHoraSalida();
+                    $html = <<<EOS
+                        <div class="noticiaAdmin">
+                            <h3> Usuario: $dni </h3>
+                            <p>Dia: $dia</p>
+                            <p>$horaEntrada - $horaSalida</p>
+                            <form name="vista" action="includes/formAdminMuestraVoluntariosProyecto.php" method="POST">
+                                <input type="hidden" name="idProyecto" id="proyecto" value="$id" /> 
+                                <input name="button" type="submit" value="Ver voluntarios"/>
+                            </form>
+                        </div> 
+EOS;
+            echo $html;  
         }
 
 
 	}
 
 
-
+}
 
 ?>

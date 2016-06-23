@@ -14,12 +14,18 @@
 		
 			<div class = "contenido">
 			<div id = "panelUsuarios">
-				<form action="formAdminVoluntarios.php"><input type="submit" value="Atras"></input></form>				
+			<div class = "panelNoticias">
+				<div class="atrasYAniade">
+					<div class="atras">
+				<form action="formAdminVoluntarios.php"><input type="submit" value="Atras"></input></form>	
+					</div>
+				</div>			
 				<?php 
 					require_once "includes/ViewScripts/VoluntariosVista.php";
 					$vVoluntarios = new voluntariosVista();
-					$vVoluntarios->muestraVoluntariosProyecto($_GET['idP']);//esto falta, habría que mostrar la lista de los usuarios y meterle los botones de eliminar y modificar
+					$vVoluntarios->muestraVoluntariosProyecto($_GET['idP']);
 				?>
+				</div>
 			</div>
 		</div>
 		

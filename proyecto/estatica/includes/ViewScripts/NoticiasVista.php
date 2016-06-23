@@ -162,8 +162,9 @@ EOS;
                                         }   
                                     </script>
                                     <form name="botonesEliminar" action="includes/formProcesaEliminarNoticia.php?id=$id" method="POST">
-                                         <input type="button" onclick="eliminar()" value="Eliminar"></input>
-                                    
+                                        <input type="button" value="editar"><a href="includes/vistaModificarNoticia.php?id=$id></a></input>
+                                        <input type="button" onclick="eliminar()" value="Eliminar"></input>
+                                    </form>
                                     </div>
 EOS;
                     echo $html;     

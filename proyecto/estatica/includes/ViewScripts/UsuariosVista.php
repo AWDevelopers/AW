@@ -28,6 +28,7 @@
 						<p>Usuario: $user </p>
 				  		<p><form name="vista" action="includes/formEliminaUsuario.php" method="POST">
 				  				<input type="hidden" name="DNI" id="dni" value="$DNI" /> 
+				  				<input type="button" value="Modificar"></input>
 				  				<input name="button" type="submit" value="Eliminar" />
 				  		</form></p>
 			  		</div> 

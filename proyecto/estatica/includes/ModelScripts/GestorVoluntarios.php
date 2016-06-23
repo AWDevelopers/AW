@@ -41,7 +41,7 @@
 			return ($this->dao->seleccionaVoluntariosONG($cifOng));
 		}
 
-		public function getVoluntariosPorONG($dni){
+		public function getVoluntariosPorDNI($dni){
 			 //$this->retiraEtiquetas($id); //LIMPIAMOS DE ETIQUETAS HTMLS Y PHP */
 			htmlspecialchars(trim(strip_tags($dni)));
 			return ($this->dao->seleccionaVoluntariosUsuario($dni));
