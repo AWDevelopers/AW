@@ -123,21 +123,23 @@ EOS;
 		
 		$lista = $this->ListaProyectos->getListaProyectosVoluntarios();
 		$iterator = $lista->getIterator();
-
+		$num = 0;
 		while($iterator->valid()) {
 			$nombre =  $iterator->current()->getNombre();
 			$imagen = $iterator->current()->getImagen();
 			$id = $iterator->current()->getIdProyecto();
 			  	 $html = <<<EOS
-			  	 	<div class="noticiaAdmin">
+			  	 	<div class="proyectoAdmin" id="proyectoAdmin$num">
 				  		<h3> $nombre </h3>
-				  		<form name="vista" action="includes/formMuestraProyectoVoluntario.php" method="POST">
+				  		<form name="vista" action="includes/formModificaProyecto.php" method="POST">
 				  				<input type="hidden" name="idProyecto" id="proyecto" value="$id" /> 
-				  				<input name="button" type="submit" value="eliminar" />
+				  				<input name="button" type="submit" value="modificar" />
 				  		</form>
+				  				<button onclick="eliminaProyecto($num,$id)" name="button" type="none" value="eliminar">Eliminar</button>
 			  		</div> 
 EOS;
-			echo $html;  		
+			echo $html; 
+			$num++; 		
 		    $iterator->next();
 		}		 	
 	}

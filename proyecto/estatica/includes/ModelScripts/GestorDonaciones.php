@@ -10,7 +10,7 @@
 		public function getListaProyectosVoluntarios(){
 			$lista = $this->dao->listaProyectosVoluntarios();
 			$array = new ArrayObject();
-			for($i= 0; $i <sizeof($lista) ; $i++){
+			for($i= 0; $i <sizeof($lista)-1 ; $i++){
 			@$array->append(new Proyectos($lista[$i]['idProyecto'], $lista[$i]['CIFOng'], $lista[$i]['fechaCreacion'], $lista[$i]['dineroNecesario'], $lista[$i]['dineroAcumulado'], $lista[$i]['nombre'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen'],$lista[$i]['numVoluntarios']));
 			}
 			return $array;

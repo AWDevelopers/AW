@@ -13,7 +13,7 @@
 		public function getListaVoluntarios(){
 			$lista = $this->dao->listaVoluntarios();
 			$array = new ArrayObject();
-			for($i= 0; $i <sizeof($lista) ; $i++){
+			for($i= 0; $i <sizeof($lista)-1 ; $i++){
 			$array->append(new voluntario($lista[$j]['idProyecto'], $lista[$j]['DNIUsuario'], $lista[$j]['dia'], $lista[$j]['horaEntrada'], $lista[$j]['horaSalida']));			
 			}
 			return $array;
