@@ -145,7 +145,43 @@ EOS;
 	}
 	
 	function muestraYmodifica(&id){
-	
+		$proyecto = $this->ListaProyectos->getProyecto($id);
+		$nombre = $proyecto->getNombre();
+		$fecha = $proyecto->getFechaCreacion();
+		$numVoluntarios =  $proyecto->getNumVoluntarios();
+		$imagen = $proyecto->getImagen();
+		$descripcion = $proyecto->getDescripcionLarga();
+		#$idUsuario = $_SESSION['usuario'];
+		$idUsuario = "";
+		if (isset($_SESSION['login']) && $_SESSION['login'])
+			$idUsuario = $_SESSION['DNI'];
+		$html = <<<EOS
+		
+		<input type="text" name="usuario" value="$nombre" required ></input> </p>
+		<div class="imgDonacion">
+			<p> <h2>Imagen: </h2></p>
+			<input id="file_url" type="file" name="foto"> (*)</input><img src="$imagen" />
+		</div>
+		<div class="cajaDescripcion">
+			<p><h2> Descripción:</h2> </p>
+			<textarea name="descripcionCorta" rows="4" value= "$descripcion" ></textarea>
+		</div>
+		<div class='proyectoFechas'>
+			<p> <h2>Fecha: </h2></p>
+			<input type="date" size="20" name="fecha"  value:"$fecha"></input>
+		</div>
+		<div class='proyectoVoluntario'>
+			<p><h2>Voluntarios necesarios: </h2></p>
+			<input type="number" value= "$numVoluntarios"></input>
+		</div>
+		
+		<p><div class="proyectoApuntame"><form name="vista" action="includes/formModificaVoluntario.php" method="POST">
+				<input type="hidden" name="idProyecto" id="proyecto" value="$id" /> 
+				<input type="hidden" name="idUsuario" id="usuario" value="$idUsuario" /> 
+				<input name="button" type="submit" value="ACTUALIZAR" /></div></p>
+		</form>
+EOS;
+		echo $html;
 	}
 
 }

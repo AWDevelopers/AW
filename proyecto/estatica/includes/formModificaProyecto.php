@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> PModificar proyecto</title>
+	<title> Modificar proyecto </title>
 	<link rel = "stylesheet" type = "text/css" href="css/colorsandtext.css"/>
 		<link rel = "stylesheet" type = "text/css " href="css/estilos.css"/>
 
@@ -28,7 +28,7 @@
 					if ($app->usuarioLogueado() && $app->tieneRol("Admin")) {
 						require_once "includes/ViewScripts/UsuariosVista.php";
 						$vUsuarios = new UsuariosVista();
-						$vUsuarios->muestraUsuarios();
+						$vUsuarios->muestraYmodifica($_REQUEST ['id']);
 					}
 				?>
 			</div>
