@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<title>Registrate - InCommOng</title>
@@ -59,7 +59,7 @@
 						<p> <h2>Imagen: </h2></p>
 						<input id="file_url" type="file" name="foto"> (*)</input>
 						<p> <h2>Fecha de Nacimiento: </h2></p>
-						<input type="date" size="20" name="fecha"> (*)</input>
+						<input type="date" size="20" name="fecha" > (*)</input>
 						<p> <h2>Sexo  </h2> </p>
 						<select name="sexo">
 							<option value="no_determinado">Sin Determinar</option>
@@ -72,8 +72,9 @@
 						<input type="text" name="direccion" placeholder= "Gran Via"></input>
 						<p> <h2>CP: </h2></p>
 						<input type="number" name="cp" placeholder= "28020"></input>
+						<!---Llamar aqui a una funcion que muestre el campo si es admin!-->
 						
-						
+						<?php require 'tipoUsuario.php'; ?>
 						<p> <h4> <font color= yellow> Para finalizar el registro haz click aqui! </font></h4>
 						<input type="submit" name="submit" value="Registrate">
 						</p>

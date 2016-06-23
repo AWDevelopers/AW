@@ -131,6 +131,7 @@ EOS;
         } 
 
             function muestraNoticiasAdmin(){
+				
                 $lista = $this->ListaNoticias->getListaNoticias();
                 $iterator = $lista->getIterator();
                 
@@ -143,8 +144,9 @@ EOS;
                                     <div class="noticiaAdmin">
                                     <h3> $titulo </h3>
                                     <p> $des </p> 
-                                    <form name="eliminar">
-                                        <input type="submit" value="eliminar"></input>
+                                    <form name="eliminar" action="includes/formProcesaEliminarNoticia.php" method="POST">
+										<input type="hidden" name="id" id="noticia" value="$id" /> 
+                                        <input type="button" onclick="alert('Estas seguro que desea eliminar la noticia')" value="eliminar"></input>
                                     </form>
                                     </div>
 EOS;

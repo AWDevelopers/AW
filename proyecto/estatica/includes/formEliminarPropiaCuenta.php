@@ -5,9 +5,10 @@ require_once 'ModelScripts/GestorUsuarios.php';
 	
 	if (isset($_SESSION['login']) && $_SESSION['login']) {
 		$lista = new GestorUsuarios();
-		$dni = $_REQUEST['DNI'];
+		$dni = $_REQUEST['id'];
 		$lista->eliminarUsuario($dni);
-		header("Location: ../formAdminUsuarios.php");
+		require_once 'logout.php';
+		header("Location: ../index.php");
 		exit();
 	}
 ?>
