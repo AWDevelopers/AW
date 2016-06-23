@@ -2,8 +2,11 @@
 	class VoluntariosVista{
 
 		private $gestorProyectos;
+        private $gestorVoluntarios;
 		function __construct(){
 			require_once "/../ModelScripts/GestorProyectos.php";
+            require_once "/../ModelScripts/GestorVoluntarios.php";
+            $this->gestorVoluntarios = new GestorVoluntarios();
 			$this->gestorProyectos = new GestorProyectos();
 		}
 
@@ -49,6 +52,11 @@
 EOS;
 		echo $html;
 		}
+
+        function muestraVoluntariosProyecto($idProyecto){
+
+            $voluntarios = $this->gestorVoluntarios->getVoluntarios($idProyecto);
+        }
 
 
 	}

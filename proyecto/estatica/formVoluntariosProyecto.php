@@ -18,7 +18,7 @@
 				<?php 
 					require_once "includes/ViewScripts/VoluntariosVista.php";
 					$vVoluntarios = new voluntariosVista();
-					$vVoluntarios->muestraVoluntariosProyecto(idProyecto);//esto falta, habría que mostrar la lista de los usuarios y meterle los botones de eliminar y modificar
+					$vVoluntarios->muestraVoluntariosProyecto($_GET['idP']);//esto falta, habría que mostrar la lista de los usuarios y meterle los botones de eliminar y modificar
 				?>
 			</div>
 		</div>

@@ -62,6 +62,23 @@
 			$con->close();
 		}
 
+		function seleccionaVoluntarios($idProyecto){
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
+			$sql = "SELECT * FROM voluntarios WHERE idProyecto = '$idProyecto'";
+			$rs = $con->query($sql) or die ($con->error);
+			$resultado = "";
+			if($rs != NULL)
+			{
+				while($lista = $rs->fetch_assoc()){
+					$resultado =  new Voluntarios($lista['idProyecto'], $lista['DNIUsuario'], $lista['dia'], $lista['horaEntrada'], $lista['horaSalida']);
+				}
+				$rs->free();
+				$con->close();
+				return ($resultado);
+			}
+		}
+
 	}
 
 ?>

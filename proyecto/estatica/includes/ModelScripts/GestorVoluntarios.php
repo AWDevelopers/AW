@@ -29,6 +29,12 @@
 			return null;
 		}
 
+		public function getVoluntarios($idProyecto){
+			 //$this->retiraEtiquetas($id); //LIMPIAMOS DE ETIQUETAS HTMLS Y PHP */
+			htmlspecialchars(trim(strip_tags($idProyecto)));
+			return ($this->dao->seleccionaVoluntarios($idProyecto));
+		}
+
 
 	}
 
