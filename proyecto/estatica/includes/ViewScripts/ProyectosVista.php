@@ -143,6 +143,10 @@ EOS;
 		    $iterator->next();
 		}		 	
 	}
+	
+	function muestraYmodifica(&id){
+	
+	}
 
 }
 ?>
