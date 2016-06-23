@@ -1,4 +1,6 @@
 <?php
+use \AW\proyecto\estatica\includes\Aplicacion as App;
+	$app = App::getSingleton();
         echo "<div id='sidebar-left'>
 			<nav>
 			<ul>
@@ -7,7 +9,7 @@
 				<li><a href='voluntariosONGUs.php'>Voluntarios</a></li>
 				<li><a href='conocenos.php'>Conocenos</a></li>
 				<li><a href='tienda.php'>Tienda</a></li>";
-				if (isset($_SESSION['login']) && $_SESSION['login'] && $_SESSION['roles'] == "Admin")
+				if (isset($_SESSION['login']) && $_SESSION['login'] && $app->tieneRol("Admin"))
 					echo "<li><a href='panelAdmin.php'>Administracion</a></li>";
 		echo "</ul>
 		</nav>

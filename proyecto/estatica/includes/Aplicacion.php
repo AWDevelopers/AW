@@ -101,7 +101,7 @@ class Aplicacion {
   }
 
   public function tieneRol($rol, $cabeceraError=NULL, $mensajeError=NULL) {
-    if (!isset($_SESSION['roles']) || ! in_array($rol, $_SESSION['roles'])) {
+    if (!isset($_SESSION['roles']) || $rol != $_SESSION['roles']) {
       if ( !is_null($cabeceraError) && ! is_null($mensajeError) ) {
         $bloqueContenido=<<<EOF
         <h1>$cabeceraError!</h1>
