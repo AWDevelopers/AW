@@ -18,7 +18,7 @@
                 if(horaFin > horaIni){
                     if(horaIni > "10:00"){
                         if(horaFin < "22:00"){
-                            document.getElementById("mostrarHoras").innerHTML += "<div id="+num+"> <p name='dia'> Dia: "+ dia +"</p> <p name='horaI'>Hora Inicio:"+horaIni+"</p> <p name='horaF'>Hora fin:"+horaFin+"</p> <button onclick='eliminaHora("+num+")' id= 'eliminar' type='submit' name = 'eliminar'>Eliminar</button></div> ";
+                            document.getElementById("mostrarHoras").innerHTML += "<div id="+num+"> <p id='dia' name='dia'> Dia: "+ dia +"</p> <p id='horaI' name='horaI'>Hora Inicio:"+horaIni+"</p> <p id='horaF' name='horaF'>Hora fin:"+horaFin+"</p> <button onclick='eliminaHora("+num+")' id= 'eliminar' type='submit' name = 'eliminar'>Eliminar</button></div> ";
                             voluntariados[num] = {dia:dia, horaF:horaFin, horaI:horaIni};
                             num++;
                             error.innerHTML = "";
@@ -36,17 +36,16 @@
                 num--;
             }  
 
-            function enviarDatos(idProyecto, dniUsuario){
+            function enviarDatos(idProyecto){
                 var dias = document.getElementsByTagName("dia");
                 var horasIni = document.getElementsByTagName("horaI");
                 var horasFin = document.getElementsByTagName("horaF");
                 var error = document.getElementById("error");
-                error.innerHTML = dniUsuario;
                 for(var i = 0; i < voluntariados.length; i++){
                     $.ajax({
                         type: "POST",
                         url: "includes/formNuevoVoluntariado.php",
-                        data: {"id":idProyecto, "dni":dniUsuario, "dia":voluntariados[i]['dia'], "horaIni":voluntariados[i]['horaI'], "horaFin":voluntariados[i]['horaF']},
+                        data: {"id":idProyecto, "dia":voluntariados[i]['dia'], "horaIni":voluntariados[i]['horaI'], "horaFin":voluntariados[i]['horaF']},
                         success: function(data) {
                             
                         }
@@ -63,7 +62,7 @@
         <?php
         require_once "includes/ViewScripts/VoluntariosVista.php";
         $vista = new VoluntariosVista();
-        $vista->muestraPanelVoluntariado($_GET['id'], $_GET['usuario']);
+        $vista->muestraPanelVoluntariado($_GET['id']);
         ?>
 
                

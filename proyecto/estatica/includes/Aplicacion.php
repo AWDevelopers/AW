@@ -54,12 +54,14 @@ class Aplicacion {
   public function login($user) {
     $_SESSION['login'] = true;
     $_SESSION['nombre'] = $user->getNombre();
+    $_SESSION['DNI'] = $user->getDNI();
     $_SESSION['roles'] = $user->getRol();
   }
 
   public function logout() {
     //Doble seguridad: unset + destroy
     unset($_SESSION["login"]);
+    unset($_SESSION["DNI"]);
     unset($_SESSION["nombre"]);
     unset($_SESSION["roles"]);
 
