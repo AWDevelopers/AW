@@ -71,7 +71,7 @@
 			if($rs != NULL)
 			{
 				while($lista = $rs->fetch_assoc()){
-					$resultado =  new Voluntarios($lista['idProyecto'], $lista['DNIUsuario'], $lista['dia'], $lista['horaEntrada'], $lista['horaSalida']);
+					$resultado =  new Voluntario($lista['idProyecto'], $lista['DNIUsuario'], $lista['dia'], $lista['horaEntrada'], $lista['horaSalida']);
 				}
 				$rs->free();
 				$con->close();
@@ -79,6 +79,22 @@
 			}
 		}
 
+		function seleccionaVoluntariosUsuario($dniUsuario){
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
+			$sql = "SELECT * FROM voluntarios WHERE DNIUsuario = '$dniUsuario'";
+			$rs = $con->query($sql) or die ($con->error);
+			$resultado = "";
+			if($rs != NULL)
+			{
+				while($lista = $rs->fetch_assoc()){
+					$resultado =  new Voluntario($lista['idProyecto'], $lista['DNIUsuario'], $lista['dia'], $lista['horaEntrada'], $lista['horaSalida']);
+				}
+				$rs->free();
+				$con->close();
+				return ($resultado);
+			}
+		}
 	}
 
 ?>

@@ -57,7 +57,6 @@ class Aplicacion {
     $_SESSION['DNI'] = $user->getDNI();
     $_SESSION['roles'] = $user->getRol();
 	$_SESSION['img'] = $user->getAvatar();
-	$_SESSION['DNI'] = $user->getDNI(); 
   }
 
   public function logout() {
@@ -66,6 +65,7 @@ class Aplicacion {
     unset($_SESSION["DNI"]);
     unset($_SESSION["nombre"]);
     unset($_SESSION["roles"]);
+    unset($_SESSION["img"]);
 
 
     session_destroy();
