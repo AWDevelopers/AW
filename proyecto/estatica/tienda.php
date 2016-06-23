@@ -8,9 +8,17 @@
 </head>
 <body>
 	<div id='contenedor'>
+
+		<form method ="post" action= "includes/formTienda.php">
+		<input type= "submit" value ="INSERTAR" name ="tienda"/>
+		<input type= "submit" value ="BORRAR" name ="tienda"/>
+		<input type= "submit" value ="MODIFICAR" name ="tienda"/>
+		</form>
 		<!--Aqui va el menu y la cabecera que es comun-->
 		<?php require 'common.php'; ?>
 		
+
+
 		<!--Aqui va el contenido-->
 		<div class="contenido">
 			<div class="filtro">

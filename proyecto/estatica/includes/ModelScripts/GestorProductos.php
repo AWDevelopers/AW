@@ -53,6 +53,14 @@
 		public function nuevoProducto($idProducto, $CIFOng, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen ){
 			return ($this->dao->insertaProducto($nombre,$cif,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen, $numVoluntarios,$dineroAcumulado));
 		}
+
+		public function borrarProducto($id){
+			$this->dao->borrarProducto($id);
+		}
+
+		public function insertaProducto($idProducto, $nombreOng, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen){
+			$this->dao->insertaProducto($idProducto, $nombreOng, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen);
+		}
         
 	}
 ?>

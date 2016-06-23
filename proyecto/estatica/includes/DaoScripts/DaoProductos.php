@@ -30,16 +30,18 @@
 
 			$app = App::getSingleton();
     		$con = $app->conexionBd();
-			$sql = "SELECT * FROM ong";
+			$sql = "SELECT nombre FROM ong WHERE CIF = '$CIFOng'";
 			$rs = $con->query($sql) or die ($con->error);
 			if($rs != NULL)
 			{
-				while($lista[] = $rs->fetch_assoc());
+				while($nombre = $rs->fetch_assoc());
 				$rs->free();
 				$con->close();
-				return ($lista);
+				return ($nombre);
 			}
 		}
+
+	
 
 		function cargarDatosProductoPorPrecioMayor(){
 
@@ -97,15 +99,25 @@
 			}
 		}
 
-		function insertaProducto($idProducto, $CIFOng, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen){
+		function insertaProducto($idProducto, $nombreOng, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen){
 			$app = App::getSingleton();
     		$con = $app->conexionBd();
-			$sql = "INSERT INTO proyecto(idProducto, CIFOng, stock, precio, nombre,descripcionCorta, descripcionLarga, imagen) VALUES ";
-			$sql.= "(".$idProducto.",". $CIFOng.",". $stock.",". $precio.",". $nombre.",".$descripcionCorta.",". $descripcionLarga.",". $imagen.")";
+
+    		$CIFOng = $_SESSION['DNI'];
+    		$sql = "INSERT INTO producto(idProducto, stock, precio, nombre,descripcionCorta, descripcionLarga, CIFOng, imagen) VALUES ";
+			$sql.= "(,". $stock.",". $precio.",". $nombre.",".$descripcionCorta.",". $descripcionLarga.",". $CIFOng.",". $imagen.")";
 			$con->query($sql) or die ($con->error);
 			$num = $con->insert_id;
 			$con->close();
 			return ($num);
+		}
+
+		function borrarProducto($id){
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
+			$sql = "DELETE FROM producto WHERE idProducto = '$id'";
+			$con->query($sql) or die ($con->error);
+			$con->close();
 		}
  	}
 
