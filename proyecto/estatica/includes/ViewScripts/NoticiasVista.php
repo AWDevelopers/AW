@@ -142,10 +142,19 @@ EOS;
                     $html = <<<EOS
                                     <div class="noticiaAdmin">
                                     <h3> $titulo </h3>
-                                    <p> $des </p> 
-                                    <form name="eliminar">
-                                        <input type="submit" value="eliminar"></input>
+                                    <p> $des </p>
+                                    <script language="JavaScript">
+                                        function eliminar(){
+                                            if(confirm("¿Estás seguro de querer borrar la noticia?")){
+                                                document.botonesEliminar.submit();
+                                            }
+                                        }   
+                                    </script>
+                                    <form name="botonesEliminar" action="includes/formProcesaEliminarNoticia.php?id=$id" method="POST">
+                                         <input type="button" onclick="eliminar()" value="Eliminar"></input>
+
                                     </form>
+                                    
                                     </div>
 EOS;
                     echo $html;     
