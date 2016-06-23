@@ -61,6 +61,10 @@
 		public function insertaProducto($idProducto, $nombreOng, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen){
 			$this->dao->insertaProducto($idProducto, $nombreOng, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen);
 		}
+
+		public function modificaProducto($idProducto, $nombreOng, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen){
+			$this->dao->modificaProducto($idProducto, $nombreOng, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen);
+		}
         
 	}
 ?>

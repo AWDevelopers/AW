@@ -16,8 +16,8 @@
 			<?php 
 				require_once "includes/ViewScripts/ProductosVista.php";
 				$vProductos = new vistaProductos();
-				$vProductos->eligeBorrarProducto();
-
+				$vProductos->eligeModificarProducto();
+				
 			?>
 		</div>
 	</div>

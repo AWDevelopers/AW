@@ -94,7 +94,7 @@
 
 		}
 
-		function muestraBorrarProductos(){
+		function eligeBorrarProducto(){
 			$lista = $this->ListaProductos->cargarDatosProductoPorNombre();
 			
 			$iterator = $lista->getIterator(); 
@@ -106,7 +106,6 @@
 				  		
 				  		//MOSTRAR PRODUCTO
 				  		echo '<form name = "borraProducto" action = "includes/formProductos.php" method = "POST">
-			  				<input  type = "hidden" name="idProducto" id="producto" value="'.$iterator->current()->getIdProducto().'"> 
 			  				<input type="image" id = "imagenProducto" name = "producto" value="MUESTRA" src="'.$iterator->current()->getImagen().'" alt = "submit">';
 
 			  				echo "<p> Unidades:  </p>";
@@ -116,24 +115,69 @@
 				  				}
 				  			echo "</select>";
 
-		  					echo ' <INPUT type="radio" name="borrarEste" value="'.$iterator->current()->getIdProducto().'">';
-						   
-							
-							echo '<input type= "hidden" name = "idProducto" value = "'.$iterator->current()->getIdProducto().'">';
-							echo '<input type = "submit" name = "producto" value = "BORRAR" >';
-							echo '</form>';
-							
-							  		
-				  			
+		  					echo ' <INPUT type="radio" name="elijoEste" value="'.$iterator->current()->getIdProducto().'">';		
+										  			
 				  	echo "</div>";
 			    $iterator->next();
-			}				 	
+			}			
+			echo '<input type = "submit" name = "producto" value = "BORRAR" >';
+			echo '</form>';
+								 	
 		}
 
-		function borrarProducto($id){
+		
+		function eligeModificarProducto(){
+			$lista = $this->ListaProductos->cargarDatosProductoPorNombre();
+			
+			$iterator = $lista->getIterator(); 
+
+			while($iterator->valid()) {
+			  		echo "<div class='producto'> ";
+				  		echo "<h1>" . $iterator->current()->getNombreProducto() . "</h1>";
+				  		//echo "<h3>".$iterator->current()->getNombreONGProducto()."</h3>";
+				  		
+				  		echo '<form name = "borraProducto" action = "includes/formProductos.php" method = "POST">
+			  				<input type="image" id = "imagenProducto" name = "producto" value="MUESTRA" src="'.$iterator->current()->getImagen().'" alt = "submit">';
+
+			  				echo "<p> Unidades:  </p>";
+			  				echo "<select id='unidades' name ='unidades'>";
+				  				for($i =1; $i <= $iterator->current()->getstockProducto(); $i++){
+				  					echo "<option value = '".$i."'>".$i."</option>";	
+				  				}
+				  			echo "</select>";
+
+		  					echo ' <INPUT type="radio" name="elijoEste" value="'.$iterator->current()->getIdProducto().'">';		
+										  			
+				  	echo "</div>";
+			    $iterator->next();
+			}			
+			echo '<input type = "submit" name = "producto" value = "ELEGIRMODIFICAR" >';
+			echo '</form>';
+								 	
+		}
+
+		function muestraModificarProducto($id){
 			$producto = $this->ListaProductos->getProducto($id);
-
+			echo '<form action="includes/formProductos.php" method="POST">
+				  <p>Nombre del producto
+				  	<input type="text" value = '.$producto->getNombreProducto().' name="nombre" required></input></p>
+				  <p>Nombre de la Ong
+				  	<input type="text" value = '.$producto->getNombreONGProducto().' name="nombreONG" required></input></p>
+				  <p>Precio
+				  	<input type="text" value = '.$producto->getPrecioProducto().' name="precio"></input> </p>
+				  <p>Descripción corta:</p>
+					<textarea cols="40" rows="5">'.$producto->getDescCortaProducto().' </textarea></p>
+				  <p>Descripción larga:</p>
+					<textarea cols="40" rows="10">'.$producto->getDescLargaProducto().' </textarea></p>
+				  <p>Número de unidades
+					<input type="text" value = '.$producto->getStockProducto().' name="stock" required></input></p>
+				  <p>Imagen
+				  <input id="file_url" type="file" name="imagen"> (*)</input>
+				  <p><input type="submit" name="producto" value="MODIFICAR"></p>
+				  </form>
+			</div>';
 		}
+		
 
 	}
 ?>

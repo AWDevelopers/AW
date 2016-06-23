@@ -119,6 +119,19 @@
 			$con->query($sql) or die ($con->error);
 			$con->close();
 		}
+
+		function modificaProducto($idProducto, $nombreOng, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen){
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
+
+    		$CIFOng = $_SESSION['DNI'];
+    		$sql = "INSERT INTO producto(idProducto, stock, precio, nombre,descripcionCorta, descripcionLarga, CIFOng, imagen) VALUES ";
+			$sql.= "(,". $stock.",". $precio.",". $nombre.",".$descripcionCorta.",". $descripcionLarga.",". $CIFOng.",". $imagen.")";
+			$con->query($sql) or die ($con->error);
+			$num = $con->insert_id;
+			$con->close();
+			return ($num);
+		}
  	}
 
  ?>

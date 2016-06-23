@@ -13,27 +13,25 @@
 		
 		<!--Aqui va el contenido-->
 		<div class="contenido">
-			<div id="proyectoONG">
-				<div class="formulario">
-				<form action="includes/formProductos.php" method="POST">
-				  <p>Nombre del producto
-				  	<input type="text" name="nombre" required></input></p>
-				  <p>Nombre de la Ong
-				  	<input type="text" name="nombreONG" required></input></p>
-				  <p>Precio
-				  	<input type="text" name="precio"></input> </p>
-				  <p>Descripción corta
-					<input type="text" name="descCorta" required></input></p>
-				  <p>Descripción larga
-					<input type="text" name="descLarga" required></input></p>
-				  <p>Número de unidades
-					<input type="text" name="stock" required></input></p>
-				  <p>Imagen
-				  <input id="file_url" type="file" name="imagen"> (*)</input>
-				  <p><input type="submit" name="producto" value="INSERTAR"></p>
-				  </form>
-				</div>
-			</div>
+			
+			<form action="includes/formProductos.php" method="POST">
+			  <p>Nombre del producto
+			  	<input type="text" name="nombre" required></input></p>
+			  <p>Nombre de la Ong
+			  	<input type="text" name="nombreONG" required></input></p>
+			  <p>Precio
+			  	<input type="text" name="precio"></input> </p>
+			  <p>Descripción corta
+				<input type="text" name="descCorta" required></input></p>
+			  <p>Descripción larga
+				<input type="text" name="descLarga" required></input></p>
+			  <p>Número de unidades
+				<input type="text" name="stock" required></input></p>
+			  <p>Imagen
+			  <input id="file_url" type="file" name="imagen"> (*)</input>
+			  <p><input type="submit" name="producto" value="INSERTAR"></p>
+			  </form>
+		
 		</div>
 	</div>
 </body>

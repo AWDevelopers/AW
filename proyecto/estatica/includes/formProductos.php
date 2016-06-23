@@ -21,15 +21,24 @@ switch($funcion){
 		break;
 
 	case 'BORRAR':
-		$idProducto = $_POST['idProducto'];
+		$idProducto = $_POST['elijoEste'];
 		
 		
 		
 		$producto->borrarProducto($idProducto);
-		header("Location: ../tienda.php?idProducto=".$idProducto."");
+		header("Location: ../formAdminProductos.php");
 		exit();
 		break;
 
+	case 'ELEGIRMODIFICAR':
+		header("Location: ../modificarProducto.php?idProducto=".$_POST['elijoEste']);
+		exit();
+		break;
+	
+	case 'MODIFICAR':
+		header("Location: ../panelAdmin.php?idProducto=".$_POST['elijoEste']);
+		exit();
+		break;
 
 	case 'INSERTAR':
 		$nombre = $_POST['nombre'];
