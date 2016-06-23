@@ -140,12 +140,13 @@ EOS;
                     $des = $iterator->current()->getDescripcionCorta();
                     $id = $iterator->current()->getId();
                     $html = <<<EOS
-        
+                                    <div class="noticiaAdmin">
                                     <h3> $titulo </h3>
                                     <p> $des </p> 
                                     <form name="eliminar">
                                         <input type="submit" value="eliminar"></input>
                                     </form>
+                                    </div>
 EOS;
                     echo $html;     
                     $iterator->next();

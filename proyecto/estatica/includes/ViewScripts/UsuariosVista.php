@@ -19,7 +19,7 @@
 			$email = $iterator->current()->getEmail();
 			$DNI = $iterator->current()->getDNI();
 			  	 $html = <<<EOS
-  				<div>
+  				<div class="noticiaAdmin">
 				  		<p>Nombre: $nombre </p>
 						<p>Apellidos : $apellidos </p>
 						<p>DNI : $DNI </p>
@@ -35,33 +35,40 @@ EOS;
 		    $iterator->next();
 		}		 	
 	}
-
-	function muestraUsuario($id){
-
-		$proyecto = $this->ListaProyectos->getProyecto($id);
-		$nombre = $proyecto->getNombre();
-		$fecha = $proyecto->getFechaCreacion();
-		$numVoluntarios =  $proyecto->getNumVoluntarios();
-		$imagen = $proyecto->getImagen();
-		$descripcion = $proyecto->getDescripcionLarga();
-		#$idUsuario = $_SESSION['usuario'];
-		$idUsuario = "000000000";
+	
+	function perfilUsuario($dni){
+		$lista = $this->ListaUsuarios->getListaUsuarios();
+		$iterator = $lista->getIterator();
+		$nombre = $iterator->current()->getNombre();
+		$apellidos = $iterator->current()->getApellidos();
+		$user = $iterator->current()->getUsuario();
+		$email =  $iterator->current()->getEmail();
+		$DNI = $iterator->current()->getDNI();
+		$telefono = $iterator->current()->getTelefono();
+		$avatar = $iterator->current()->getAvatar();
 		$html = <<<EOS
-		<h1> $nombre </h1>
-		<div class="imgDonaciones">
-			<img src="$imagen" />
-		</div>
-		<p> $descripcion </p>
-		<div class='proyectoFechas'>Fecha: $fecha </div>		
-		<div class='proyectoVoluntario'>Voluntarios necesarios: $numVoluntarios </div>	
-		<form name="vista" action="includes/formApuntameVoluntario.php" method="POST">
-				<input type="hidden" name="idProyecto" id="proyecto" value="$id" /> 
-				<input type="hidden" name="idUsuario" id="usuario" value="$idUsuario" /> 
-				<input name="button" type="submit" value="APUNTAME" />
-		</form>
+		<div id= "contenidoPerfilUsuario">
+  				<div class="cabeceraPerfil">
+				<div id="volver" class ="cabeceraPerfil">
+					<button name = "volver" class= "bCabecera" ><img src="img/back.png"></button>
+
+				</div>
+				<div id="fotoUsuario" class = "cabeceraPerfil">
+						<img src="$avatar">
+						<strong>
+						<p>$nombre</p>
+						<p>$apellidos</p>
+						</strong>
+				</div>
+				<div id="cerrar" class = "cabeceraPerfil">
+					<button id = "bCerrar" class="bCabecera" ><img src="img/salir.png"></button>
+				</div>
+			</div>
+		</div> 
 EOS;
-		echo $html;
+			echo $html; 
 	}
+	
 
 }
 ?>

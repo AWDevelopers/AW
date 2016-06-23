@@ -56,7 +56,8 @@
 					$passBd = $row["pass"];
 					if (password_verify($pass, $passBd)) {
 						//contraseña correcta hacemos sesion
-						$usuario = new Usuario($row["nombre"], $row["DNI"], $row["apellidos"], $row["direccion"], $row["usuario"], $row["cp"], $row["usuario"], $row["pass"], $row["email"], $row["fechaNacimiento"], $row["avatar"], $row["sexo"],$row["telefono"], $row["tipo"]);
+
+						$usuario = new Usuario($row["nombre"], $row["DNI"], $row["apellidos"], $row["direccion"], $row["cp"], $row["usuario"], $row["pass"], $row["email"], $row["fechaNacimiento"], $row["avatar"], $row["sexo"],$row["telefono"], $row["tipo"]);
 						$app->login($usuario);
 						$login=true;
 					}
@@ -96,7 +97,7 @@
 		function borraUsuario($DNI){
 			$app = App::getSingleton();
 			$con = $app->conexionBd();
-            $sql = "DELETE FROM usuario WHERE DNI = '$DNI'";
+            $sql = "DELETE FROM usuario WHERE DNI='$DNI'";
 			$con->query($sql) or die ($con->error);
 			$con->close();
 		}
@@ -110,7 +111,7 @@
 			if($rs != NULL)
 			{
 				while($lista = $rs->fetch_assoc()){
-					//$resultado =  new Proyectos($lista['idProyecto'], $lista['CIFOng'], $lista['fechaCreacion'], $lista['dineroNecesario'], $lista['dineroAcumulado'], $lista['nombre'], $lista['descripcionCorta'], $lista['descripcionLarga'], $lista['imagen'], $lista['numVoluntarios']);
+					//$resultado =  new Usuario($lista['idProyecto'], $lista['CIFOng'], $lista['fechaCreacion'], $lista['dineroNecesario'], $lista['dineroAcumulado'], $lista['nombre'], $lista['descripcionCorta'], $lista['descripcionLarga'], $lista['imagen'], $lista['numVoluntarios']);
 				}
 				$rs->free();
 				$con->close();

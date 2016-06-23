@@ -4,6 +4,7 @@
 	<title>Proyectos ONGS</title>
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
 		<link rel="stylesheet" type="text/css" href="css/colorsandtext.css"/>
+	<!--<link rel="stylesheet" type="text/css" href="css/proyectosONG.css">-->
 </head>
 <body>
 	<div id='contenedor'>
@@ -12,18 +13,13 @@
 		
 		<!--Aqui va el contenido-->
 		<div class="contenido">
-		
-				<?php
+			<?php 
+				require_once "includes/ViewScripts/ProductosVista.php";
+				$vProductos = new vistaProductos();
+				$vProductos->eligeBorrarProducto();
 
-					if (isset($_SESSION['login']) && $_SESSION['login']) {
-		
-						require_once "includes/ViewScripts/UsuariosVista.php";
-						$vista = new UsuariosVista();
-						$vista->muestraUsuarios();
-					}
-				?>				
+			?>
 		</div>
-			
 	</div>
 </body>
 </html>

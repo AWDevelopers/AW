@@ -56,6 +56,8 @@ class Aplicacion {
     $_SESSION['nombre'] = $user->getNombre();
     $_SESSION['DNI'] = $user->getDNI();
     $_SESSION['roles'] = $user->getRol();
+	$_SESSION['img'] = $user->getAvatar();
+	$_SESSION['DNI'] = $user->getDNI(); 
   }
 
   public function logout() {

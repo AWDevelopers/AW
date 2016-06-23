@@ -76,11 +76,11 @@
 		}
 		
 		
-		function insertaNoticia($titulo, $tipo , $descripcionCorta, $descripcionLarga, $imagen, $fecha){
+		function insertaNoticia($titulo, $tipo , $descripcionCorta, $descripcionLarga, $imagen){
             $app = App::getSingleton();
             $con = $app->conexionBd();
 			$sql = "INSERT INTO noticia (titulo,tipo,descripcionCorta,descripcionLarga,fecha, imagen) VALUES ";
-			$sql.= "('".$titulo."', '".$tipo."', '".$desripcionCorta."', '".$descripcionLarga."', sysdate() , '".$imagen."')";
+			$sql.= "('".$titulo."', '".$tipo."', '".$descripcionCorta."', '".$descripcionLarga."', sysdate() , '".$imagen."')";
 			$con->query($sql) or die ($con->error);
             $num = $con->insert_id;
 			$con->close();

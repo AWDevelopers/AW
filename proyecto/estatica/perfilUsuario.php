@@ -10,6 +10,8 @@
 <body>
 	<div id="contenedor">
 	<?php require("common.php");?>
+	
+	
 	<div class="contenido">
 		
 		<div id= "contenidoPerfilUsuario">
@@ -74,8 +76,6 @@
 					<input type ="text" name ="apellidos" /><br>
 					<br>E-mail 
 					<input type ="email" name ="email" ><br>
-					<br>DNI 
-					<input type ="text" name ="DNI" ><br>
 					<br>Teléfono 
 					<input type ="text" name ="telefono" ><br>
 					<center>

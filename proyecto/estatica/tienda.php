@@ -8,9 +8,13 @@
 </head>
 <body>
 	<div id='contenedor'>
+
+	
 		<!--Aqui va el menu y la cabecera que es comun-->
 		<?php require 'common.php'; ?>
 		
+
+
 		<!--Aqui va el contenido-->
 		<div class="contenido">
 			<div class="filtro">

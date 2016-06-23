@@ -42,10 +42,27 @@
 			}
 		}
 		public function nuevoUsuario($user, $pass, $nombre, $apellidos, $dni, $email, $fechaNacimiento, $sexo, $telefono, $direccion, $cp, $avatar ){
+			//Eliminamos caracteres especiales
+			$userN = htmlspecialchars(trim(strip_tags($user)));
+			$passN = htmlspecialchars(trim(strip_tags($pass)));
+			$nombreN= htmlspecialchars(trim(strip_tags($nombre)));
+			$apellidosN = htmlspecialchars(trim(strip_tags($apellidos)));
+			$dniN = htmlspecialchars(trim(strip_tags($dni)));
+			$emailN = htmlspecialchars(trim(strip_tags($email)));
+			$fechaNacimientoN = htmlspecialchars(trim(strip_tags($fechaNacimiento)));
+			$sexoN = htmlspecialchars(trim(strip_tags($sexo)));
+			$telefonoN = htmlspecialchars(trim(strip_tags($telefono)));
+			$direccionN = htmlspecialchars(trim(strip_tags($direccion)));
+			$cpN = htmlspecialchars(trim(strip_tags($cp)));
+			$avatarN = htmlspecialchars(trim(strip_tags($avatar)));
+			
 			//No existe el usuario
-			if ($this->comprobarDNI($dni) && strlen($pass)>5){
-			  if($this->dao->existeUsuario($dni, $email, $user) == 0){
-					$this->dao->insertaUsuario($user, $pass, $nombre, $apellidos, $dni, $email, $fechaNacimiento, $sexo, $telefono, $direccion, $cp, $avatar );
+			if ($this->comprobarDNI($dniN) && strlen($passN)>5){
+			  if($this->dao->existeUsuario($dniN, $emailN, $userN) == 0){
+					if($avatarN == "img/"){
+						$avatarN = "img/UsuarioSF.png";
+					}
+					$this->dao->insertaUsuario($userN, $passN, $nombreN, $apellidosN, $dniN, $emailN, $fechaNacimientoN, $sexoN, $telefonoN, $direccionN, $cpN, $avatarN );
 					return true;
 				}    
 				else{
@@ -55,7 +72,15 @@
 			else{
 				return false;
 			}
-        
+			return $avatarN;
+		}
+		
+		public function eliminarUsuario($dni){
+			return $this->dao->borraUsuario($dni);
+		}
+		
+		public function getUsuario($dni){
+			return $this->dao->seleccionaUsuario($dni);
 		}
 	}
 ?>

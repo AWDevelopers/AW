@@ -2,7 +2,8 @@
  	echo '<div id="cabecera">';
 			echo '<div class="avatar">';
 				if (isset($_SESSION['login']) && $_SESSION['login']) {
-					echo '<a href="perfilUsuario.php"><IMG SRC="img/usuarioSF.png" WIDTH=120 HEIGHT=120 ALT="Avatar usuario"> </a>';
+					$imagen = $_SESSION['img'];
+					echo '<a href="perfilUsuario.php"><img src="'.$imagen.'" WIDTH=120 HEIGHT=120 ALT="Avatar usuario"> </a>';
 				}
 			echo '</div>';
 			echo '<div class="titulo"> <IMG SRC="img/tituloPagina.png" WIDTH=500 HEIGHT=150 ALT="Avatar usuario"> </div>';

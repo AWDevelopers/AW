@@ -16,6 +16,7 @@ require_once 'ModelScripts/GestorUsuarios.php';
 	//$tipo = "User";
 	$avatar = "img/".$_REQUEST['foto'];
 	$salida = $lista->nuevoUsuario($user, $pass, $nombre, $apellidos, $dni, $email, $fechaNacimiento, $sexo, $telefono, $direccion, $cp, $avatar);
+	echo $salida;
 	if ($salida){ //Se ha hecho el registro correctamente
 		//header("Location: ../login.php");
 		echo "Se ha registrado";

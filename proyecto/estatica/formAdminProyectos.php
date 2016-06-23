@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Panel de Administracion de Noticias</title>
+	<title> Panel de Administracion de Proyectos</title>
 	<link rel = "stylesheet" type = "text/css" href="css/colorsandtext.css"/>
 		<link rel = "stylesheet" type = "text/css " href="css/estilos.css"/>
 
@@ -14,20 +14,18 @@
 		
 			<div class = "contenido">
 			<div class = "panelNoticias">
-				<!--Estos dos botones deberían ser imagenes-->
 				<div class="atrasYAniade">
 					<div class="atras">
 						<form action="panelAdmin.php"><input type="submit" value="Atras"></input></form>
 					</div>
 					<div class="aniade">
-						<form action="vistaAniadirNoticia.php"><input type="submit" value="Añadir Noticia"></input></form>
-					</div>				
-					
-				</div>
+						<form action="vistaAniadirProyecto.php"><input type="submit" value="Añadir Proyecto"></input></form>
+					</div>
+				</div>				
 				<?php 
-					require_once "includes/ViewScripts/NoticiasVista.php";
-					$vNoticias = new NoticiasVista();
-					$vNoticias->muestraNoticiasAdmin();
+					require_once "includes/ViewScripts/ProyectosVista.php";
+					$vProyectos = new vistaProyectos();
+					$vProyectos->muestraProyectosVoluntariosAdmin();
 				?>
 			</div>
 		</div>
