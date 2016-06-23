@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	class GestorUsuarios{
 		private $dao;
 		
@@ -8,10 +8,10 @@
 			if (!isset($_SESSION)) session_start();
 		}
 		
-		public function getListaUsuarios(){
-			$lista = $this->dao->listaUsuarios();
+		public function getListaUsuarios($dni){
+			$lista = $this->dao->listaUsuarios($dni);
 			$array = new ArrayObject();
-			for($i= 0; $i <sizeof($lista) ; $i++){
+			for($i= 0; $i <sizeof($lista)-1 ; $i++){
 				$array->append(new Usuario($lista[$i]['nombre'], $lista[$i]['DNI'],$lista[$i]['apellidos'], $lista[$i]['direccion'], $lista[$i]['cp'],
 				$lista[$i]['usuario'],$lista[$i]['pass'],$lista[$i]['email'],$lista[$i]['fechaNacimiento'], $lista[$i]['avatar'],$lista[$i]['sexo'],$lista[$i]['telefono'],
 				$lista[$i]['tipo']));
@@ -20,28 +20,32 @@
 		}
 		
 		public function comprobarLogin($user, $pass){
-			if(($this->dao->usuarioCorrecto($user) == 0)){
+			$userN = htmlspecialchars(trim(strip_tags($user)));
+			$passN = htmlspecialchars(trim(strip_tags($pass)));
+			
+			if(($this->dao->usuarioCorrecto($userN) == 0)){
 				//usuario no correct, no existe
 				$login=0;
 				return $login;
 			}
 			else{
-				$login = $this->dao->compruebaLogin($user, $pass);
+				$login = $this->dao->compruebaLogin($userN, $passN);
 				return $login;
 			}
 		}
 		
 		public function comprobarDNI($dni){
 			$dni = $_REQUEST['dni'];
-			$letra = substr($dni, -1);
-			$numeros = substr($dni, 0, -1);
+			$dniN = htmlspecialchars(trim(strip_tags($dni)));
+			$letra = substr($dniN, -1);
+			$numeros = substr($dniN, 0, -1);
 			if ( substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros%23, 1) == $letra && strlen($letra) == 1 && strlen ($numeros) == 8 ){
 				return true;
 			}else{
 				return false;
 			}
 		}
-		public function nuevoUsuario($user, $pass, $nombre, $apellidos, $dni, $email, $fechaNacimiento, $sexo, $telefono, $direccion, $cp, $avatar ){
+		public function nuevoUsuario($user, $pass, $nombre, $apellidos, $dni, $email, $fechaNacimiento, $sexo, $telefono, $direccion, $cp, $avatar, $tipo ){
 			//Eliminamos caracteres especiales
 			$userN = htmlspecialchars(trim(strip_tags($user)));
 			$passN = htmlspecialchars(trim(strip_tags($pass)));
@@ -62,7 +66,7 @@
 					if($avatarN == "img/"){
 						$avatarN = "img/UsuarioSF.png";
 					}
-					$this->dao->insertaUsuario($userN, $passN, $nombreN, $apellidosN, $dniN, $emailN, $fechaNacimientoN, $sexoN, $telefonoN, $direccionN, $cpN, $avatarN );
+					$this->dao->insertaUsuario($userN, $passN, $nombreN, $apellidosN, $dniN, $emailN, $fechaNacimientoN, $sexoN, $telefonoN, $direccionN, $cpN, $avatarN, $tipo );
 					return true;
 				}    
 				else{
@@ -75,6 +79,9 @@
 			return $avatarN;
 		}
 		
+		public function existeUser($dni, $user, $email){
+			
+		}
 		public function eliminarUsuario($dni){
 			return $this->dao->borraUsuario($dni);
 		}

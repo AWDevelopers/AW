@@ -9,7 +9,8 @@
 		}
 
 	function muestraUsuarios(){
-		$lista = $this->ListaUsuarios->getListaUsuarios();
+		$dni= $_SESSION['DNI'];
+		$lista = $this->ListaUsuarios->getListaUsuarios($dni);
 		$iterator = $lista->getIterator();
 
 		while($iterator->valid()) {
@@ -25,10 +26,10 @@
 						<p>DNI : $DNI </p>
 						<p>Email: $email </p>
 						<p>Usuario: $user </p>
-				  		<form name="vista" action="includes/formEliminaUsuario.php" method="POST">
+				  		<p><form name="vista" action="includes/formEliminaUsuario.php" method="POST">
 				  				<input type="hidden" name="DNI" id="dni" value="$DNI" /> 
 				  				<input name="button" type="submit" value="Eliminar" />
-				  		</form>
+				  		</form></p>
 			  		</div> 
 EOS;
 			echo $html;  		
@@ -76,6 +77,30 @@ EOS;
 		</div>
 		<div id= "contenidoPerfilUsuario">
 			<form action="includes/formModificarPass.php" method="POST">
+<<<<<<< HEAD
+				<div id="cambiaContrasena" class= "datosUsuario">
+					<p>Cambiar contraseña</p>
+					<form>
+						<p>Nueva contraseña (min 6 caracteres):
+						<input type="password" name="pass1" required> (*)</input></p>
+						<p>Repetir contraseña (min 6 caracteres):
+						<input type="password" name="pass2" required> (*)</input></p>
+						<input type="hidden" name="id" id="usuario" value="$DNI" /> 
+						<input type="submit" value="Confirmar"></input>
+					</form>
+				</div>
+			</form>
+
+			<div id="bolsaHoras" class ="datosUsuario">
+				<p>Bolsa de horas</p>
+				<p>Horas totales: 8h</p>
+				<form>
+					<p>Día</p>
+					<input type="date" name="dia"><br>
+					<p>Horas</p>
+					<input type="time" name="horas"><br>
+					<input type="submit" value ="confirmar"></input>
+=======
 				<div id ="datosUsuario" >
 					<p><h2>Cambiar contraseña: </h2></p>
 					<form>
@@ -99,6 +124,7 @@ EOS;
 					<p>Horas: </p>
 					<p><input type="time" name="horas"></p>
 					<p><input type="submit" value ="confirmar"></input></p>
+>>>>>>> 27c237d773b5ce928203a6af043f1e97e52b6b49
 				</form>
 			</div>
 		</div>
@@ -107,6 +133,17 @@ EOS;
 			<div id= "datosUsuario">
 				<p><h2>Editar datos del usuario: </h2></p>
 				<form >
+<<<<<<< HEAD
+					<p>Nombre
+					<input type ="text" name ="nombre" required/></p>
+					<p>Apellidos
+					<input type ="text" name ="apellidos" required/></p>
+					<p>E-mail 
+					<input type ="email" name ="email" required></p>
+					<p>Teléfono 
+					<input type ="text" name ="telefono" required></p>
+					<input type="hidden" name="id" id="usuario" value="$DNI" /> 
+=======
 					<p>Nombre:</p>
 					<p><input type ="text" name ="nombre" required/></p>
 					<p>Apellidos:</p>
@@ -116,9 +153,13 @@ EOS;
 					<p>Teléfono : </p>
 					<p><input type ="text" name ="telefono" required></p>
 					<p><input type="hidden" name="id" id="usuario" value="$DNI" /> </p>
+>>>>>>> 27c237d773b5ce928203a6af043f1e97e52b6b49
 					<p><input type ="submit" value="editar"></input></p>
 				</form>
 			</div>
+			<form action="includes/formEliminarPropiaCuenta.php" method="POST">
+				<input type="hidden" name="id" id="usuario" value="$DNI" /> 
+			<p><input type ="submit" value="Eliminar cuenta"></input></p>
 			</form>
 		</div>
 		</div> 

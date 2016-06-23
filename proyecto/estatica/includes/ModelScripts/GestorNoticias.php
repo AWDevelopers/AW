@@ -54,8 +54,13 @@
 		}
 		
 		public function nuevaNoticia($titulo, $tipo , $descripcionCorta, $descripcionLarga, $imagen){
-                        if(!$this->dao->existeNoticia($titulo)){
-                            return ($this->dao->insertaNoticia($titulo,$tipo,$descripcionCorta, $descripcionLarga, $imagen));
+			$tituloN = htmlspecialchars(trim(strip_tags($titulo)));
+			$tipoN = htmlspecialchars(trim(strip_tags($tipo)));
+			$cortaN = htmlspecialchars(trim(strip_tags($descripcionCorta)));
+			$largaN = htmlspecialchars(trim(strip_tags($descripcionLarga)));
+			$imagenN = htmlspecialchars(trim(strip_tags($imagen)));
+                        if(!$this->dao->existeNoticia($tituloN)){
+                            return ($this->dao->insertaNoticia($tituloN,$tipoN,$cortaN, $largaN, $imagenN));
                         }
                         else{
                             return false;

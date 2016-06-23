@@ -9,7 +9,5 @@ require_once 'ModelScripts/GestorNoticias.php';
 	$descripcionLarga = $_REQUEST['descripcionLarga'];
 	$imagen = "img/".$_REQUEST['imagen'];
 	$salida = $lista->nuevaNoticia($titulo, $tipo , $descripcionCorta, $descripcionLarga, $imagen);
-	echo $descripcionCorta;
-	echo $descripcionLarga;
-	//header("Location: ../vistaNoticiaDetallada.php?id=".$salida);
+	header("Location: ../vistaNoticiaDetallada.php?id=".$salida);
 ?>

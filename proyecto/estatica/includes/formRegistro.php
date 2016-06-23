@@ -1,6 +1,8 @@
 <?php
 include ('config.php');
 require_once 'ModelScripts/GestorUsuarios.php';
+use \AW\proyecto\estatica\includes\Aplicacion as App;
+	$app = App::getSingleton();
 	$lista = new GestorUsuarios();
 	$user = $_REQUEST['usuario'];
 	$pass = $_REQUEST['pass'];
@@ -13,17 +15,21 @@ require_once 'ModelScripts/GestorUsuarios.php';
 	$telefono = $_REQUEST['tlf'];
 	$direccion = $_REQUEST['direccion'];
 	$cp = $_REQUEST['cp'];
-	//$tipo = "User";
+	if($app->usuarioLogueado() && $app->esAdmin("Admin")){
+		$tipo = $_REQUEST['tipo'];
+	}
+	else{
+		$tipo= "User";
+	}
 	$avatar = "img/".$_REQUEST['foto'];
-	$salida = $lista->nuevoUsuario($user, $pass, $nombre, $apellidos, $dni, $email, $fechaNacimiento, $sexo, $telefono, $direccion, $cp, $avatar);
-	echo $salida;
+	$salida = $lista->nuevoUsuario($user, $pass, $nombre, $apellidos, $dni, $email, $fechaNacimiento, $sexo, $telefono, $direccion, $cp, $avatar, $tipo);
 	if ($salida){ //Se ha hecho el registro correctamente
-		//header("Location: ../login.php");
+		header("Location: ../index.php");
 		echo "Se ha registrado";
 	}
 	else{
 		echo "No se ha registrado";
-		//header("Location: ../index.php");
+		header("Location: ../registrate.php");
 	}
 	
 
