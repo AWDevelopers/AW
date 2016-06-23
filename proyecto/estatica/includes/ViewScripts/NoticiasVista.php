@@ -141,6 +141,7 @@ EOS;
         } 
 
             function muestraNoticiasAdmin(){
+				
                 $lista = $this->ListaNoticias->getListaNoticias();
                 $iterator = $lista->getIterator();
                 
@@ -150,17 +151,25 @@ EOS;
                     $des = $iterator->current()->getDescripcionCorta();
                     $id = $iterator->current()->getId();
                     $html = <<<EOS
-                                    <div class="noticiaAdmin">
+                                 <div class="noticiaAdmin">
                                     <h3> $titulo </h3>
-                                    <p> $des </p> 
-                                    <form name="eliminar">
-                                        <input type="submit" value="eliminar"></input>
-                                    </form>
+                                    <p> $des </p>
+                                    <script language="JavaScript">
+                                        function eliminar(){
+                                            if(confirm("¿Estás seguro de querer borrar la noticia?")){
+                                                document.botonesEliminar.submit();
+                                            }
+                                        }   
+                                    </script>
+                                    <form name="botonesEliminar" action="includes/formProcesaEliminarNoticia.php?id=$id" method="POST">
+                                         <input type="button" onclick="eliminar()" value="Eliminar"></input>
+                                    
                                     </div>
 EOS;
                     echo $html;     
                     $iterator->next();
                 }
             } 
+
 }   
 ?>

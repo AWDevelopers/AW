@@ -1,6 +1,7 @@
 <?php
-use \AW\proyecto\estatica\includes\Aplicacion as App;
-	$app = App::getSingleton();
+		use \AW\proyecto\estatica\includes\Aplicacion as App;
+		$app = App::getSingleton();
+
         echo "<div id='sidebar-left'>
 			<nav>
 			<ul>

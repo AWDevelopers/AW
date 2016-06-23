@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 	require_once '/../ModelScripts/usuario.php';
 	require_once '/../config.php';
 	use \AW\proyecto\estatica\includes\Aplicacion as App;
@@ -6,10 +6,10 @@
 
 		private $array;
 
-		function listaUsuarios(){
+		function listaUsuarios($dni){
 			$app = App::getSingleton();
             $con = $app->conexionBd();
-			$sql = "SELECT * FROM usuario";
+			$sql = "SELECT * FROM usuario WHERE DNI<>'$dni'";
 			$rs = $con->query($sql) or die ($con->error);
 			if($rs->num_rows >0 )
 			{
@@ -52,10 +52,10 @@
 			$rs = $con->query($sql) or die ($con->error);
 			$login =false;
 			if($row = $rs->fetch_assoc()){    
-					//Si el usuario es correcto ahora validamos su contraseña
+					//Si el usuario es correcto ahora validamos su contraseÃ±a
 					$passBd = $row["pass"];
 					if (password_verify($pass, $passBd)) {
-						//contraseña correcta hacemos sesion
+						//contraseÃ±a correcta hacemos sesion
 
 						$usuario = new Usuario($row["nombre"], $row["DNI"], $row["apellidos"], $row["direccion"], $row["cp"], $row["usuario"], $row["pass"], $row["email"], $row["fechaNacimiento"], $row["avatar"], $row["sexo"],$row["telefono"], $row["tipo"]);
 						$app->login($usuario);
@@ -74,10 +74,9 @@
 			return $login;
 		}
 		
-		function insertaUsuario($user, $pass, $nombre, $apellidos, $dni, $email, $fechaNacimiento, $sexo, $telefono, $direccion, $cp, $avatar ){
+		function insertaUsuario($user, $pass, $nombre, $apellidos, $dni, $email, $fechaNacimiento, $sexo, $telefono, $direccion, $cp, $avatar, $tipo ){
 			$app = App::getSingleton();
             $con = $app->conexionBd();
-			$tipo = "User";
 		
 			$opciones = [
 				'cost' => 11,
@@ -142,6 +141,10 @@
 		}
 		
 		public function eliminarUsuario($dni){
+			$app = App::getSingleton();
+			$con = $app->conexionBd();
+			$sql = "DELETE usuario WHERE DNI='$dni'";
+			$con->query($sql);
 		
 		}
 	}

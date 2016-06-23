@@ -25,9 +25,13 @@
 					
 				</div>
 				<?php 
+					use \AW\proyecto\estatica\includes\Aplicacion as App;
+					$app = App::getSingleton();
 					require_once "includes/ViewScripts/NoticiasVista.php";
-					$vNoticias = new NoticiasVista();
-					$vNoticias->muestraNoticiasAdmin();
+					if (isset($_SESSION['login']) && $_SESSION['login'] && $app->tieneRol("Admin")){
+						$vNoticias = new NoticiasVista();
+						$vNoticias->muestraNoticiasAdmin();
+					}
 				?>
 			</div>
 		</div>

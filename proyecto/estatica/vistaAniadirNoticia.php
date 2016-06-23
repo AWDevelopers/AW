@@ -15,6 +15,11 @@
 
 		
 			<div class="contenido">
+				<?php
+					use \AW\proyecto\estatica\includes\Aplicacion as App;
+					$app = App::getSingleton();
+					if ($app->usuarioLogueado()  && $app->tieneRol("Admin")) {
+				?>
 				<div class="formulario">
 					<form action="includes/formProcesaAniadirNoticia.php" method="POST">
 						<div class="contenido2">
@@ -36,7 +41,7 @@
 								<p><h2> Descripción larga de la noticia: </h2> </p>
 								<textarea name="descripcionLarga" rows="10" placeholder= "Descripcion larga de la noticia..." ></textarea>			
 								<p><h2> Imagen: </h2></p>
-								<input id="file_url" type="file" name="imagen"> (*)</input>
+								<input id="file_url" type="file" name="imagen" required> (*)</input>
 								<p><input type="submit" name="button" value="Nueva Noticia"></p>
 							</div>
 						<div>
@@ -44,7 +49,9 @@
 					</form>
 					
 				</div>
-				
+			<?php	
+			}
+			?>	
 		</div>
 	</body>
 </html>
