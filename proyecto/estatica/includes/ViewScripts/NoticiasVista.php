@@ -153,7 +153,6 @@ EOS;
                     $html = <<<EOS
                                  <div class="noticiaAdmin">
                                     <h3> $titulo </h3>
-<<<<<<< HEAD
                                     <p> $des </p>
                                     <script language="JavaScript">
                                         function eliminar(){
@@ -164,14 +163,6 @@ EOS;
                                     </script>
                                     <form name="botonesEliminar" action="includes/formProcesaEliminarNoticia.php?id=$id" method="POST">
                                          <input type="button" onclick="eliminar()" value="Eliminar"></input>
-
-=======
-                                    <p> $des </p> 
-                                    <form name="eliminar" action="includes/formProcesaEliminarNoticia.php" method="POST">
-										<input type="hidden" name="id" id="noticia" value="$id" /> 
-                                        <input type="button" onclick="alert('Estas seguro que desea eliminar la noticia')" value="eliminar"></input>
->>>>>>> 25d5da50edc9219e789142b57eb4e8b0f97c6b1f
-                                    </form>
                                     
                                     </div>
 EOS;
