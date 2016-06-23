@@ -19,10 +19,20 @@
                 $des = $noticia->getDescripcionLarga();
                  $html = <<<EOS
         
-                                    <h1> $titulo </h1>
-                                    <img src="$imagen"/>
-                                    <p> $fecha </p>
-                                    <p> $des </p>
+		
+					<div class="contenido">
+				
+						<div id= "tituloNoticia">
+							<h1> $titulo </h1>
+						</div>
+						<div class = "imgYdescrip">
+							<p><img src= "$imagen" /></p>
+							<p> $fecha </p>
+							<p>$des</p>
+						</div>
+						
+						
+					</div>
 EOS;
                     echo $html;  	
 

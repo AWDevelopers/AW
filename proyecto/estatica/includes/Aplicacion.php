@@ -115,4 +115,8 @@ EOF;
 
     return true;
   }
-}
+  
+  public function esAdmin(){
+	return (isset($_SESSION["roles"]) && ($_SESSION["roles"]==="Admin"));
+  }
+  }

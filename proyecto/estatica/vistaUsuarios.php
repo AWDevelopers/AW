@@ -12,10 +12,10 @@
 		
 		<!--Aqui va el contenido-->
 		<div class="contenido">
-		
 				<?php
-
-					if (isset($_SESSION['login']) && $_SESSION['login']) {
+					use \AW\proyecto\estatica\includes\Aplicacion as App;
+					$app = App::getSingleton();
+					if ($app->usuarioLogueado() && $app->esAdmin()) {
 		
 						require_once "includes/ViewScripts/UsuariosVista.php";
 						$vista = new UsuariosVista();

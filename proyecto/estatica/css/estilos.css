@@ -98,7 +98,7 @@ a#pull {
 
 button {
 	width: 150px;  /* Ancho del botón */
-	height: 40px;
+	/*height quitado*/
 	text-align: center;  /* Alineación del texto */
 }
 
@@ -121,6 +121,19 @@ button {
 .imgDonaciones img{
 	width: 70%;
 	height: 70%;
+	
+}
+.imgDonacion img{
+	width: 52.5%;
+	height: 52.5%;
+	margin-left:25%;
+}
+
+.
+
+.imgONG img{
+	width: 60%;
+	height: 60%;
 }
 
 .cajaDescripcion{
@@ -292,6 +305,7 @@ button {
 	width: 90%;
 	margin-top: 2%;
 }
+
 
 
 .imagenUsuario img{
@@ -509,6 +523,11 @@ progress{
 	display:inline-block;
 	margin-left: 60px;
 }
+
+#tituloDonacionesVista{
+	
+	margin-left:42%;
+}
 /*------------------FIN DONACIONES----------*/
 
 /*-----------------ONG---------------------*/
@@ -665,6 +684,11 @@ progress{
     display: inline-block;
 }
 
+#tituloNoticia{
+	
+	margin-left:45%;
+}
+
 @media only screen and (max-width : 500px) {
 
 	nav {
@@ -714,6 +738,36 @@ progress{
     #cabecera{
     	display: none;
     }
+	
+	/* ---- USUARIO -----*/
+	
+	#cabeceraPerfil{
+		width: 50%;
+		height: 50%;
+	}
+	
+	#volver{
+		
+	}
+	#cerrar {
+
+	}
+	
+	#fotoUsuario{
+		width:40%;
+		height:40%;
+	}
+	
+	#contenidoPerfilUsuario{
+	
+	}
+	
+	#datosUsuario{
+		
+	}
+	
+	/* ---- FIN USUARIO ---- */
+	
     .principal{
     	width: 90%;
     	margin: 5%; 

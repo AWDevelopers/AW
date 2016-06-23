@@ -93,6 +93,8 @@
 			$con->close();
 
 		}
+		
+		
 
 		function borraUsuario($DNI){
 			$app = App::getSingleton();
@@ -111,15 +113,37 @@
 			if($rs != NULL)
 			{
 				while($lista = $rs->fetch_assoc()){
-					//$resultado =  new Usuario($lista['idProyecto'], $lista['CIFOng'], $lista['fechaCreacion'], $lista['dineroNecesario'], $lista['dineroAcumulado'], $lista['nombre'], $lista['descripcionCorta'], $lista['descripcionLarga'], $lista['imagen'], $lista['numVoluntarios']);
+					$resultado =  new Usuario($lista['nombre'], $lista['DNI'], $lista['apellidos'], $lista['direccion'], $lista['cp'], $lista['usuario'], $lista['pass'], $lista['email'], $lista['fechaNacimiento'], $lista['avatar'], $lista['sexo'], $lista['telefono'], $lista['tipo']);
 				}
 				$rs->free();
 				$con->close();
 				return ($resultado);
 			}
 		}
+		
+		public function modificarPass($dni, $pass){
+			$app = App::getSingleton();
+			$con = $app->conexionBd();
+			$opciones = [
+				'cost' => 11,
+				'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
+			];
+			$contra = $pass;
+			$contra = password_hash($contra, PASSWORD_BCRYPT, $opciones)."\n";
+            $sql = "UPDATE usuario SET pass='$contra' WHERE DNI= '$dni'";
+			$con->query($sql);
+			}
 
-
+		public function modificarPerfilUser($dni, $nombre, $apellidos, $email, $telefono){
+			$app = App::getSingleton();
+			$con = $app->conexionBd();
+			$sql = "UPDATE usuario SET nombre='$nombre', apellidos='$apellidos', email='$email', telefono='$telefono' WHERE DNI= '$dni'";
+			$con->query($sql);
+		}
+		
+		public function eliminarUsuario($dni){
+		
+		}
 	}
 
 ?>

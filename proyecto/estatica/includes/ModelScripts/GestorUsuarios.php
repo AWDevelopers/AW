@@ -80,7 +80,15 @@
 		}
 		
 		public function getUsuario($dni){
-			return $this->dao->seleccionaUsuario($dni);
+			return ($this->dao->seleccionaUsuario($dni));
+		}
+		
+		public function modificarContra($dni, $pass){
+			$this->dao->modificarPass($dni, $pass);
+		}
+		
+		public function modificarPerfilUser($dni, $nombre, $apellidos, $email, $telefono){
+			$this->dao->modificarPerfilUser($dni, $nombre, $apellidos, $email, $telefono);
 		}
 	}
 ?>

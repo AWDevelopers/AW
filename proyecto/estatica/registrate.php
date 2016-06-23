@@ -26,6 +26,7 @@
 		</script>
 		
 		
+		
 	</head>
 	<body>
 		<div id='contenedor'>
@@ -36,7 +37,7 @@
 
 			<div class="contenido">
 				<div class="formulario">
-					<form action="includes/formRegistro.php" method="POST">
+					<form name= formulario action="includes/formRegistro.php" method="POST">
 					
 					<div class="contenido2">
 						
@@ -71,6 +72,7 @@
 						<input type="text" name="direccion" placeholder= "Gran Via"></input>
 						<p> <h2>CP: </h2></p>
 						<input type="number" name="cp" placeholder= "28020"></input>
+						
 						
 						<p> <h4> <font color= yellow> Para finalizar el registro haz click aqui! </font></h4>
 						<input type="submit" name="submit" value="Registrate">
