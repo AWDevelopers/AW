@@ -2,7 +2,7 @@
 include ('config.php');
 	use \AW\proyecto\estatica\includes\Aplicacion as App;
 	$app = App::getSingleton();
-	if($app->usuarioLogueado() && $app->esAdmin("Admin")){
+	if($app->usuarioLogueado() && $app->tieneRol("Admin")){
 	 $html = <<<EOS
 		<p> <h2> Tipo de usuario  </h2> </p>
 		<select name="tipo">

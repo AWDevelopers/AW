@@ -15,6 +15,11 @@
 
 		
 			<div class="contenido">
+				<?php
+					use \AW\proyecto\estatica\includes\Aplicacion as App;
+					$app = App::getSingleton();
+					if ($app->usuarioLogueado()  && $app->tieneRol("Admin")) {
+				?>
 				<div class="formulario">
 					<form action="includes/formProcesaAniadirNoticia.php" method="POST">
 						<div class="contenido2">
@@ -44,7 +49,9 @@
 					</form>
 					
 				</div>
-				
+			<?php	
+			}
+			?>	
 		</div>
 	</body>
 </html>
