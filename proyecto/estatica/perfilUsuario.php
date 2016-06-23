@@ -24,7 +24,7 @@
 					<center>
 						<img src="img/perfil.png">
 						<strong>
-						<p>Nombre Apellidooos</p>
+						<p>Nombre Apellidos</p>
 						</strong>
 					</center>
 				</div>
@@ -34,50 +34,50 @@
 			</div>
 
 			<div class = "datosUsuario" id="datosPersonales">
-				<center><strong><p>Datos personales</p></strong></center>
+				<p>Datos personales</p>
 				
-						<p>Nombre : Nombre<br></p>
-						<p>Apellidos :Apellido1 apellido2<br></p>
-						<p>email : emal@email.com</p>
+						<p>Nombre : Nombre</p>
+						<p>Apellidos :Apellido1 apellido2</p>
+						<p>Email : emal@email.com</p>
 						<p>DNI : 01010101-A</p>
 						<p>Teléfono : 999 99 99 99</p>
 				
 			</div>
 			<div id="cambiaContrasena" class= "datosUsuario">
-				<center><strong>Cambiar contraseña</strong></center><br>
+				<p>Cambiar contraseña</p>
 				<form>
 					Nueva contraseña:
-					<input type="password"></input><br>
+					<input type="password"></input>
 					Repetir contraseña:
-					<input type="password"></input><br>
+					<input type="password"></input>
 					<center><input type="submit" value="Confirmar"></input></center>
 				</form>
 			</div>
 
 			<div id="bolsaHoras" class ="datosUsuario">
-				<strong><center><p>Bolsa de horas</p></center></strong>
+				<p>Bolsa de horas</p>
 				<p>Horas semanales: 8h</p>
 				<form>
 					<p>Día</p>
-					<input type="date" name="dia"><br>
+					<input type="date" name="dia">
 					<p>Horas</p>
-					<input type="time" name="horas"><br>
+					<input type="time" name="horas">
 					<center><input type="submit" value ="confirmar"></input></center>
 				</form>
 			</div>
 
 			<div id= "formularioPerfil" class= "datosUsuario">
-				<center><strong><p>Editar datos usuario</p></strong></center>
+				<p>Editar datos usuario</p>
 				<form >
-					<br>
+					
 					Nombre
-					<input type ="text" name ="nombre"/><br>
+					<input type ="text" name ="nombre"/>
 					<br>Apellidos
-					<input type ="text" name ="apellidos" /><br>
+					<input type ="text" name ="apellidos" />
 					<br>E-mail 
-					<input type ="email" name ="email" ><br>
+					<input type ="email" name ="email" >
 					<br>Teléfono 
-					<input type ="text" name ="telefono" ><br>
+					<input type ="text" name ="telefono" >
 					<center>
 						<input type ="submit" value="editar"></input>
 					</center>
