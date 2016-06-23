@@ -6,6 +6,43 @@ html body{
 	background: #F3F3F3;
 }
 
+#cabeceraPerfil{
+	
+}
+
+#volver{
+	margin-left:5%;
+	float:left;
+	
+}
+
+#cerrar {
+	
+	margin-right:5%;
+	float:right;
+}
+
+#fotoUsuario{
+	margin-left:25%;
+	
+}
+
+#contenidoPerfilUsuario{
+	background:#f3f3f3;
+	margin-left:25%;
+	margin-right:25%;
+	margin-top:5%;
+	text-align:center;
+}
+
+#datosUsuario{
+	margin-top:1%;
+	
+	border: 10px solid #024e88; /* Borde */
+}
+
+
+
 #sidebar-left{
 	background: #024e88;
 }
@@ -70,7 +107,13 @@ button:active /* Al presionarse el botón */ {
 .imgONG{
 	font-size: 16px;
 	font-family: cursive;
-	margin-left:30%;
+	margin-left:35%;
+}
+
+.imgYdescrip{
+	font-size: 16px;
+	font-family: cursive;
+	margin-left:35%;
 }
 .cajaDescripcion{
 	background: white;

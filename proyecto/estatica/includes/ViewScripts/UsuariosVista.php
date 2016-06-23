@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 	
 	class UsuariosVista{
 		
@@ -46,74 +46,81 @@ EOS;
 		$telefono = $datosUsuario->getTelefono();
 		$avatar = $datosUsuario->getAvatar();
 		$html = <<<EOS
-		<div id= "contenidoPerfilUsuario">
+		
   			<div class="cabeceraPerfil">
-				<div id="volver" class ="cabeceraPerfil">
+				<div id="volver" >
 					<button name = "volver" class= "bCabecera" ><img src="img/back.png"></button>
 				</div>
-				<div id="fotoUsuario" class = "cabeceraPerfil">
-						<img src="$avatar">
-						<p>$nombre
-						$apellidos</p>
-				</div>
-				<div id="cerrar" class = "cabeceraPerfil">
+				
+				<div id="cerrar">
 					<button id = "bCerrar" class="bCabecera" ><img src="img/salir.png"></button>
 				</div>
-			</div>
-			
-			<div class = "datosUsuario" id="datosPersonales">
-				<p>Datos personales</p>
 				
-						<p>Nombre : $nombre<br></p>
-						<p>Apellidos :$apellidos<br></p>
+				<div id="fotoUsuario" >
+						<img src="$avatar">
+						
+				</div>
+				
+			</div>
+		<div id= "contenidoPerfilUsuario">
+			<div id ="datosUsuario" >
+				<p><h2>Datos personales:</h2></p>
+				
+						<p>Nombre : $nombre</p>
+						<p>Apellidos : $apellidos</p>
 						<p>email : $email</p>
 						<p>DNI : $DNI</p>
 						<p>Telefono : $telefono</p>
 				
 			</div>
+		</div>
+		<div id= "contenidoPerfilUsuario">
 			<form action="includes/formModificarPass.php" method="POST">
-				<div id="cambiaContrasena" class= "datosUsuario">
-					<p>Cambiar contraseña</p>
+				<div id ="datosUsuario" >
+					<p><h2>Cambiar contraseÃ±a: </h2></p>
 					<form>
-						<p>Nueva contraseña (min 6 caracteres):
-						<input type="password" name="pass1" required> (*)</input></p>
-						<p>Repetir contraseña (min 6 caracteres):
-						<input type="password" name="pass2" required> (*)</input></p>
-						<input type="hidden" name="id" id="usuario" value="$DNI" /> 
-						<input type="submit" value="Confirmar"></input>
+						<p>Nueva contraseÃ±a (min 6 caracteres): </p>
+						<p><input type="password" name="pass1" required> (*)</input></p>
+						<p>Repetir contraseÃ±a (min 6 caracteres): </p>
+						<p><input type="password" name="pass2" required> (*)</input></p>
+						<p><input type="hidden" name="id" id="usuario" value="$DNI" /> </p>
+						<p><input type="submit" value="Confirmar"></input></p>
 					</form>
 				</div>
 			</form>
-
-			<div id="bolsaHoras" class ="datosUsuario">
-				<p>Bolsa de horas</p>
+		</div>
+		<div id= "contenidoPerfilUsuario">
+			<div id ="datosUsuario">
+				<p><h2>Bolsa de horas: </h2></p>
 				<p>Horas semanales: 8h</p>
 				<form>
-					<p>Día</p>
-					<input type="date" name="dia"><br>
-					<p>Horas</p>
-					<input type="time" name="horas"><br>
-					<input type="submit" value ="confirmar"></input>
+					<p>DÃ­a: </p>
+					<p><input type="date" name="dia"></p>
+					<p>Horas: </p>
+					<p><input type="time" name="horas"></p>
+					<p><input type="submit" value ="confirmar"></input></p>
 				</form>
 			</div>
-
+		</div>
+		<div id= "contenidoPerfilUsuario">
 			<form action="includes/formModificarUsuario.php" method="POST">
-			<div id= "formularioPerfil" class= "datosUsuario">
-				<p>Editar datos usuario</p>
+			<div id= "datosUsuario">
+				<p><h2>Editar datos del usuario: </h2></p>
 				<form >
-					<p>Nombre
-					<input type ="text" name ="nombre" required/></p>
-					<p>Apellidos
-					<input type ="text" name ="apellidos" required/></p>
-					<p>E-mail 
-					<input type ="email" name ="email" required></p>
-					<p>Teléfono 
-					<input type ="text" name ="telefono" required></p>
-					<input type="hidden" name="id" id="usuario" value="$DNI" /> 
+					<p>Nombre:</p>
+					<p><input type ="text" name ="nombre" required/></p>
+					<p>Apellidos:</p>
+					<p><input type ="text" name ="apellidos" required/></p>
+					<p>E-mail: </p>
+					<p><input type ="email" name ="email" required></p>
+					<p>TelÃ©fono : </p>
+					<p><input type ="text" name ="telefono" required></p>
+					<p><input type="hidden" name="id" id="usuario" value="$DNI" /> </p>
 					<p><input type ="submit" value="editar"></input></p>
 				</form>
 			</div>
 			</form>
+		</div>
 		</div> 
 EOS;
 			echo $html; 
