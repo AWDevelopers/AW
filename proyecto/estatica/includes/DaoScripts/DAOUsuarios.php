@@ -133,10 +133,10 @@
 			$con->query($sql);
 			}
 
-		public function modificarPerfilUser($dni, $nombre, $apellidos, $email, $telefono){
+		public function modificarPerfilUser($dni, $nombre, $apellidos, $email, $telefono, $direccion, $cp, $tipo, $avatar, $sexo, $usuario, $fecha){
 			$app = App::getSingleton();
 			$con = $app->conexionBd();
-			$sql = "UPDATE usuario SET nombre='$nombre', apellidos='$apellidos', email='$email', telefono='$telefono' WHERE DNI= '$dni'";
+			$sql="UPDATE `usuario` SET `nombre`='$nombre',`apellidos`='$apellidos',`direccion`='$direccion',`cp`='$cp',`usuario`='$usuario',`email`='$email',`fechaNacimiento`='$fecha',`avatar`='$avatar',`sexo`='$sexo',`telefono`='$telefono',`tipo`='$tipo' WHERE `DNI`='$dni'";
 			$con->query($sql);
 		}
 		

@@ -16,14 +16,14 @@
 		
 			<div class="contenido">
 				<div class="formulario">
-					<form action="includes/formProcesaModificarNoticia.php?id=<?=$_GET['id']?>" method="POST">
+					<form action="includes/formProcesaModificarNoticia.php?id=<?=$_REQUEST['id']?>" method="POST">
 						<div class="contenido2">
 						
 						
 							<div id="formulariosTitulo"><p><h1> Formulario para editar una noticia </font></h1></p></div>
 							
 								<p><h2>Titulo de la noticia:</h2> </p>
-								<input type="text" name="titulo" value="<?= $_GET['titulo']?>" required> (*)</input>
+								<input type="text" name="titulo" value="<?= $_REQUEST['titulo']?>" required> (*)</input>
 								<p><h2>Tipo de la noticia: </h2></p>
 								<select name="tipo">
 									<option value="primaria">Primaria</option>
@@ -32,13 +32,11 @@
 									<option value="otras">Otras</option>
 								</select> (*)</p>
 								<p><h2> Descripción corta de la noticia (*):</h2> </p>
-								<textarea name="desCorta" rows="4" placeholder= "Descripcion corta." value="<?= $_GET['des_corta']?>" ></textarea>
+								<textarea name="desCorta" rows="4" placeholder=<?$_REQUEST['des']?><?= $_REQUEST['des']?></textarea>
 								<p><h2> Descripción larga de la noticia: </h2> </p>
-								<textarea name="desLarga" rows="10" placeholder= "Descripcion larga de la noticia..." value="<?= $_GET['des_larga']?>" ></textarea>			
-								<p><h2> Fecha de la noticia:</h2></p>
-								<input type="date" name="fecha" value="<?= $_GET['fecha']?>"> (*)</input>
-								<p><h2> Nombre de la imagen: </h2></p>
-								<input type="text" name="imagen" value="<?= $_GET['imagen']?>"> (*)</input>
+								<textarea name="desLarga" rows="10" placeholder=<?$_REQUEST['desl']?><?= $_REQUEST['desl']?></textarea>			
+								<p><h2> Imagen: </h2></p>
+								<input id="file_url" type="file" name="imagen" required> (*)</input>
 								<p><input type="submit" name="button" value="Editar"></p>
 							</div>
 						<div>

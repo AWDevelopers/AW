@@ -46,5 +46,13 @@ class noticia{
 	public function getImagen(){
 		return $this->imagen;
 	}
+	
+	public function toJson(){
+			return $json;
+		}
+
+	public function fromJson($json){
+		return $proyecto;
+	}
 }
 ?>

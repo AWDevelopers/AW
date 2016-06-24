@@ -4,7 +4,8 @@
 	<title> Panel de Administracion de Noticias</title>
 	<link rel = "stylesheet" type = "text/css" href="css/colorsandtext.css"/>
 		<link rel = "stylesheet" type = "text/css " href="css/estilos.css"/>
-
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/noticiasAdmin.js"></script>
 
 </head>
 
@@ -28,7 +29,7 @@
 					use \AW\proyecto\estatica\includes\Aplicacion as App;
 					$app = App::getSingleton();
 					require_once "includes/ViewScripts/NoticiasVista.php";
-					if (isset($_SESSION['login']) && $_SESSION['login'] && $app->tieneRol("Admin")){
+					if ($app->usuarioLogueado() && $app->tieneRol("Admin")){
 						$vNoticias = new NoticiasVista();
 						$vNoticias->muestraNoticiasAdmin();
 					}

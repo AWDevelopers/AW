@@ -39,7 +39,7 @@
 								<p><h2> Descripción corta de la noticia (*):</h2> </p>
 								<textarea name="descripcionCorta" rows="4" placeholder= "Descripcion corta." ></textarea>
 								<p><h2> Descripción larga de la noticia: </h2> </p>
-								<textarea name="descripcionLarga" rows="10" placeholder= "Descripcion larga de la noticia..." ></textarea>			
+								<textarea name="descripcionLarga" rows="10" placeholder= "Descripcion larga de la noticia..." ></textarea>
 								<p><h2> Imagen: </h2></p>
 								<input id="file_url" type="file" name="imagen" required> (*)</input>
 								<p><input type="submit" name="button" value="Nueva Noticia"></p>

@@ -118,7 +118,7 @@ EOS;
             function muestraNoticiasOtras(){
                 $lista = $this->ListaNoticias->getListaNoticiasOtras();
                 $iterator = $lista->getIterator();
-		
+				
 		while($iterator->valid()) {
                     $titulo = $iterator->current()->getTitulo();
                     $imagen = $iterator->current()->getImagen();
@@ -140,35 +140,43 @@ EOS;
             
         } 
 
+
             function muestraNoticiasAdmin(){
 				
                 $lista = $this->ListaNoticias->getListaNoticias();
                 $iterator = $lista->getIterator();
-                
+                $num=0;
         
                 while($iterator->valid()) {
                     $titulo = $iterator->current()->getTitulo();
                     $des = $iterator->current()->getDescripcionCorta();
                     $id = $iterator->current()->getId();
+					$desl= $iterator->current()->getDescripcionLarga();
+					$fecha= $iterator->current()->getFecha();
+					$imagen= $iterator->current()->getImagen();
                     $html = <<<EOS
-                                 <div class="noticiaAdmin">
+                                 <div class="noticiaAdmin" id="noticiaAdmin$num">
                                     <h3> $titulo </h3>
                                     <p> $des </p>
-                                    <script language="JavaScript">
-                                        function eliminar(){
-                                            if(confirm("¿Estás seguro de querer borrar la noticia?")){
-                                                document.botonesEliminar.submit();
-                                            }
-                                        }   
-                                    </script>
-                                    <form name="botonesEliminar" action="includes/formProcesaEliminarNoticia.php?id=$id" method="POST">
-                                        <input type="button" value="editar"><a href="includes/vistaModificarNoticia.php?id=$id></a></input>
-                                        <input type="button" onclick="eliminar()" value="Eliminar"></input>
-                                    </form>
-                                    </div>
+                                   
+                                   <form name="vista" action="vistaModificarNoticia.php" method="POST">
+										<input type="hidden" name="id"  value="$id" />
+										<input type="hidden" name="titulo" value="$titulo" />
+										<input type="hidden" name="des"  value="$des" />
+										<input type="hidden" name="desl"  value="$desl" />
+										<input type="hidden" name="imagen" value="$imagen" />
+										<input name="button" type="submit" value="Modificar" />
+								   </form>
+								   <form>
+									<button onclick="eliminaNoticia($num,$id)" name="button" type="none" value="eliminar">Eliminar</button>
+								   </form>
+										
+								
+                                </div>
 EOS;
-                    echo $html;     
+                    echo $html; 
                     $iterator->next();
+					$num++; 
                 }
             } 
 
