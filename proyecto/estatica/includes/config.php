@@ -4,11 +4,16 @@ define('BD_HOST', 'localhost');
 define('BD_NAME', 'incommong');
 define('BD_USER', 'root');
 define('BD_PASS', '');
-define('RAIZ_APP', __DIR__);
-define('RUTA_APP', __DIR__);
+define('RAIZ_APP', dirname(__DIR__));
+define('RAIZ', "/var/www/html/");
+define('RUTA_APP', '/AW/proyecto/estatica/');
 define('RUTA_IMGS', RUTA_APP.'img/');
 define('RUTA_CSS', RUTA_APP.'css/');
 define('RUTA_JS', RUTA_APP.'js/');
+define('RUTA_INC', RUTA_APP.'includes/');
+define('RUTA_MODEL', RUTA_APP.'includes/ModelScripts/');
+define('RUTA_DAO', RUTA_APP.'includes/DaoScripts/');
+
 define('INSTALADA', true );
 
 if (! INSTALADA) {
