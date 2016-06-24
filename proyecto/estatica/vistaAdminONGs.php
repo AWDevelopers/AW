@@ -20,7 +20,7 @@
 					</div>
 					<div class="aniade">
 						<form action="vistaInsertarOng.php"><input type="submit" value="Añadir ONG"></input></form>
-						<form action="vistaEliminarOg.php"><input type="submit" value="Eliminar ONG"></input></form>
+						<form action="vistaEliminarOng.php"><input type="submit" value="Eliminar ONG"></input></form>
 						<form action="vistaModificarNombreOng.php"><input type="submit" value="Modificar Nombre"></input></form>
 						<form action="vistaModificarCifOng.php"><input type="submit" value="Modificar Cif"></input></form>
 						<form action="vistaModificarTelefonoOng.php"><input type="submit" value="Modificar Telefono"></input></form>

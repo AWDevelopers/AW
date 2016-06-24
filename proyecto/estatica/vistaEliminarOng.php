@@ -16,8 +16,13 @@
 			<div id="proyectoONG">
 				<?php
 					require_once "includes/ViewScripts/OngsVista.php";
-					$vONG = new vistaOng();
-					$vONG->eliminarOng($_GET['CIF']);
+					if(isset($_GET['CIF'])){
+						$vONG = new vistaOng();
+						$vONG->eliminarOng($_GET['CIF']);
+					}else{
+						$vONG = new vistaOng();
+						$vONG->muestraEliminarOng();
+					}
 				?>
 			</div>
 		</div>

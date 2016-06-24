@@ -165,19 +165,27 @@
 			$this->cambiaPass();
 		}
 
-		public function muestraEliminarOng($id){
+		public function eliminaOng(){
+			if(isset($_POST['delete'])){
+				$CIF=$_POST['cif'];
+				$lista = $this->listaOngs->deleteOng($CIF);
+				header("Location: procesarBorrado.php");
+			}
+		}
+		
+		public function muestraEliminarOng(){
 
 			echo '<div class="formulario">';
-			echo '<form  action="includes/formOng.php" method="POST">
-				  <p>¿Está seguro de que quiere dar de baja la Ong? </p>
-				  <p><input type="hidden" name="cif" required value = '.$id.'></input></p>
-				  <p>
-				  <input type="submit" name="submit" value="Cancelar">
-				  <input type="submit" name="submit" value="Dar de baja Ong">
+			echo '<form method="POST">
+				  <p>Cif de la Ong que quiere eliminar</p>
+				  <p><input type="text" name="cif" required></input></p>
+				  <input type="submit" name="delete" value="Dar de baja Ong">
 				  </p>
 				  </form>';
 			echo '</div>';
+			$this->eliminaOng();
 		}
+		
 
 		public function eliminarOng($CIF){
 			$lista = $this->listaOngs->deleteOng($CIF);
