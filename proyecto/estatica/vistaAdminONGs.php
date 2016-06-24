@@ -19,13 +19,23 @@
 						<form action="panelAdmin.php"><input type="submit" value="Atras"></input></form>
 					</div>
 					<div class="aniade">
-						<form action="vistaInsertarONG.php"><input type="submit" value="Añadir ONG"></input></form><!--La funcion de añadir ong da problemillas-->	
+						<form action="vistaInsertarOng.php"><input type="submit" value="Añadir ONG"></input></form>
+						<form action="vistaEliminarOng.php"><input type="submit" value="Eliminar ONG"></input></form>
+						<!--<form action="vistaModificarNombreOng.php"><input type="submit" value="Modificar Nombre"></input></form>
+						<form action="vistaModificarCifOng.php"><input type="submit" value="Modificar Cif"></input></form>
+						<form action="vistaModificarTelefonoOng.php"><input type="submit" value="Modificar Telefono"></input></form>
+						<form action="vistaModificarDireccionOng.php"><input type="submit" value="Modificar Direccion"></input></form>
+						<form action="vistaModificarEmailOng.php"><input type="submit" value="Modificar Email"></input></form>-->
 					</div>
 						
-				<?php 
-					require_once "includes/ViewScripts/OngsVista.php";
-					$vONGs = new vistaOng();
-					$vONGs->muestraOngs();//Falta, lista con botoncitos de todas las ongs de la pagina
+				<?php
+					use \AW\proyecto\estatica\includes\Aplicacion as App;
+					$app = App::getSingleton();
+					if ($app->usuarioLogueado() && $app->tieneRol("Admin")) {
+						require_once "includes/ViewScripts/OngsVista.php";
+						$vONGs = new vistaOng();
+						$vONGs->muestraOngs();//Falta, lista con botoncitos de todas las ongs de la pagina
+					}
 				?>
 			</div>
 		</div>

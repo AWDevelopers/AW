@@ -20,10 +20,14 @@
 						<form action="panelAdmin.php"><input type="submit" value="Atras"></input></form>
 					</div>
 				</div>				
-					<?php 
+					<?php
+					use \AW\proyecto\estatica\includes\Aplicacion as App;
+					$app = App::getSingleton();
+					if ($app->usuarioLogueado() && $app->tieneRol("Admin")) {
 						require_once "includes/ViewScripts/ProyectosVista.php";
 						$vProyectos = new vistaProyectos();
 						$vProyectos->muestraProyectosConVoluntarios();
+					}
 					?>
 			</div>
 			

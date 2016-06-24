@@ -1,10 +1,10 @@
 ﻿<?php
+use \AW\proyecto\estatica\includes\DaoScripts\DaoUsuarios as DaoUsuarios;
 	class GestorUsuarios{
 		private $dao;
 		
 		function __construct(){
-			require_once '/../DaoScripts/DaoUsuarios.php';
-			$this->dao = new DaoUsuarios();
+			$this->dao = DaoUsuarios::new DaoUsuarios();
 			if (!isset($_SESSION)) session_start();
 		}
 		
@@ -13,9 +13,7 @@
 			$lista = $this->dao->listaUsuarios($dniN);
 			$array = new ArrayObject();
 			for($i= 0; $i <sizeof($lista)-1 ; $i++){
-				$array->append(new Usuario($lista[$i]['nombre'], $lista[$i]['DNI'],$lista[$i]['apellidos'], $lista[$i]['direccion'], $lista[$i]['cp'],
-				$lista[$i]['usuario'],$lista[$i]['pass'],$lista[$i]['email'],$lista[$i]['fechaNacimiento'], $lista[$i]['avatar'],$lista[$i]['sexo'],$lista[$i]['telefono'],
-				$lista[$i]['tipo']));
+				$array->append(new Usuario($lista[$i]['nombre'], $lista[$i]['DNI'],$lista[$i]['apellidos'], $lista[$i]['direccion'], $lista[$i]['cp'], $lista[$i]['usuario'],$lista[$i]['pass'],$lista[$i]['email'],$lista[$i]['fechaNacimiento'], $lista[$i]['avatar'],$lista[$i]['sexo'],$lista[$i]['telefono'], $lista[$i]['tipo']));
 			}
 			return $array;
 		}

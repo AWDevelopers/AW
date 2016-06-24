@@ -165,27 +165,51 @@
 			$this->cambiaPass();
 		}
 
-		public function muestraEliminarOng($id){
+		public function eliminaOng(){
+			if(isset($_POST['delete'])){
+				$CIF=$_POST['cif'];
+				$lista = $this->listaOngs->deleteOng($CIF);
+				header("Location: procesarBorrado.php");
+			}
+		}
+		
+		public function muestraEliminarOng(){
 
 			echo '<div class="formulario">';
-			echo '<form  action="includes/formOng.php" method="POST">
-				  <p>¿Está seguro de que quiere dar de baja la Ong? </p>
-				  <p><input type="hidden" name="cif" required value = '.$id.'></input></p>
-				  <p>
-				  <input type="submit" name="submit" value="Cancelar">
-				  <input type="submit" name="submit" value="Dar de baja Ong">
+			echo '<form method="POST">
+				  <p>Cif de la Ong que quiere eliminar</p>
+				  <p><input type="text" name="cif" required></input></p>
+				  <input type="submit" name="delete" value="Dar de baja Ong">
 				  </p>
 				  </form>';
 			echo '</div>';
+			$this->eliminaOng();
 		}
+		
 
 		public function eliminarOng($CIF){
 			$lista = $this->listaOngs->deleteOng($CIF);
 		}
+
+		public function insertarOng(){
+			if(isset($_POST['add'])){
+				$cif=$_POST["CIF"];
+				$nombre=$_POST["nombre"];
+				$dir=$_POST["direccion"];
+				$mail=$_POST["email"];
+				$user=$_POST["usuario"];
+				$pass=$_POST["pass"];
+				$tlf=$_POST["telefono"];
+				
+				$lista = $this->listaOngs->addOng($cif, $nombre, $dir, $mail, $user, $pass, $tlf);
+				header("Location: procesarInsertar.php");
+			}
+			
+		}
 		public function muestraInsertarOng(){
 
 			echo '<div class="formulario">';
-			echo '<form action="includes/formOng.php" method="POST">
+			echo '<form method="POST">
 				  <p>CIF de la Ong
 				  	<input type="text" name="CIF" required></input></p>
 				  <p>Nombre de la Ong
@@ -200,9 +224,10 @@
 					<input type="text" name="pass" required></input></p>
 				  <p>Teléfono de contacto
 					<input type="text" name="telefono"></input></p>
-				  <p><input type="submit" name="submit" value="Dar de alta Ong"></p>
+				  <p><input type="submit" name="add" value="Dar de alta Ong"></p>
 				  </form>';
 			echo '</div>';
+			$this->insertarOng();
 		}
 
 		public function muestraPerfilOng($ong){
@@ -255,6 +280,26 @@
   				</div>';
   				echo '</div>';	
 			echo '</div>';
+		}
+
+		public function muestraOngs(){
+			$lista = $this->listaOngs->getLista();
+            $iterator = $lista->getIterator();
+               		
+			while($iterator->valid()) {
+                $nombre = $iterator->current()->getNombre();
+                $imagen = $iterator->current()->getImagen();
+                $cif = $iterator->current()->getCif();
+                echo'<div class="principal">
+	                    <h2>'. $nombre .'</h2>
+	                    <img src="'.$imagen.'"/>
+	                    <form name="vista" action="includes/perfilOng.php?ong='.$cif.'method="POST">
+	                    <input name="button" type="submit" value="Visitar Perfil" />
+	                    </form>
+                    </div>';
+ 		
+		    $iterator->next();
+			}	 	
 		}
 	}
 
