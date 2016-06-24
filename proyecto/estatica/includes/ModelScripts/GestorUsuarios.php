@@ -120,6 +120,7 @@
 			$this->dao->modificarPerfilUser($dniN, $nombreN, $apellidosN, $emailN, $telefonoN, $direccionN, $cpN, $tipoN, $avatarN, $sexoN, $usuarioN, $fechaN );
 		}
 		
+<<<<<<< HEAD
 		public function generaPass(){
 			$cadena = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
 			$longitudCadena=strlen($cadena);
@@ -145,5 +146,17 @@
 		}
 		
 
+=======
+		
+		public function modificarCamposUsuario( $dni , $nombre, $apellidos, $email, $telefono){
+			$dniN = htmlspecialchars(trim(strip_tags($dni)));
+			$nombreN = htmlspecialchars(trim(strip_tags($nombre)));
+			$apellidosN = htmlspecialchars(trim(strip_tags($apellidos)));
+			$emailN = htmlspecialchars(trim(strip_tags($email)));
+			$telefonoN = htmlspecialchars(trim(strip_tags($telefono)));
+			$this->dao->modificarCamposUsuario($dniN, $nombreN, $apellidosN, $emailN, $telefonoN );
+			
+		}
+>>>>>>> c41c1646bda4bb008fd61fa8c2cdfd92ff85ecc1
 	}
 ?>
