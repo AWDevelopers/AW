@@ -119,5 +119,31 @@
 			$fechaN =  htmlspecialchars(trim(strip_tags($fecha)));
 			$this->dao->modificarPerfilUser($dniN, $nombreN, $apellidosN, $emailN, $telefonoN, $direccionN, $cpN, $tipoN, $avatarN, $sexoN, $usuarioN, $fechaN );
 		}
+		
+		public function generaPass(){
+			$cadena = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+			$longitudCadena=strlen($cadena);
+			$pass = "";
+			$longitudPass=10;
+			//Creamos la contraseña
+			for($i=1 ; $i<=$longitudPass ; $i++){
+				$pos=rand(0,$longitudCadena-1);
+				$pass .= substr($cadena,$pos,1);
+			}
+			return $pass;
+		}
+		
+		public function comprobarExisteUsuario($user, $correo, $dni){
+			$userN = htmlspecialchars(trim(strip_tags($user)));
+			$correoN = htmlspecialchars(trim(strip_tags($correo)));
+			$dniN= htmlspecialchars(trim(strip_tags($dni)));
+			if($this->dao->existeUsuario($dniN, $correoN, $userN) > 0){
+				$passNueva = $this->generaPass();
+				$this->modificarContra($dniN, $passNueva);
+				mail($correoN, "Nueva contraseña", $passNueva);
+			}
+		}
+		
+
 	}
 ?>

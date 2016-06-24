@@ -15,7 +15,6 @@
 			{
 				while($lista[] = $rs->fetch_assoc());
 				$rs->free();
-				$con->close();
 				return ($lista);
 			}
 		}
@@ -41,7 +40,6 @@
 			$rs = $con->query($sql) or die ($con->error);
 			$numCol = $rs->num_rows;
 			$rs->num_rows;
-			//$con->close();
 			return $numCol;
 		}
 		
@@ -70,7 +68,6 @@
 			{	
 				$login=false;
 			}
-			$con->close();
 			return $login;
 		}
 		
@@ -89,8 +86,6 @@
 			VALUES ( '$dni', '$nombre', '$apellidos', '$direccion', '$cp', '$user', '$contra', '$email', '$fechaNacimiento', '$avatar', '$sexo', '$telefono', '$tipo')";
 			$rs = $con->query($sql) or die ($con->error);
 			
-			$con->close();
-
 		}
 		
 		
@@ -100,7 +95,6 @@
 			$con = $app->conexionBd();
             $sql = "DELETE FROM usuario WHERE DNI='$DNI'";
 			$con->query($sql) or die ($con->error);
-			$con->close();
 		}
 
 		function seleccionaUsuario($DNI){
@@ -115,7 +109,6 @@
 					$resultado =  new Usuario($lista['nombre'], $lista['DNI'], $lista['apellidos'], $lista['direccion'], $lista['cp'], $lista['usuario'], $lista['pass'], $lista['email'], $lista['fechaNacimiento'], $lista['avatar'], $lista['sexo'], $lista['telefono'], $lista['tipo']);
 				}
 				$rs->free();
-				$con->close();
 				return ($resultado);
 			}
 		}

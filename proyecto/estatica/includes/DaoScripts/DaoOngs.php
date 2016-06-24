@@ -58,7 +58,6 @@
     		$con = $app->conexionBd();
 			$sql = "UPDATE ong SET CIF = '$cif_nuevo' WHERE CIF = '$cif_actual'";
 			$con->query($sql) or die ($con->error);
-			$con->close();
 		}
 
 		public function modifyDireccion($dir_nueva, $dir_actual){
@@ -101,10 +100,12 @@
 			$sql = "SELECT * FROM ong WHERE CIF = '$cif'";
 			$rs = $con->query($sql) or die($con->error);
 			$resultado = "";
-			while($lista = $rs->fetch_assoc()){
-				$resultado =  new ong($lista['CIF'], $lista['nombre'], $lista['direccion'], $lista['email'], $lista['usuario'], $lista['pass'], $lista['telefono'], $lista['imagen']);
-				$rs->free();
-				
+			if($rs!= NULL){
+				while($lista = $rs->fetch_assoc()){
+					$resultado =  new ong($lista['CIF'], $lista['nombre'], $lista['direccion'], $lista['email'], $lista['usuario'], $lista['pass'], $lista['telefono'], $lista['imagen']);
+					$rs->free();
+					
+				}
 			}
 			return $resultado;
 

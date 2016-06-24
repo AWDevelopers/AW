@@ -15,7 +15,6 @@
 			{
 				while($lista[] = $rs->fetch_assoc());
 				$rs->free();
-				$con->close();
 				return ($lista);
 			}
 		}
@@ -56,7 +55,6 @@
     		$con = $app->conexionBd();
 			$sql = "DELETE FROM proyecto WHERE idProyecto = '$idProyecto'";
 			$con->query($sql) or die ($con->error);
-			$con->close();
 		}
 
 		function seleccionaProyecto($idProyecto){
@@ -71,7 +69,6 @@
 					$resultado =  new Proyectos($lista['idProyecto'], $lista['CIFOng'], $lista['fechaCreacion'], $lista['dineroNecesario'], $lista['dineroAcumulado'], $lista['nombre'], $lista['descripcionCorta'], $lista['descripcionLarga'], $lista['imagen'], $lista['numVoluntarios'], $lista['fechaFin']);
 				}
 				$rs->free();
-				$con->close();
 				return ($resultado);
 			}
 		}

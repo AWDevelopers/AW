@@ -5,8 +5,8 @@ require_once 'ModelScripts/GestorUsuarios.php';
 		$user= $_REQUEST['usuario'];
 		$correo= $_REQUEST['email'];
 		$dni = $_REQUEST['dni'];
-		//$lista->
-		require_once 'logout.php';
+		echo $lista->comprobarExisteUsuario($user, $correo, $dni);
+		$lista->comprobarExisteUsuario($user, $correo, $dni)
 		header("Location: ../index.php");
 		exit();
 
