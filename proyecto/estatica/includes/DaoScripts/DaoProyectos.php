@@ -9,7 +9,7 @@
 		function listaProyectosVoluntarios(){
 			$app = App::getSingleton();
     		$con = $app->conexionBd();
-			$sql = "SELECT * FROM proyecto";
+			$sql = "SELECT * FROM proyecto WHERE fechaFin >= sysdate() ORDER BY fechaCreacion";
 			$rs = $con->query($sql) or die ($con->error);
 			if($rs != NULL)
 			{
@@ -20,6 +20,13 @@
 			}
 		}
 
+		function modificaProyecto($id, $nombre,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen,$numVoluntarios,$fechaFin){
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
+			$sql = "UPDATE proyecto SET  dineroNecesario = '$dineroNecesario', nombre = '$nombre', descripcionLarga = '$descripcionLarga', descripcionCorta = '$descripcionCorta', imagen = '$imagen', numVoluntarios = '$numVoluntarios', fechaFin = '$fechaFin' WHERE idProyecto = '$id'";
+			$con->query($sql) or die ($con->error);
+		}
+
 		function insertaProyecto($nombre,$cif,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen, $numVoluntarios,$dineroAcumulado, $fechaFin){
 			$app = App::getSingleton();
     		$con = $app->conexionBd();
@@ -27,8 +34,21 @@
 			$sql.= "('".$cif."', sysdate() , '".$dineroNecesario."', '".$dineroAcumulado."', '".$nombre."', '".$descripcionLarga."', '".$descripcionCorta."', '".$imagen."', '".$numVoluntarios."', '".$fechaFin."')";
 			$con->query($sql) or die ($con->error);
 			$num = $con->insert_id;
-			$con->close();
 			return ($num);
+		}
+
+		function restaVoluntarios($idProyecto, $numVol){
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
+			$sql = "UPDATE proyecto SET numVoluntarios = (numVoluntarios-'$numVol') WHERE idProyecto = '$id'";
+			$con->query($sql) or die ($con->error);
+		}
+
+		function sumaDineroAcumulado($idProyecto, $dinero){
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
+			$sql = "UPDATE proyecto SET dineroAcumulado = (dineroAcumulado + '$dinero') WHERE idProyecto = '$id'";
+			$con->query($sql) or die ($con->error);
 		}
 
 		function borraProyecto($idProyecto){

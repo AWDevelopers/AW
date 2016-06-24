@@ -1,14 +1,13 @@
 <?php
-	
-	
-
 	class GestorVoluntarios{
 
 		private $dao;
 		function __construct(){
 			require_once '/../DaoScripts/DaoVoluntarios.php';
 			require_once '/../DaoScripts/DaoUsuarios.php';
+			require_once '/../DaoScripts/DaoProyectos.php';
 			$this->dao = new DaoVoluntarios();
+			$this->daoP = new DaoProyectos();
 		}
 		public function getListaVoluntarios(){
 			$lista = $this->dao->listaVoluntarios();
@@ -20,9 +19,18 @@
 			
 		}
 
+		public function getSumHorasVoluntariado($dniUsuario){
+			$lista = $this->dao->sumHorasVoluntario($dniUsuario);
+			$sum = 0;
+			for($i= 0; $i <sizeof($lista)-1 ; $i++){
+			  $sum += ($lista[$j]['horaSalida'] - $lista[$j]['horaEntrada']);			
+			}
+			return $sum;
+		}
 		public function nuevoVoluntariado($idProyecto,$dniUsuario,$dia,$horaEntrada,$horaSalida){
 			$daoU = new DaoUsuarios();
 			//if($daoU->seleccionaUsuario($dniUsuario) != null){
+				$this->daoP->restaVoluntarios($idProyecto, 1);
 				return ($this->dao->insertaVoluntario($idProyecto,$dniUsuario,$dia,$horaEntrada,$horaSalida));
 			//}
 

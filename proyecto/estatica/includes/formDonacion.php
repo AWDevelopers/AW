@@ -3,10 +3,10 @@
 use \AW\proyecto\estatica\includes\Aplicacion as App;
 include ('config.php');
 
-$funcion = $_REQUEST['donacion'];
+//$funcion = $_REQUEST['donacion'];
 
-switch($funcion){
-	case 'Hacer Donación':
+//switch($funcion){
+//	case 'Hacer Donación':
 		
 		$dni = $_POST['dni'];
 		$id = $_POST['pid'];
@@ -34,6 +34,6 @@ switch($funcion){
     	}
 		
 		
-}
+//}
 
 ?>
