@@ -28,10 +28,14 @@
 						<form action="vistaModificarEmailOng.php"><input type="submit" value="Modificar Email"></input></form>-->
 					</div>
 						
-				<?php 
-					require_once "includes/ViewScripts/OngsVista.php";
-					$vONGs = new vistaOng();
-					$vONGs->muestraOngs();//Falta, lista con botoncitos de todas las ongs de la pagina
+				<?php
+					use \AW\proyecto\estatica\includes\Aplicacion as App;
+					$app = App::getSingleton();
+					if ($app->usuarioLogueado() && $app->tieneRol("Admin")) {
+						require_once "includes/ViewScripts/OngsVista.php";
+						$vONGs = new vistaOng();
+						$vONGs->muestraOngs();//Falta, lista con botoncitos de todas las ongs de la pagina
+					}
 				?>
 			</div>
 		</div>

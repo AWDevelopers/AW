@@ -24,9 +24,13 @@
 					</div>
 				</div>				
 				<?php 
-					require_once "includes/ViewScripts/ProyectosVista.php";
-					$vProyectos = new vistaProyectos();
-					$vProyectos->muestraProyectosVoluntariosAdmin();
+					use \AW\proyecto\estatica\includes\Aplicacion as App;
+					$app = App::getSingleton();
+					if ($app->usuarioLogueado() && $app->tieneRol("Admin")) {
+						require_once "includes/ViewScripts/ProyectosVista.php";
+						$vProyectos = new vistaProyectos();
+						$vProyectos->muestraProyectosVoluntariosAdmin();
+					}
 				?>
 			</div>
 		</div>
