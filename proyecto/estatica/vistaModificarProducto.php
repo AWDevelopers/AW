@@ -14,7 +14,7 @@
 		<!--Aqui va el contenido-->
 		<div class="contenido">
 			<?php 
-				require_once "includes/ViewScripts/ProductosVista.php";
+				require_once RAIZ.RUTA_VIEW."ProductosVista.php";
 				$vProductos = new vistaProductos();
 				$vProductos->eligeModificarProducto();
 				

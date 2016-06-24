@@ -1,5 +1,5 @@
 <?php
-	require_once '/../ModelScripts/donacion.php';
+	require_once RAIZ.RUTA_MODEL.'donacion.php';
 	use \AW\proyecto\estatica\includes\Aplicacion as App;
 	class DaoDonaciones{
 

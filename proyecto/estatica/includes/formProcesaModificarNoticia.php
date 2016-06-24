@@ -1,5 +1,5 @@
 <?php
-include ('config.php');
+include (RAIZ.RUTA_INC.'config.php');
 if (!isset($_SESSION)) session_start();
 require_once 'ModelScripts/GestorNoticias.php';
 	use \AW\proyecto\estatica\includes\Aplicacion as App;
@@ -13,10 +13,10 @@ require_once 'ModelScripts/GestorNoticias.php';
 		$descripcionLarga = $_REQUEST['desLarga'];
 		$imagen = "img/".$_REQUEST['imagen'];
 		$salida = $lista->editaNoticia($id,$titulo, $tipo , $descripcionCorta, $descripcionLarga,$imagen);
-		header("Location: ../vistaNoticiaDetallada.php?id=".$id);
+		header("Location: "RAIZ.RUTA_APP."vistaNoticiaDetallada.php?id=".$id);
 	}
 	else{
-		header("Location: ../index.php);
+		header("Location: "RAIZ.RUTA_APP."index.php);
 	}
 	
 ?>

@@ -14,7 +14,7 @@
 		<div class="contenido">
 			
 				<?php
-                    require_once "includes/ViewScripts/NoticiasVista.php";
+                    require_once RAIZ.RUTA_VIEW."NoticiasVista.php";
                     $vista= new NoticiasVista();
 					$vista->muestraNoticia($_GET['id']);
 

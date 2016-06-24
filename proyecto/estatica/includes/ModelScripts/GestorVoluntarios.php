@@ -3,9 +3,9 @@
 
 		private $dao;
 		function __construct(){
-			require_once '/../DaoScripts/DaoVoluntarios.php';
-			require_once '/../DaoScripts/DaoUsuarios.php';
-			require_once '/../DaoScripts/DaoProyectos.php';
+			require_once RAIZ.RUTA_DAO.'DaoVoluntarios.php';
+			require_once RAIZ.RUTA_DAO.'DaoUsuarios.php';
+			require_once RAIZ.RUTA_DAO.'DaoProyectos.php';
 			$this->dao = new DaoVoluntarios();
 			$this->daoP = new DaoProyectos();
 		}

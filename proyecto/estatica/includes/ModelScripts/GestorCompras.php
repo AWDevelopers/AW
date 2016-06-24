@@ -1,6 +1,6 @@
 <?php
 
-	require_once '/../DaoScripts/DaoCompras.php';
+	require_once RAIZ.RUTA_DAO.'DaoCompras.php';
 	class GestorCompras{
 
 		private $dao;

@@ -15,7 +15,7 @@
 		<div class="contenido">
 			<div id="proyectoONG">
 				<?php
-					require_once "includes/ViewScripts/ProyectosVista.php";
+					require_once RAIZ.RUTA_VIEW."ProyectosVista.php";
 					$vista = new vistaProyectos();
 					$vista->muestraProyecto($_GET['id']);
 				?>	

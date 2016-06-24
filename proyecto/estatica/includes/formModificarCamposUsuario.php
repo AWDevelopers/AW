@@ -1,7 +1,7 @@
 <?php
-include ('config.php');
+include (RAIZ.RUTA_INC.'config.php');
 if (!isset($_SESSION)) session_start();
-require_once 'ModelScripts/GestorUsuarios.php';
+require_once RAIZ.RUTA_MODEL.'GestorUsuarios.php';
 	use \AW\proyecto\estatica\includes\Aplicacion as App;
 	$app = App::getSingleton();
 	if($app->usuarioLogueado() ){
@@ -17,7 +17,7 @@ require_once 'ModelScripts/GestorUsuarios.php';
 			echo $email;
 			echo $telefono;
 			$lista->modificarCamposUsuario( $dni , $nombre, $apellidos, $email, $telefono);
-			header("Location: ../index.php");
+			header("Location: "RAIZ.RUTA_APP."index.php");
 			exit();
 	}
 

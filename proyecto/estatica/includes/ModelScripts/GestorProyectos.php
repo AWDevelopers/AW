@@ -4,8 +4,8 @@
 
 		private $dao;
 		function __construct(){
-			require_once '/../DaoScripts/DaoProyectos.php';
-			require_once '/../DaoScripts/DaoOngs.php';
+			require_once RAIZ.RUTA_DAO.'DaoProyectos.php';
+			require_once RAIZ.RUTA_DAO.'DaoOngs.php';
 			$this->dao = new DaoProyectos();
 		}
 		public function getListaProyectosVoluntarios(){

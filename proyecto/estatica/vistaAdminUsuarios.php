@@ -24,7 +24,7 @@
 					use \AW\proyecto\estatica\includes\Aplicacion as App;
 					$app = App::getSingleton();
 					if ($app->usuarioLogueado() && $app->tieneRol("Admin")) {
-						require_once "includes/ViewScripts/UsuariosVista.php";
+						require_once RAIZ.RUTA_VIEW."UsuariosVista.php";
 						$vUsuarios = new UsuariosVista();
 						$vUsuarios->muestraUsuarios();
 					}

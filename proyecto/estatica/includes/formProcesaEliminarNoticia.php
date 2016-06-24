@@ -1,5 +1,5 @@
 <?php
-	include ('config.php');
+	include (RAIZ.RUTA_INC.'config.php');
 	use \AW\proyecto\estatica\includes\Aplicacion as App;
 	require_once 'ModelScripts/GestorNoticias.php';
 	$app = App::getSingleton();
@@ -9,5 +9,5 @@
 		$idNoticia=$_REQUEST['id'];
 		$salida = $lista->eliminaNoticia($idNoticia);
 	}
-	header("Location: ../formAdminNoticias.php");
+	header("Location: "RAIZ.RUTA_APP."vistaAdminNoticias.php");
 ?>

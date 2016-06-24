@@ -1,7 +1,7 @@
 <?php
-include ('config.php');
-require_once 'ModelScripts/Voluntarios.php';
-require_once 'ModelScripts/GestorVoluntarios.php';
+include (RAIZ.RUTA_INC.'config.php');
+require_once RAIZ.RUTA_MODEL.'Voluntarios.php';
+require_once RAIZ.RUTA_MODEL.'GestorVoluntarios.php';
 		$id = $_REQUEST['id'];
 		$dni = $_SESSION['DNI'];
 		$dia = $_REQUEST['dia'];

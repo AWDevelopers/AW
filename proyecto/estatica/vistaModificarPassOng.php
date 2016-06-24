@@ -15,7 +15,7 @@
 		<div class="contenido">
 			<div id="proyectoONG">
 				<?php
-					require_once "includes/ViewScripts/OngsVista.php";
+					require_once RAIZ.RUTA_VIEW."OngsVista.php";
 					$vONG = new vistaOng();
 					$vONG->muestraModificarPass();
 				?>

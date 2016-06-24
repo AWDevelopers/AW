@@ -1,7 +1,7 @@
 <?php
-include ('config.php');
+include (RAIZ.RUTA_INC.'config.php');
 if (!isset($_SESSION)) session_start();
-require_once 'ModelScripts/GestorUsuarios.php';
+require_once RAIZ.RUTA_MODEL.'GestorUsuarios.php';
 	use \AW\proyecto\estatica\includes\Aplicacion as App;
 	$app = App::getSingleton();
 	if($app->usuarioLogueado() && $app->tieneRol("Admin")){
@@ -20,7 +20,7 @@ require_once 'ModelScripts/GestorUsuarios.php';
 			$fecha = $_REQUEST['fecha'];
 			echo $usuario;
 			$lista->modificarPerfilUser($dni, $nombre, $apellidos, $email, $telefono, $direccion, $cp, $tipo, $avatar, $sexo, $usuario, $fecha);
-			header("Location: ../vistaAdminUsuarios.php");
+			header("Location: "RAIZ.RUTA_APP."vistaAdminUsuarios.php");
 			exit();
 	}
 

@@ -1,5 +1,5 @@
 <?php
-	require_once '/../DaoScripts/DaoNoticias.php';
+	require_once RAIZ.RUTA_DAO.'DaoNoticias.php';
 	class GestorNoticias{
 		private $dao;
 		function __construct(){

@@ -16,7 +16,7 @@
 
         <div class="contenido">
         <?php
-        require_once "includes/ViewScripts/VoluntariosVista.php";
+        require_once RAIZ.RUTA_VIEW."VoluntariosVista.php";
         $vista = new VoluntariosVista();
         $vista->muestraPanelVoluntariado($_GET['id']);
         ?>

@@ -1,7 +1,7 @@
 <?php
 sleep(1);
-include('config.php');
-require_once 'ModelScripts/GestorOngs.php';
+include(RAIZ.RUTA_INC.'config.php');
+require_once RAIZ.RUTA_MODEL.'GestorOngs.php';
     $cif = $_REQUEST['cif'];
     $gestor = new GestorOngs();
     $salida = $gestor->seleccionaOng($cif);

@@ -1,6 +1,6 @@
 <?php
 
-require_once 'ModelScripts/GestorProductos.php';
+require_once RAIZ.RUTA_MODEL.'GestorProductos.php';
 $funcion = $_REQUEST['producto'];
 
 $producto = new GestorProductos();
@@ -8,19 +8,19 @@ $producto = new GestorProductos();
 switch($funcion){
 	case 'MUESTRA':
 		$idProducto = $_REQUEST['idProducto'];
-		header("Location: ../vistaProducto.php?idProducto=".$idProducto);
+		header("Location: "RAIZ.RUTA_APP."vistaProducto.php?idProducto=".$idProducto);
 		exit();
 		break;
 
 	case 'BORRAR':
 		$idProducto = $_POST['elijoEste'];
 		$producto->borrarProducto($idProducto);
-		header("Location: ../formAdminProductos.php");
+		header("Location: "RAIZ.RUTA_APP."vistaAdminProductos.php");
 		exit();
 		break;
 
 	case 'ELEGIRMODIFICAR':
-		header("Location: ../modificarProducto.php?idProducto=".$_POST['elijoEste']);
+		header("Location: "RAIZ.RUTA_APP."modificarProducto.php?idProducto=".$_POST['elijoEste']);
 		exit();
 		break;
 	

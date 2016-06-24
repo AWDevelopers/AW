@@ -12,7 +12,7 @@
 	<div id='contenedor'>
 		<?php 
 			require ('common.php');
-			require_once('includes/ViewScripts/DonacionesVista.php');
+			require_once(RAIZ.RUTA_VIEW.'DonacionesVista.php');
 			$vDonaciones = new vistaDonaciones();
 			$vDonaciones->muestraDonacionesProyecto($_GET['id']);
 	

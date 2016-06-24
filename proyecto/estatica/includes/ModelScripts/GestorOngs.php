@@ -1,5 +1,5 @@
 <?php
-	require_once '/../DaoScripts/DaoOngs.php';
+	require_once RAIZ.RUTA_DAO.'DaoOngs.php';
 	class GestorOngs{
 
 		private $daoOngs;

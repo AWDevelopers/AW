@@ -16,7 +16,7 @@
 		<!--Aqui va el contenido-->
 		<div class="contenido">
 			<?php
-			require_once ("includes/ViewScripts/ProyectosVista.php");
+			require_once (RAIZ.RUTA_VIEW."ProyectosVista.php");
 			
 			$vista = new vistaProyectos();
 			$vista->muestraProyectosDonar();

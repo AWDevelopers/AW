@@ -1,6 +1,6 @@
 <?php
-	require_once '/../ModelScripts/ong.php';
-	require_once '/../config.php';
+	require_once RAIZ.RUTA_MODEL.'ong.php';
+	require_once RAIZ.RUTA_INC.'config.php';
 	use \AW\proyecto\estatica\includes\Aplicacion as App;
 	use \AW\proyecto\estatica\includes\ModelScripts\ong as Ong;
 

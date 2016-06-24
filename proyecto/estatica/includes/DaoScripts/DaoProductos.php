@@ -1,6 +1,6 @@
 <?php
-	require_once '/../ModelScripts/Producto.php';
-	require_once '/../config.php';
+	require_once RAIZ.RUTA_MODEL.'Producto.php';
+	require_once RAIZ.RUTA_INC.'config.php';
 	use \AW\proyecto\estatica\includes\Aplicacion as App;
 
 	class DaoProductos{

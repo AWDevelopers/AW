@@ -18,7 +18,7 @@
 		
 			
 			<?php
-			require_once ("includes/ViewScripts/UsuariosVista.php");
+			require_once (RAIZ.RUTA_VIEW."UsuariosVista.php");
 			if (isset($_SESSION['login']) && $_SESSION['login']) {
 					$vista = new UsuariosVista();
 					$dni= $_SESSION['DNI'];

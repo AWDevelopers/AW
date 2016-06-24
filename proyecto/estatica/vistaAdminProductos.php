@@ -28,7 +28,7 @@
 					use \AW\proyecto\estatica\includes\Aplicacion as App;
 					$app = App::getSingleton();
 					if ($app->usuarioLogueado() && $app->tieneRol("Admin")) {
-						require_once "includes/ViewScripts/ProductosVista.php";
+						require_once RAIZ.RUTA_VIEW."ProductosVista.php";
 						$vProyectos = new vistaProductos();
 						$vProyectos->muestraProductos();
 					}

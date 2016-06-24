@@ -21,7 +21,7 @@
 					</div>
 				</div>			
 				<?php 
-					require_once "includes/ViewScripts/VoluntariosVista.php";
+					require_once RAIZ.RUTA_VIEW."VoluntariosVista.php";
 					$vVoluntarios = new voluntariosVista();
 					$vVoluntarios->muestraVoluntariosProyecto($_GET['idP']);
 				?>

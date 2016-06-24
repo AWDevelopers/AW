@@ -1,6 +1,6 @@
 <?php
-	require_once '/../ModelScripts/Proyectos.php';
-	require_once '/../config.php';
+	require_once RAIZ.RUTA_MODEL.'Proyectos.php';
+	require_once RAIZ.RUTA_INC.'config.php';
 	use \AW\proyecto\estatica\includes\Aplicacion as App;
 	class DaoProyectos{
 

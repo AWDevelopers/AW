@@ -1,10 +1,9 @@
 <?php
-include ('config.php');
-require_once 'ModelScripts/GestorUsuarios.php';
+include (RAIZ.RUTA_INC.'config.php');
+require_once RAIZ.RUTA_MODEL.'GestorUsuarios.php';
 use \AW\proyecto\estatica\includes\Aplicacion as App;
-use \AW\proyecto\estatica\includes\ModelScripts\GestorUsuarios as GestorUsuarios;
 	$app = App::getSingleton();
-	$lista = GestorUsuarios::new GestorUsuarios();
+	$lista = new GestorUsuarios();
 	$user = $_REQUEST['usuario'];
 	$pass = $_REQUEST['pass'];
 	$nombre = $_REQUEST['nombre'];
@@ -25,12 +24,12 @@ use \AW\proyecto\estatica\includes\ModelScripts\GestorUsuarios as GestorUsuarios
 	$avatar = "img/".$_REQUEST['foto'];
 	$salida = $lista->nuevoUsuario($user, $pass, $nombre, $apellidos, $dni, $email, $fechaNacimiento, $sexo, $telefono, $direccion, $cp, $avatar, $tipo);
 	if ($salida){ //Se ha hecho el registro correctamente
-		header("Location: ../index.php");
+		header("Location: "RAIZ.RUTA_APP."index.php");
 		echo "Se ha registrado";
 	}
 	else{
 		echo "No se ha registrado";
-		header("Location: ../registrate.php");
+		header("Location: "RAIZ.RUTA_APP."registrate.php");
 	}
 	
 

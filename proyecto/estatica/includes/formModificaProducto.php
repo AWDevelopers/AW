@@ -1,6 +1,6 @@
 <?php
 
-require_once 'ModelScripts/GestorProductos.php';
+require_once RAIZ.RUTA_MODEL.'GestorProductos.php';
 
 $producto = new GestorProductos();
 
@@ -14,7 +14,7 @@ $producto = new GestorProductos();
 		$producto->modificaDLargaProducto($_POST['idProducto'], $_POST['DLARGA']);
 	
 		$producto->modificaNumeroProducto($_POST['idProducto'], $_POST['STOCK']);
-		header("Location: ../formAdminProductos.php");
+		header("Location: "RAIZ.RUTA_APP."vistaAdminProductos.php");
 	
 
 ?>

@@ -20,7 +20,7 @@
 
 				<h1>Noticias</h1>
 				<?php
-					require_once ("includes/ViewScripts/NoticiasVista.php");
+					require_once (RAIZ.RUTA_VIEW."NoticiasVista.php");
 
 					$vista = new NoticiasVista();
 					$vista->muestraNoticiasPrimarias();

@@ -15,7 +15,7 @@
 		<div class="contenido">
 			<div id="proyectoONG">
 				<?php
-					require_once "includes/ViewScripts/ComprasVista.php";
+					require_once RAIZ.RUTA_VIEW."ComprasVista.php";
 					muestraCompra($_GET['unidades'], $_GET['nombreProducto'], $_GET['precioProducto']);
 
 				?>

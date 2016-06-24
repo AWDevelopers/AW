@@ -1,7 +1,7 @@
 <?php
-include ('config.php');
+include (RAIZ.RUTA_INC.'config.php');
 if (!isset($_SESSION)) session_start();
-require_once 'ModelScripts/GestorProyectos.php';
+require_once RAIZ.RUTA_MODEL.'GestorProyectos.php';
 		$id = $_REQUEST['idProyecto'];
-		header("Location: ../formVoluntariosProyecto.php?idP=".$id);
+		header("Location:"RAIZ.RUTA_INC."formVoluntariosProyecto.php?idP=".$id);
 ?>

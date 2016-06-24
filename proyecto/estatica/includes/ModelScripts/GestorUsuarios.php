@@ -1,5 +1,5 @@
 <?php
-require_once ("config.php");
+require_once RAIZ.RUTA_INC."config.php";
 require_once RAIZ.RUTA_DAO.'DAOUsuarios.php';
 	class GestorUsuarios{
 		private $dao;

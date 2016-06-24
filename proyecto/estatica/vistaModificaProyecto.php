@@ -18,7 +18,7 @@
 						<form action="panelAdmin.php"><input type="submit" value="Atras"></input></form>
 					</div>		
 				<?php 
-						require_once "includes/ViewScripts/ProyectosVista.php";
+						require_once RAIZ.RUTA_VIEW."ProyectosVista.php";
 						$vProyectos = new VistaProyectos();
 						$vProyectos->muestraYmodifica($_REQUEST['id']);
 				?>

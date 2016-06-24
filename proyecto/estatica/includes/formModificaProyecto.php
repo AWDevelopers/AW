@@ -1,6 +1,6 @@
 <?php
-include ('config.php');
-require_once 'ModelScripts/GestorProyectos.php';
+include (RAIZ.RUTA_INC.'config.php');
+require_once RAIZ.RUTA_MODEL.'GestorProyectos.php';
 $lista = new GestorProyectos();
 	$id = $_REQUEST['idProyecto'];
 	$nombre = $_REQUEST['nombre'];
@@ -12,6 +12,6 @@ $lista = new GestorProyectos();
 	$fechaFin = $_REQUEST['fechaFin'];
 	#$rol = $_SESSION['rol'];
 	$lista->modificaProyecto($id, $nombre,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen,$numVoluntarios,$fechaFin);
-	header("Location: ../formAdminProyectos.php);
+	header("Location: "RAIZ.RUTA_APP."vistaAdminProyectos.php);
 
 ?>

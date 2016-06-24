@@ -28,7 +28,7 @@
 				<?php 
 					use \AW\proyecto\estatica\includes\Aplicacion as App;
 					$app = App::getSingleton();
-					require_once "includes/ViewScripts/NoticiasVista.php";
+					require_once RAIZ.RUTA_VIEW."NoticiasVista.php";
 					if ($app->usuarioLogueado() && $app->tieneRol("Admin")){
 						$vNoticias = new NoticiasVista();
 						$vNoticias->muestraNoticiasAdmin();

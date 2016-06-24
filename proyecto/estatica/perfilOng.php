@@ -16,7 +16,7 @@
 		<div class="contenido">
 			<div id="proyectoONG">
 				<?php
-					require_once 'includes/ViewScripts/OngsVista.php';
+					require_once RAIZ.RUTA_VIEW.'/OngsVista.php';
 					$ong = new vistaOng();
 					$ong->muestraPerfilOng($_GET['ong']);
 					

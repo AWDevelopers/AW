@@ -1,7 +1,7 @@
 <?php
-include ('config.php');
+include (RAIZ.RUTA_INC.'config.php');
 use \AW\proyecto\estatica\includes\Aplicacion as App;
-require_once 'ModelScripts/GestorProyectos.php';
+require_once RAIZ.RUTA_MODEL.'GestorProyectos.php';
 $app = App::getSingleton();
 if($app->usuarioLogueado() && $app->tieneRol("Admin", "Error", "No tienes permisos")){
 $lista = new GestorProyectos();
@@ -14,7 +14,7 @@ $lista = new GestorProyectos();
 	$numVoluntarios = $_REQUEST['voluntarios'];
 	$fechaFin = $_REQUEST['fechaFin'];
 	$salida = $lista->nuevoProyecto($nombre,$cif,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen,$numVoluntarios,$fechaFin);
-	header("Location: ../vistaAdminProyectos.php");
+	header("Location: "RAIZ.RUTA_APP."vistaAdminProyectos.php");
 }
 exit();
 

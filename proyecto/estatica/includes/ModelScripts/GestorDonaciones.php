@@ -1,6 +1,6 @@
 <?php
-	require_once '/../DaoScripts/DaoProyectos.php';
-	require_once '/../DaoScripts/DaoDonaciones.php';
+	require_once RAIZ.RUTA_DAO.'DaoProyectos.php';
+	require_once RAIZ.RUTA_DAO.'DaoDonaciones.php';
 	class GestorDonaciones{
 
 		private $dao;

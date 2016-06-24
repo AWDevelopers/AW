@@ -1,7 +1,7 @@
 <?php
 
 use \AW\proyecto\estatica\includes\Aplicacion as App;
-include ('config.php');
+include (RAIZ.RUTA_INC.'config.php');
 
 //$funcion = $_REQUEST['donacion'];
 
@@ -22,13 +22,13 @@ include ('config.php');
 			echo 'El dni introducido no coincide. Intentelo de nuevo..';
 			header("Location: ../donaciones.php?id=$id");
     	}else{
-    		require_once 'ModelScripts/GestorDonaciones.php';
+    		require_once RAIZ.RUTA_MODEL.'GestorDonaciones.php';
 			$donacion = new GestorDonaciones();
 			
 			$donacion->addDonacion($dni, $id, $dinero);
 			
 			
-			header("Location: ../procesarDonacion.php");
+			header("Location: "RAIZ.RUTA_APP."procesarDonacion.php");
 			exit();
 			break;
     	}
