@@ -20,7 +20,7 @@
 				while($lista[] = $rs->fetch_assoc());
 
 					$rs->free();
-					$connection->close();
+					
 					return ($lista);	
 			}
 			
@@ -36,7 +36,7 @@
 			{
 				while($nombre = $rs->fetch_assoc());
 				$rs->free();
-				$con->close();
+				
 				return ($nombre);
 			}
 		}
@@ -55,7 +55,7 @@
 				while($lista[] = $rs->fetch_assoc());
 
 					$rs->free();
-					$connection->close();
+					
 					return ($lista);	
 			}
 			
@@ -74,7 +74,7 @@
 				while($lista[] = $rs->fetch_assoc());
 
 					$rs->free();
-					$connection->close();
+					
 					return ($lista);	
 			}
 			
@@ -91,7 +91,8 @@
 			if($rs != NULL)
 			{
 				while($lista = $rs->fetch_assoc()){
-					$resultado =  new Producto($lista['idProducto'], $lista['CIFOng'],$lista['stock'],$lista['precio'],$lista['nombre'], $lista['descripcionCorta'], $lista['descripcionLarga'], $lista['imagen']);
+					$nombreONG = $this->cargarNombreONG($lista['CIFOng']);
+					$resultado =  new Producto($lista['idProducto'], $nombreONG, $lista['CIFOng'],$lista['stock'],$lista['precio'],$lista['nombre'], $lista['descripcionCorta'], $lista['descripcionLarga'], $lista['imagen']);
 				}
 				$rs->free();
 				//$con->close();
@@ -125,6 +126,47 @@
 			$app = App::getSingleton();
     		$con = $app->conexionBd();
 			$sql =  "UPDATE producto SET stock = (stock - '$unidades') WHERE idProducto = '$idProducto'";
+			$con->query($sql) or die ($con->error);
+			
+		}
+
+			function modificaNumeroProducto($idProducto, $unidades){
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
+			$sql =  "UPDATE producto SET stock = '$unidades' WHERE idProducto = '$idProducto'";
+			$con->query($sql) or die ($con->error);
+			
+		}
+
+
+		function modificaNombreProducto($idProducto, $nombre){
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
+			$sql =  "UPDATE producto SET nombre = '$nombre' WHERE idProducto = '$idProducto'";
+			$con->query($sql) or die ($con->error);
+			
+		}
+
+		function modificaPrecioProducto($idProducto, $precio){
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
+			$sql =  "UPDATE producto SET precio = '$precio' WHERE idProducto = '$idProducto'";
+			$con->query($sql) or die ($con->error);
+			
+		}
+
+		function modificaDLargaProducto($idProducto, $dLarga){
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
+			$sql =  "UPDATE producto SET descripcionLarga = '$dLarga' WHERE idProducto = '$idProducto'";
+			$con->query($sql) or die ($con->error);
+			
+		}
+
+		function modificaDCortaProducto($idProducto, $dCorta){
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
+			$sql =  "UPDATE producto SET descripcionCorta = '$dCorta' WHERE idProducto = '$idProducto'";
 			$con->query($sql) or die ($con->error);
 			
 		}

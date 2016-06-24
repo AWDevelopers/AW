@@ -21,7 +21,7 @@
 					<div class="aniade">
 							<form action="vistaInsertarProducto.php"><input type="submit" value="Añadir Producto(aun no está)"></input></form><!--Falta la vista para añadir profucto-->	
 							<form action="vistaBorrarProducto.php"><input type="submit" value="Borrar Producto"></input></form>
-							<form action="vistaModificarProducto.php"><input type="submit" value="Modificar Producto(aun no está)"></input></form>
+							<form action="vistaModificarProducto.php"><input type="submit" value="Modificar Producto"></input></form>
 					</div>
 						
 				<?php 

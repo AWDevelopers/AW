@@ -12,19 +12,8 @@ switch($funcion){
 		exit();
 		break;
 
-	case 'COMPRAR':
-		$unidades = $_REQUEST['unidades'];
-		$nombreProducto = $_REQUEST['nombreProducto'];
-		$precioProducto = $_REQUEST['precioProducto'];
-		header("Location: ../vistaCompra.php?unidades=".$unidades."&&nombreProducto=".$nombreProducto."&&precioProducto=".$precioProducto);
-		exit();
-		break;
-
 	case 'BORRAR':
 		$idProducto = $_POST['elijoEste'];
-		
-		
-		
 		$producto->borrarProducto($idProducto);
 		header("Location: ../formAdminProductos.php");
 		exit();
@@ -35,10 +24,6 @@ switch($funcion){
 		exit();
 		break;
 	
-	case 'MODIFICAR':
-		header("Location: ../panelAdmin.php?idProducto=".$_POST['elijoEste']);
-		exit();
-		break;
 
 	case 'INSERTAR':
 		$nombre = $_POST['nombre'];

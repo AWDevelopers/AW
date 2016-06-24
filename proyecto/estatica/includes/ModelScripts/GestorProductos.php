@@ -18,9 +18,9 @@
 
 			for($i= 0; $i <(sizeof($lista)-1) ; $i++){
 
-				//$nombreONG = $this->cargarNombreONG($lista[$i]['CIFOng']);
+				$nombreONG = $this->cargarNombreONG($lista[$i]['CIFOng']);
 				
-				$array->append(new Producto($lista[$i]['idProducto'], $lista[$i]['CIFOng'],$lista[$i]['stock'],$lista[$i]['precio'],$lista[$i]['nombre'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen']));
+				$array->append(new Producto($lista[$i]['idProducto'],$nombreONG, $lista[$i]['CIFOng'],$lista[$i]['stock'],$lista[$i]['precio'],$lista[$i]['nombre'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen']));
 			}
 			return $array;
 		}
@@ -30,8 +30,8 @@
 			$lista = $dao->cargarDatosProductoPorPrecioMayor();
 			$array = new ArrayObject();
 			for($i= 0; $i <(sizeof($lista)-1) ; $i++){
-				//$nombreONG = cargarNombreONG($lista[$i]['CIFOng']);
-				$array->append(new Producto($lista[$i]['idProducto'], $lista[$i]['CIFOng'],$lista[$i]['stock'],$lista[$i]['precio'],$lista[$i]['nombre'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen']));
+				$nombreONG = cargarNombreONG($lista[$i]['CIFOng']);
+				$array->append(new Producto($lista[$i]['idProducto'], $nombreONG,$lista[$i]['CIFOng'],$lista[$i]['stock'],$lista[$i]['precio'],$lista[$i]['nombre'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen']));
 			}
 			return $array;
 		}
@@ -41,7 +41,8 @@
 			$lista = $dao->cargarDatosProductoPorPrecioMenor();
 			$array = new ArrayObject();
 			for($i= 0; $i <(sizeof($lista)-1) ; $i++){
-				$array->append(new Producto($lista[$i]['idProducto'], $lista[$i]['CIFOng'],$lista[$i]['stock'],$lista[$i]['precio'],$lista[$i]['nombre'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen']));
+				$nombreONG = cargarNombreONG($lista[$i]['CIFOng']);
+				$array->append(new Producto($lista[$i]['idProducto'], $nombreONG,$lista[$i]['CIFOng'],$lista[$i]['stock'],$lista[$i]['precio'],$lista[$i]['nombre'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen']));
 			}
 			return $array;
 		}
@@ -61,13 +62,31 @@
 		public function insertaProducto($idProducto, $nombreOng, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen){
 			$this->dao->insertaProducto($idProducto, $nombreOng, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen);
 		}
+      
+        public function modificaNombreProducto($idProducto, $nombre){
+        	$this->dao->modificaNombreProducto($idProducto, $nombre);
+        }
+		
+        public function modificaPrecioProducto($idProducto, $precio){
+        	$this->dao->modificaPrecioProducto($idProducto, $precio);
+        }
 
-		public function modificaProducto($idProducto, $nombreOng, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen){
-			$this->dao->modificaProducto($idProducto, $nombreOng, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen);
-		}
-        
         public function modificaStockProducto($idProducto, $unidades){
         	$this->dao->modificaStockProducto($idProducto, $unidades);
         }
+
+        public function modificaNumeroProducto($idProducto, $unidades){
+        	$this->dao->modificaNumeroProducto($idProducto, $unidades);
+        }
+
+        public function modificaDCortaProducto($idProducto, $DCorta){
+        	$this->dao->modificaDCortaProducto($idProducto, $DCorta);
+        }
+
+        public function modificaDLargaProducto($idProducto, $DLarga){
+        	$this->dao->modificaDLargaProducto($idProducto, $DLarga);
+        }
+
 	}
+
 ?>

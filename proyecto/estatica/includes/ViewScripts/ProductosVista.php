@@ -30,7 +30,7 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 			while($iterator->valid()) {
 			  		echo "<div class='producto'> ";
 				  		echo "<h1>" . $iterator->current()->getNombreProducto() . "</h1>";
-				  		//echo "<h3>".$iterator->current()->getNombreONGProducto()."</h3>";
+				  		echo "<h3>".$iterator->current()->getNombreONGProducto()."</h3>";
 				  		
 				  		//MOSTRAR PRODUCTO
 				  		echo '<form name="muestra" action="includes/formProductos.php" method="POST">
@@ -95,10 +95,7 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 
 		}
 
-		function realizaCompraProducto(){
-			
-					
-		}
+		
 		function muestraCompra($id){
 
 			$producto = $this->ListaProductos->getProducto($id);
@@ -209,24 +206,56 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 
 		function muestraModificarProducto($id){
 			$producto = $this->ListaProductos->getProducto($id);
-			echo '<form action="includes/formProductos.php" method="POST">
-				  <p>Nombre del producto
-				  	<input type="text" value = '.$producto->getNombreProducto().' name="nombre" required></input></p>
-				  <p>Nombre de la Ong
-				  	<input type="text" value = '.$producto->getNombreONGProducto().' name="nombreONG" required></input></p>
-				  <p>Precio
-				  	<input type="text" value = '.$producto->getPrecioProducto().' name="precio"></input> </p>
-				  <p>Descripción corta:</p>
-					<textarea cols="40" rows="5">'.$producto->getDescCortaProducto().' </textarea></p>
-				  <p>Descripción larga:</p>
-					<textarea cols="40" rows="10">'.$producto->getDescLargaProducto().' </textarea></p>
-				  <p>Número de unidades
-					<input type="text" value = '.$producto->getStockProducto().' name="stock" required></input></p>
-				  <p>Imagen
-				  <input id="file_url" type="file" name="imagen"> (*)</input>
-				  <p><input type="submit" name="producto" value="MODIFICAR"></p>
-				  </form>
-			</div>';
+			$app = App::getSingleton();
+    		
+    		echo '<p><img src="'.$producto->getImagen().'" /></p>';
+
+			echo '<form method = "POST" action = "includes/formModificaProducto.php">';
+				echo "Nombre ong = ".$producto->getNombreONGProducto();
+				echo '<p>Nombre del producto: </p>';
+				
+				//if($app->usuarioLogueado() && $app->nombreUsuario()== $producto->getNombreONGProducto()){
+					echo '<input type = "hidden" name = "idProducto" value = "'.$producto->getIdProducto().'">';
+					echo ' <input type = "text" name= "NOMBRE" value ="'.$producto->getNombreProducto().'"> ';
+					
+			//	}
+
+
+				echo '<p>Precio del producto:</p>';
+				//if($app->usuarioLogueado() && $app->nombreUsuario()==$user){
+					echo '  <input type = "text"  name= "PRECIO" value ="'.$producto->getPrecioProducto().'"> ';
+					
+				//}
+
+
+				echo '<p>Descripción corta del producto: </p>';
+			//	if($app->usuarioLogueado() && $app->nombreUsuario()==$user){
+					echo '  <textarea name= "DCORTA" rows="4" cols="40">'.$producto->getDescCortaProducto().'</textarea> ';
+					
+			//	}
+
+
+				echo '<p>Descripción larga del producto: </p>';
+				//if($app->usuarioLogueado() && $app->nombreUsuario()==$user){
+					
+					echo '  <textarea  rows="10" cols="40" name= "DLARGA">'.$producto->getDescLargaProducto().'</textarea> ';
+					
+				//}
+
+				echo '<p>Stock </p>';
+				//if($app->usuarioLogueado() && $app->nombreUsuario()==$user){
+					echo '  <input type = "text" name= "STOCK" value ="'.$producto->getstockProducto().'">';
+					
+				//}
+
+				echo ' <input type= "submit" value = "MODIFICAR">"</p>';
+
+			echo '</form>';
+
+
+  				
+  				
+  				
 		}
 		
 		

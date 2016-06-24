@@ -144,7 +144,7 @@ EOS;
 		}		 	
 	}
 	
-	function muestraYmodifica(&id){
+	function muestraYmodifica($id){
 		$proyecto = $this->ListaProyectos->getProyecto($id);
 		$nombre = $proyecto->getNombre();
 		$fecha = $proyecto->getFechaCreacion();
