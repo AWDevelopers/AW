@@ -131,7 +131,7 @@ EOS;
 			  	 $html = <<<EOS
 			  	 	<div class="proyectoAdmin" id="proyectoAdmin$num">
 				  		<h3> $nombre </h3>
-				  		<form name="vista" action="includes/formModificaProyecto.php" method="POST">
+				  		<form name="vista" action="vistaModificaProyecto.php?id=$id" method="POST">
 				  				<input type="hidden" name="idProyecto" id="proyecto" value="$id" /> 
 				  				<input name="button" type="submit" value="modificar" />
 				  		</form>
@@ -147,42 +147,50 @@ EOS;
 	function muestraYmodifica($id){
 		$proyecto = $this->ListaProyectos->getProyecto($id);
 		$nombre = $proyecto->getNombre();
-		$fecha = $proyecto->getFechaCreacion();
+		$fecha = $proyecto->getFechaFin();
 		$numVoluntarios =  $proyecto->getNumVoluntarios();
 		$imagen = $proyecto->getImagen();
-		$descripcion = $proyecto->getDescripcionLarga();
+		$dineroNecesario = $proyecto->getDineroNecesario();
+		$descripcionCorta = $proyecto->getDescripcionCorta();
+		$descripcionLarga = $proyecto->getDescripcionLarga();
 		#$idUsuario = $_SESSION['usuario'];
 		$idUsuario = "";
 		if (isset($_SESSION['login']) && $_SESSION['login'])
 			$idUsuario = $_SESSION['DNI'];
 		$html = <<<EOS
-		
-		<input type="text" name="usuario" value="$nombre" required ></input> </p>
+		<form name="vista" action="includes/formModificaProyecto.php" method="POST">
+		<input type="text" id="nombre" value="$nombre"  name="nombre" required ></input> </p>
 		<div class="imgDonacion">
 			<p> <h2>Imagen: </h2></p>
-			<input id="file_url" type="file" name="foto"> (*)</input><img src="$imagen" />
+			<input id="file_url" type="file" value=$imagen id="imagen" name="imagen" > (*)</input><img src="$imagen" />
 		</div>
 		<div class="cajaDescripcion">
 			<p><h2> Descripción:</h2> </p>
-			<textarea name="descripcionCorta" rows="4" value= "$descripcion" ></textarea>
+			<textarea id="descripcionCorta" rows="4"  name="descripcionCorta" value= "$descripcionCorta" alt=$descripcionCorta></textarea>
+		</div>
+		<div class="cajaDescripcion">
+			<p><h2> Descripción:</h2> </p>
+			<textarea id="descripcionCorta" rows="8" name="descripcionLarga" value= "$descripcionLarga" alt=$descripcionLarga></textarea>
 		</div>
 		<div class='proyectoFechas'>
 			<p> <h2>Fecha: </h2></p>
-			<input type="date" size="20" name="fecha"  value:"$fecha"></input>
+			<input type="date" size="20" name="fechaFin" id="fechaFin"  value:"$fecha"></input>
+		</div>
+		<div class='proyectoDinero'>
+			<p> <h2>Dinero Necesario: </h2></p>
+			<input type="numbre" size="20" name="dineroNecesario" value:"$dineroNecesario"></input>
 		</div>
 		<div class='proyectoVoluntario'>
 			<p><h2>Voluntarios necesarios: </h2></p>
-			<input type="number" value= "$numVoluntarios"></input>
+			<input type="number" value= "$numVoluntarios" name="numVoluntarios" id = "numVoluntarios"></input>
 		</div>
 		
-		<p><div class="proyectoApuntame"><form name="vista" action="includes/formModificaVoluntario.php" method="POST">
-				<input type="hidden" name="idProyecto" id="proyecto" value="$id" /> 
-				<input type="hidden" name="idUsuario" id="usuario" value="$idUsuario" /> 
+		<p><div class="proyectoApuntame">
+				<input type="hidden" name="idProyecto" id="idProyecto" value="$id" /> 
 				<input name="button" type="submit" value="ACTUALIZAR" /></div></p>
 		</form>
 EOS;
 		echo $html;
 	}
-
 }
 ?>

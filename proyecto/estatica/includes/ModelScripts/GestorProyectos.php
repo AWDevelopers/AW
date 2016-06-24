@@ -28,6 +28,19 @@
 			htmlspecialchars(trim(strip_tags($id)));
 			return ($this->dao->borraProyecto($id));
 		}
+
+		public function modificaProyecto($id, $nombre,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen,$numVoluntarios,$fechaFin){
+			 //$this->retiraEtiquetas($id); //LIMPIAMOS DE ETIQUETAS HTMLS Y PHP */
+			htmlspecialchars(trim(strip_tags($id)));
+			htmlspecialchars(trim(strip_tags($nombre)));
+			htmlspecialchars(trim(strip_tags($dineroNecesario)));
+			htmlspecialchars(trim(strip_tags($descripcionCorta)));
+			htmlspecialchars(trim(strip_tags($descripcionLarga)));
+			htmlspecialchars(trim(strip_tags($imagen)));
+			htmlspecialchars(trim(strip_tags($numVoluntarios)));
+			htmlspecialchars(trim(strip_tags($fechaFin)));
+			return ($this->dao->modificaProyecto($id, $nombre,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen,$numVoluntarios,$fechaFin));
+		}
 		/*private function retiraEtiquetas(&$columns) {
 		    foreach ($columns as $n) {
 		       $n=htmlspecialchars(trim(strip_tags($n)));

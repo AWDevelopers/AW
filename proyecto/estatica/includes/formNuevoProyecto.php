@@ -11,7 +11,7 @@ $lista = new GestorProyectos();
 	$numVoluntarios = $_REQUEST['voluntarios'];
 	$fechaFin = $_REQUEST['fechaFin'];
 	#$rol = $_SESSION['rol'];
-	$rol = "admin";
+	$rol = "User";
 	$salida = $lista->nuevoProyecto($nombre,$cif,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen,$numVoluntarios,$fechaFin, $rol);
 	header("Location: ../vistaProyecto.php?id=".$salida);
 

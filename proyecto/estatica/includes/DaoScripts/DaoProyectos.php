@@ -20,6 +20,13 @@
 			}
 		}
 
+		function modificaProyecto($id, $nombre,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen,$numVoluntarios,$fechaFin){
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
+			$sql = "UPDATE proyecto SET  dineroNecesario = '$dineroNecesario', nombre = '$nombre', descripcionLarga = '$descripcionLarga', descripcionCorta = '$descripcionCorta', imagen = '$imagen', numVoluntarios = '$numVoluntarios', fechaFin = '$fechaFin' WHERE idProyecto = '$id'";
+			$con->query($sql) or die ($con->error);
+		}
+
 		function insertaProyecto($nombre,$cif,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen, $numVoluntarios,$dineroAcumulado, $fechaFin){
 			$app = App::getSingleton();
     		$con = $app->conexionBd();
@@ -27,7 +34,6 @@
 			$sql.= "('".$cif."', sysdate() , '".$dineroNecesario."', '".$dineroAcumulado."', '".$nombre."', '".$descripcionLarga."', '".$descripcionCorta."', '".$imagen."', '".$numVoluntarios."', '".$fechaFin."')";
 			$con->query($sql) or die ($con->error);
 			$num = $con->insert_id;
-			$con->close();
 			return ($num);
 		}
 
