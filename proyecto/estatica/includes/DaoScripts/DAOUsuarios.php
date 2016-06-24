@@ -1,6 +1,5 @@
-﻿<?php
-	require_once '/../ModelScripts/usuario.php';
-	require_once '/../config.php';
+<?php
+	require_once RAIZ.RUTA_INC.'config.php';
 	use \AW\proyecto\estatica\includes\Aplicacion as App;
 	class DaoUsuarios{
 
@@ -136,17 +135,9 @@
 		public function modificarPerfilUser($dni, $nombre, $apellidos, $email, $telefono, $direccion, $cp, $tipo, $avatar, $sexo, $usuario, $fecha){
 			$app = App::getSingleton();
 			$con = $app->conexionBd();
-			$sql="UPDATE usuario SET `nombre`='$nombre',`apellidos`='$apellidos',`direccion`='$direccion',`cp`='$cp',`usuario`='$usuario',`email`='$email',`fechaNacimiento`='$fecha',`avatar`='$avatar',`sexo`='$sexo',`telefono`='$telefono',`tipo`='$tipo' WHERE `DNI`='$dni'";
+			$sql="UPDATE `usuario` SET `nombre`='$nombre',`apellidos`='$apellidos',`direccion`='$direccion',`cp`='$cp',`usuario`='$usuario',`email`='$email',`fechaNacimiento`='$fecha',`avatar`='$avatar',`sexo`='$sexo',`telefono`='$telefono',`tipo`='$tipo' WHERE `DNI`='$dni'";
 			$con->query($sql);
 		}
-		
-		public function modificarCamposUsuario($dni, $nombre, $apellidos, $email, $telefono){
-			$app = App::getSingleton();
-			$con = $app->conexionBd();
-			$sql="UPDATE `usuario` SET `nombre`='$nombre',`apellidos`='$apellidos',`email`='$email',`telefono`='$telefono' WHERE `DNI`='$dni'";
-			$con->query($sql);
-		}
-		
 		
 		public function eliminarUsuario($dni){
 			$app = App::getSingleton();
