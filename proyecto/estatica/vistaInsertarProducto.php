@@ -13,23 +13,23 @@
 		
 		<!--Aqui va el contenido-->
 		<div class="contenido">
-			
-			<form action="includes/formInsertarProducto.php" method="POST">
-			  <p>Nombre del producto
-			  	<input type="text" name="NOMBRE" required></input></p>
-			  <p>Precio
-			  	<input type="text" name="PRECIO"></input> </p>
-			  <p>Descripción corta
-				<input type="text" name="DCORTA" required></input></p>
-			  <p>Descripción larga
-				<input type="text" name="DLARGA" required></input></p>
-			  <p>Número de unidades
-				<input type="text" name="STOCK" required></input></p>
-			  <p>Imagen
-			  <input id="file_url" type="file" name="IMAGEN"> (*)</input>
-			  <p><input type="submit" ></p>
-			  </form>
-		
+			<div class="insertarprod">
+				<form action="includes/formInsertarProducto.php" method="POST">
+				  <p>Nombre del producto</p>
+				  	<input type="text" name="NOMBRE" required></input>
+				  <p>Precio</p>
+				  	<input type="text" name="PRECIO"></input> 
+				  <p>Descripción corta</p>
+					<input type="text" name="DCORTA" required></input>
+				  <p>Descripción larga</p>
+					<input type="text" name="DLARGA" required></input>
+				  <p>Número de unidades</p>
+					<input type="text" name="STOCK" required></input>
+				  <p>Imagen</p>
+				  <input id="file_url" type="file" name="IMAGEN"></input>
+				  <p><input type="submit" ></p>
+				</form>
+			</div>
 		</div>
 	</div>
 </body>

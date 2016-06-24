@@ -399,6 +399,35 @@ progress{
 .noticiaAdmin form input[type=submit]:hover{
 	background-color:#b3b3ff;
 }
+
+/*----------INSERTAR PRODUCTO--------*/
+.insertarprod{
+	background-color: #024e88;
+}
+.insertarprod form p{
+	color: white;
+	font-size: 16px;
+	font-family: arial;
+}
+.insertarprod form input{
+	border: 2px solid #ccc;
+    border-radius: 2%;
+    font-size: 90%;
+    background-color: white;
+}
+.insertarprod form input[type=submit]{
+	background-color: #3399ff;
+	border: none;
+	padding: 1%;
+	border-radius: 4px;
+	color: white;
+    font-size: 16px;
+}
+.insertarprod form input[type=submit]:hover{
+	background-color: #66b3ff;
+}
+
+
 /*------FIN PANEL DE ADMIN----------*/
 @media only screen and (max-width : 500px) {
  
