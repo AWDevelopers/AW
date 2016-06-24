@@ -1,4 +1,6 @@
 <?php
+	
+	use \AW\proyecto\estatica\includes\Aplicacion as App;
 
 	class vistaDonaciones{
 		private $ListaProyectos;
@@ -47,7 +49,7 @@
 						</div>
 						<div id = "datoscantidad">
 							<div id= "cantidad"> Cantidad:</div>
-								<form action="vistaDonacion.php?idProyect" method="POST">
+								<form action="vistaDonacion.php" method="POST">
 									<p><input type="text" name="cantidad">
 									<input type="hidden" name="idProyect" value="$id">
 									<input type= "submit" name ="donar" value = "Donar" size="20">
@@ -69,7 +71,9 @@ EOS;
 
 		public function muestraInsertarDonacion($id, $dinero){
 
-			if(!(isset($_SESSION['login']) && $_SESSION['login'])){
+			//if(!(isset($_SESSION['login']) && $_SESSION['login'])){
+			$app = App::getSingleton();
+    		if($app->usuarioLogueado()){
 				echo '<div class="formulario">';
 				echo '<form action="includes/formDonacion.php" method="POST">
 					  <p>Dni:

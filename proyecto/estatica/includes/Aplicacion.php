@@ -80,6 +80,10 @@ class Aplicacion {
     return isset($_SESSION['nombre']) ? $_SESSION['nombre'] : '';
   }
 
+  public function dniUsuario(){
+    return isset($_SESSION['DNI']) ? $_SESSION['DNI'] : '';
+  }
+
   public function conexionBd() {
     if (! $this->conn ) {
       $bdHost = $this->bdDatosConexion['host'];

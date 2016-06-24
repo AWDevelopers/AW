@@ -32,8 +32,9 @@
     		$con = $app->conexionBd();
 			$consulta = "INSERT INTO ong(CIF, nombre, direccion, email, usuario, pass, telefono) VALUES ";
 			$consulta .= "('" . $ong->getCif() . "', '" . $ong->getNombre() . "', '" . $ong->getDireccion() . "', '" . $ong->getEmail() . "', '" . $ong->getUsuario() . "', '" . $ong->getPass() . "', '" . $ong->getTelefono() . "')";
-			$rs = $con->query($consulta) or die ($con->error);
-			$rs->free();
+			//$rs = $con->query($consulta) or die ($con->error);
+			$con->query($consulta) or die ($con->error);
+			//$rs->free();
 			$con->close();
 		}
 
@@ -41,8 +42,9 @@
 			$app = App::getSingleton();
     		$con = $app->conexionBd();
 			$consulta = "DELETE FROM ong WHERE CIF='$cif'";
-			$rs = $con->query($consulta) or die ($con->error);
-			$rs->free();
+			//$rs = $con->query($consulta) or die ($con->error);
+			$con->query($consulta) or die ($con->error);
+			//$rs->free();
 			$con->close();
 		}
 

@@ -21,15 +21,17 @@
 			}
 		}
 
-		public function addDonacion($DNI, $id, $dinero){
+		public function addDonacion($dni, $id, $dinero){
 			$app = App::getSingleton();
     		$connection = $app->conexionBd();
 			//Añado la nueva donacion a la tabla donaciones
-			$consulta = "INSERT INTO donaciones(DNIUsuario, idProyecto, donacion) VALUES ($DNI, $id, $dinero)";
+			$consulta = "INSERT INTO donaciones(DNIUsuario, idProyecto, donacion) VALUES ('$dni', '$id', '$dinero')";
 			$connection->query($consulta) or die($connection->error);
+			//echo $dni;
 			//Actualizo el proyecto añadiendo la nueva donacion
-			$consulta2 = "UPDATE proyecto SET dineroAcumulado = (dineroAcumulado + $dinero) WHERE idProyecto = $id";
-			$rs->free();
+			$consulta2 = "UPDATE proyecto SET dineroAcumulado = (dineroAcumulado + '$dinero') WHERE idProyecto = '$id'";
+			$connection->query($consulta2) or die($connection->error);
+			//$rs->free();
 			$connection->close();
 		}
 
