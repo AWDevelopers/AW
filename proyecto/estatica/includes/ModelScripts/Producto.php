@@ -10,14 +10,14 @@
 		private $CIFOng;
 		private $rutaImagen;
 
-		function Producto($idProducto, $nombreOng, $stock, $precio, $nombre, $descCorta, $descLarga, $imagen){
+		function Producto($idProducto, $CIFOng, $stock, $precio, $nombre, $descCorta, $descLarga, $imagen){
 			$this->idProducto = $idProducto;
 			$this->stock = $stock;
 			$this->precio = $precio;
 			$this->nombre = $nombre;
 			$this->descripcionCorta = $descCorta;
 			$this->descripcionLarga = $descLarga;
-			$this->nombreOng = $nombreOng;
+			$this->CIFOng = $CIFOng;
 			$this->imagen = $imagen;
 		}
 

@@ -66,5 +66,8 @@
 			$this->dao->modificaProducto($idProducto, $nombreOng, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen);
 		}
         
+        public function modificaStockProducto($idProducto, $unidades){
+        	$this->dao->modificaStockProducto($idProducto, $unidades);
+        }
 	}
 ?>

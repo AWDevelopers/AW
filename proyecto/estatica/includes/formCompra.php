@@ -1,22 +1,12 @@
 <?php
+	use \AW\proyecto\estatica\includes\Aplicacion as App;
+	include ('config.php');
+	require_once 'ModelScripts/GestorProductos.php';
+	require_once 'ModelScripts/GestorCompras.php';
 
-$funcion = $_REQUEST['compra'];
+	$prod = new GestorProductos();
+	$prod->modificaStockProducto($_POST['idProducto'], $_POST['quantity']);
 
-switch($funcion){
-	case 'CANCELAR':
-		header("Location: ../tienda.php");
-		exit();
-		break;
-
-	case 'CONFIRMAR':
-		$unidades = $_REQUEST['unidades'];
-		$nombreProducto = $_REQUEST['nombreProducto'];
-		$precioProducto = $_REQUEST['precioProducto'];
-		$dniUser = $_SESSION['DNIUsuario'];
-		//header("Location: ../procesarCompra.php?unidades=".$unidades."&&nombreProducto=".$nombreProducto."&&precioProducto=".$precioProducto);
-		header("Location: ../procesarCompra.php");
-		exit();
-		break;
-}
-
+	$compra = new GestorCompras();
+	$compra->nuevaCompra($_POST['idProducto'], $_POST['CIFOng'], $_POST['quantity']);
 ?>

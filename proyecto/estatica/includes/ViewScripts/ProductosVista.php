@@ -1,4 +1,7 @@
 <?php
+
+use \AW\proyecto\estatica\includes\Aplicacion as App;
+
 	class vistaProductos{
 		
 		private $ListaProductos;
@@ -35,31 +38,35 @@
 			  				<input type="image" id = "imagenProducto" name = "producto" value="MUESTRA" src="'.$iterator->current()->getImagen().'" alt = "submit">';
 			  			echo' </form>';
 
-		  				echo '<form action="https://www.paypal.com/cgi-bin/webscr" method="post">';
-		  					echo'<input  type = "hidden" name="idProducto" id="producto" value="'.$iterator->current()->getIdProducto().'"> ';
-			  				echo "<p> Unidades:  </p>";
-			  				echo "<select id='unidades' name ='quantity'>";
-				  				for($i =1; $i <= $iterator->current()->getstockProducto(); $i++){
-				  					echo "<option value = '".$i."'>".$i."</option>";	
-				  				}
-				  			echo "</select>";
+			  			if(isset($_SESSION['login'])){
+			  				if($iterator->current()->getstockProducto() >0){
+				  				echo '<form method="post">';
+				  					echo'<input  type = "hidden" name="idProducto" id="producto" value="'. $iterator->current()->getIdProducto() .'"> ';
+					  				echo "<p> Unidades:  </p>";
+					  				echo "<select id='unidades' name ='quantity'>";
+						  				for($i =1; $i <= $iterator->current()->getstockProducto(); $i++){
+						  					echo "<option value = '".$i."'>".$i."</option>";	
+						  				}
+						  			echo "</select>";
 
-				  			
-				  			echo "<input type='hidden' name = 'nombreProducto' value = '".$iterator->current()->getNombreProducto()."'>";
-				  			echo "<h3>Precio: ".$iterator->current()->getPrecioProducto()."€ </h3>";
-				  		
-				  			echo '<input type="hidden" name="cmd" value="_ext-enter" />
-							<input type="hidden" name="redirect_cmd" value="_xclick" />
-							<input type="hidden" name="business" value="Incommong@gmail.com" />'; //Cuenta a la que va destinada el dinero
+						 			echo "<h3>Precio: ". $iterator->current()->getPrecioProducto() ."€ </h3>";  		
+						  			echo '<input type="hidden" name="cmd" value="_ext-enter" />
+									<input type="hidden" name="redirect_cmd" value="_xclick" />
+									<input type="hidden" name="business" value="Incommong@gmail.com" />'; //Cuenta a la que va destinada el dinero
+									echo '<input type="hidden" name="notify_url" value="includes/formCompra.php" />';
+									echo '<input type="hidden" name="item_name" value="'. $iterator->current()->getNombreProducto() .'" />'; //nombre del producto
+									echo '<input type="hidden" name="amount" value= "'. $iterator->current()->getPrecioProducto() .'" />'; //Precio del producto
+									echo '<input type="hidden" name="currency_code" value="EUR" />'; //tipo de moneda
+									echo'<input type="hidden" name="return" value="tienda.php">'; //pagina a la que vuelve al hacer la compra
+									echo '<input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_buynow_LG.gif" border="0" name="pepito" value = "pepito" alt="PayPal. La forma rápida y segura de pagar en Internet.">';
+						  		echo'</form>';	 
 
-							echo '<input type="hidden" name="item_name" value="'.$iterator->current()->getNombreProducto().'" />'; //nombre del producto
-							echo '<input type="hidden" name="amount" value= "'.$iterator->current()->getPrecioProducto().'" />'; //Precio del producto
-							echo '<input type="hidden" name="currency_code" value="EUR" />'; //tipo de moneda
-							echo'<input type="hidden" name="return" value="tienda.php">'; //pagina a la que vuelve al hacer la compra
-							echo '<input type="hidden" name="notify_url" value="http://www.nutecoweb.com/ok.php" />'; //procesar compra en bbdd
-							echo '<input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_buynow_LG.gif" border="0" name="submitPaypal" alt="PayPal. La forma rápida y segura de pagar en Internet.">';
-				  		echo'</form>';	  		
-				  			
+					  		} else{
+					  			echo '<p>Agotado</p>';
+					  		}		
+				  		}else{
+				  			echo ' <p><a href="registrate.php">Registrate</a> o <a href="login.php">inicia sesión</a> para comprar.</p>';
+				  		}
 				  	echo "</div>";
 			    $iterator->next();
 			}				 	
@@ -68,7 +75,7 @@
 
 		function muestraProducto($id){
 			$producto = $this->ListaProductos->getProducto($id);
-			echo "Hola!";
+			
 			echo '<div class="columnaIzda">';
 				echo "<h1>".$producto->getNombreProducto()."</h1>";
 				echo '<img src="'.$producto->getImagen().'"/>';
@@ -82,18 +89,36 @@
 					
 					echo '<h3>Precio: '.$producto->getPrecioProducto().'€</h3>';
 					echo '<p>Num.Unidades'.$producto->getStockProducto().'</p>';
+					$this->muestraCompra($id);
+	
+				echo '</div>';		
 
-					echo '<form action="https://www.paypal.com/cgi-bin/webscr" method="post">';
+		}
+
+		function realizaCompraProducto(){
+			
+					
+		}
+		function muestraCompra($id){
+
+			$producto = $this->ListaProductos->getProducto($id);
+			$app = App::getSingleton();
+
+			if($app->usuarioLogueado()){
+				if($producto->getStockProducto() >0){
+					echo'<form action="https://www.paypal.com/cgi-bin/webscr" method="post">';
 			
 					echo'<input  type = "hidden" name="idProducto" id="producto" value="'.$producto->getIdProducto().'"> ';
 					echo "<input type='hidden' name = 'nombreProducto' value = '".$producto->getNombreProducto()."'>";
+					echo "<input type='hidden' name = 'CIFOng' value = '".$producto->getCifONGProducto()."'>";
+
 					echo "<input type='hidden' name = 'precioProducto' value = '".$producto->getPrecioProducto()."'>";
 						echo '<select name= "quantity">';
 
 							for($i =1; $i <= $producto->getstockProducto(); $i++){
 				  				echo "<option value = '".$i."'>".$i."</option>";	
 				  			}
-
+				  		
 						echo '</select>';
 						
 					
@@ -105,13 +130,19 @@
 						echo '<input type="hidden" name="amount" value= "'.$producto->getPrecioProducto().'" />'; //Precio del producto
 						echo '<input type="hidden" name="currency_code" value="EUR" />'; //tipo de moneda
 						echo'<input type="hidden" name="return" value="tienda.php">'; //pagina a la que vuelve al hacer la compra
-						echo '<input type="hidden" name="notify_url" value="http://www.nutecoweb.com/ok.php" />'; //procesar compra en bbdd
-						echo '<input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal. La forma rápida y segura de pagar en Internet.">
-						</form>';
+						//echo '<input type="hidden" name="notify_url" value="http://www.nutecoweb.com/ok.php" />'; //procesar compra en bbdd
+						echo '<input type="hidden" name = "realizaCompra" value = "includes/formCompra.php"/>';
+						echo '<input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_buynow_LG.gif" border="0" name="pepito" value = "pepito" alt="PayPal. La forma rápida y segura de pagar en Internet.">';
+					echo '</form>';
 
-	
-				echo '</div>';
-
+				} else{
+		  			echo '<p>Agotado</p>';
+		  		}	
+					
+			}else{
+	  			echo ' <p><a href="registrate.php">Registrate</a> o <a href="login.php">inicia sesión</a> para comprar.</p>';
+	  		}
+	  	
 		}
 
 		function eligeBorrarProducto(){
@@ -198,7 +229,7 @@
 			</div>';
 		}
 		
-
+		
 	}
 ?>
 

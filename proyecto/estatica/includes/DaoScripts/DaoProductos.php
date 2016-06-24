@@ -94,7 +94,7 @@
 					$resultado =  new Producto($lista['idProducto'], $lista['CIFOng'],$lista['stock'],$lista['precio'],$lista['nombre'], $lista['descripcionCorta'], $lista['descripcionLarga'], $lista['imagen']);
 				}
 				$rs->free();
-				$con->close();
+				//$con->close();
 				return ($resultado);
 			}
 		}
@@ -120,17 +120,13 @@
 			$con->close();
 		}
 
-		function modificaProducto($idProducto, $nombreOng, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen){
+		
+		function modificaStockProducto($idProducto, $unidades){
 			$app = App::getSingleton();
     		$con = $app->conexionBd();
-
-    		$CIFOng = $_SESSION['DNI'];
-    		$sql = "INSERT INTO producto(idProducto, stock, precio, nombre,descripcionCorta, descripcionLarga, CIFOng, imagen) VALUES ";
-			$sql.= "(,". $stock.",". $precio.",". $nombre.",".$descripcionCorta.",". $descripcionLarga.",". $CIFOng.",". $imagen.")";
+			$sql =  "UPDATE producto SET stock = (stock - '$unidades') WHERE idProducto = '$idProducto'";
 			$con->query($sql) or die ($con->error);
-			$num = $con->insert_id;
-			$con->close();
-			return ($num);
+			
 		}
  	}
 
