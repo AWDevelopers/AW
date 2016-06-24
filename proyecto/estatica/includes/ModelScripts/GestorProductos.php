@@ -7,20 +7,21 @@
 		}
 
 		public function cargarNombreONG($CIFOng){
-			$dao = new DaoProductos();
-			return ($dao->cargarNombreONG($CIFOng));
+			require_once '/../DaoScripts/DaoOngs.php';
+			$daoOng = new DaoOngs();
+			$ONG = $daoOng->seleccionaOng($CIFOng);
+			return($ONG->getNombre());
 		}
 
 		public function cargarDatosProductoPorNombre(){
 			$dao = new DaoProductos();
 			$lista = $dao->cargarDatosProductoPorNombre();
 			$array = new ArrayObject();
-
+			
 			for($i= 0; $i <(sizeof($lista)-1) ; $i++){
-
-				$nombreONG = $this->cargarNombreONG($lista[$i]['CIFOng']);
+			
 				
-				$array->append(new Producto($lista[$i]['idProducto'],$nombreONG, $lista[$i]['CIFOng'],$lista[$i]['stock'],$lista[$i]['precio'],$lista[$i]['nombre'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen']));
+				$array->append(new Producto($lista[$i]['idProducto'], $lista[$i]['CIFOng'],$lista[$i]['stock'],$lista[$i]['precio'],$lista[$i]['nombre'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen']));
 			}
 			return $array;
 		}
@@ -30,8 +31,8 @@
 			$lista = $dao->cargarDatosProductoPorPrecioMayor();
 			$array = new ArrayObject();
 			for($i= 0; $i <(sizeof($lista)-1) ; $i++){
-				$nombreONG = cargarNombreONG($lista[$i]['CIFOng']);
-				$array->append(new Producto($lista[$i]['idProducto'], $nombreONG,$lista[$i]['CIFOng'],$lista[$i]['stock'],$lista[$i]['precio'],$lista[$i]['nombre'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen']));
+				$
+				$array->append(new Producto($lista[$i]['idProducto'], $lista[$i]['CIFOng'],$lista[$i]['stock'],$lista[$i]['precio'],$lista[$i]['nombre'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen']));
 			}
 			return $array;
 		}
@@ -41,8 +42,8 @@
 			$lista = $dao->cargarDatosProductoPorPrecioMenor();
 			$array = new ArrayObject();
 			for($i= 0; $i <(sizeof($lista)-1) ; $i++){
-				$nombreONG = cargarNombreONG($lista[$i]['CIFOng']);
-				$array->append(new Producto($lista[$i]['idProducto'], $nombreONG,$lista[$i]['CIFOng'],$lista[$i]['stock'],$lista[$i]['precio'],$lista[$i]['nombre'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen']));
+				
+				$array->append(new Producto($lista[$i]['idProducto'], $lista[$i]['CIFOng'],$lista[$i]['stock'],$lista[$i]['precio'],$lista[$i]['nombre'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen']));
 			}
 			return $array;
 		}

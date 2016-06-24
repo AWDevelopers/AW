@@ -30,7 +30,7 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 			while($iterator->valid()) {
 			  		echo "<div class='producto'> ";
 				  		echo "<h1>" . $iterator->current()->getNombreProducto() . "</h1>";
-				  		echo "<h3>".$iterator->current()->getNombreONGProducto()."</h3>";
+				  			echo '<h3>'.$this->ListaProductos->cargarNombreONG( $iterator->current()->getCifONGProducto()).'</h3>';
 				  		
 				  		//MOSTRAR PRODUCTO
 				  		echo '<form name="muestra" action="includes/formProductos.php" method="POST">
@@ -79,7 +79,8 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 			echo '<div class="columnaIzda">';
 				echo "<h1>".$producto->getNombreProducto()."</h1>";
 				echo '<img src="'.$producto->getImagen().'"/>';
-				echo '<h1>'.$producto->getNombreONGProducto().'</h1>';
+				echo '<h1>'.$this->ListaProductos->cargarNombreONG($producto->getCifONGProducto()).'</h1>';
+				
 				echo '<h3>'.$producto->getDescCortaProducto() .'</h3>';
 				echo '<p>'.$producto->getDescLargaProducto() .'</p>';	
 			echo '</div>';
@@ -208,56 +209,34 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 			$producto = $this->ListaProductos->getProducto($id);
 			$app = App::getSingleton();
     		
+    		$user = $producto->getCifONGProducto();
     		echo '<p><img src="'.$producto->getImagen().'" /></p>';
 
-			echo '<form method = "POST" action = "includes/formModificaProducto.php">';
-				echo "Nombre ong = ".$producto->getNombreONGProducto();
-				echo '<p>Nombre del producto: </p>';
-				
-				//if($app->usuarioLogueado() && $app->nombreUsuario()== $producto->getNombreONGProducto()){
+    		if($app->usuarioLogueado()){
+    			/*if($app->nombreUsuario()!= $user){
+    				echo '<p>Debes ser el propietario de este producto para modificarlo.</p>';
+    			}else{*/
+    				echo '<form method = "POST" action = "includes/formModificaProducto.php">';
+					echo '<p>Nombre del producto: </p>';
 					echo '<input type = "hidden" name = "idProducto" value = "'.$producto->getIdProducto().'">';
 					echo ' <input type = "text" name= "NOMBRE" value ="'.$producto->getNombreProducto().'"> ';
-					
-			//	}
-
-
-				echo '<p>Precio del producto:</p>';
-				//if($app->usuarioLogueado() && $app->nombreUsuario()==$user){
+					echo '<p>Precio del producto:</p>';
 					echo '  <input type = "text"  name= "PRECIO" value ="'.$producto->getPrecioProducto().'"> ';
-					
-				//}
-
-
-				echo '<p>Descripción corta del producto: </p>';
-			//	if($app->usuarioLogueado() && $app->nombreUsuario()==$user){
+					echo '<p>Descripción corta del producto: </p>';
 					echo '  <textarea name= "DCORTA" rows="4" cols="40">'.$producto->getDescCortaProducto().'</textarea> ';
-					
-			//	}
-
-
-				echo '<p>Descripción larga del producto: </p>';
-				//if($app->usuarioLogueado() && $app->nombreUsuario()==$user){
-					
+					echo '<p>Descripción larga del producto: </p>';
 					echo '  <textarea  rows="10" cols="40" name= "DLARGA">'.$producto->getDescLargaProducto().'</textarea> ';
-					
-				//}
-
-				echo '<p>Stock </p>';
-				//if($app->usuarioLogueado() && $app->nombreUsuario()==$user){
+					echo '<p>Stock </p>';
 					echo '  <input type = "text" name= "STOCK" value ="'.$producto->getstockProducto().'">';
-					
-				//}
-
-				echo ' <input type= "submit" value = "MODIFICAR">"</p>';
-
-			echo '</form>';
-
-
-  				
-  				
-  				
+					echo ' <input type= "submit" value = "MODIFICAR"></p>';
+				echo '</form>';
+    			//}
+    		}else{
+    			echo ' <p>Debes estar <a href="registrate.php">registrado</a> o en tu <a href="login.php">cuenta de usuario</a> para modificar.</p>';
+    		}
+	
+			echo '<form action="panelAdmin.php"><input type="submit" value="Atras"></input></form>';
 		}
-		
 		
 	}
 ?>

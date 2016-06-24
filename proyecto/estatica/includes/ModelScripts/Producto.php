@@ -8,15 +8,13 @@
 		private $descripcionCorta;
 		private $descripcionLarga;
 		private $CIFOng;
-		private $nombreONG;
 		private $rutaImagen;
 
-		function Producto($idProducto, $nombreONG, $CIFOng, $stock, $precio, $nombre, $descCorta, $descLarga, $rutaImagen){
+		function Producto($idProducto, $CIFOng, $stock, $precio, $nombre, $descCorta, $descLarga, $rutaImagen){
 			$this->idProducto = $idProducto;
 			$this->stock = $stock;
 			$this->precio = $precio;
 			$this->nombre = $nombre;
-			$this->nombreONG = $nombreONG;
 			$this->descripcionCorta = $descCorta;
 			$this->descripcionLarga = $descLarga;
 			$this->CIFOng = $CIFOng;
@@ -26,9 +24,7 @@
 		public function getIdProducto(){
 			return $this->idProducto;
 		}
-		public function getNombreONGProducto(){
-			return $this->nombreONG;
-		}
+		
 		public function getNombreProducto(){
 			return $this->nombre;
 		}

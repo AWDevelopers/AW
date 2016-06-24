@@ -26,22 +26,7 @@
 			
 		}
 
-		function cargarNombreONG($CIFOng){
-
-			$app = App::getSingleton();
-    		$con = $app->conexionBd();
-			$sql = "SELECT nombre FROM ong WHERE CIF = '$CIFOng'";
-			$rs = $con->query($sql) or die ($con->error);
-			if($rs != NULL)
-			{
-				while($nombre = $rs->fetch_assoc());
-				$rs->free();
-				
-				return ($nombre);
-			}
-		}
-
-	
+		
 
 		function cargarDatosProductoPorPrecioMayor(){
 
@@ -91,8 +76,8 @@
 			if($rs != NULL)
 			{
 				while($lista = $rs->fetch_assoc()){
-					$nombreONG = $this->cargarNombreONG($lista['CIFOng']);
-					$resultado =  new Producto($lista['idProducto'], $nombreONG, $lista['CIFOng'],$lista['stock'],$lista['precio'],$lista['nombre'], $lista['descripcionCorta'], $lista['descripcionLarga'], $lista['imagen']);
+					
+					$resultado =  new Producto($lista['idProducto'], $lista['CIFOng'],$lista['stock'],$lista['precio'],$lista['nombre'], $lista['descripcionCorta'], $lista['descripcionLarga'], $lista['imagen']);
 				}
 				$rs->free();
 				//$con->close();
@@ -100,7 +85,7 @@
 			}
 		}
 
-		function insertaProducto($idProducto, $nombreOng, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen){
+		function insertaProducto($idProducto, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen){
 			$app = App::getSingleton();
     		$con = $app->conexionBd();
 
