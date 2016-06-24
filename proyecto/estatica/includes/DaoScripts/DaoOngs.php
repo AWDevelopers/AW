@@ -113,7 +113,7 @@
 			while($lista = $rs->fetch_assoc()){
 				$resultado =  new ong($lista['CIF'], $lista['nombre'], $lista['direccion'], $lista['email'], $lista['usuario'], $lista['pass'], $lista['telefono'], $lista['imagen']);
 				$rs->free();
-				$con->close();
+				//$con->close();
 				return $resultado;
 			}
 
