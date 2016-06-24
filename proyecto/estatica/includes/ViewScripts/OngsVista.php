@@ -182,10 +182,26 @@
 		public function eliminarOng($CIF){
 			$lista = $this->listaOngs->deleteOng($CIF);
 		}
+
+		public function insertarOng(){
+			if(isset($_POST['add'])){
+				$cif=$_POST["CIF"];
+				$nombre=$_POST["nombre"];
+				$dir=$_POST["direccion"];
+				$mail=$_POST["email"];
+				$user=$_POST["usuario"];
+				$pass=$_POST["pass"];
+				$tlf=$_POST["telefono"];
+				
+				$lista = $this->listaOngs->addOng($cif, $nombre, $dir, $mail, $user, $pass, $tlf);
+				header("Location: procesarInsertar.php");
+			}
+			
+		}
 		public function muestraInsertarOng(){
 
 			echo '<div class="formulario">';
-			echo '<form action="includes/formOng.php" method="POST">
+			echo '<form method="POST">
 				  <p>CIF de la Ong
 				  	<input type="text" name="CIF" required></input></p>
 				  <p>Nombre de la Ong
@@ -200,9 +216,10 @@
 					<input type="text" name="pass" required></input></p>
 				  <p>Teléfono de contacto
 					<input type="text" name="telefono"></input></p>
-				  <p><input type="submit" name="submit" value="Dar de alta Ong"></p>
+				  <p><input type="submit" name="add" value="Dar de alta Ong"></p>
 				  </form>';
 			echo '</div>';
+			$this->insertarOng();
 		}
 
 		public function muestraPerfilOng($ong){

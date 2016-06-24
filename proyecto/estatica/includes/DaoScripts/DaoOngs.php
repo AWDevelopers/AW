@@ -26,11 +26,17 @@
 			}
 		}
 
-		public function addOng($ong){
+		public function addOng($cif, $nombre, $dir, $mail, $user, $pass, $tlf){
 			$app = App::getSingleton();
     		$con = $app->conexionBd();
+    		$opciones = [
+				'cost' => 11,
+				'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
+			];
+			$contra = $pass;
+			$contra = password_hash($contra, PASSWORD_BCRYPT, $opciones)."\n";
 			$consulta = "INSERT INTO ong(CIF, nombre, direccion, email, usuario, pass, telefono) VALUES ";
-			$consulta .= "('" . $ong->getCif() . "', '" . $ong->getNombre() . "', '" . $ong->getDireccion() . "', '" . $ong->getEmail() . "', '" . $ong->getUsuario() . "', '" . $ong->getPass() . "', '" . $ong->getTelefono() . "')";
+			$consulta .= "('" . $cif . "', '" . $nombre . "', '" . $dir . "', '" . $mail . "', '" . $user . "', '" . $contra . "', '" . $tlf . "')";
 			//$rs = $con->query($consulta) or die ($con->error);
 			$con->query($consulta) or die ($con->error);
 			//$rs->free()

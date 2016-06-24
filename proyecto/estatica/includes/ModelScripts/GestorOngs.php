@@ -44,6 +44,10 @@
 			$dao = new DaoOngs();
 			return ($dao->deleteOng($cif));
 		}
+		public function addOng($cif, $nombre, $dir, $mail, $user, $pass, $tlf){
+			$dao = new DaoOngs();
+			return ($dao->addOng($cif, $nombre, $dir, $mail, $user, $pass, $tlf));
+		}
 		
 	}
 
