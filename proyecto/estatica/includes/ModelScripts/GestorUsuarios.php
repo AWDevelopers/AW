@@ -118,5 +118,14 @@
 			$fechaN =  htmlspecialchars(trim(strip_tags($fecha)));
 			$this->dao->modificarPerfilUser($dniN, $nombreN, $apellidosN, $emailN, $telefonoN, $direccionN, $cpN, $tipoN, $avatarN, $sexoN, $usuarioN, $fechaN );
 		}
+		
+		public function modificarCamposUsuario( $dni ,$nombre, $apellidos, $email, $telefono){
+			$dniN = htmlspecialchars(trim(strip_tags($dni)));
+			$nombreN = htmlspecialchars(trim(strip_tags($nombre)));
+			$apellidosN = htmlspecialchars(trim(strip_tags($apellidos)));
+			$emailN = htmlspecialchars(trim(strip_tags($email)));
+			$telefonoN = htmlspecialchars(trim(strip_tags($telefono)));
+			$this->dao->modificarCamposUsuario($dniN, $nombreN, $apellidosN, $emailN, $telefonoN );
+		}
 	}
 ?>

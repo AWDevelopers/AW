@@ -75,13 +75,6 @@ EOS;
 		$html = <<<EOS
 		
   			<div class="cabeceraPerfil">
-				<div id="volver" >
-					<button name = "volver" class= "bCabecera" ><img src="img/back.png"></button>
-				</div>
-				
-				<div id="cerrar">
-					<button id = "bCerrar" class="bCabecera" ><img src="img/salir.png"></button>
-				</div>
 				
 				<div id="fotoUsuario" >
 						<img src="$avatar">
@@ -126,27 +119,26 @@ EOS;
 					<p><input type="date" name="dia"></p>
 					<p>Horas: </p>
 					<p><input type="time" name="horas"></p>
-					<p><input type="submit" value ="confirmar"></input></p>
+					<p><input type="submit" value ="Confirmar"></input></p>
 
 				</form>
 			</div>
 		</div>
 		<div id= "contenidoPerfilUsuario">
-			<form action="includes/formModificarUsuario.php" method="POST">
+			<form action="includes/formModificarCamposUsuario.php" method="POST">
 			<div id= "datosUsuario">
 				<p><h2>Editar datos del usuario: </h2></p>
 				<form >
 					<p>Nombre:</p>
-					<p><input type ="text" name ="nombre" required/></p>
+					<p><input type ="text" name ="nombre" value="$nombre" required/></p>
 					<p>Apellidos:</p>
-					<p><input type ="text" name ="apellidos" required/></p>
+					<p><input type ="text" name ="apellidos" value="$apellidos" required/></p>
 					<p>E-mail: </p>
-					<p><input type ="email" name ="email" required></p>
+					<p><input type ="email" name ="email" value="$email" required></p>
 					<p>Teléfono : </p>
-					<p><input type ="text" name ="telefono" required></p>
+					<p><input type ="text" name ="telefono" value="$telefono" required></p>
 					<p><input type="hidden" name="id" id="usuario" value="$DNI" /> </p>
-
-					<p><input type ="submit" value="editar"></input></p>
+					<p><input type ="submit" value="Editar"></input></p>
 				</form>
 			</div>
 			</form>
