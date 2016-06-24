@@ -1,10 +1,11 @@
-﻿<?php
-use \AW\proyecto\estatica\includes\DaoScripts\DaoUsuarios as DaoUsuarios;
+<?php
+require_once ("config.php");
+require_once RAIZ.RUTA_DAO.'DAOUsuarios.php';
 	class GestorUsuarios{
 		private $dao;
 		
 		function __construct(){
-			$this->dao = DaoUsuarios::new DaoUsuarios();
+			$this->dao = new DaoUsuarios();
 			if (!isset($_SESSION)) session_start();
 		}
 		
@@ -101,7 +102,6 @@ use \AW\proyecto\estatica\includes\DaoScripts\DaoUsuarios as DaoUsuarios;
 			$this->dao->modificarPass($dniN, $passN);
 		}
 		
-		
 		public function modificarPerfilUser($dni, $nombre, $apellidos, $email, $telefono, $direccion, $cp, $tipo, $avatar, $sexo, $usuario, $fecha){
 			$dniN = htmlspecialchars(trim(strip_tags($dni)));
 			$nombreN = htmlspecialchars(trim(strip_tags($nombre)));
@@ -113,18 +113,9 @@ use \AW\proyecto\estatica\includes\DaoScripts\DaoUsuarios as DaoUsuarios;
 			$tipoN =  htmlspecialchars(trim(strip_tags($tipo)));
 			$avatarN =  htmlspecialchars(trim(strip_tags($avatar)));
 			$sexoN =  htmlspecialchars(trim(strip_tags($sexo)));
-			$usuarioN =  htmlspecialchars(trim(strip_tags($usuario)));
+			$usuario =  htmlspecialchars(trim(strip_tags($usuario)));
 			$fechaN =  htmlspecialchars(trim(strip_tags($fecha)));
 			$this->dao->modificarPerfilUser($dniN, $nombreN, $apellidosN, $emailN, $telefonoN, $direccionN, $cpN, $tipoN, $avatarN, $sexoN, $usuarioN, $fechaN );
-		}
-		
-		public function modificarCamposUsuario( $dni ,$nombre, $apellidos, $email, $telefono){
-			$dniN = htmlspecialchars(trim(strip_tags($dni)));
-			$nombreN = htmlspecialchars(trim(strip_tags($nombre)));
-			$apellidosN = htmlspecialchars(trim(strip_tags($apellidos)));
-			$emailN = htmlspecialchars(trim(strip_tags($email)));
-			$telefonoN = htmlspecialchars(trim(strip_tags($telefono)));
-			$this->dao->modificarCamposUsuario($dniN, $nombreN, $apellidosN, $emailN, $telefonoN );
 		}
 	}
 ?>
