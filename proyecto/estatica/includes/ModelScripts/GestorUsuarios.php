@@ -9,7 +9,8 @@ use \AW\proyecto\estatica\includes\DaoScripts\DaoUsuarios as DaoUsuarios;
 		}
 		
 		public function getListaUsuarios($dni){
-			$lista = $this->dao->listaUsuarios($dni);
+			$dniN = htmlspecialchars(trim(strip_tags($dni)));
+			$lista = $this->dao->listaUsuarios($dniN);
 			$array = new ArrayObject();
 			for($i= 0; $i <sizeof($lista)-1 ; $i++){
 				$array->append(new Usuario($lista[$i]['nombre'], $lista[$i]['DNI'],$lista[$i]['apellidos'], $lista[$i]['direccion'], $lista[$i]['cp'], $lista[$i]['usuario'],$lista[$i]['pass'],$lista[$i]['email'],$lista[$i]['fechaNacimiento'], $lista[$i]['avatar'],$lista[$i]['sexo'],$lista[$i]['telefono'], $lista[$i]['tipo']));
@@ -33,7 +34,7 @@ use \AW\proyecto\estatica\includes\DaoScripts\DaoUsuarios as DaoUsuarios;
 		}
 		
 		public function comprobarDNI($dni){
-			$dni = $_REQUEST['dni'];
+			//$dni = $_REQUEST['dni'];
 			$dniN = htmlspecialchars(trim(strip_tags($dni)));
 			$letra = substr($dniN, -1);
 			$numeros = substr($dniN, 0, -1);
@@ -78,22 +79,42 @@ use \AW\proyecto\estatica\includes\DaoScripts\DaoUsuarios as DaoUsuarios;
 		}
 		
 		public function existeUser($dni, $user, $email){
+			$dniN = htmlspecialchars(trim(strip_tags($dni)));
+			$userN = htmlspecialchars(trim(strip_tags($user)));
+			$emailN = htmlspecialchars(trim(strip_tags($email)));
 			
 		}
+		
 		public function eliminarUsuario($dni){
-			return $this->dao->borraUsuario($dni);
+			$dniN = htmlspecialchars(trim(strip_tags($dni)));
+			return $this->dao->borraUsuario($dniN);
 		}
 		
 		public function getUsuario($dni){
-			return ($this->dao->seleccionaUsuario($dni));
+			$dniN = htmlspecialchars(trim(strip_tags($dni)));
+			return ($this->dao->seleccionaUsuario($dniN));
 		}
 		
 		public function modificarContra($dni, $pass){
-			$this->dao->modificarPass($dni, $pass);
+			$dniN = htmlspecialchars(trim(strip_tags($dni)));
+			$passN = htmlspecialchars(trim(strip_tags($pass)));
+			$this->dao->modificarPass($dniN, $passN);
 		}
 		
-		public function modificarPerfilUser($dni, $nombre, $apellidos, $email, $telefono){
-			$this->dao->modificarPerfilUser($dni, $nombre, $apellidos, $email, $telefono);
+		public function modificarPerfilUser($dni, $nombre, $apellidos, $email, $telefono, $direccion, $cp, $tipo, $avatar, $sexo, $usuario, $fecha){
+			$dniN = htmlspecialchars(trim(strip_tags($dni)));
+			$nombreN = htmlspecialchars(trim(strip_tags($nombre)));
+			$apellidosN = htmlspecialchars(trim(strip_tags($apellidos)));
+			$emailN = htmlspecialchars(trim(strip_tags($email)));
+			$telefonoN = htmlspecialchars(trim(strip_tags($telefono)));
+			$direccionN = htmlspecialchars(trim(strip_tags($direccion)));
+			$cpN =  htmlspecialchars(trim(strip_tags($cp)));
+			$tipoN =  htmlspecialchars(trim(strip_tags($tipo)));
+			$avatarN =  htmlspecialchars(trim(strip_tags($avatar)));
+			$sexoN =  htmlspecialchars(trim(strip_tags($sexo)));
+			$usuario =  htmlspecialchars(trim(strip_tags($usuario)));
+			$fechaN =  htmlspecialchars(trim(strip_tags($fecha)));
+			$this->dao->modificarPerfilUser($dniN, $nombreN, $apellidosN, $emailN, $telefonoN, $direccionN, $cpN, $tipoN, $avatarN, $sexoN, $usuarioN, $fechaN );
 		}
 	}
 ?>

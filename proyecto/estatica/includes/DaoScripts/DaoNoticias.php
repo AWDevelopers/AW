@@ -122,6 +122,15 @@
 			}
 		}
 		
+		function editaNoticia($idN,$tituloN, $tipoN , $desC, $desL, $imagenN){
+		$app = App::getSingleton();
+        $con = $app->conexionBd();
+        $sql = "UPDATE noticia SET titulo='$tituloN', tipo= '$tipoN', descripcionCorta='$desC', descripcionLarga='$desL', imagen='$imagenN' WHERE id='$idN'";
+		$rs = $con->query($sql) or die ($con->error);
+		
+		}
+		
+		
 		
 	}
 ?>	
