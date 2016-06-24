@@ -1,8 +1,8 @@
 <?php
 	
-	require_once '/../ModelScripts/ong.php';
 	require_once '/../config.php';
 	use \AW\proyecto\estatica\includes\Aplicacion as App;
+	use \AW\proyecto\estatica\includes\ModelScripts\ong as Ong;
 
 	class DaoOngs{
 
