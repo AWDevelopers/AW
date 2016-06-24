@@ -16,7 +16,7 @@
 		
 			<div class="contenido">
 				<div class="formulario">
-					<form action="includes/formModificarUsuario.php?id=<?=$_REQUEST['DNI']?>" method="POST">
+					<form action="includes/formModificarUsuario.php?id=<?=$_REQUEST['id']?>" method="POST">
 						<div class="contenido2">
 						
 						
@@ -43,7 +43,7 @@
 								<p> <h2>Telefono: </h2> </p>
 								<input type="number" name="tlf" value="<?= $_REQUEST['telefono']?>" required></input>
 								<p> <h2>Direccion: </h2></p>
-								<input type="text" name="direccion" value="<?= $_REQUEST['direccion']?>" required></input>
+								<input type="text" name="direccion" value="<?= $_REQUEST['direccion']?>"></input>
 								<p> <h2>CP: </h2></p>
 								<input type="number" name="cp" value="<?= $_REQUEST['cp']?>" required></input>
 								<!---Llamar aqui a una funcion que muestre el campo si es admin!-->

@@ -103,6 +103,7 @@
 			$this->dao->modificarPass($dniN, $passN);
 		}
 		
+		
 		public function modificarPerfilUser($dni, $nombre, $apellidos, $email, $telefono, $direccion, $cp, $tipo, $avatar, $sexo, $usuario, $fecha){
 			$dniN = htmlspecialchars(trim(strip_tags($dni)));
 			$nombreN = htmlspecialchars(trim(strip_tags($nombre)));
@@ -114,7 +115,7 @@
 			$tipoN =  htmlspecialchars(trim(strip_tags($tipo)));
 			$avatarN =  htmlspecialchars(trim(strip_tags($avatar)));
 			$sexoN =  htmlspecialchars(trim(strip_tags($sexo)));
-			$usuario =  htmlspecialchars(trim(strip_tags($usuario)));
+			$usuarioN =  htmlspecialchars(trim(strip_tags($usuario)));
 			$fechaN =  htmlspecialchars(trim(strip_tags($fecha)));
 			$this->dao->modificarPerfilUser($dniN, $nombreN, $apellidosN, $emailN, $telefonoN, $direccionN, $cpN, $tipoN, $avatarN, $sexoN, $usuarioN, $fechaN );
 		}

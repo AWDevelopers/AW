@@ -75,7 +75,7 @@
 						<!---Llamar aqui a una funcion que muestre el campo si es admin!-->
 						
 						<?php require 'tipoUsuario.php'; ?>
-						<p> <h4> <font color= yellow> Para finalizar el registro haz click aqui! </font></h4>
+						<p> <h4> Para finalizar el registro haz click aqui!</h4>
 						<input type="submit" name="submit" value="Registrate">
 						</p>
 						

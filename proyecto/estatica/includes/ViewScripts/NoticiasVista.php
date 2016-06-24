@@ -2,12 +2,10 @@
 
         class NoticiasVista{	
             private $ListaNoticias;
-            private $dao;
             function __construct(){
-			require_once '/../ModelScripts/GestorNoticias.php';
-            require_once '/../DaoScripts/DaoNoticias.php';
-			$this->ListaNoticias = new GestorNoticias();
-            $this->dao= new DaoNoticias();
+				require_once '/../ModelScripts/GestorNoticias.php';
+				require_once '/../DaoScripts/DaoNoticias.php';
+				$this->ListaNoticias = new GestorNoticias();
             }
             
             
@@ -41,7 +39,6 @@ EOS;
             function muestraNoticiasPrimarias(){
                 $lista = $this->ListaNoticias->getListaNoticiasPrimarias();
                 $iterator = $lista->getIterator();
-                
 		
 		while($iterator->valid()) {
                     $titulo = $iterator->current()->getTitulo();

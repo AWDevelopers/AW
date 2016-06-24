@@ -15,7 +15,7 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 	$telefono = $_REQUEST['tlf'];
 	$direccion = $_REQUEST['direccion'];
 	$cp = $_REQUEST['cp'];
-	if($app->usuarioLogueado() && $app->esAdmin("Admin")){
+	if($app->usuarioLogueado() && $app->tieneRol("Admin")){
 		$tipo = $_REQUEST['tipo'];
 	}
 	else{

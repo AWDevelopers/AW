@@ -1,13 +1,16 @@
 ﻿<?php
 include ('config.php');
 if (!isset($_SESSION)) session_start();
+use \AW\proyecto\estatica\includes\Aplicacion as App;
 require_once 'ModelScripts/GestorUsuarios.php';
+$app = App::getSingleton();
+
 	
-	if (isset($_SESSION['login']) && $_SESSION['login']) {
+	if ($app->usuarioLogueado() && $app->tieneRol("Admin","Error", "No tienes permisos")) {
 		$lista = new GestorUsuarios();
-		$dni = $_REQUEST['DNI'];
+		$dni = $_REQUEST['id'];
 		$lista->eliminarUsuario($dni);
-		header("Location: ../formAdminUsuarios.php");
+		header("Location: ../vistaAdminUsuarios.php");
 		exit();
 	}
 ?>

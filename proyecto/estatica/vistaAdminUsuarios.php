@@ -4,9 +4,6 @@
 	<title> Panel de Administracion de Usuarios</title>
 	<link rel = "stylesheet" type = "text/css" href="css/colorsandtext.css"/>
 		<link rel = "stylesheet" type = "text/css " href="css/estilos.css"/>
-
- <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-    <script src="js/usuariosAdmin.js"></script>
 </head>
 
 <body>

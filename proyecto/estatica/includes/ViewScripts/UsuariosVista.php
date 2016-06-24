@@ -16,12 +16,12 @@ function muestraUsuarios(){
 		$lista = $this->ListaUsuarios->getListaUsuarios($dni);
 		$iterator = $lista->getIterator();
 		$num=0;
+		
 		while($iterator->valid()) {
 			$nombre =  $iterator->current()->getNombre();
 			$apellidos = $iterator->current()->getApellidos();
 			$user = $iterator->current()->getUsuario();
 			$email = $iterator->current()->getEmail();
-			$DNI = $iterator->current()->getDNI();
 			$direccion = $iterator->current()->getDireccion();
 			$cp = $iterator->current()->getCP();
 			$fechaNacimiento=  $iterator->current()->getFechaNacimiento();
@@ -29,15 +29,16 @@ function muestraUsuarios(){
 			$telefono =  $iterator->current()->getTelefono();
 			$sexo =  $iterator->current()->getSexo();
 			$tipo =  $iterator->current()->getRol();
-			  	 $html = <<<EOS
+			$id = $iterator->current()->getDNI();
+			 $html = <<<EOS
   				<div class="noticiaAdmin" id="usuarioAdmin$num">
 				  		<p>Nombre: $nombre </p>
 						<p>Apellidos : $apellidos </p>
-						<p>DNI : $DNI </p>
+						<p>DNI : $id </p>
 						<p>Email: $email </p>
 						<p>Usuario: $user </p>
 				  		<form name="vista" action="vistaModificarUsuario.php" method="POST">
-				  				<input type="hidden" name="DNI" id="usuario" value="$DNI" /> 
+				  				<input type="hidden" name="id" value="$id" /> 
 								<input type="hidden" name="nombre" value="$nombre" />
 								<input type="hidden" name="apellidos"  value="$apellidos" />
 								<input type="hidden" name="usuario"  value="$user" />
@@ -51,9 +52,10 @@ function muestraUsuarios(){
 								<input type="hidden" name="tipo" value="$tipo" />			
 				  				<input name="button" type="submit" value="Modificar"></input>
 						</form>
-						<p>
-				  			<button onclick="eliminaUsuario($num,$DNI)" name="button" type="none" value="eliminar">Eliminar</button>
-				  		</p>
+						<form action="includes/formEliminaUsuario.php" method="POST">
+							<input type="hidden" name="id" value="$id" />	
+							<input name="button" type="submit" value="Eliminar"></input>
+						</form>
 			  		</div> 
 EOS;
 			echo $html;  		
