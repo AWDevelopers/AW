@@ -2,8 +2,9 @@
 include ('config.php');
 require_once 'ModelScripts/GestorUsuarios.php';
 use \AW\proyecto\estatica\includes\Aplicacion as App;
+use \AW\proyecto\estatica\includes\ModelScripts\GestorUsuarios as GestorUsuarios;
 	$app = App::getSingleton();
-	$lista = new GestorUsuarios();
+	$lista = GestorUsuarios::new GestorUsuarios();
 	$user = $_REQUEST['usuario'];
 	$pass = $_REQUEST['pass'];
 	$nombre = $_REQUEST['nombre'];

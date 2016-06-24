@@ -1,36 +1,37 @@
 <?php
-	
 	require_once '/../ModelScripts/ong.php';
 	require_once '/../config.php';
 	use \AW\proyecto\estatica\includes\Aplicacion as App;
+	use \AW\proyecto\estatica\includes\ModelScripts\ong as Ong;
 
 	class DaoOngs{
 
 		private $array;
 
 		public function listaOngs(){
-			$array = new ArrayObject();
 			$app = App::getSingleton();
-    		$con = $app->conexionBd();
-
-			$consulta = "SELECT * FROM ongs";
-			$resultado = $rs = $con->query($consulta) or die ($con->error);
-
-			if($resultado != NULL){
-				while($lista = $resultado->fetch_assoc()){
-					$array->append(new Ongs($lista['CIF'], $lista['nombre'], $lista['direccion'], $lista['email'], $lista['usuario'], $lista['pass'], $lista['telefono'], $lista['imagen']));
-				}
-				mysqli_free_result($resultado);
+            $con = $app->conexionBd();
+			$sql = sprintf("SELECT * FROM ong");
+			$rs = $con->query($sql) or die ($con->error);
+			if($rs != NULL)
+			{
+                            while($lista[] = $rs->fetch_assoc());
 				$rs->free();
-				return $array;
+				return ($lista);
 			}
 		}
 
-		public function addOng($ong){
+		public function addOng($cif, $nombre, $dir, $mail, $user, $pass, $tlf){
 			$app = App::getSingleton();
     		$con = $app->conexionBd();
+    		$opciones = [
+				'cost' => 11,
+				'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
+			];
+			$contra = $pass;
+			$contra = password_hash($contra, PASSWORD_BCRYPT, $opciones)."\n";
 			$consulta = "INSERT INTO ong(CIF, nombre, direccion, email, usuario, pass, telefono) VALUES ";
-			$consulta .= "('" . $ong->getCif() . "', '" . $ong->getNombre() . "', '" . $ong->getDireccion() . "', '" . $ong->getEmail() . "', '" . $ong->getUsuario() . "', '" . $ong->getPass() . "', '" . $ong->getTelefono() . "')";
+			$consulta .= "('" . $cif . "', '" . $nombre . "', '" . $dir . "', '" . $mail . "', '" . $user . "', '" . $contra . "', '" . $tlf . "')";
 			//$rs = $con->query($consulta) or die ($con->error);
 			$con->query($consulta) or die ($con->error);
 			//$rs->free()

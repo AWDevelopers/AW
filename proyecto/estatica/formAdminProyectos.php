@@ -20,17 +20,13 @@
 						<form action="panelAdmin.php"><input type="submit" value="Atras"></input></form>
 					</div>
 					<div class="aniade">
-						<form action="vistaNuevoProyecto.php"><input type="submit" value="Añadir Proyecto"></input></form>
+						<form action="vistaAniadirProyecto.php"><input type="submit" value="Añadir Proyecto"></input></form>
 					</div>
 				</div>				
 				<?php 
-					use \AW\proyecto\estatica\includes\Aplicacion as App;
-					$app = App::getSingleton();
-					if ($app->usuarioLogueado() && $app->tieneRol("Admin")) {
-						require_once "includes/ViewScripts/ProyectosVista.php";
-						$vProyectos = new vistaProyectos();
-						$vProyectos->muestraProyectosVoluntariosAdmin();
-					}
+					require_once "includes/ViewScripts/ProyectosVista.php";
+					$vProyectos = new vistaProyectos();
+					$vProyectos->muestraProyectosVoluntariosAdmin();
 				?>
 			</div>
 		</div>

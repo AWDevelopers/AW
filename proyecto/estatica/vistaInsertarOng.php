@@ -15,8 +15,9 @@
 		<div class="contenido">
 			<div id="proyectoONG">
 				<?php
-					require_once "ViewScripts/OngsVista.php";
-					muestraInsertarOng();
+					require_once "includes/ViewScripts/OngsVista.php";
+					$vOng= new vistaOng();
+					$vOng->muestraInsertarOng();
 				?>
 			</div>
 		</div>

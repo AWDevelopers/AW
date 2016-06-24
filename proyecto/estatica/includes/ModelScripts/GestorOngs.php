@@ -44,6 +44,20 @@
 			$dao = new DaoOngs();
 			return ($dao->deleteOng($cif));
 		}
+		public function addOng($cif, $nombre, $dir, $mail, $user, $pass, $tlf){
+			$dao = new DaoOngs();
+			return ($dao->addOng($cif, $nombre, $dir, $mail, $user, $pass, $tlf));
+		}
+
+		public function getLista(){
+			$dao = new DaoOngs();
+			$lista = $dao->listaOngs();
+			$array = new ArrayObject();
+			for($i= 0; $i <sizeof($lista)-1 ; $i++){
+			$array->append(new Ong($lista[$i]['CIF'], $lista[$i]['nombre'],$lista[$i]['direccion'], $lista[$i]['email'], $lista[$i]['usuario'], $lista[$i]['pass'],$lista[$i]['telefono']));
+			}
+			return $array;
+		}
 		
 	}
 

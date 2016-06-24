@@ -140,6 +140,14 @@
 			$con->query($sql);
 		}
 		
+		public function modificarCamposUsuario($dni, $nombre, $apellidos, $email, $telefono){
+			$app = App::getSingleton();
+			$con = $app->conexionBd();
+			$sql="UPDATE `usuario` SET `nombre`='$nombre',`apellidos`='$apellidos',`email`='$email',`telefono`='$telefono' WHERE `DNI`='$dni'";
+			$con->query($sql);
+		}
+		
+		
 		public function eliminarUsuario($dni){
 			$app = App::getSingleton();
 			$con = $app->conexionBd();

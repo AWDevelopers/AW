@@ -15,6 +15,8 @@
 		
 		<!--Aqui va el contenido-->
 		<div class="contenido">
+		
+			
 			<?php
 			require_once ("includes/ViewScripts/UsuariosVista.php");
 			if (isset($_SESSION['login']) && $_SESSION['login']) {
