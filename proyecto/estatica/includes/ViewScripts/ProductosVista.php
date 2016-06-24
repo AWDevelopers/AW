@@ -40,7 +40,7 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 
 			  			if(isset($_SESSION['login'])){
 			  				if($iterator->current()->getstockProducto() >0){
-				  				echo '<form method="post">';
+				  				echo'<form action="https://www.paypal.com/cgi-bin/webscr" method="post">';
 				  					echo'<input  type = "hidden" name="idProducto" id="producto" value="'. $iterator->current()->getIdProducto() .'"> ';
 					  				echo "<p> Unidades:  </p>";
 					  				echo "<select id='unidades' name ='quantity'>";
@@ -57,7 +57,7 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 									echo '<input type="hidden" name="item_name" value="'. $iterator->current()->getNombreProducto() .'" />'; //nombre del producto
 									echo '<input type="hidden" name="amount" value= "'. $iterator->current()->getPrecioProducto() .'" />'; //Precio del producto
 									echo '<input type="hidden" name="currency_code" value="EUR" />'; //tipo de moneda
-									echo'<input type="hidden" name="return" value="tienda.php">'; //pagina a la que vuelve al hacer la compra
+									echo '<input type="hidden" name = "notify_url" value = "includes/formCompra.php"/>';
 									echo '<input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_buynow_LG.gif" border="0" name="pepito" value = "pepito" alt="PayPal. La forma rápida y segura de pagar en Internet.">';
 						  		echo'</form>';	 
 
@@ -131,7 +131,7 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 						echo '<input type="hidden" name="currency_code" value="EUR" />'; //tipo de moneda
 						echo'<input type="hidden" name="return" value="tienda.php">'; //pagina a la que vuelve al hacer la compra
 						//echo '<input type="hidden" name="notify_url" value="http://www.nutecoweb.com/ok.php" />'; //procesar compra en bbdd
-						echo '<input type="hidden" name = "realizaCompra" value = "includes/formCompra.php"/>';
+						echo '<input type="hidden" name = "notify_url" value = "includes/formCompra.php"/>';
 						echo '<input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_buynow_LG.gif" border="0" name="pepito" value = "pepito" alt="PayPal. La forma rápida y segura de pagar en Internet.">';
 					echo '</form>';
 
