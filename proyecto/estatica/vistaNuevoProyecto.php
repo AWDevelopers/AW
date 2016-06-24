@@ -40,7 +40,7 @@
 			<div class="contenido">
 
 				<div class="formulario">
-					<form id="formNuevoProyecto" gaction="includes/formNuevoProyecto.php" method="POST">
+					<form id="formNuevoProyecto" action="includes/formNuevoProyecto.php" method="POST">
 						<div class="contenido2">	
 							
 							<div id="formulariosTitulo">
@@ -53,7 +53,7 @@
 							<p><h2> Imagen: </h2></p>
 							<input id="file_url" type="file" name="foto"></input>
 							<p> <h2>Fecha de finalizacion: </h2></p>
-							<input type="date" size="20" name="fecha"> (*)</input></p>
+							<input type="date" size="20" name="fechaFin"> (*)</input></p>
 							<p><h2> Dinero necesario: </h2></p>
 							<input type="number" name="dinero"> (*)</input>
 							<p><h2> Voluntarios necesarios: </h2></p>

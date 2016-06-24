@@ -19,6 +19,21 @@
 			}
 		}
 
+		function sumHorasVoluntario($dniUsuario){
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
+			$array = new ArrayObject();
+			$sql = "SELECT horaEntrada, horaSalida FROM voluntarios WHERE DNIUsuario = '$dniUsuario'";
+			$rs = $con->query($sql) or die ($con->error);
+			if($rs != NULL)
+			{
+				while($lista[] = $rs->fetch_assoc());
+				$rs->free();
+				$con->close();
+				return ($lista);	
+			}
+		}
+
 		function insertaVoluntario($idProyecto,$dniUsuario,$dia,$horaEntrada,$horaSalida){
 			$app = App::getSingleton();
     		$con = $app->conexionBd();

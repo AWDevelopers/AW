@@ -22,7 +22,6 @@
 				}
 				mysqli_free_result($resultado);
 				$rs->free();
-			$con->close();
 				return $array;
 			}
 		}
@@ -34,8 +33,7 @@
 			$consulta .= "('" . $ong->getCif() . "', '" . $ong->getNombre() . "', '" . $ong->getDireccion() . "', '" . $ong->getEmail() . "', '" . $ong->getUsuario() . "', '" . $ong->getPass() . "', '" . $ong->getTelefono() . "')";
 			//$rs = $con->query($consulta) or die ($con->error);
 			$con->query($consulta) or die ($con->error);
-			//$rs->free();
-			$con->close();
+			//$rs->free()
 		}
 
 		public function deleteOng($cif){
@@ -45,7 +43,6 @@
 			//$rs = $con->query($consulta) or die ($con->error);
 			$con->query($consulta) or die ($con->error);
 			//$rs->free();
-			$con->close();
 		}
 
 		public function modifyUsuario($usuario_nuevo, $usuario_actual){
@@ -53,7 +50,6 @@
     		$con = $app->conexionBd();
 			$sql = "UPDATE ong SET usuario = '$usuario_nuevo' WHERE usuario = '$usuario_actual'";
 			$con->query($sql) or die ($con->error);
-			$con->close();
 
 		}
 
@@ -70,7 +66,6 @@
     		$con = $app->conexionBd();
 			$sql = "UPDATE ong SET direccion = '$dir_nueva' WHERE direccion = '$dir_actual'";
 			$con->query($sql) or die ($con->error);
-			$con->close();
 		}
 
 		public function modifyEmail($email_nuevo, $email_actual){
@@ -78,14 +73,12 @@
     		$con = $app->conexionBd();
 			$sql = "UPDATE ong SET email = '$email_nuevo' WHERE email = '$email_actual'";
 			$con->query($sql) or die ($con->error);
-			$con->close();
 		}
 		public function modifyNombre($nombre_nuevo, $nombre_actual){
 			$app = App::getSingleton();
     		$con = $app->conexionBd();
 			$sql =  "UPDATE ong SET nombre = '$nombre_nuevo' WHERE nombre = '$nombre_actual'";
 			$con->query($sql) or die ($con->error);
-			$con->close();
 		}
 
 		public function modifyPass($pass_nueva, $pass_actual){
@@ -93,7 +86,6 @@
     		$con = $app->conexionBd();
 			$sql = "UPDATE ong SET pass = '$pass_nueva' WHERE pass = '$pass_actual'";
 			$con->query($sql) or die ($con->error);
-			$con->close();
 		}
 
 		public function modifyTelefono($tlf_nuevo, $tlf_actual){
@@ -101,7 +93,6 @@
     		$con = $app->conexionBd();
 			$sql = "UPDATE ong SET telefono = '$tlf_nuevo' WHERE telefono = '$tlf_actual'";
 			$con->query($sql) or die ($con->error);
-			$con->close();
 		}
 
 		public function seleccionaOng($cif){
@@ -109,13 +100,13 @@
     		$con = $app->conexionBd();
 			$sql = "SELECT * FROM ong WHERE CIF = '$cif'";
 			$rs = $con->query($sql) or die($con->error);
-
+			$resultado = "";
 			while($lista = $rs->fetch_assoc()){
 				$resultado =  new ong($lista['CIF'], $lista['nombre'], $lista['direccion'], $lista['email'], $lista['usuario'], $lista['pass'], $lista['telefono'], $lista['imagen']);
 				$rs->free();
-				//$con->close();
-				return $resultado;
+				
 			}
+			return $resultado;
 
 			
 		}

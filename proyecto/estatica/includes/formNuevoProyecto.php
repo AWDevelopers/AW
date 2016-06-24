@@ -1,6 +1,9 @@
 <?php
 include ('config.php');
+use \AW\proyecto\estatica\includes\Aplicacion as App;
 require_once 'ModelScripts/GestorProyectos.php';
+$app = App::getSingleton();
+if($app->usuarioLogueado() && $app->tieneRol("Admin", "Error", "No tienes permisos")){
 $lista = new GestorProyectos();
 	$nombre = $_REQUEST['nombre'];
 	$cif = $_REQUEST['cif'];
@@ -10,10 +13,10 @@ $lista = new GestorProyectos();
 	$imagen = "img/".$_REQUEST['foto'];
 	$numVoluntarios = $_REQUEST['voluntarios'];
 	$fechaFin = $_REQUEST['fechaFin'];
-	#$rol = $_SESSION['rol'];
-	$rol = "User";
-	$salida = $lista->nuevoProyecto($nombre,$cif,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen,$numVoluntarios,$fechaFin, $rol);
-	header("Location: ../vistaProyecto.php?id=".$salida);
+	$salida = $lista->nuevoProyecto($nombre,$cif,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen,$numVoluntarios,$fechaFin);
+	header("Location: ../vistaAdminProyectos.php");
+}
+exit();
 
 
 

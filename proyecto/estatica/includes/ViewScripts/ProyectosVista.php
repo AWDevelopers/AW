@@ -159,10 +159,10 @@ EOS;
 			$idUsuario = $_SESSION['DNI'];
 		$html = <<<EOS
 		<form name="vista" action="includes/formModificaProyecto.php" method="POST">
-		<input type="text" id="nombre" value="$nombre"  name="nombre" required ></input> </p>
+		<input type="text" id="nombre" value="$nombre"  name="nombre"></input> </p>
 		<div class="imgDonacion">
 			<p> <h2>Imagen: </h2></p>
-			<input id="file_url" type="file" value=$imagen id="imagen" name="imagen" > (*)</input><img src="$imagen" />
+			<input id="file_url" type="file" value=$imagen id="imagen" name="imagen" ></input><img src='$imagen' />
 		</div>
 		<div class="cajaDescripcion">
 			<p><h2> Descripción:</h2> </p>
