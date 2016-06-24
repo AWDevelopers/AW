@@ -1,5 +1,5 @@
 <?php
-	
+	require_once '/../ModelScripts/ong.php';
 	require_once '/../config.php';
 	use \AW\proyecto\estatica\includes\Aplicacion as App;
 	use \AW\proyecto\estatica\includes\ModelScripts\ong as Ong;
@@ -9,20 +9,15 @@
 		private $array;
 
 		public function listaOngs(){
-			$array = new ArrayObject();
 			$app = App::getSingleton();
-    		$con = $app->conexionBd();
-
-			$consulta = "SELECT * FROM ongs";
-			$resultado = $rs = $con->query($consulta) or die ($con->error);
-
-			if($resultado != NULL){
-				while($lista = $resultado->fetch_assoc()){
-					$array->append(new Ongs($lista['CIF'], $lista['nombre'], $lista['direccion'], $lista['email'], $lista['usuario'], $lista['pass'], $lista['telefono'], $lista['imagen']));
-				}
-				mysqli_free_result($resultado);
+            $con = $app->conexionBd();
+			$sql = sprintf("SELECT * FROM ong");
+			$rs = $con->query($sql) or die ($con->error);
+			if($rs != NULL)
+			{
+                            while($lista[] = $rs->fetch_assoc());
 				$rs->free();
-				return $array;
+				return ($lista);
 			}
 		}
 

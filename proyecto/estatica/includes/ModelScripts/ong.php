@@ -13,7 +13,7 @@
 
 		/*---------------- CONSTRUCTORA ---------------------------------*/
 
-		function __construct($cif, $nombre, $direccion, $email, $usuario, $pass, $telefono, $imagen){
+		function __construct($cif, $nombre, $direccion, $email, $usuario, $pass, $telefono){
 			$this->cif = $cif;
 			$this->nombre = $nombre;
 			$this->direccion = $direccion;
@@ -21,7 +21,7 @@
 			$this->usuario = $usuario;
 			$this->pass = $pass;
 			$this->telefono = $telefono;
-			$this->imagen = $imagen;
+			//$this->imagen = $imagen;
 		}
 
 		/*----------------- MÉTODOS GET --------------------*/

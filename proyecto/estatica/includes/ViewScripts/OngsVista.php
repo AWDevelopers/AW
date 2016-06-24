@@ -273,6 +273,26 @@
   				echo '</div>';	
 			echo '</div>';
 		}
+
+		public function muestraOngs(){
+			$lista = $this->listaOngs->getLista();
+            $iterator = $lista->getIterator();
+               		
+			while($iterator->valid()) {
+                $nombre = $iterator->current()->getNombre();
+                $imagen = $iterator->current()->getImagen();
+                $cif = $iterator->current()->getCif();
+                echo'<div class="principal">
+	                    <h2>'. $nombre .'</h2>
+	                    <img src="'.$imagen.'"/>
+	                    <form name="vista" action="includes/perfilOng.php?ong='.$cif.'method="POST">
+	                    <input name="button" type="submit" value="Visitar Perfil" />
+	                    </form>
+                    </div>';
+ 		
+		    $iterator->next();
+			}	 	
+		}
 	}
 
 ?>
