@@ -85,17 +85,15 @@
 			}
 		}
 
-		function insertaProducto($idProducto, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen){
+		function insertaProducto($idProducto, $CIFOng, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen){
 			$app = App::getSingleton();
     		$con = $app->conexionBd();
 
-    		$CIFOng = $_SESSION['DNI'];
-    		$sql = "INSERT INTO producto(idProducto, stock, precio, nombre,descripcionCorta, descripcionLarga, CIFOng, imagen) VALUES ";
-			$sql.= "(,". $stock.",". $precio.",". $nombre.",".$descripcionCorta.",". $descripcionLarga.",". $CIFOng.",". $imagen.")";
+    		$sql = "INSERT INTO producto(idProducto, stock, precio, nombre,descripcionCorta, descripcionLarga, CIFOng, imagen) VALUES (NULL, '$stock','$precio', '$nombre','$descripcionCorta', '$descripcionLarga', '$CIFOng', '$imagen')";
 			$con->query($sql) or die ($con->error);
-			$num = $con->insert_id;
+			//$num = $con->insert_id;
 			$con->close();
-			return ($num);
+			//return ($num);
 		}
 
 		function borrarProducto($id){
